@@ -14,7 +14,7 @@ const featurePills = [
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-[#FFFBF5] via-[#f5faf6] to-[#FFFBF5] py-20 md:py-28 lg:py-32">
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#FFFBF5] via-[#f5faf6] to-[#FFFBF5] pt-32 pb-20 md:pt-36 md:pb-28 lg:pt-40 lg:pb-32">
       {/* Ambient background gradients */}
       <div className="pointer-events-none absolute inset-0">
         {/* Top-right sage/emerald orb */}
