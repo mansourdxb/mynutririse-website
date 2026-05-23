@@ -42,42 +42,25 @@ export function Navbar() {
       >
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5">
-            <svg
-              width="28"
-              height="28"
-              viewBox="0 0 28 28"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M20 6C20 6 19 10 15 13C11 16 7 17 7 17C7 17 8 21 12 22C16 23 20 20 22 16C24 12 20 6 20 6Z"
-                fill="#10B981"
-                fillOpacity="0.15"
-              />
-              <path
-                d="M20 6C20 6 19 10 15 13C11 16 7 17 7 17"
-                stroke="#10B981"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
-              <path
-                d="M7 17C7 17 8 21 12 22C16 23 20 20 22 16C24 12 20 6 20 6"
-                stroke="#10B981"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
-              <path
-                d="M15 13C13 15 10 19 9 22"
-                stroke="#10B981"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-              />
-            </svg>
-            <span
-              className="text-lg font-semibold tracking-tight text-emerald-700"
-              style={{ fontFamily: "'Inter', sans-serif" }}
-            >
+          <Link href="/" className="flex items-center gap-2">
+            <span className="flex h-7 w-7 items-center justify-center rounded-full bg-emerald-500">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                className="text-white"
+              >
+                <path
+                  d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </span>
+            <span className="text-lg font-semibold tracking-tight text-emerald-700">
               MyNutriRise
             </span>
           </Link>

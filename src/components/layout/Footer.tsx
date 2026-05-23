@@ -5,16 +5,15 @@ const footerColumns = [
     title: "Product",
     links: [
       { label: "Features", href: "/features" },
-      { label: "Premium", href: "/premium" },
-      { label: "Download", href: "/download" },
+      { label: "Premium", href: "/#premium" },
+      { label: "Download", href: "/#download" },
     ],
   },
   {
     title: "Resources",
     links: [
-      { label: "Blog", href: "/blog" },
       { label: "Help Center", href: "/support" },
-      { label: "Community", href: "/community" },
+      { label: "Wellness", href: "/#wellness" },
     ],
   },
   {
