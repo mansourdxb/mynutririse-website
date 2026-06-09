@@ -44,11 +44,7 @@ const row2 = [
 
 function ScreenCard({ src, label }: { src: string; label: string }) {
   return (
-    <motion.div
-      whileHover={{ scale: 1.05, y: -8 }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      className="group relative flex-shrink-0 w-[160px] sm:w-[190px] lg:w-[210px] cursor-pointer"
-    >
+    <div className="group relative flex-shrink-0 w-[160px] sm:w-[190px] lg:w-[210px] transition-transform duration-300 hover:scale-105 hover:-translate-y-2">
       <div className="relative overflow-hidden rounded-2xl bg-white shadow-lg shadow-slate-200/60 ring-1 ring-slate-100 transition-shadow duration-300 group-hover:shadow-xl group-hover:shadow-emerald-200/30 group-hover:ring-emerald-200">
         <div className="relative aspect-[9/19.5] w-full">
           <Image
@@ -56,7 +52,7 @@ function ScreenCard({ src, label }: { src: string; label: string }) {
             alt={label}
             fill
             className="object-cover object-top"
-            sizes="210px"
+            sizes="(max-width: 640px) 160px, 210px"
             loading="lazy"
           />
         </div>
@@ -65,38 +61,36 @@ function ScreenCard({ src, label }: { src: string; label: string }) {
           <span className="text-xs font-semibold text-white drop-shadow-sm">{label}</span>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
 function MarqueeRow({
   items,
   direction = "left",
-  speed = 30,
 }: {
   items: typeof row1;
   direction?: "left" | "right";
-  speed?: number;
 }) {
-  const doubled = [...items, ...items];
-
   return (
     <div className="relative overflow-hidden">
-      <motion.div
-        className="flex gap-4 sm:gap-5"
-        animate={{ x: direction === "left" ? ["0%", "-50%"] : ["-50%", "0%"] }}
-        transition={{
-          x: {
-            duration: speed,
-            repeat: Infinity,
-            ease: "linear",
-          },
-        }}
+      <div
+        className={`flex w-max hover:[animation-play-state:paused] ${
+          direction === "left" ? "animate-marquee" : "animate-marquee-reverse"
+        }`}
       >
-        {doubled.map((s, i) => (
-          <ScreenCard key={`${s.src}-${i}`} src={s.src} label={s.label} />
+        {[0, 1].map((half) => (
+          <div
+            key={half}
+            aria-hidden={half === 1}
+            className="flex shrink-0 gap-4 pr-4 sm:gap-5 sm:pr-5"
+          >
+            {items.map((s) => (
+              <ScreenCard key={`${s.src}-${half}`} src={s.src} label={s.label} />
+            ))}
+          </div>
         ))}
-      </motion.div>
+      </div>
     </div>
   );
 }
@@ -129,8 +123,8 @@ export function AppShowcase() {
       </div>
 
       <motion.div style={{ opacity }} className="space-y-5 sm:space-y-6">
-        <MarqueeRow items={row1} direction="left" speed={40} />
-        <MarqueeRow items={row2} direction="right" speed={45} />
+        <MarqueeRow items={row1} direction="left" />
+        <MarqueeRow items={row2} direction="right" />
       </motion.div>
 
       {/* Fade edges */}

@@ -196,11 +196,14 @@ function FaqItem({
   isOpen: boolean;
   onToggle: () => void;
 }) {
+  const panelId = `faq-${question.replace(/\W+/g, "-").toLowerCase()}`;
   return (
     <div className="border-b border-slate-100 last:border-b-0">
       <button
         onClick={onToggle}
-        className="flex w-full items-center justify-between gap-4 px-5 py-5 text-left transition-colors hover:bg-emerald-50/40 sm:px-6"
+        aria-expanded={isOpen}
+        aria-controls={panelId}
+        className="flex w-full items-center justify-between gap-4 px-5 py-5 text-left transition-colors hover:bg-emerald-50/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-emerald-500 sm:px-6"
       >
         <span
           className={`text-sm font-medium transition-colors sm:text-[15px] ${isOpen ? "text-emerald-600" : "text-slate-700"}`}
@@ -210,7 +213,7 @@ function FaqItem({
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-          className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full transition-colors ${isOpen ? "bg-emerald-100 text-emerald-600" : "bg-slate-100 text-slate-400"}`}
+          className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full transition-colors ${isOpen ? "bg-emerald-100 text-emerald-600" : "bg-slate-100 text-slate-500"}`}
         >
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
             <path d="M2 4.5L6 8.5L10 4.5" />
@@ -225,6 +228,7 @@ function FaqItem({
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
             className="overflow-hidden"
+            id={panelId}
           >
             <div className="px-5 pb-5 sm:px-6">
               <p className="text-sm leading-relaxed text-slate-500 sm:text-[15px] sm:leading-7">
@@ -329,7 +333,8 @@ export default function SupportPage() {
               <button
                 key={cat.id}
                 onClick={() => handleCategoryChange(cat.id)}
-                className={`inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 ${
+                aria-pressed={activeCategory === cat.id}
+                className={`inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 ${
                   activeCategory === cat.id
                     ? "bg-emerald-500 text-white shadow-md shadow-emerald-500/25"
                     : "bg-white text-slate-600 border border-slate-200 hover:border-emerald-300 hover:text-emerald-600 hover:bg-emerald-50"
@@ -343,7 +348,7 @@ export default function SupportPage() {
 
           {/* Count badge */}
           <div className="mt-6 text-center">
-            <span className="text-xs text-slate-400">
+            <span className="text-xs text-slate-500">
               {filtered.length} {filtered.length === 1 ? "question" : "questions"}
             </span>
           </div>

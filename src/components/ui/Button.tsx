@@ -51,7 +51,7 @@ export function AppStoreButton({ store }: { store: "apple" | "google" }) {
   return (
     <a
       href={isApple ? "https://apps.apple.com/app/mynutririse/id6764006876" : "https://play.google.com/store/apps/details?id=com.nutririse.app"}
-      className="inline-flex items-center gap-3 rounded-xl bg-slate-900 px-5 py-3 text-white transition-all duration-200 hover:bg-slate-800 hover:scale-[1.02]"
+      className="inline-flex items-center gap-3 rounded-xl bg-slate-900 px-5 py-3 text-white transition-all duration-200 hover:bg-slate-800 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2"
     >
       {isApple ? (
         <svg className="h-7 w-7" viewBox="0 0 24 24">

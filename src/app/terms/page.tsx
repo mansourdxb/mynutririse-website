@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Service — MyNutriRise",
+  title: "Terms of Service",
   description:
     "Read the terms and conditions governing your use of the MyNutriRise app and services.",
+  alternates: { canonical: "/terms" },
 };
 
 export default function TermsPage() {

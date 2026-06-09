@@ -193,11 +193,20 @@ export function SocialProof() {
                   {t.quote}
                 </blockquote>
 
-                <div>
-                  <p className="text-sm font-semibold text-slate-800">
-                    {t.name}
-                  </p>
-                  <p className="text-xs text-slate-400">{t.role}</p>
+                <div className="flex items-center gap-3">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-emerald-100 text-sm font-semibold text-emerald-700">
+                    {t.name
+                      .split(" ")
+                      .map((part) => part[0])
+                      .join("")
+                      .replace(".", "")}
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-slate-800">
+                      {t.name}
+                    </p>
+                    <p className="text-xs text-slate-500">{t.role}</p>
+                  </div>
                 </div>
               </motion.div>
             </StaggerItem>

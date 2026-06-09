@@ -114,10 +114,10 @@ function PhonePlaceholderScreen() {
             <span className="text-[9px] font-semibold text-slate-600">Streak</span>
           </div>
           <p className="text-[13px] font-bold text-slate-800 mt-1">
-            1 <span className="text-[9px] font-normal text-slate-400">days</span>
+            12 <span className="text-[9px] font-normal text-slate-400">days</span>
           </p>
           <div className="mt-1 h-1 overflow-hidden rounded-full bg-orange-100">
-            <div className="h-full w-[14%] rounded-full bg-orange-400" />
+            <div className="h-full w-[70%] rounded-full bg-orange-400" />
           </div>
           <p className="text-[7px] text-orange-500 mt-0.5">Keep it going!</p>
         </div>
@@ -130,12 +130,12 @@ function PhonePlaceholderScreen() {
             <span className="text-[12px]">🌙</span>
             <div>
               <p className="text-[9px] font-semibold text-slate-600">Sleep</p>
-              <p className="text-[12px] font-bold text-slate-800">3h 0m</p>
+              <p className="text-[12px] font-bold text-slate-800">7h 20m</p>
             </div>
           </div>
-          <div className="flex items-center gap-1 rounded-full bg-red-50 px-2 py-0.5">
-            <div className="h-1.5 w-1.5 rounded-full bg-red-400" />
-            <span className="text-[7px] font-medium text-red-500">Quality: Low</span>
+          <div className="flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5">
+            <div className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+            <span className="text-[7px] font-medium text-emerald-600">Quality: Good</span>
           </div>
         </div>
       </div>

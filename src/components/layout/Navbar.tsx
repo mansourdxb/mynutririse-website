@@ -71,14 +71,14 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-slate-600 transition-colors duration-200 hover:text-emerald-600"
+                className="text-sm font-medium text-slate-600 transition-colors duration-200 hover:text-emerald-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 rounded-sm"
               >
                 {link.label}
               </Link>
             ))}
             <Link
               href="/#download"
-              className="rounded-full bg-emerald-500 px-6 py-2.5 text-sm font-medium text-white shadow-sm shadow-emerald-500/20 transition-all duration-200 hover:bg-emerald-600 hover:shadow-md hover:shadow-emerald-500/25"
+              className="rounded-full bg-emerald-500 px-6 py-2.5 text-sm font-medium text-white shadow-sm shadow-emerald-500/20 transition-all duration-200 hover:bg-emerald-600 hover:shadow-md hover:shadow-emerald-500/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2"
             >
               Download App
             </Link>
@@ -88,8 +88,9 @@ export function Navbar() {
           <button
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="relative z-50 flex h-10 w-10 items-center justify-center rounded-lg md:hidden"
-            aria-label="Toggle menu"
+            className="relative z-50 flex h-10 w-10 items-center justify-center rounded-lg md:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileOpen}
           >
             <div className="flex w-5 flex-col gap-1.5">
               <motion.span

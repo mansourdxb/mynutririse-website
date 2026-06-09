@@ -7,9 +7,9 @@ import { PhoneMockup } from "@/components/ui/PhoneMockup";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 
 const featurePills = [
-  { label: "AI Meal Scan", top: "10%", right: "-8%", delay: 0.8 },
-  { label: "Fasting", top: "45%", right: "-12%", delay: 1.1 },
-  { label: "9000+ Recipes", bottom: "18%", left: "-6%", delay: 1.4 },
+  { label: "AI Meal Scan", top: "10%", right: "-8%", delay: 0.6 },
+  { label: "Halal & Cultural Diets", top: "45%", right: "-12%", delay: 0.75 },
+  { label: "9000+ Recipes", bottom: "18%", left: "-6%", delay: 0.9 },
 ];
 
 export function Hero() {
@@ -35,7 +35,7 @@ export function Hero() {
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
+              transition={{ duration: 0.6, delay: 0.05 }}
             >
               <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-4 py-1.5 text-sm font-medium text-emerald-700 ring-1 ring-emerald-200/60">
                 ✨ Trusted by 150,000+ health-conscious people
@@ -47,13 +47,12 @@ export function Hero() {
               className="mt-6 text-5xl font-bold tracking-tight text-slate-800 sm:text-6xl lg:text-7xl"
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.25 }}
+              transition={{ duration: 0.7, delay: 0.15 }}
             >
-              Your Complete{" "}
+              Snap a photo.{" "}
               <span className="bg-gradient-to-r from-emerald-600 to-emerald-400 bg-clip-text text-transparent">
-                Wellness
-              </span>{" "}
-              Companion
+                Know your nutrition.
+              </span>
             </motion.h1>
 
             {/* Subtitle */}
@@ -61,11 +60,11 @@ export function Hero() {
               className="mt-6 max-w-xl text-lg leading-relaxed text-slate-500"
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.4 }}
+              transition={{ duration: 0.7, delay: 0.25 }}
             >
-              Track nutrition, scan meals with AI, follow personalized plans,
-              monitor fasting, and get intelligent coaching — everything you need
-              for a healthier, happier life.
+              Scan meals with AI, follow halal and cultural meal plans, track
+              fasting, and get intelligent coaching — everything you need for a
+              healthier, happier life.
             </motion.p>
 
             {/* Warm gold accent line */}
@@ -73,7 +72,7 @@ export function Hero() {
               className="mx-auto mt-8 h-0.5 w-12 rounded-full bg-gradient-to-r from-amber-300 to-amber-200 lg:mx-0"
               initial={{ opacity: 0, scaleX: 0 }}
               animate={{ opacity: 1, scaleX: 1 }}
-              transition={{ duration: 0.5, delay: 0.55 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
             />
 
             {/* App Store buttons */}
@@ -81,7 +80,7 @@ export function Hero() {
               className="mt-8 flex flex-col items-center gap-4 sm:flex-row lg:justify-start"
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.65 }}
+              transition={{ duration: 0.6, delay: 0.35 }}
             >
               <AppStoreButton store="apple" />
               <AppStoreButton store="google" />

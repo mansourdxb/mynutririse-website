@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
@@ -139,13 +139,13 @@ function MacroRing({
         </svg>
         <div className="absolute inset-0 flex flex-col items-center justify-center">
           <span className="text-sm font-bold text-slate-800">{value}</span>
-          <span className="text-[9px] text-slate-400">{unit}</span>
+          <span className="text-[9px] text-slate-500">{unit}</span>
         </div>
       </div>
       <span className="text-[11px] font-medium" style={{ color }}>
         {label}
       </span>
-      <span className="text-[9px] text-slate-400">
+      <span className="text-[9px] text-slate-500">
         / {total}
         {unit}
       </span>
@@ -165,12 +165,12 @@ function NutritionCards() {
         animate={float1}
         className="absolute top-4 left-4 sm:left-8 w-56 rounded-2xl bg-white/90 backdrop-blur border border-emerald-100/60 shadow-lg shadow-emerald-900/5 p-5"
       >
-        <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
+        <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">
           Calories
         </p>
         <div className="flex items-end gap-1.5">
           <span className="text-3xl font-bold text-slate-800">1,693</span>
-          <span className="text-sm text-slate-400 mb-1">/ 2,100 kcal</span>
+          <span className="text-sm text-slate-500 mb-1">/ 2,100 kcal</span>
         </div>
         <div className="mt-3 h-2 rounded-full bg-emerald-100 overflow-hidden">
           <motion.div
@@ -191,7 +191,7 @@ function NutritionCards() {
         animate={float2}
         className="absolute top-28 right-0 sm:right-4 w-60 rounded-2xl bg-white/90 backdrop-blur border border-purple-100/60 shadow-lg shadow-purple-900/5 p-5"
       >
-        <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-4">
+        <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-4">
           Macros
         </p>
         <div className="flex justify-around">
@@ -230,7 +230,7 @@ function NutritionCards() {
         animate={float3}
         className="absolute bottom-12 left-6 sm:left-12 rounded-xl bg-white/90 backdrop-blur border border-teal-100/60 shadow-md shadow-teal-900/5 px-4 py-3"
       >
-        <p className="text-[10px] font-semibold uppercase tracking-wider text-slate-400 mb-2">
+        <p className="text-[10px] font-semibold uppercase tracking-wider text-slate-500 mb-2">
           Micronutrients
         </p>
         <div className="flex items-center gap-3">
@@ -289,7 +289,7 @@ function WellnessCards() {
         animate={float2}
         className="absolute top-4 left-4 sm:left-8 w-48 rounded-2xl bg-white/90 backdrop-blur border border-emerald-100/60 shadow-lg shadow-emerald-900/5 p-5 flex flex-col items-center"
       >
-        <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3">
+        <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-3">
           Fasting
         </p>
         <div className="relative w-24 h-24">
@@ -344,7 +344,7 @@ function WellnessCards() {
         <p className="text-sm font-semibold text-slate-700">
           9,000+ Recipes
         </p>
-        <p className="text-xs text-slate-400 mt-0.5">
+        <p className="text-xs text-slate-500 mt-0.5">
           Mediterranean, Keto, Vegan &amp; more
         </p>
         <div className="mt-2 flex gap-1.5">
@@ -362,7 +362,7 @@ function WellnessCards() {
         animate={float3}
         className="absolute bottom-20 left-6 sm:left-10 w-56 rounded-2xl bg-white/90 backdrop-blur border border-blue-100/60 shadow-lg shadow-blue-900/5 p-4"
       >
-        <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3">
+        <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-3">
           This Week&apos;s Activity
         </p>
         <div className="flex items-center gap-3 mb-3">
@@ -381,7 +381,7 @@ function WellnessCards() {
           </div>
           <div>
             <p className="text-sm font-semibold text-slate-700">1,429 kcal</p>
-            <p className="text-[11px] text-slate-400">
+            <p className="text-[11px] text-slate-500">
               230 min &middot; 6 exercises
             </p>
           </div>
@@ -488,7 +488,7 @@ function CoachingCards() {
         animate={float3}
         className="absolute top-6 right-0 sm:right-6 w-48 rounded-2xl bg-white/90 backdrop-blur border border-emerald-100/60 shadow-lg shadow-emerald-900/5 p-5 flex flex-col items-center"
       >
-        <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3">
+        <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-3">
           Wellness Score
         </p>
         <div className="relative w-24 h-24">
@@ -581,7 +581,7 @@ function CoachingCards() {
         </div>
         <div className="grid grid-cols-2 gap-2">
           <div className="bg-violet-50/60 rounded-lg p-2 text-center">
-            <p className="text-sm font-bold text-violet-600">14%</p>
+            <p className="text-sm font-bold text-violet-600">86%</p>
             <p className="text-[9px] text-slate-500">Consistency</p>
           </div>
           <div className="bg-emerald-50/60 rounded-lg p-2 text-center">
@@ -589,7 +589,7 @@ function CoachingCards() {
             <p className="text-[9px] text-slate-500">Avg kcal</p>
           </div>
         </div>
-        <p className="mt-2 text-[10px] text-slate-400 text-center">
+        <p className="mt-2 text-[10px] text-slate-500 text-center">
           Shareable &middot; PDF Export
         </p>
       </motion.div>
@@ -645,7 +645,7 @@ function MotivationCards() {
             transition={{ duration: 1, delay: 0.3 }}
           />
         </div>
-        <p className="mt-1.5 text-[10px] text-slate-400 text-right">240 / 400 XP</p>
+        <p className="mt-1.5 text-[10px] text-slate-500 text-right">240 / 400 XP</p>
       </motion.div>
 
       {/* Streak fire */}
@@ -717,13 +717,13 @@ function MotivationCards() {
         animate={float4}
         className="absolute bottom-4 right-2 sm:right-8 w-48 rounded-2xl bg-white/90 backdrop-blur border border-violet-100/60 shadow-lg shadow-violet-900/5 p-4"
       >
-        <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3">
+        <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-3">
           Leaderboard
         </p>
         <div className="space-y-2">
           {[
-            { rank: 1, name: "Sarah M.", xp: "1,240 XP", highlight: false },
-            { rank: 2, name: "James K.", xp: "1,180 XP", highlight: false },
+            { rank: 1, name: "Amira H.", xp: "1,240 XP", highlight: false },
+            { rank: 2, name: "Omar S.", xp: "1,180 XP", highlight: false },
             { rank: 3, name: "You", xp: "1,050 XP", highlight: true },
           ].map((u) => (
             <div
@@ -737,7 +737,7 @@ function MotivationCards() {
                   u.rank === 1
                     ? "text-amber-500"
                     : u.rank === 2
-                    ? "text-slate-400"
+                    ? "text-slate-500"
                     : "text-emerald-500"
                 }`}
               >
@@ -752,7 +752,7 @@ function MotivationCards() {
               >
                 {u.name}
               </span>
-              <span className="text-[10px] text-slate-400">{u.xp}</span>
+              <span className="text-[10px] text-slate-500">{u.xp}</span>
             </div>
           ))}
         </div>
@@ -938,36 +938,25 @@ const featureGridItems: {
   },
 ];
 
-function FlipCard({
-  item,
-  isAutoFlipped,
-  onUserInteract,
-}: {
-  item: (typeof featureGridItems)[number];
-  isAutoFlipped?: boolean;
-  onUserInteract?: () => void;
-}) {
-  const [manualFlip, setManualFlip] = useState<boolean | null>(null);
+function FlipCard({ item }: { item: (typeof featureGridItems)[number] }) {
+  const [showBack, setShowBack] = useState(false);
 
-  const showBack = manualFlip !== null ? manualFlip : !!isAutoFlipped;
-
-  const handleClick = () => {
-    onUserInteract?.();
-    setManualFlip((prev) => (prev !== null ? !prev : !isAutoFlipped));
-  };
-
-  useEffect(() => {
-    if (manualFlip === null) return;
-    setManualFlip(null);
-  // reset manual override when auto-flip target changes
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isAutoFlipped]);
+  const handleFlip = () => setShowBack((prev) => !prev);
 
   return (
     <div
-      className="relative cursor-pointer [perspective:1000px]"
+      role="button"
+      tabIndex={0}
+      aria-label={`${item.name} — ${showBack ? "hide" : "show"} screen preview`}
+      className="relative cursor-pointer [perspective:1000px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 rounded-xl"
       style={{ minHeight: showBack ? 320 : "auto" }}
-      onClick={handleClick}
+      onClick={handleFlip}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          handleFlip();
+        }
+      }}
     >
       <motion.div
         animate={{ rotateY: showBack ? 180 : 0 }}
@@ -993,7 +982,7 @@ function FlipCard({
             <p className="text-sm font-semibold text-slate-700 group-hover:text-emerald-600 transition-colors">
               {item.name}
             </p>
-            <p className="text-[12px] leading-relaxed text-slate-400 mt-0.5">
+            <p className="text-[12px] leading-relaxed text-slate-500 mt-0.5">
               {item.desc}
             </p>
           </div>
@@ -1046,42 +1035,20 @@ function FlipCard({
 }
 
 function FeatureGrid() {
-  const [autoIndex, setAutoIndex] = useState(0);
-  const [autoActive, setAutoActive] = useState(true);
-
-  useEffect(() => {
-    if (!autoActive) return;
-    const timer = setInterval(() => {
-      setAutoIndex((prev) => (prev + 1) % featureGridItems.length);
-    }, 3000);
-    return () => clearInterval(timer);
-  }, [autoActive]);
-
-  const stopAuto = useCallback(() => setAutoActive(false), []);
-
   return (
     <div>
       <div className="flex items-center justify-center gap-2 mb-6">
-        <motion.span
-          animate={{ opacity: [0.5, 1, 0.5] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="text-emerald-400"
-        >
+        <span className="text-emerald-400">
           <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
             <path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" />
             <path fillRule="evenodd" d="M.664 10.59a1.651 1.651 0 010-1.186A10.004 10.004 0 0110 3c4.257 0 7.893 2.66 9.336 6.41.147.381.146.804 0 1.186A10.004 10.004 0 0110 17c-4.257 0-7.893-2.66-9.336-6.41zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd" />
           </svg>
-        </motion.span>
-        <span className="text-sm text-slate-400 font-medium">Tap any card to preview the screen</span>
+        </span>
+        <span className="text-sm text-slate-500 font-medium">Tap any card to preview the screen</span>
       </div>
       <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
-        {featureGridItems.map((f, i) => (
-          <FlipCard
-            key={f.name}
-            item={f}
-            isAutoFlipped={autoActive && i === autoIndex}
-            onUserInteract={stopAuto}
-          />
+        {featureGridItems.map((f) => (
+          <FlipCard key={f.name} item={f} />
         ))}
       </div>
     </div>
@@ -1094,14 +1061,14 @@ function FeatureGrid() {
 
 export function Features() {
   return (
-    <section className="relative overflow-hidden">
+    <section id="wellness" className="relative overflow-hidden">
       {/* ---------------------------------------------------------- */}
       {/*  Section header                                            */}
       {/* ---------------------------------------------------------- */}
       <div className="py-20 lg:py-28 px-6 lg:px-8">
         <AnimatedSection className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-semibold tracking-widest uppercase text-emerald-600 mb-5">
-            95+ Screens &middot; 40+ Feature Modules
+            All-in-one nutrition, fasting &amp; coaching
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] xl:text-5xl font-bold leading-tight tracking-tight text-slate-800">
             One app for your entire{" "}
