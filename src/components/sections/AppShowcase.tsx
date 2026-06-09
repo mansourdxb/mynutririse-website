@@ -17,6 +17,11 @@ const row1 = [
   { src: "/screenshots/IMG_5873.PNG", label: "Wellness Score" },
   { src: "/screenshots/IMG_5852.PNG", label: "Micronutrients" },
   { src: "/screenshots/IMG_5869.PNG", label: "Meal Log" },
+  { src: "/screenshots/IMG_5844.PNG", label: "Recipe Categories" },
+  { src: "/screenshots/IMG_5881.PNG", label: "Friends & Leaderboard" },
+  { src: "/screenshots/IMG_5872.PNG", label: "Micronutrient Goals" },
+  { src: "/screenshots/IMG_5858.PNG", label: "Meal Templates" },
+  { src: "/screenshots/workout-routines.jpeg", label: "Workout Routines" },
 ];
 
 const row2 = [
@@ -31,6 +36,10 @@ const row2 = [
   { src: "/screenshots/IMG_5876.PNG", label: "Fasting Masterclass" },
   { src: "/screenshots/IMG_5887.PNG", label: "Quick Actions" },
   { src: "/screenshots/IMG_5861.PNG", label: "Cultural Diets" },
+  { src: "/screenshots/IMG_5864.PNG", label: "Compare Foods" },
+  { src: "/screenshots/IMG_5875.PNG", label: "Fasting Plans" },
+  { src: "/screenshots/IMG_5848.PNG", label: "Week Plan" },
+  { src: "/screenshots/exercise-library.jpeg", label: "Exercise Library" },
 ];
 
 function ScreenCard({ src, label }: { src: string; label: string }) {
