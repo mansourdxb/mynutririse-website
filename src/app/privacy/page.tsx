@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — MyNutriRise",
+  title: "Privacy Policy",
   description:
     "Learn how MyNutriRise collects, uses, and protects your personal information.",
+  alternates: { canonical: "/privacy" },
 };
 
 export default function PrivacyPage() {
@@ -14,7 +15,7 @@ export default function PrivacyPage() {
           Privacy Policy
         </h1>
         <p className="mt-4 text-sm text-slate-500">
-          Last updated: May 15, 2026
+          Last updated: May 29, 2026
         </p>
 
         <div className="mt-12 space-y-10 text-base leading-7 text-slate-600">
@@ -111,6 +112,16 @@ export default function PrivacyPage() {
               personal information from unauthorized access, alteration,
               disclosure, or destruction.
             </p>
+            <h3 className="mt-6 font-semibold text-slate-800">Data Retention</h3>
+            <p className="mt-3">
+              We retain your personal, nutrition, and health data for as long as
+              your account remains active, so the app can show your history,
+              progress, and trends. Health data read from Google Health Connect
+              or Apple Health is refreshed each time the app syncs and is kept
+              only while the integration is connected. When you delete your
+              account, all associated data is permanently removed from our
+              systems within 30 days (see &ldquo;Your Rights&rdquo; below).
+            </p>
           </section>
 
           {/* 4. Health Data */}
@@ -119,25 +130,60 @@ export default function PrivacyPage() {
               4. Health Data
             </h2>
             <p className="mt-3">
-              MyNutriRise handles health-related data with extra care:
+              MyNutriRise can connect to Google Health Connect (Android) or
+              Apple Health (iOS), but only after you grant explicit permission.
+              We access only the data types needed for the app&apos;s activity
+              and sleep features:
             </p>
             <ul className="mt-3 list-disc space-y-2 pl-6">
               <li>
-                Health data from Google Health Connect or Apple Health is only
-                accessed with your explicit permission.
+                <strong>Steps</strong> &mdash; to show daily activity and refine
+                calorie-balance estimates. (Read and write.)
               </li>
               <li>
-                We use health data solely to provide you with accurate calorie
-                balance calculations and activity tracking.
+                <strong>Active energy / calories burned</strong> &mdash; to
+                calculate your daily energy expenditure.
               </li>
               <li>
-                Health data is stored in your private Firestore document and is
-                not shared with other users.
+                <strong>Exercise &amp; workouts</strong> &mdash; to reflect
+                activity in your daily summary.
               </li>
               <li>
-                You can disconnect health integration at any time from Settings.
+                <strong>Distance</strong> &mdash; to display movement alongside
+                steps.
               </li>
-              <li>We do not sell health data to any third party.</li>
+              <li>
+                <strong>Hydration / water</strong> &mdash; to sync water intake
+                with your tracker.
+              </li>
+              <li>
+                <strong>Sleep</strong> &mdash; to display sleep duration and
+                recovery insights. (Read and write.)
+              </li>
+            </ul>
+            <p className="mt-3">
+              On iOS only, the app may also read <strong>basal energy</strong>{" "}
+              and <strong>flights climbed</strong> to improve energy-expenditure
+              estimates. We do not request these on Android.
+            </p>
+            <ul className="mt-3 list-disc space-y-2 pl-6">
+              <li>
+                Health data is used <strong>solely</strong> to power these
+                in-app features &mdash; never for advertising or profiling.
+              </li>
+              <li>
+                It is stored in your private Firestore document, is not shared
+                with other users, and is <strong>never sold</strong> to any
+                third party.
+              </li>
+              <li>
+                You can disconnect health integration at any time from Settings,
+                and revoke access in Health Connect or Apple Health.
+              </li>
+              <li>
+                Health data is deleted along with your account (see
+                &ldquo;Your Rights&rdquo; and &ldquo;Data Retention&rdquo;).
+              </li>
             </ul>
           </section>
 
@@ -194,8 +240,18 @@ export default function PrivacyPage() {
                 screen.
               </li>
               <li>
-                Delete your account and all associated data by contacting
-                support.
+                <strong>Delete your account and all associated data</strong>{" "}
+                directly in the app: go to{" "}
+                <strong>Settings &rarr; Delete Account</strong>. This permanently
+                removes your account, profile, nutrition history, photos, and any
+                stored health data. You can also request deletion by emailing{" "}
+                <a
+                  href="mailto:support@mynutririse.com"
+                  className="font-medium text-emerald-600 underline underline-offset-4 hover:text-emerald-700"
+                >
+                  support@mynutririse.com
+                </a>
+                . Deletions are completed within 30 days.
               </li>
               <li>Opt out of notifications at any time.</li>
               <li>Disconnect health data integration.</li>
