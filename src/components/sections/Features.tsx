@@ -841,7 +841,7 @@ const featureGridItems: {
     desc: "Afghan, Arabic, Bangladeshi & more",
     color: "text-teal-600",
     bg: "bg-teal-50",
-    screenshot: "/screenshots/IMG_5861.PNG",
+    screenshot: "/screenshots/cultural-diets.png",
   },
   {
     icon: (

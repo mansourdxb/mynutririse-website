@@ -301,8 +301,8 @@ export default function SupportPage() {
             </div>
             <h2 className="mt-6 text-lg font-semibold text-slate-800">Feature Request</h2>
             <p className="mt-2 text-sm leading-6 text-slate-500">Tell us what you&apos;d like to see next.</p>
-            <a href="mailto:feedback@mynutririse.com" className="mt-4 inline-block text-sm font-medium text-emerald-600 hover:text-emerald-700">
-              feedback@mynutririse.com
+            <a href="mailto:contact@mynutririse.com" className="mt-4 inline-block text-sm font-medium text-emerald-600 hover:text-emerald-700">
+              contact@mynutririse.com
             </a>
           </div>
         </div>

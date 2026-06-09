@@ -6,14 +6,15 @@ import Image from "next/image";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 
 const row1 = [
-  { src: "/screenshots/IMG_5840.PNG", label: "Smart Dashboard" },
-  { src: "/screenshots/IMG_5854.PNG", label: "Macro Tracking" },
-  { src: "/screenshots/IMG_5842.PNG", label: "AI Coach" },
+  { src: "/screenshots/today.png", label: "Smart Dashboard" },
+  { src: "/screenshots/analytics.png", label: "Analytics & Trends" },
+  { src: "/screenshots/ai-coach.png", label: "AI Coach" },
   { src: "/screenshots/IMG_5847.PNG", label: "Fasting Timer" },
-  { src: "/screenshots/IMG_5843.PNG", label: "9,000+ Recipes" },
+  { src: "/screenshots/recipes.png", label: "9,000+ Recipes" },
   { src: "/screenshots/IMG_5849.PNG", label: "AI Meal Plans" },
-  { src: "/screenshots/IMG_5850.PNG", label: "Food Search" },
-  { src: "/screenshots/IMG_5851.PNG", label: "Exercise Tracker" },
+  { src: "/screenshots/food-log.png", label: "Food Search" },
+  { src: "/screenshots/scanned-food.png", label: "AI Food Scan" },
+  { src: "/screenshots/exercises.png", label: "Exercise Tracker" },
   { src: "/screenshots/IMG_5873.PNG", label: "Wellness Score" },
   { src: "/screenshots/IMG_5852.PNG", label: "Micronutrients" },
   { src: "/screenshots/IMG_5869.PNG", label: "Meal Log" },
@@ -21,25 +22,24 @@ const row1 = [
   { src: "/screenshots/IMG_5881.PNG", label: "Friends & Leaderboard" },
   { src: "/screenshots/IMG_5872.PNG", label: "Micronutrient Goals" },
   { src: "/screenshots/IMG_5858.PNG", label: "Meal Templates" },
-  { src: "/screenshots/workout-routines.jpeg", label: "Workout Routines" },
 ];
 
 const row2 = [
-  { src: "/screenshots/IMG_5877.PNG", label: "Exercise Log" },
-  { src: "/screenshots/IMG_5841.PNG", label: "Diet Plans" },
+  { src: "/screenshots/routines.png", label: "Workout Routines" },
+  { src: "/screenshots/diet-plans.png", label: "Diet Plans" },
   { src: "/screenshots/IMG_5879.PNG", label: "Wearables" },
   { src: "/screenshots/IMG_5880.PNG", label: "Achievements" },
   { src: "/screenshots/IMG_5882.PNG", label: "Challenges" },
-  { src: "/screenshots/IMG_5853.PNG", label: "Weekly Report" },
+  { src: "/screenshots/weekly-report.png", label: "Weekly Report" },
   { src: "/screenshots/IMG_5867.PNG", label: "Weight Progress" },
+  { src: "/screenshots/breakfast-recipes.png", label: "Breakfast Recipes" },
   { src: "/screenshots/IMG_5857.PNG", label: "Meal Timing" },
   { src: "/screenshots/IMG_5876.PNG", label: "Fasting Masterclass" },
   { src: "/screenshots/IMG_5887.PNG", label: "Quick Actions" },
-  { src: "/screenshots/IMG_5861.PNG", label: "Cultural Diets" },
+  { src: "/screenshots/cultural-diets.png", label: "Cultural Diets" },
   { src: "/screenshots/IMG_5864.PNG", label: "Compare Foods" },
   { src: "/screenshots/IMG_5875.PNG", label: "Fasting Plans" },
   { src: "/screenshots/IMG_5848.PNG", label: "Week Plan" },
-  { src: "/screenshots/exercise-library.jpeg", label: "Exercise Library" },
 ];
 
 function ScreenCard({ src, label }: { src: string; label: string }) {

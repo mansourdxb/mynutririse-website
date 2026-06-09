@@ -107,7 +107,7 @@ export function Hero() {
               <PhoneMockup>
                 <div className="relative aspect-[9/19.5] w-full">
                   <Image
-                    src="/screenshots/IMG_5840.PNG"
+                    src="/screenshots/today.png"
                     alt="MyNutriRise Dashboard"
                     fill
                     className="object-cover object-top"
