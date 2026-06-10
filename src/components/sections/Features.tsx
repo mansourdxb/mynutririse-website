@@ -1126,6 +1126,12 @@ export function Features({ showGrid = false }: { showGrid?: boolean }) {
                   "Log any recipe to your day in one tap",
                 ]}
               />
+              <a
+                href="/halal-nutrition-app"
+                className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-600 transition-colors hover:text-emerald-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 rounded-sm"
+              >
+                Built for halal &amp; cultural eating — see how →
+              </a>
             </AnimatedSection>
 
             {/* Visual side */}
