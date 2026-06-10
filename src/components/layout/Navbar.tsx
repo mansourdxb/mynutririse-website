@@ -8,8 +8,10 @@ const navLinks = [
   { href: "/features", label: "Features" },
   { href: "/recipes", label: "Recipes" },
   { href: "/tools", label: "Tools" },
+  { href: "/quiz", label: "Custom Plan" },
   { href: "/#premium", label: "Premium" },
   { href: "/blog", label: "Blog" },
+  { href: "/support", label: "Support" },
 ];
 
 export function Navbar() {
@@ -67,7 +69,7 @@ export function Navbar() {
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden items-center gap-8 md:flex">
+          <div className="hidden items-center gap-6 lg:gap-7 md:flex">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
