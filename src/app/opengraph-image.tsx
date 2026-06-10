@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "MyNutriRise — Snap a photo. Know your nutrition.";
+export const alt = "MyNutriRise — Nutrition & Fitness tracking for real life";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -15,7 +15,7 @@ export default function Image() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          background: "linear-gradient(135deg, #FFFBF5 0%, #ecfdf5 100%)",
+          background: "linear-gradient(135deg, #ffffff 0%, #ecfdf5 100%)",
           fontFamily: "sans-serif",
         }}
       >
@@ -48,27 +48,27 @@ export default function Image() {
         <div
           style={{
             marginTop: 48,
-            fontSize: 76,
+            fontSize: 68,
             fontWeight: 800,
             color: "#1e293b",
             textAlign: "center",
             lineHeight: 1.1,
-            maxWidth: 1000,
+            maxWidth: 1050,
           }}
         >
-          Snap a photo.
+          Nutrition &amp; Fitness tracking
         </div>
         <div
           style={{
-            fontSize: 76,
+            fontSize: 68,
             fontWeight: 800,
             color: "#059669",
             textAlign: "center",
             lineHeight: 1.1,
-            maxWidth: 1000,
+            maxWidth: 1050,
           }}
         >
-          Know your nutrition.
+          for real life
         </div>
         <div
           style={{

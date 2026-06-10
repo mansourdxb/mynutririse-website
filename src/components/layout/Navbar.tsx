@@ -6,8 +6,9 @@ import Link from "next/link";
 
 const navLinks = [
   { href: "/features", label: "Features" },
-  { href: "/#wellness", label: "Wellness" },
+  { href: "/quiz", label: "Custom Plan" },
   { href: "/#premium", label: "Premium" },
+  { href: "/blog", label: "Blog" },
   { href: "/support", label: "Support" },
 ];
 
@@ -140,7 +141,7 @@ export function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 28, stiffness: 220 }}
-              className="absolute right-0 top-0 bottom-0 w-full max-w-sm bg-[#FFFBF5] shadow-xl"
+              className="absolute right-0 top-0 bottom-0 w-full max-w-sm bg-white shadow-xl"
             >
               <div className="flex h-full flex-col items-center justify-center gap-6 px-8">
                 {navLinks.map((link, i) => (

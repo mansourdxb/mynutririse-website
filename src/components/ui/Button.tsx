@@ -1,51 +1,3 @@
-import { ReactNode } from "react";
-
-interface ButtonProps {
-  children: ReactNode;
-  variant?: "primary" | "secondary" | "ghost";
-  size?: "sm" | "md" | "lg";
-  href?: string;
-  className?: string;
-}
-
-export function Button({
-  children,
-  variant = "primary",
-  size = "md",
-  href,
-  className = "",
-}: ButtonProps) {
-  const base =
-    "inline-flex items-center justify-center font-medium rounded-full transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:ring-offset-2";
-
-  const variants = {
-    primary:
-      "bg-emerald-500 text-white hover:bg-emerald-600 shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40",
-    secondary:
-      "bg-white text-slate-800 border border-slate-200 hover:border-emerald-300 hover:bg-emerald-50 dark:bg-slate-800 dark:text-slate-200 dark:border-slate-700 dark:hover:border-emerald-600",
-    ghost:
-      "text-slate-600 hover:text-emerald-600 hover:bg-emerald-50 dark:text-slate-400 dark:hover:text-emerald-400 dark:hover:bg-slate-800",
-  };
-
-  const sizes = {
-    sm: "px-4 py-2 text-sm gap-1.5",
-    md: "px-6 py-2.5 text-sm gap-2",
-    lg: "px-8 py-3.5 text-base gap-2.5",
-  };
-
-  const classes = `${base} ${variants[variant]} ${sizes[size]} ${className}`;
-
-  if (href) {
-    return (
-      <a href={href} className={classes}>
-        {children}
-      </a>
-    );
-  }
-
-  return <button className={classes}>{children}</button>;
-}
-
 export function AppStoreButton({ store }: { store: "apple" | "google" }) {
   const isApple = store === "apple";
   return (
@@ -79,5 +31,27 @@ export function AppStoreButton({ store }: { store: "apple" | "google" }) {
         </span>
       </div>
     </a>
+  );
+}
+
+export function StoreButtons({
+  reassurance = false,
+  className = "",
+}: {
+  reassurance?: boolean;
+  className?: string;
+}) {
+  return (
+    <div className={className}>
+      <div className="flex flex-wrap items-center justify-center gap-4">
+        <AppStoreButton store="apple" />
+        <AppStoreButton store="google" />
+      </div>
+      {reassurance && (
+        <p className="mt-4 text-center text-sm text-slate-500">
+          Free to download &middot; Premium optional &middot; Cancel anytime
+        </p>
+      )}
+    </div>
   );
 }

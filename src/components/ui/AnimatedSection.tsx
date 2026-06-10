@@ -1,29 +1,48 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useRef, useState } from "react";
 
-interface AnimatedSectionProps {
-  children: ReactNode;
-  className?: string;
-  delay?: number;
+function useRevealed<T extends HTMLElement>() {
+  const ref = useRef<T>(null);
+  const [revealed, setRevealed] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setRevealed(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "-80px" }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return { ref, revealed };
 }
 
 export function AnimatedSection({
   children,
   className = "",
   delay = 0,
-}: AnimatedSectionProps) {
+}: {
+  children: ReactNode;
+  className?: string;
+  delay?: number;
+}) {
+  const { ref, revealed } = useRevealed<HTMLDivElement>();
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 32 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.7, delay, ease: [0.21, 0.47, 0.32, 0.98] }}
-      className={className}
+    <div
+      ref={ref}
+      className={`reveal ${revealed ? "revealed" : ""} ${className}`}
+      style={delay ? { transitionDelay: `${delay}s` } : undefined}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }
 
@@ -34,19 +53,14 @@ export function StaggerContainer({
   children: ReactNode;
   className?: string;
 }) {
+  const { ref, revealed } = useRevealed<HTMLDivElement>();
   return (
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-80px" }}
-      variants={{
-        hidden: {},
-        visible: { transition: { staggerChildren: 0.12 } },
-      }}
-      className={className}
+    <div
+      ref={ref}
+      className={`reveal-group ${revealed ? "revealed" : ""} ${className}`}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }
 
@@ -57,19 +71,5 @@ export function StaggerItem({
   children: ReactNode;
   className?: string;
 }) {
-  return (
-    <motion.div
-      variants={{
-        hidden: { opacity: 0, y: 24 },
-        visible: {
-          opacity: 1,
-          y: 0,
-          transition: { duration: 0.5, ease: [0.21, 0.47, 0.32, 0.98] },
-        },
-      }}
-      className={className}
-    >
-      {children}
-    </motion.div>
-  );
+  return <div className={`reveal-item ${className}`}>{children}</div>;
 }

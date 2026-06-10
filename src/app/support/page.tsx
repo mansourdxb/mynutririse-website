@@ -313,7 +313,7 @@ export default function SupportPage() {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="bg-gradient-to-b from-[#FFFBF5] to-emerald-50/30 py-20 lg:py-28">
+      <section id="faq" className="bg-gradient-to-b from-white to-emerald-50/30 py-20 lg:py-28">
         <div className="mx-auto max-w-4xl px-6">
           <div className="text-center">
             <p className="text-sm font-semibold tracking-widest uppercase text-emerald-600 mb-3">

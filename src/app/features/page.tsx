@@ -3,7 +3,7 @@ import { Features } from "@/components/sections/Features";
 import { CTA } from "@/components/sections/CTA";
 
 export const metadata: Metadata = {
-  title: "Features",
+  title: "Features — AI Meal Scan, Cultural Recipes & Fasting Tracker",
   description:
     "Explore the powerful features that make MyNutriRise the smartest way to track nutrition, build healthy habits, and reach your wellness goals.",
   alternates: { canonical: "/features" },
@@ -23,7 +23,7 @@ export default function FeaturesPage() {
           </p>
         </section>
       </div>
-      <Features />
+      <Features showGrid />
       <CTA />
     </>
   );

@@ -1,7 +1,8 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { AnimatedSection } from "@/components/ui/AnimatedSection";
+import {
+  AnimatedSection,
+  StaggerContainer,
+  StaggerItem,
+} from "@/components/ui/AnimatedSection";
 
 const heroFeatures = [
   {
@@ -133,7 +134,7 @@ const moreFeatures = [
 
 export function Premium() {
   return (
-    <section id="premium" className="relative overflow-hidden bg-gradient-to-b from-emerald-50 via-green-50/30 to-[#FFFBF5] py-24 sm:py-32">
+    <section id="premium" className="relative overflow-hidden bg-gradient-to-b from-emerald-50 via-green-50/30 to-white py-24 sm:py-32">
       {/* Soft decorative elements */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -top-40 left-1/4 h-96 w-96 rounded-full bg-emerald-100/40 blur-3xl" />
@@ -156,12 +157,8 @@ export function Premium() {
 
         <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:gap-8">
           {heroFeatures.map((feature, i) => (
-            <AnimatedSection key={feature.title} delay={i * 0.1}>
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.25, ease: "easeOut" }}
-                className="group relative h-full overflow-hidden rounded-3xl border-t-[3px] border-emerald-400 bg-white p-8 shadow-lg transition-shadow duration-300 hover:shadow-xl"
-              >
+            <AnimatedSection key={feature.title} delay={i * 0.1} className="h-full">
+              <div className="group relative h-full overflow-hidden rounded-3xl border-t-[3px] border-emerald-400 bg-white p-8 shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
                 <div className="relative">
                   <div className="mb-4 inline-flex rounded-full bg-emerald-50 p-3 text-emerald-500">
                     {feature.icon}
@@ -173,7 +170,7 @@ export function Premium() {
                     {feature.description}
                   </p>
                 </div>
-              </motion.div>
+              </div>
             </AnimatedSection>
           ))}
         </div>
@@ -182,39 +179,31 @@ export function Premium() {
           <p className="mb-8 text-center text-sm font-semibold uppercase tracking-widest text-emerald-600">
             Plus even more premium tools
           </p>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {moreFeatures.map((feature, i) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.4, delay: Math.min(i * 0.06, 0.3) }}
-                whileHover={{ scale: 1.03, y: -4 }}
-                className="group flex items-start gap-3 rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-100 p-5 shadow-sm transition-shadow duration-300 hover:shadow-md hover:border-emerald-200"
-              >
-                <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600">
-                  {feature.icon}
-                </span>
-                <div className="min-w-0">
-                  <h4 className="text-sm font-semibold text-slate-800 group-hover:text-emerald-600 transition-colors">
-                    {feature.title}
-                  </h4>
-                  <p className="mt-1 text-xs leading-relaxed text-slate-500">
-                    {feature.description}
-                  </p>
+          <StaggerContainer className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {moreFeatures.map((feature) => (
+              <StaggerItem key={feature.title} className="h-full">
+                <div className="group flex h-full items-start gap-3 rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-100 p-5 shadow-sm transition-all duration-300 hover:shadow-md hover:border-emerald-200 hover:-translate-y-1">
+                  <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600">
+                    {feature.icon}
+                  </span>
+                  <div className="min-w-0">
+                    <h4 className="text-sm font-semibold text-slate-800 group-hover:text-emerald-600 transition-colors">
+                      {feature.title}
+                    </h4>
+                    <p className="mt-1 text-xs leading-relaxed text-slate-500">
+                      {feature.description}
+                    </p>
+                  </div>
                 </div>
-              </motion.div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </AnimatedSection>
 
         <AnimatedSection delay={0.5} className="mt-14 text-center">
-          <motion.a
+          <a
             href="/#download"
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.97 }}
-            className="inline-flex items-center gap-2 rounded-full bg-emerald-500 px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-emerald-500/25 transition-colors duration-200 hover:bg-emerald-600 hover:shadow-emerald-500/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2"
+            className="inline-flex items-center gap-2 rounded-full bg-emerald-500 px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-emerald-500/25 transition-all duration-200 hover:bg-emerald-600 hover:shadow-emerald-500/40 hover:scale-[1.04] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2"
           >
             Start Free Trial
             <svg
@@ -230,7 +219,7 @@ export function Premium() {
                 d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
               />
             </svg>
-          </motion.a>
+          </a>
           <p className="mt-4 text-sm text-slate-500">
             Free to download &middot; Premium optional &middot; Cancel anytime
           </p>

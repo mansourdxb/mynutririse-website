@@ -6,20 +6,27 @@ const footerColumns = [
     title: "Product",
     links: [
       { label: "Features", href: "/features" },
+      { label: "Recipes", href: "/recipes" },
+      { label: "Halal Nutrition", href: "/halal-nutrition-app" },
       { label: "Premium", href: "/#premium" },
-      { label: "Download", href: "/#download" },
+      { label: "Compare", href: "/compare/mynutririse-vs-myfitnesspal" },
+      { label: "Download", href: "/download" },
     ],
   },
   {
     title: "Resources",
     links: [
       { label: "Help Center", href: "/support" },
-      { label: "Wellness", href: "/#wellness" },
+      { label: "Blog", href: "/blog" },
+      { label: "Custom Plan Quiz", href: "/quiz" },
+      { label: "Free Tools", href: "/tools" },
     ],
   },
   {
-    title: "Legal",
+    title: "Company",
     links: [
+      { label: "About Us", href: "/about" },
+      { label: "Press Kit", href: "/press" },
       { label: "Privacy Policy", href: "/privacy" },
       { label: "Terms of Service", href: "/terms" },
       { label: "Contact", href: "/support" },

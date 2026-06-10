@@ -1,45 +1,32 @@
-"use client";
-
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 
+// Screens shown in the feature deep-dive phones (Today, AI Coach, Recipes,
+// Routines, Cardio, Scan, Leaderboard) are intentionally excluded here.
 const row1 = [
-  { src: "/screenshots/today.png", label: "Smart Dashboard" },
   { src: "/screenshots/analytics.png", label: "Analytics & Trends" },
-  { src: "/screenshots/ai-coach.png", label: "AI Coach" },
   { src: "/screenshots/IMG_5847.PNG", label: "Fasting Timer" },
-  { src: "/screenshots/recipes.png", label: "9,000+ Recipes" },
   { src: "/screenshots/IMG_5849.PNG", label: "AI Meal Plans" },
   { src: "/screenshots/food-log.png", label: "Food Search" },
-  { src: "/screenshots/scanned-food.png", label: "AI Food Scan" },
-  { src: "/screenshots/exercises.png", label: "Exercise Tracker" },
+  { src: "/screenshots/exercises.png", label: "Exercise Library" },
   { src: "/screenshots/IMG_5873.PNG", label: "Wellness Score" },
   { src: "/screenshots/IMG_5852.PNG", label: "Micronutrients" },
   { src: "/screenshots/IMG_5869.PNG", label: "Meal Log" },
   { src: "/screenshots/IMG_5844.PNG", label: "Recipe Categories" },
-  { src: "/screenshots/IMG_5881.PNG", label: "Friends & Leaderboard" },
-  { src: "/screenshots/IMG_5872.PNG", label: "Micronutrient Goals" },
   { src: "/screenshots/IMG_5858.PNG", label: "Meal Templates" },
 ];
 
 const row2 = [
-  { src: "/screenshots/routines.png", label: "Workout Routines" },
   { src: "/screenshots/diet-plans.png", label: "Diet Plans" },
   { src: "/screenshots/IMG_5879.PNG", label: "Wearables" },
   { src: "/screenshots/IMG_5880.PNG", label: "Achievements" },
   { src: "/screenshots/IMG_5882.PNG", label: "Challenges" },
   { src: "/screenshots/weekly-report.png", label: "Weekly Report" },
   { src: "/screenshots/IMG_5867.PNG", label: "Weight Progress" },
-  { src: "/screenshots/breakfast-recipes.png", label: "Breakfast Recipes" },
   { src: "/screenshots/IMG_5857.PNG", label: "Meal Timing" },
-  { src: "/screenshots/IMG_5876.PNG", label: "Fasting Masterclass" },
   { src: "/screenshots/IMG_5887.PNG", label: "Quick Actions" },
   { src: "/screenshots/cultural-diets.png", label: "Cultural Diets" },
   { src: "/screenshots/IMG_5864.PNG", label: "Compare Foods" },
-  { src: "/screenshots/IMG_5875.PNG", label: "Fasting Plans" },
-  { src: "/screenshots/IMG_5848.PNG", label: "Week Plan" },
 ];
 
 function ScreenCard({ src, label }: { src: string; label: string }) {
@@ -56,8 +43,8 @@ function ScreenCard({ src, label }: { src: string; label: string }) {
             loading="lazy"
           />
         </div>
-        <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-        <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+        <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-100 transition-opacity duration-300 md:opacity-0 md:group-hover:opacity-100" />
+        <div className="absolute bottom-0 left-0 right-0 p-3 opacity-100 transition-all duration-300 md:translate-y-2 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100">
           <span className="text-xs font-semibold text-white drop-shadow-sm">{label}</span>
         </div>
       </div>
@@ -75,7 +62,7 @@ function MarqueeRow({
   return (
     <div className="relative overflow-hidden">
       <div
-        className={`flex w-max hover:[animation-play-state:paused] ${
+        className={`flex w-max hover:[animation-play-state:paused] active:[animation-play-state:paused] focus-within:[animation-play-state:paused] ${
           direction === "left" ? "animate-marquee" : "animate-marquee-reverse"
         }`}
       >
@@ -96,15 +83,8 @@ function MarqueeRow({
 }
 
 export function AppShowcase() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
-  });
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.3, 1, 1, 0.3]);
-
   return (
-    <section ref={containerRef} className="relative overflow-hidden bg-gradient-to-b from-[#FFFBF5] via-emerald-50/30 to-[#FFFBF5] py-20 lg:py-28">
+    <section className="relative overflow-hidden bg-gradient-to-b from-white via-emerald-50/30 to-white py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <AnimatedSection className="mx-auto max-w-2xl text-center mb-14">
           <p className="text-sm font-semibold tracking-widest uppercase text-emerald-600 mb-4">
@@ -112,7 +92,7 @@ export function AppShowcase() {
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-800">
             Beautiful screens,{" "}
-            <span className="bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent">
+            <span className="text-emerald-600">
               endless possibilities
             </span>
           </h2>
@@ -122,14 +102,14 @@ export function AppShowcase() {
         </AnimatedSection>
       </div>
 
-      <motion.div style={{ opacity }} className="space-y-5 sm:space-y-6">
+      <div className="space-y-5 sm:space-y-6">
         <MarqueeRow items={row1} direction="left" />
         <MarqueeRow items={row2} direction="right" />
-      </motion.div>
+      </div>
 
       {/* Fade edges */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-20 sm:w-32 bg-gradient-to-r from-[#FFFBF5] to-transparent z-10" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-20 sm:w-32 bg-gradient-to-l from-[#FFFBF5] to-transparent z-10" />
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-20 sm:w-32 bg-gradient-to-r from-white to-transparent z-10" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-20 sm:w-32 bg-gradient-to-l from-white to-transparent z-10" />
     </section>
   );
 }

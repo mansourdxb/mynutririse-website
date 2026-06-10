@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <section className="flex min-h-[60vh] flex-col items-center justify-center bg-[#FFFBF5] px-6 pt-24 pb-16 text-center">
+    <section className="flex min-h-[60vh] flex-col items-center justify-center bg-white px-6 pt-24 pb-16 text-center">
       <p className="text-sm font-semibold tracking-widest uppercase text-emerald-600">
         404
       </p>
