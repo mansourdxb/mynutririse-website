@@ -7,7 +7,7 @@ import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { PhoneMockup } from "@/components/ui/PhoneMockup";
 import { CountUpValue } from "@/components/ui/CountUp";
 import { CUISINE_COUNT, CUISINE_FLOOR } from "@/data/facts";
-import { localePath, type Locale } from "@/i18n/config";
+import { localePath, screenshot, type Locale } from "@/i18n/config";
 import type { Messages } from "@/i18n/messages";
 import { fill, rich } from "@/i18n/rich";
 
@@ -187,11 +187,11 @@ function MacroRing({
 /*  Block 1 : Smart Nutrition Intelligence                            */
 /* ================================================================== */
 
-function NutritionCards({ t }: { t: CardsT }) {
+function NutritionCards({ t, lang }: { t: CardsT; lang: Locale }) {
   return (
     <div className="relative mx-auto w-full max-w-md py-6">
       <BlockPhone
-        src="/screenshots/scanned-food.png"
+        src={screenshot(lang, "food-detail")}
         alt={t.nutritionAlt}
       />
       {/* Calories card */}
@@ -269,11 +269,11 @@ function NutritionCards({ t }: { t: CardsT }) {
 /*  Block 2 : Your Wellness Ecosystem                                 */
 /* ================================================================== */
 
-function WellnessCards({ t }: { t: CardsT }) {
+function WellnessCards({ t, lang }: { t: CardsT; lang: Locale }) {
   return (
     <div className="relative mx-auto w-full max-w-md py-6">
       <BlockPhone
-        src="/screenshots/today.png"
+        src={screenshot(lang, "today")}
         alt={t.wellnessAlt}
       />
       {/* Fasting timer circle */}
@@ -348,11 +348,11 @@ function WellnessCards({ t }: { t: CardsT }) {
 /*  Block 3 : Intelligent Coaching & Insights                         */
 /* ================================================================== */
 
-function CoachingCards({ t }: { t: CardsT }) {
+function CoachingCards({ t, lang }: { t: CardsT; lang: Locale }) {
   return (
     <div className="relative mx-auto w-full max-w-md py-6">
       <BlockPhone
-        src="/screenshots/ai-coach.png"
+        src={screenshot(lang, "ai-coach")}
         alt={t.coachingAlt}
       />
       {/* Weekly report card */}
@@ -434,11 +434,11 @@ function CoachingCards({ t }: { t: CardsT }) {
 /*  Block : Recipes                                                   */
 /* ================================================================== */
 
-function RecipeCards({ t }: { t: CardsT }) {
+function RecipeCards({ t, lang }: { t: CardsT; lang: Locale }) {
   return (
     <div className="relative mx-auto w-full max-w-md py-6">
       <BlockPhone
-        src="/screenshots/recipes.png"
+        src={screenshot(lang, "recipes")}
         alt={t.recipesAlt}
       />
       {/* Dish nutrition card */}
@@ -493,11 +493,11 @@ function RecipeCards({ t }: { t: CardsT }) {
 /*  Block : Workouts, Routines & Exercises                            */
 /* ================================================================== */
 
-function WorkoutCards({ t }: { t: CardsT }) {
+function WorkoutCards({ t, lang }: { t: CardsT; lang: Locale }) {
   return (
     <div className="relative mx-auto w-full max-w-md py-6">
       <BlockPhone
-        src="/screenshots/routines.png"
+        src={screenshot(lang, "routines")}
         alt={t.workoutsAlt}
       />
       {/* Cardio mini screen */}
@@ -507,7 +507,7 @@ function WorkoutCards({ t }: { t: CardsT }) {
       >
         <div className="relative aspect-[9/14] w-full">
           <Image
-            src="/screenshots/cardio.png"
+            src={screenshot(lang, "exercise")}
             alt={t.cardioAlt}
             fill
             className="object-cover object-top"
@@ -597,11 +597,11 @@ function WorkoutCards({ t }: { t: CardsT }) {
 /*  Block 4 : Stay Motivated Together                                 */
 /* ================================================================== */
 
-function MotivationCards({ t }: { t: CardsT }) {
+function MotivationCards({ t, lang }: { t: CardsT; lang: Locale }) {
   return (
     <div className="relative mx-auto w-full max-w-md py-6">
       <BlockPhone
-        src="/screenshots/IMG_5881.PNG"
+        src={screenshot(lang, "achievements")}
         alt={t.motivationAlt}
       />
       {/* Achievement badge */}
@@ -682,7 +682,7 @@ const featureGridItems: {
     ),
     color: "text-emerald-600 dark:text-emerald-400",
     bg: "bg-emerald-50 dark:bg-emerald-400/10",
-    screenshot: "/screenshots/IMG_5870.PNG",
+    screenshot: "meal-photos",
   },
   {
     icon: (
@@ -695,7 +695,7 @@ const featureGridItems: {
     ),
     color: "text-blue-600 dark:text-blue-400",
     bg: "bg-blue-50 dark:bg-blue-400/10",
-    screenshot: "/screenshots/IMG_5868.PNG",
+    screenshot: "food-diary",
   },
   {
     icon: (
@@ -706,7 +706,7 @@ const featureGridItems: {
     ),
     color: "text-orange-600 dark:text-orange-400",
     bg: "bg-orange-50 dark:bg-orange-400/10",
-    screenshot: "/screenshots/IMG_5865.PNG",
+    screenshot: "color-guide",
   },
   {
     icon: (
@@ -718,7 +718,7 @@ const featureGridItems: {
     ),
     color: "text-purple-600 dark:text-purple-400",
     bg: "bg-purple-50 dark:bg-purple-400/10",
-    screenshot: "/screenshots/IMG_5863.PNG",
+    screenshot: "compare-foods",
   },
   {
     icon: (
@@ -730,7 +730,7 @@ const featureGridItems: {
     ),
     color: "text-teal-600 dark:text-teal-400",
     bg: "bg-teal-50 dark:bg-teal-400/10",
-    screenshot: "/screenshots/cultural-diets.png",
+    screenshot: "cuisines",
   },
   {
     icon: (
@@ -741,7 +741,7 @@ const featureGridItems: {
     ),
     color: "text-rose-600 dark:text-rose-400",
     bg: "bg-rose-50 dark:bg-rose-400/10",
-    screenshot: "/screenshots/IMG_5862.PNG",
+    screenshot: "recipe-import",
   },
   {
     icon: (
@@ -753,7 +753,7 @@ const featureGridItems: {
     ),
     color: "text-lime-600 dark:text-lime-400",
     bg: "bg-lime-50 dark:bg-lime-400/10",
-    screenshot: "/screenshots/IMG_5866.PNG",
+    screenshot: "grocery",
   },
   {
     icon: (
@@ -763,7 +763,7 @@ const featureGridItems: {
     ),
     color: "text-amber-600 dark:text-amber-400",
     bg: "bg-amber-50 dark:bg-amber-400/10",
-    screenshot: "/screenshots/IMG_5859.PNG",
+    screenshot: "meal-templates",
   },
   {
     icon: (
@@ -775,7 +775,7 @@ const featureGridItems: {
     ),
     color: "text-cyan-600 dark:text-cyan-400",
     bg: "bg-cyan-50 dark:bg-cyan-400/10",
-    screenshot: "/screenshots/IMG_5860.PNG",
+    screenshot: "meal-prep",
   },
   {
     icon: (
@@ -788,7 +788,7 @@ const featureGridItems: {
     ),
     color: "text-ink-2",
     bg: "bg-surface-2",
-    screenshot: "/screenshots/IMG_5885.PNG",
+    screenshot: "export",
   },
   {
     icon: (
@@ -799,7 +799,7 @@ const featureGridItems: {
     ),
     color: "text-indigo-600 dark:text-indigo-400",
     bg: "bg-indigo-50 dark:bg-indigo-400/10",
-    screenshot: "/screenshots/IMG_5878.PNG",
+    screenshot: "lessons",
   },
   {
     icon: (
@@ -809,16 +809,18 @@ const featureGridItems: {
     ),
     color: "text-rose-600 dark:text-rose-400",
     bg: "bg-rose-50 dark:bg-rose-400/10",
-    screenshot: "/screenshots/IMG_5874.PNG",
+    screenshot: "glucose",
   },
 ];
 
 function FlipCard({
   item,
   t,
+  lang,
 }: {
   item: (typeof featureGridItems)[number] & T["grid"]["items"][number];
   t: T["grid"];
+  lang: Locale;
 }) {
   const [showBack, setShowBack] = useState(false);
 
@@ -893,7 +895,7 @@ function FlipCard({
         >
           <div className="relative aspect-[9/16] w-full bg-surface-2">
             <Image
-              src={item.screenshot}
+              src={screenshot(lang, item.screenshot)}
               alt={fill(t.screenAlt, { name: item.name })}
               fill
               className="object-contain object-top"
@@ -915,7 +917,7 @@ function FlipCard({
   );
 }
 
-function FeatureGrid({ t }: { t: T["grid"] }) {
+function FeatureGrid({ t, lang }: { t: T["grid"]; lang: Locale }) {
   return (
     <div>
       <div className="flex items-center justify-center gap-2 mb-6">
@@ -929,7 +931,7 @@ function FeatureGrid({ t }: { t: T["grid"] }) {
       </div>
       <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
         {featureGridItems.map((f, i) => (
-          <FlipCard key={f.screenshot} item={{ ...f, ...t.items[i] }} t={t} />
+          <FlipCard key={f.screenshot} item={{ ...f, ...t.items[i] }} t={t} lang={lang} />
         ))}
       </div>
     </div>
@@ -978,7 +980,7 @@ export function Features({
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Visual side */}
             <AnimatedSection className="order-2 lg:order-1">
-              <NutritionCards t={t.cards} />
+              <NutritionCards t={t.cards} lang={lang} />
             </AnimatedSection>
 
             {/* Text side */}
@@ -1020,7 +1022,7 @@ export function Features({
 
             {/* Visual side */}
             <AnimatedSection delay={0.15}>
-              <WellnessCards t={t.cards} />
+              <WellnessCards t={t.cards} lang={lang} />
             </AnimatedSection>
           </div>
         </div>
@@ -1034,7 +1036,7 @@ export function Features({
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Visual side */}
             <AnimatedSection className="order-2 lg:order-1">
-              <CoachingCards t={t.cards} />
+              <CoachingCards t={t.cards} lang={lang} />
             </AnimatedSection>
 
             {/* Text side */}
@@ -1082,7 +1084,7 @@ export function Features({
 
             {/* Visual side */}
             <AnimatedSection delay={0.15}>
-              <RecipeCards t={t.cards} />
+              <RecipeCards t={t.cards} lang={lang} />
             </AnimatedSection>
           </div>
         </div>
@@ -1110,7 +1112,7 @@ export function Features({
 
             {/* Visual side */}
             <AnimatedSection delay={0.15} className="order-2 lg:order-1">
-              <WorkoutCards t={t.cards} />
+              <WorkoutCards t={t.cards} lang={lang} />
             </AnimatedSection>
           </div>
         </div>
@@ -1138,7 +1140,7 @@ export function Features({
 
             {/* Visual side */}
             <AnimatedSection delay={0.15}>
-              <MotivationCards t={t.cards} />
+              <MotivationCards t={t.cards} lang={lang} />
             </AnimatedSection>
           </div>
         </div>
@@ -1162,7 +1164,7 @@ export function Features({
               </p>
             </AnimatedSection>
             <AnimatedSection delay={0.1}>
-              <FeatureGrid t={t.grid} />
+              <FeatureGrid t={t.grid} lang={lang} />
             </AnimatedSection>
           </div>
         </div>
