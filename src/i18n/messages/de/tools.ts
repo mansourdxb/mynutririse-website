@@ -68,7 +68,7 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
   bmi: {
     metaTitle: "BMI-Rechner – Body-Mass-Index berechnen",
     metaDescription:
-      "Kostenloser BMI-Rechner mit metrischen und imperialen Einheiten. Vergleiche deinen Body-Mass-Index mit gesunden Bereichen und erfahre, was die Zahl wirklich bedeutet.",
+      "Kostenloser BMI-Rechner (metrisch & imperial). Vergleiche deinen Body-Mass-Index mit gesunden Bereichen und erfahre, was die Zahl bedeutet.",
     breadcrumb: "BMI-Rechner",
     title: "BMI-Rechner",
     subtitle: "Ermittle deinen Body-Mass-Index in Sekunden – kostenlos und ohne Anmeldung.",
@@ -124,7 +124,7 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
   },
 
   bmr: {
-    metaTitle: "Grundumsatz-Rechner – Grundumsatz (BMR) berechnen",
+    metaTitle: "Grundumsatz-Rechner (BMR)",
     metaDescription:
       "Kostenloser Grundumsatz-Rechner nach der Mifflin–St-Jeor-Formel. Finde heraus, wie viele Kalorien dein Körper in Ruhe verbrennt, und mach daraus dein Tagesziel.",
     breadcrumb: "Grundumsatz-Rechner",
@@ -175,7 +175,7 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
   },
 
   calorie: {
-    metaTitle: "Kalorienrechner – Kalorienbedarf zum Ab- oder Zunehmen",
+    metaTitle: "Kalorienrechner: täglicher Kalorienbedarf",
     metaDescription:
       "Berechne deinen täglichen Kalorienbedarf mit der Mifflin–St-Jeor-Formel. Kostenlose Ziele zum Abnehmen, Halten oder Muskelaufbau – plus Ramadan-Ratgeber.",
     breadcrumb: "Kalorienrechner",
@@ -251,7 +251,7 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
   },
 
   idealWeight: {
-    metaTitle: "Idealgewicht-Rechner – gesundes Gewicht für deine Größe",
+    metaTitle: "Idealgewicht-Rechner für deine Größe",
     metaDescription:
       "Kostenloser Idealgewicht-Rechner nach den Formeln von Devine und Robinson plus gesundem BMI-Bereich – finde ein realistisches Ziel für deine Größe.",
     breadcrumb: "Idealgewicht",
@@ -306,7 +306,7 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
   },
 
   macro: {
-    metaTitle: "Makrorechner – Ziele für Protein, Kohlenhydrate & Fett",
+    metaTitle: "Makrorechner: Protein, Kohlenhydrate & Fett",
     metaDescription:
       "Kostenloser Makrorechner: Mach aus deinem Kalorienbedarf Ziele für Protein, Kohlenhydrate und Fett – ausgewogen, proteinreich, Keto oder Ausdauer.",
     breadcrumb: "Makrorechner",

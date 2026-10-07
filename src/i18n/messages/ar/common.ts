@@ -5,7 +5,7 @@ import type en from "../en/common";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default (f: Facts): ReturnType<typeof en> => ({
   site: {
-    title: "MyNutriRise: عدّاد السعرات بالذكاء الاصطناعي وتطبيق التغذية الحلال",
+    title: "MyNutriRise: عدّاد سعرات بالذكاء الاصطناعي وتغذية حلال",
     titleTemplate: "%s — MyNutriRise",
     description:
       "تتبّع سعراتك، وحلّل وجباتك بالذكاء الاصطناعي، واتبع خطط وجبات مخصصة لك، وابنِ عادات أكثر صحة مع MyNutriRise — رفيقك الذكي نحو العافية.",

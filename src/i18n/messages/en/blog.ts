@@ -30,6 +30,7 @@ export default (f: Facts) => ({
   },
   intermittentFasting: {
     title: "Intermittent Fasting 16:8 — A Beginner's Guide",
+    metaTitle: "Intermittent Fasting 16:8 — A Beginner's Guide",
     description:
       "What the 16:8 fasting method is, how it works, who it suits, and how to start without making the common mistakes.",
     breadcrumb: "Intermittent Fasting 16:8",
@@ -74,6 +75,7 @@ export default (f: Facts) => ({
   },
   aiPhoto: {
     title: "How AI Photo Calorie Tracking Actually Works",
+    metaTitle: "How AI Photo Calorie Tracking Actually Works",
     description:
       "Snap a photo, get calories and macros. Here's what happens behind the scenes — and how to get the most accurate results.",
     breadcrumb: "How AI Photo Calorie Tracking",
@@ -114,6 +116,7 @@ export default (f: Facts) => ({
   },
   halalMacros: {
     title: "Tracking Macros with Halal & Cultural Meals",
+    metaTitle: "Tracking Macros with Halal & Cultural Meals",
     description:
       "Kabuli pulao, mandi, biryani — traditional dishes deserve proper tracking. How to log cultural cuisine accurately.",
     breadcrumb: "Tracking Macros",

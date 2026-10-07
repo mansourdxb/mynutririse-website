@@ -8,7 +8,7 @@ export default (f: Facts): ReturnType<typeof en> => ({
     title: "MyNutriRise: KI-Kalorienzähler & Halal-Ernährungs-App",
     titleTemplate: "%s — MyNutriRise",
     description:
-      "Zähle Kalorien, scanne Mahlzeiten mit KI, folge persönlichen Mahlzeitenplänen und entwickle gesündere Gewohnheiten mit MyNutriRise – deinem smarten Begleiter für mehr Wohlbefinden.",
+      "Kalorien zählen, Mahlzeiten per KI scannen, persönlichen Plänen folgen und gesündere Gewohnheiten aufbauen – mit MyNutriRise, deinem smarten Begleiter.",
     ogDescription:
       "Zähle Kalorien, scanne Mahlzeiten mit KI, folge persönlichen Mahlzeitenplänen und entwickle jeden Tag gesündere Gewohnheiten.",
     twitterDescription:

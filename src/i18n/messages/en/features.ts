@@ -2,7 +2,7 @@ import type { Facts } from "@/data/facts";
 
 export default (f: Facts) => ({
   // /features page
-  metaTitle: "Features — AI Meal Scan, Cultural Recipes & Fasting Tracker",
+  metaTitle: "Features: AI Meal Scan, Recipes & Fasting",
   metaDescription:
     "Explore the powerful features that make MyNutriRise the smartest way to track nutrition, build healthy habits, and reach your wellness goals.",
   pageTitle: "Powerful Features for Healthier Living",

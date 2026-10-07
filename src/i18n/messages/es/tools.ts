@@ -66,9 +66,9 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
   },
 
   bmi: {
-    metaTitle: "Calculadora de IMC: calcula tu índice de masa corporal",
+    metaTitle: "Calculadora de IMC (índice de masa corporal)",
     metaDescription:
-      "Calculadora de IMC gratuita con unidades métricas e imperiales. Compara tu índice de masa corporal con los rangos saludables y descubre qué significa realmente el número.",
+      "Calculadora de IMC gratuita (métrica e imperial). Compara tu índice de masa corporal con los rangos saludables y entiende qué significa.",
     breadcrumb: "Calculadora de IMC",
     title: "Calculadora de IMC",
     subtitle: "Descubre tu índice de masa corporal en segundos: gratis y sin registro.",
@@ -124,9 +124,9 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
   },
 
   bmr: {
-    metaTitle: "Calculadora de TMB: calcula tu tasa metabólica basal",
+    metaTitle: "Calculadora de TMB (tasa metabólica basal)",
     metaDescription:
-      "Calculadora de TMB gratuita con la ecuación de Mifflin–St Jeor. Descubre las calorías que tu cuerpo quema en reposo y aprende a convertirlas en un objetivo diario.",
+      "Calculadora de TMB gratuita (Mifflin–St Jeor). Descubre cuántas calorías quema tu cuerpo en reposo y cómo convertirlas en un objetivo diario.",
     breadcrumb: "Calculadora de TMB",
     title: "Calculadora de TMB",
     subtitle: "Descubre cuántas calorías quema tu cuerpo en reposo absoluto.",
@@ -175,9 +175,9 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
   },
 
   calorie: {
-    metaTitle: "Calculadora de calorías: cuántas calorías comer al día",
+    metaTitle: "Calculadora de calorías diarias",
     metaDescription:
-      "Calcula cuántas calorías necesitas al día con la ecuación de Mifflin–St Jeor. Objetivos gratuitos para bajar de peso, mantenerlo o ganar músculo, y una guía para el Ramadán.",
+      "Calcula tus calorías diarias con la ecuación de Mifflin–St Jeor. Objetivos gratis para bajar de peso, mantenerte o ganar músculo, y guía de Ramadán.",
     breadcrumb: "Calculadora de calorías",
     title: "Calculadora de calorías",
     subtitle:
@@ -251,7 +251,7 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
   },
 
   idealWeight: {
-    metaTitle: "Calculadora de peso ideal: peso saludable según tu altura",
+    metaTitle: "Calculadora de peso ideal según tu altura",
     metaDescription:
       "Calculadora de peso ideal gratuita con las fórmulas de Devine y Robinson y el rango de IMC saludable: encuentra un objetivo realista para tu altura.",
     breadcrumb: "Peso ideal",
@@ -306,9 +306,9 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
   },
 
   macro: {
-    metaTitle: "Calculadora de macros: proteína, carbohidratos y grasa",
+    metaTitle: "Calculadora de macros: proteína, HC y grasa",
     metaDescription:
-      "Calculadora de macros gratuita: convierte tus calorías diarias en objetivos de proteína, carbohidratos y grasa con repartos equilibrado, alto en proteína, keto o de resistencia.",
+      "Calculadora de macros gratuita: tus calorías en objetivos de proteína, carbohidratos y grasa, con reparto equilibrado, alto en proteína, keto o resistencia.",
     breadcrumb: "Calculadora de macros",
     title: "Calculadora de macros",
     subtitle: "Convierte tu meta de calorías en objetivos diarios de proteína, carbohidratos y grasa: gratis y sin registro.",

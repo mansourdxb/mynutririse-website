@@ -31,6 +31,7 @@ export default (f: Facts): ReturnType<typeof en> => ({
   },
   intermittentFasting: {
     title: "Jeûne intermittent 16:8 : le guide du débutant",
+    metaTitle: "Jeûne intermittent 16:8 : le guide du débutant",
     description:
       "Ce qu’est la méthode de jeûne 16:8, comment elle fonctionne, à qui elle convient et comment se lancer sans commettre les erreurs classiques.",
     breadcrumb: "Jeûne intermittent 16:8",
@@ -75,6 +76,7 @@ export default (f: Facts): ReturnType<typeof en> => ({
   },
   aiPhoto: {
     title: "Comment fonctionne vraiment le suivi des calories par photo avec l’IA",
+    metaTitle: "Suivi des calories par photo avec l’IA",
     description:
       "Prenez une photo, obtenez calories et macros. Voici ce qui se passe en coulisses, et comment obtenir les résultats les plus précis.",
     breadcrumb: "Le suivi des calories par photo avec l’IA",
@@ -115,6 +117,7 @@ export default (f: Facts): ReturnType<typeof en> => ({
   },
   halalMacros: {
     title: "Suivre ses macros avec une alimentation halal et les plats de sa culture",
+    metaTitle: "Macros, alimentation halal et cuisines du monde",
     description:
       "Kabuli pulao, mandi, biryani : les plats traditionnels méritent un vrai suivi. Comment enregistrer précisément les cuisines du monde.",
     breadcrumb: "Suivre ses macros",

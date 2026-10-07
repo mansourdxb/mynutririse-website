@@ -4,7 +4,7 @@ import type en from "../en/quiz";
 export default (f: Facts): ReturnType<typeof en> => ({
   metaTitle: "Obtenez votre programme personnalisé",
   metaDescription:
-    "Répondez à quatre questions rapides et recevez un programme nutritionnel personnalisé avec votre objectif calorique quotidien — gratuitement, en moins d’une minute.",
+    "Répondez à quatre questions et recevez gratuitement un programme nutritionnel personnalisé avec votre objectif calorique, en moins d’une minute.",
   title: "Votre programme personnalisé <accent>en 1 minute</accent>",
   intro: "Quatre questions rapides, sans inscription.",
   // Passed to the client QuizFlow component.

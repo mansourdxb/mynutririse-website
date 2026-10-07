@@ -3,9 +3,9 @@ import type en from "../en/features";
 
 export default (f: Facts): ReturnType<typeof en> => ({
   // /features page
-  metaTitle: "Funciones: escaneo de comidas con IA, recetas culturales y ayuno",
+  metaTitle: "Funciones: escaneo con IA, recetas y ayuno",
   metaDescription:
-    "Descubre las potentes funciones que hacen de MyNutriRise la forma más inteligente de controlar tu nutrición, crear hábitos saludables y alcanzar tus objetivos de bienestar.",
+    "Descubre las funciones de MyNutriRise para controlar tu nutrición, crear hábitos saludables y alcanzar tus objetivos de bienestar.",
   pageTitle: "Funciones potentes para una vida más saludable",
   pageIntro:
     "Todo lo que necesitas para entender tu nutrición, mejorar tus hábitos y sentirte de maravilla, en una sola app con un diseño cuidado.",

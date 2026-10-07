@@ -123,7 +123,7 @@ const tools = (f: Facts) => ({
   },
 
   bmr: {
-    metaTitle: "BMR Calculator — Calculate Your Basal Metabolic Rate",
+    metaTitle: "BMR Calculator: Basal Metabolic Rate",
     metaDescription:
       "Free BMR calculator using the Mifflin–St Jeor equation. Find the calories your body burns at rest and learn how to turn it into a daily target.",
     breadcrumb: "BMR Calculator",
@@ -174,9 +174,9 @@ const tools = (f: Facts) => ({
   },
 
   calorie: {
-    metaTitle: "Calorie Calculator — Daily Calories to Lose or Gain Weight",
+    metaTitle: "Calorie Calculator: Daily Calorie Needs",
     metaDescription:
-      "Calculate how many calories you need per day with the Mifflin–St Jeor equation. Free targets for losing weight, maintaining, or building muscle — plus a Ramadan guide.",
+      "Calculate your daily calorie needs with the Mifflin–St Jeor equation. Free targets to lose weight, maintain or build muscle, plus a Ramadan guide.",
     breadcrumb: "Calorie Calculator",
     title: "Calorie Calculator",
     subtitle:
@@ -250,7 +250,7 @@ const tools = (f: Facts) => ({
   },
 
   idealWeight: {
-    metaTitle: "Ideal Weight Calculator — Healthy Weight for Your Height",
+    metaTitle: "Ideal Weight Calculator for Your Height",
     metaDescription:
       "Free ideal weight calculator using the Devine and Robinson formulas plus the healthy BMI range — find a realistic target for your height.",
     breadcrumb: "Ideal Weight",
@@ -305,7 +305,7 @@ const tools = (f: Facts) => ({
   },
 
   macro: {
-    metaTitle: "Macro Calculator — Protein, Carbs & Fat Targets",
+    metaTitle: "Macro Calculator: Protein, Carbs & Fat",
     metaDescription:
       "Free macro calculator: turn your daily calories into protein, carb, and fat targets with balanced, high-protein, keto, or endurance splits.",
     breadcrumb: "Macro Calculator",

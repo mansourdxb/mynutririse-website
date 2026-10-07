@@ -3,7 +3,7 @@ import type en from "../en/recipes";
 
 export default (f: Facts): ReturnType<typeof en> => ({
   metaTitle: `${f.RECIPES} recetas: halal, culturales y saludables`,
-  metaDescription: `Descubre las recetas de MyNutriRise de ${f.CUISINES} cocinas del mundo —turca, marroquí, pakistaní, afgana y más— con calorías y macros completos, además de desayunos, sopas y platos principales altos en proteína.`,
+  metaDescription: `Recetas de MyNutriRise de ${f.CUISINES} cocinas del mundo —turca, marroquí, pakistaní, afgana y más— con calorías y macros completos.`,
   title: `${f.RECIPES} recetas. <accent>Tu cultura, incluida.</accent>`,
   intro: `De los kebabs turcos al pulao afgano: ${f.CUISINES} cocinas del mundo con calorías y macros completos, aptas para halal en todo el catálogo. Consulta la página sobre la <link>app de nutrición halal</link> para conocer toda la historia. Una muestra de lo que encontrarás en la app:`,
   featuredTitle: "Platos destacados de la biblioteca",
