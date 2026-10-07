@@ -1,4 +1,15 @@
 import type { Metadata } from "next";
+import {
+  CARDIO_ACTIVITY_COUNT,
+  CUISINES,
+  DIET_PLAN_COUNT,
+  DISHES,
+  FASTING_PLAN_COUNT,
+  LANGUAGES,
+  LANGUAGE_LIST,
+  RECIPES,
+  STRENGTH_EXERCISE_COUNT,
+} from "@/data/facts";
 
 export const metadata: Metadata = {
   title: "Press Kit",
@@ -10,12 +21,12 @@ export const metadata: Metadata = {
 const factSheet = [
   ["Product", "MyNutriRise — AI-powered nutrition & fitness tracker"],
   ["Platforms", "iOS and Android"],
-  ["Languages", "English, Arabic, Turkish, Urdu"],
-  ["Recipes", "9,000+ with full nutrition details"],
-  ["Cuisine libraries", "50+ cultural cuisines, halal-friendly"],
-  ["Fasting plans", "25 protocols including 16:8, 5:2, OMAD, and a Ramadan schedule"],
-  ["Diet plans", "6 guided 4-week plans incl. Middle Eastern Healthy"],
-  ["Workout library", "318 exercises with prebuilt routines"],
+  ["Languages", LANGUAGES.join(", ")],
+  ["Recipes", `${RECIPES} with real ingredient amounts and cooking steps, across ${DISHES} dishes`],
+  ["Cuisines", `${CUISINES} world cuisines, halal filtering checked across every dish`],
+  ["Fasting plans", `${FASTING_PLAN_COUNT} plans including 16:8, 5:2, OMAD, and a Ramadan schedule`],
+  ["Diet plans", `${DIET_PLAN_COUNT} guided 4-week plans incl. Middle Eastern Healthy`],
+  ["Workout library", `${STRENGTH_EXERCISE_COUNT} strength exercises, ${CARDIO_ACTIVITY_COUNT} cardio and sports activities, and prebuilt routines`],
   ["Pricing", "Free to download; optional Premium subscription"],
   ["Website", "www.mynutririse.com"],
 ];
@@ -36,11 +47,11 @@ export default function PressPage() {
           <p className="mt-4 rounded-2xl bg-white p-6 leading-7 text-slate-600 shadow-sm ring-1 ring-slate-100">
             MyNutriRise is an AI-powered nutrition and fitness app built for
             people the big trackers overlook. Users snap a photo of any meal
-            and AI logs the calories and macros instantly — across 9,000+
-            recipes and 50+ cultural cuisine libraries, with halal-friendly
-            meal plans, 25 intermittent-fasting protocols including a Ramadan
+            and AI logs the calories and macros instantly — across {RECIPES}
+            recipes and {CUISINES} world cuisines, with halal-friendly
+            meal plans, {FASTING_PLAN_COUNT} intermittent-fasting plans including a Ramadan
             schedule, workout tracking, and an AI coach. Available on iOS and
-            Android in English, Arabic, Turkish, and Urdu.
+            Android in {LANGUAGE_LIST}.
           </p>
         </section>
 

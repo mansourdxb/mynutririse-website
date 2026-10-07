@@ -1,6 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { AppStoreButton } from "@/components/ui/Button";
+import {
+  CUISINES,
+  DIET_PLAN_COUNT,
+  FASTING_PLAN_COUNT,
+  FREE_COACH_MESSAGES_PER_DAY,
+  FREE_PHOTO_SCANS_PER_DAY,
+  LANGUAGES,
+  PREMIUM_PHOTO_SCANS_PER_DAY,
+  STRENGTH_EXERCISE_COUNT,
+} from "@/data/facts";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 
@@ -13,17 +23,17 @@ const compareFaqs = [
   {
     question: "Is MyFitnessPal halal-friendly?",
     answer:
-      "MyFitnessPal has a large general food database but no dedicated halal or cultural cuisine libraries. MyNutriRise includes 50+ cultural libraries with 1,000+ halal dishes and a halal-friendly Middle Eastern Healthy meal plan.",
+      `MyFitnessPal has a large general food database but no dedicated halal or cultural cuisine libraries. MyNutriRise covers ${CUISINES} world cuisines, checks halal filtering across every dish in its catalogue, and includes a halal-friendly Middle Eastern Healthy meal plan.`,
   },
   {
     question: "Which app has better AI photo scanning?",
     answer:
-      "MyNutriRise includes AI photo meal scanning from the free tier (2 scans/day, 30/day with Premium). MyFitnessPal's Meal Scan is available on its Premium plans.",
+      `MyNutriRise includes AI photo meal scanning from the free tier (${FREE_PHOTO_SCANS_PER_DAY} scans/day, ${PREMIUM_PHOTO_SCANS_PER_DAY}/day with Premium). MyFitnessPal's Meal Scan is available on its Premium plans.`,
   },
   {
     question: "Can I track Ramadan fasting in either app?",
     answer:
-      "MyNutriRise ships a dedicated Ramadan schedule among 25 fasting protocols. MyFitnessPal offers intermittent fasting tracking with Premium but has no Ramadan-specific schedule.",
+      `MyNutriRise ships a dedicated Ramadan schedule among ${FASTING_PLAN_COUNT} fasting plans. MyFitnessPal offers intermittent fasting tracking with Premium but has no Ramadan-specific schedule.`,
   },
 ];
 
@@ -47,37 +57,37 @@ export const metadata: Metadata = {
 const rows: [string, string, string][] = [
   [
     "Halal & cultural cuisine libraries",
-    "50+ purpose-built libraries — Turkish, Moroccan, Pakistani, Afghan, Gulf & more, halal throughout",
+    `${CUISINES} world cuisines — Turkish, Moroccan, Pakistani, Afghan, Gulf & more, halal-checked throughout`,
     "Large general food database; no dedicated halal/cultural libraries",
   ],
   [
     "AI photo meal scanning",
-    "Yes — included free (2 scans/day), 30/day with Premium",
+    `Yes — included free (${FREE_PHOTO_SCANS_PER_DAY} scans/day), ${PREMIUM_PHOTO_SCANS_PER_DAY}/day with Premium`,
     "Meal Scan available on Premium plans",
   ],
   [
     "Intermittent fasting",
-    "25 plans incl. 16:8, 5:2, OMAD and a Ramadan schedule",
+    `${FASTING_PLAN_COUNT} plans incl. 16:8, 5:2, OMAD and a Ramadan schedule`,
     "Fasting tracking included with Premium",
   ],
   [
     "Guided meal plans",
-    "6 four-week plans incl. Middle Eastern Healthy, Keto, Mediterranean",
+    `${DIET_PLAN_COUNT} four-week plans incl. Middle Eastern Healthy, Keto Friendly, Mediterranean`,
     "Meal plans available with Premium",
   ],
   [
     "Workout tracking",
-    "318-exercise library, routines, cardio & wearable sync",
+    `${STRENGTH_EXERCISE_COUNT}-exercise strength library, routines, cardio & wearable sync`,
     "Exercise logging with large exercise database",
   ],
   [
     "App languages",
-    "English, Arabic, Turkish, Urdu",
+    LANGUAGES.join(", "),
     "Many languages incl. English, Spanish, French, German",
   ],
   [
     "AI coach",
-    "Built-in AI nutrition & fitness coach (5 free messages/day)",
+    `Built-in AI nutrition & fitness coach (${FREE_COACH_MESSAGES_PER_DAY} free messages/day)`,
     "No conversational AI coach",
   ],
   [
@@ -151,8 +161,8 @@ export default function ComparePage() {
           <p>
             Your plate looks like biryani, tagine, mandi, or kabuli pulao —
             dishes generic databases miss. You want halal-friendly meal plans,
-            a Ramadan fasting schedule, an app that speaks Arabic, Turkish, or
-            Urdu, and AI photo logging without paying first. That is exactly
+            a Ramadan fasting schedule, an app that speaks Arabic, and AI
+            photo logging without paying first. That is exactly
             the gap MyNutriRise was built to fill — see the{" "}
             <Link href="/halal-nutrition-app" className="font-medium text-emerald-600 hover:text-emerald-700">
               halal nutrition app
@@ -187,7 +197,7 @@ export default function ComparePage() {
             packaged-food based, it serves you well. MyNutriRise is built for
             people whose plates those databases under-serve: if you eat kabuli
             pulao, nihari, or tagine, want halal-friendly plans, fast during
-            Ramadan, or prefer Arabic, Turkish, or Urdu — that&apos;s exactly
+            Ramadan, or prefer an app in Arabic — that&apos;s exactly
             what we&apos;re for, with AI photo logging included from the free
             tier.
           </p>

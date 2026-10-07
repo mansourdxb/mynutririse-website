@@ -1,13 +1,15 @@
+import { CUISINES, LANGUAGE_LIST } from "@/data/facts";
+
 export const homeFaqs = [
   {
     question: "Is MyNutriRise free?",
     answer:
-      "Yes — MyNutriRise is free to download and use. Premium is optional and unlocks advanced tools like the AI meal scanner, micronutrient tracking, and PDF reports. You can cancel anytime.",
+      "Yes — MyNutriRise is free to download and use, including AI photo meal scanning with a daily limit. Premium is optional: it raises the scan limit and unlocks micronutrient tracking and PDF reports. You can cancel anytime.",
   },
   {
     question: "Does it support halal and cultural diets?",
     answer:
-      "Yes. MyNutriRise includes 50+ cultural cuisine libraries — Turkish, Moroccan, Persian, Pakistani, Afghan, Bangladeshi, Gulf & Emirati, and many more — plus halal-friendly recipes, a Middle Eastern Healthy meal plan, and even a Ramadan fasting schedule. The app also speaks Arabic, Turkish, and Urdu.",
+      `Yes. MyNutriRise covers ${CUISINES} world cuisines — Turkish, Moroccan, Persian, Pakistani, Afghan, Bangladeshi, Gulf & Emirati, and many more — plus halal-friendly recipes, a Middle Eastern Healthy meal plan, and even a Ramadan fasting schedule. The app also speaks ${LANGUAGE_LIST}.`,
   },
   {
     question: "How does AI meal scanning work?",

@@ -3,6 +3,7 @@ import {
   StaggerContainer,
   StaggerItem,
 } from "@/components/ui/AnimatedSection";
+import { CUISINES, RECIPES } from "@/data/facts";
 
 const goals = [
   {
@@ -32,7 +33,7 @@ const goals = [
   {
     title: "Eat halal & cultural",
     href: "/halal-nutrition-app",
-    description: "50+ cuisines — Turkish, Pakistani, Afghan & more, halal throughout.",
+    description: `${CUISINES} cuisines — Turkish, Pakistani, Afghan & more, halal-checked throughout.`,
     color: "text-teal-600",
     bg: "bg-teal-50",
     icon: (
@@ -69,7 +70,7 @@ const goals = [
   {
     title: "Eat balanced meals",
     href: "/recipes",
-    description: "9,000+ healthy recipes and AI-generated meal plans.",
+    description: `${RECIPES} healthy recipes and AI-generated meal plans.`,
     color: "text-rose-600",
     bg: "bg-rose-50",
     icon: (

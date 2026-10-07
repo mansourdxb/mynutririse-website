@@ -3,11 +3,17 @@ import Link from "next/link";
 import { StoreButtons } from "@/components/ui/Button";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import {
+  CUISINES,
+  DISHES,
+  FASTING_PLAN_COUNT,
+  LANGUAGE_LIST,
+} from "@/data/facts";
 
 export const metadata: Metadata = {
   title: { absolute: "Halal Calorie Tracker & Muslim Nutrition App | MyNutriRise" },
   description:
-    "Track calories with a halal-friendly nutrition app: 50+ cultural cuisine libraries, a Ramadan fasting schedule, AI photo meal logging, and Arabic, Turkish & Urdu support.",
+    `Track calories with a halal-friendly nutrition app: ${CUISINES} world cuisines, a Ramadan fasting schedule, AI photo meal logging, and full Arabic support.`,
   alternates: { canonical: "/halal-nutrition-app" },
 };
 
@@ -22,12 +28,12 @@ const faqs = [
   {
     question: "Is MyNutriRise halal-friendly?",
     answer:
-      "Yes. MyNutriRise includes 1,000+ halal dishes across 50+ cultural cuisine libraries, halal-friendly recipes and meal plans — including a dedicated Middle Eastern Healthy plan — with no pork or alcohol-based entries in those libraries.",
+      `Yes. Halal filtering is checked across every one of the ${DISHES} dishes in the catalogue, spanning ${CUISINES} world cuisines, with halal-friendly recipes and meal plans — including a dedicated Middle Eastern Healthy plan.`,
   },
   {
     question: "Does it have a Ramadan mode?",
     answer:
-      "Yes. Among its 25 fasting protocols, MyNutriRise includes a dedicated Ramadan schedule, so you can track suhoor and iftar meals and keep your nutrition balanced through the month.",
+      `Yes. Among its ${FASTING_PLAN_COUNT} fasting plans, MyNutriRise includes a dedicated Ramadan schedule that tracks your dawn-to-sunset fast, while you keep logging meals to stay balanced through the month.`,
   },
   {
     question: "Can I track traditional dishes like biryani or kabuli pulao?",
@@ -37,7 +43,7 @@ const faqs = [
   {
     question: "Which languages does the app support?",
     answer:
-      "MyNutriRise is available in English, Arabic, Turkish, and Urdu on both iPhone and Android.",
+      `MyNutriRise is available in ${LANGUAGE_LIST} on both iPhone and Android.`,
   },
 ];
 
@@ -72,7 +78,7 @@ export default function HalalNutritionAppPage() {
 
         <section className="mt-14">
           <h2 className="text-2xl font-bold text-slate-800">
-            1,000+ halal dishes across 50+ cuisines
+            Halal-checked across {DISHES} dishes and {CUISINES} cuisines
           </h2>
           <p className="mt-4 leading-7 text-slate-600">
             Every dish comes with calories, protein, carbs, and fat per serving
@@ -107,10 +113,10 @@ export default function HalalNutritionAppPage() {
             Ramadan-ready fasting
           </h2>
           <p className="mt-4 leading-7 text-slate-600">
-            MyNutriRise includes 25 fasting protocols — and one of them is a
-            dedicated <strong>Ramadan schedule</strong>. Log suhoor and iftar,
-            keep your calories and protein balanced through the month, and see
-            exactly how your eating window affects your energy. Outside
+            MyNutriRise includes {FASTING_PLAN_COUNT} fasting plans — and one of them is a
+            dedicated <strong>Ramadan schedule</strong> that tracks your
+            dawn-to-sunset fast. Keep logging your meals to hold calories and
+            protein steady through the month. Outside
             Ramadan, the same tracker covers 16:8, 5:2, OMAD, and more —
             see our{" "}
             <Link
@@ -147,8 +153,8 @@ export default function HalalNutritionAppPage() {
             In your language
           </h2>
           <p className="mt-4 leading-7 text-slate-600">
-            The app speaks <strong>English, Arabic, Turkish, and Urdu</strong>{" "}
-            — including the food database, coaching, and meal plans like{" "}
+            The app speaks <strong>{LANGUAGE_LIST}</strong>{" "}
+            — including the AI coach and meal plans like{" "}
             <strong>Middle Eastern Healthy</strong>, a 4-week halal-friendly
             plan with grilled meats, legumes, fresh salads, and wholesome
             grains.

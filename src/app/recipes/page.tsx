@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { AppStoreButton } from "@/components/ui/Button";
 import { JsonLd } from "@/components/ui/JsonLd";
+import { CUISINES, RECIPES } from "@/data/facts";
 
 export const metadata: Metadata = {
-  title: "9,000+ Recipes — Halal, Cultural & Healthy",
+  title: `${RECIPES} Recipes — Halal, Cultural & Healthy`,
   description:
-    "Explore MyNutriRise recipes: Turkish, Moroccan, Pakistani, Afghan and 50+ more cuisines with full calories and macros — plus breakfasts, soups, and high-protein mains.",
+    `Explore MyNutriRise recipes from ${CUISINES} world cuisines — Turkish, Moroccan, Pakistani, Afghan and more — with full calories and macros, plus breakfasts, soups, and high-protein mains.`,
   alternates: { canonical: "/recipes" },
 };
 
@@ -59,13 +60,13 @@ export default function RecipesPage() {
       <JsonLd data={itemListJsonLd} />
       <div className="mx-auto max-w-6xl px-6 py-16">
         <h1 className="text-center text-4xl font-bold tracking-tight text-slate-800 sm:text-5xl">
-          9,000+ recipes.{" "}
+          {RECIPES} recipes.{" "}
           <span className="text-emerald-600">
             Your culture included.
           </span>
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-slate-500">
-          From Turkish kebabs to Afghan pulao — 50+ cuisine libraries with full
+          From Turkish kebabs to Afghan pulao — {CUISINES} world cuisines with full
           calories and macros, halal-friendly throughout — see the{" "}
           <Link href="/halal-nutrition-app" className="font-medium text-emerald-600 hover:text-emerald-700">
             halal nutrition app

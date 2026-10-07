@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ArticleCta } from "../ArticleCta";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { FASTING_PLAN_COUNT } from "@/data/facts";
 
 const articleJsonLd = {
   "@context": "https://schema.org",
@@ -109,7 +110,8 @@ export default function Article() {
               calorie calculator
             </a>{" "}
             to find that number, and note that MyNutriRise includes a
-            dedicated Ramadan schedule among its 25 fasting protocols.
+            dedicated Ramadan schedule among its {FASTING_PLAN_COUNT} fasting
+            plans.
           </p>
 
           <h2 className="pt-4 text-2xl font-bold text-slate-800">

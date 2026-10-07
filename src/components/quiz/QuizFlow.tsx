@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { StoreButtons } from "@/components/ui/Button";
 import { LIMITS, NumberField, inRange } from "@/components/tools/shared";
+import { CUISINES } from "@/data/facts";
 
 // Mirrors the app's onboarding questions and plan calculation
 // (lib/app/modules/Onboarding + lib/app/data/diet_plans.dart).
@@ -33,7 +34,7 @@ const workoutLevels = [
 
 const eatingStyles: { value: EatingStyle; label: string; sub: string }[] = [
   { value: "everything", label: "No restrictions", sub: "I eat everything" },
-  { value: "halal", label: "Halal & cultural", sub: "50+ cuisines — Turkish, Pakistani, Afghan & more" },
+  { value: "halal", label: "Halal & cultural", sub: `${CUISINES} cuisines — Turkish, Pakistani, Afghan & more` },
   { value: "mediterranean", label: "Mediterranean", sub: "Olive oil, fish, vegetables" },
   { value: "plant", label: "Vegetarian / Vegan", sub: "Plant-based nutrition" },
   { value: "keto", label: "Keto / low-carb", sub: "Under 30g net carbs per day" },
@@ -306,7 +307,7 @@ export function QuizFlow() {
 
               <p className="mx-auto mt-6 max-w-md leading-relaxed text-slate-500">
                 This is the same math the app uses. Download MyNutriRise and
-                your plan is ready — 4 weeks of meals, AI photo logging, and
+                your plan is ready — a guided meal plan (week 1 free, all 4 weeks with Premium), AI photo logging, and
                 coaching included.
               </p>
               <StoreButtons reassurance className="mt-8" />

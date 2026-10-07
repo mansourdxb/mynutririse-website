@@ -1,6 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { AppStoreButton } from "@/components/ui/Button";
+import {
+  CUISINES,
+  DIET_PLAN_COUNT,
+  FASTING_PLAN_COUNT,
+  LANGUAGES,
+  LANGUAGE_COUNT,
+  LANGUAGE_LIST,
+  RECIPES,
+  STRENGTH_EXERCISE_COUNT,
+} from "@/data/facts";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -10,12 +20,12 @@ export const metadata: Metadata = {
 };
 
 const facts = [
-  { value: "9,000+", label: "Recipes with full nutrition details" },
-  { value: "50+", label: "Cultural cuisine libraries" },
-  { value: "25", label: "Fasting plans, incl. a Ramadan schedule" },
-  { value: "318", label: "Exercises in the workout library" },
-  { value: "6", label: "Guided 4-week diet plans" },
-  { value: "4", label: "Languages: English, Arabic, Turkish, Urdu" },
+  { value: RECIPES, label: "Recipes with real ingredient amounts and cooking steps" },
+  { value: CUISINES, label: "World cuisines" },
+  { value: String(FASTING_PLAN_COUNT), label: "Fasting plans, incl. a Ramadan schedule" },
+  { value: String(STRENGTH_EXERCISE_COUNT), label: "Strength exercises in the workout library" },
+  { value: String(DIET_PLAN_COUNT), label: "Guided 4-week diet plans" },
+  { value: String(LANGUAGE_COUNT), label: `Languages: ${LANGUAGES.join(", ")}` },
 ];
 
 export default function AboutPage() {
@@ -36,12 +46,12 @@ export default function AboutPage() {
           </p>
           <p>
             MyNutriRise was built to remove that choice. Our food libraries
-            cover 50+ cultural cuisines — Turkish, Moroccan, Persian,
+            cover {CUISINES} world cuisines — Turkish, Moroccan, Persian,
             Pakistani, Afghan, Bangladeshi, Gulf &amp; Emirati, and many more —
             with halal-friendly recipes and meal plans as first-class features,
-            not afterthoughts. The app speaks English, Arabic, Turkish, and
-            Urdu, and even includes a Ramadan fasting schedule alongside 16:8,
-            5:2, and 20+ other protocols.
+            not afterthoughts. The app speaks {LANGUAGE_LIST}, and even
+            includes a Ramadan fasting schedule among its{" "}
+            {FASTING_PLAN_COUNT} fasting plans, alongside 16:8 and 5:2.
           </p>
           <p>
             The second thing we removed is friction. Tracking fails when it

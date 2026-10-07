@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { Hero } from "@/components/sections/Hero";
 import { Features } from "@/components/sections/Features";
 import { AppShowcase } from "@/components/sections/AppShowcase";
-import { StatsBand } from "@/components/sections/StatsBand";
-import { Testimonials } from "@/components/sections/Testimonials";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { Goals } from "@/components/sections/Goals";
 import { PressBar } from "@/components/sections/PressBar";
@@ -58,12 +56,10 @@ export default function Home() {
       />
       <Hero />
       <PressBar />
-      <StatsBand />
       <HowItWorks />
       <Goals />
       <Features />
       <AppShowcase />
-      <Testimonials />
       <Premium />
       <Science />
       <Community />

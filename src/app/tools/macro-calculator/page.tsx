@@ -4,6 +4,7 @@ import { MacroCalculator } from "@/components/tools/MacroCalculator";
 import { StoreButtons } from "@/components/ui/Button";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { CUISINES } from "@/data/facts";
 
 export const metadata: Metadata = {
   title: "Macro Calculator — Protein, Carbs & Fat Targets",
@@ -31,7 +32,7 @@ const faqs = [
   {
     question: "Can I track macros with halal or cultural food?",
     answer:
-      "Yes — mixed dishes like biryani or tagine have known macro profiles. MyNutriRise includes 50+ cultural cuisine libraries with per-serving protein, carbs, and fat.",
+      `Yes — mixed dishes like biryani or tagine have known macro profiles. MyNutriRise covers ${CUISINES} world cuisines with per-serving protein, carbs, and fat.`,
   },
 ];
 

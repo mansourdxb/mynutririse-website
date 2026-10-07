@@ -1,11 +1,12 @@
 import Image from "next/image";
 import { AppStoreButton } from "@/components/ui/Button";
 import { PhoneMockup } from "@/components/ui/PhoneMockup";
+import { RECIPES } from "@/data/facts";
 
 const featurePills = [
   { label: "AI Meal Scan", top: "10%", right: "-8%", delay: 0.6 },
   { label: "Halal & Cultural Diets", top: "45%", right: "-12%", delay: 0.75 },
-  { label: "9000+ Recipes", bottom: "18%", left: "-6%", delay: 0.9 },
+  { label: `${RECIPES} Recipes`, bottom: "18%", left: "-6%", delay: 0.9 },
 ];
 
 export function Hero() {
@@ -23,16 +24,9 @@ export function Hero() {
         <div className="flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:gap-16">
           {/* Text content */}
           <div className="flex-1 text-center lg:text-left">
-            {/* Wellness badge */}
-            <div className="anim-fade-up" style={{ animationDelay: "0.05s" }}>
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-4 py-1.5 text-sm font-medium text-emerald-700 ring-1 ring-emerald-200/60">
-                ✨ Trusted by 150,000+ health-conscious people
-              </span>
-            </div>
-
             {/* Headline */}
             <h1
-              className="anim-fade-up mt-6 text-5xl font-bold tracking-tight text-slate-800 sm:text-6xl lg:text-7xl"
+              className="anim-fade-up text-5xl font-bold tracking-tight text-slate-800 sm:text-6xl lg:text-7xl"
               style={{ animationDelay: "0.15s" }}
             >
               Nutrition &amp; Fitness tracking{" "}

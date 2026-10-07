@@ -6,6 +6,18 @@ import Image from "next/image";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { PhoneMockup } from "@/components/ui/PhoneMockup";
 import { CountUpValue } from "@/components/ui/CountUp";
+import {
+  CUISINES,
+  CUISINE_COUNT,
+  CUISINE_FLOOR,
+  EXERCISES_AND_ACTIVITIES,
+  FASTING_PLAN_COUNT,
+  FOOD_COLOR_GROUP_COUNT,
+  MICRONUTRIENT_COUNT,
+  PDF_REPORT_RANGE,
+  RECIPES,
+  STRENGTH_EXERCISE_COUNT,
+} from "@/data/facts";
 
 function BlockPhone({ src, alt }: { src: string; alt: string }) {
   return (
@@ -421,7 +433,7 @@ function CoachingCards() {
 }
 
 /* ================================================================== */
-/*  Block : 9,000+ Recipes                                            */
+/*  Block : Recipes                                                   */
 /* ================================================================== */
 
 function RecipeCards() {
@@ -429,7 +441,7 @@ function RecipeCards() {
     <div className="relative mx-auto w-full max-w-md py-6">
       <BlockPhone
         src="/screenshots/recipes.png"
-        alt="MyNutriRise recipes screen with 9,000 healthy recipes and categories"
+        alt="MyNutriRise recipes screen with healthy recipes and categories"
       />
       {/* Dish nutrition card */}
       <motion.div
@@ -457,10 +469,10 @@ function RecipeCards() {
         className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:bottom-16 sm:right-0 w-48 rounded-2xl bg-white/90 backdrop-blur border border-teal-100/60 shadow-lg shadow-teal-900/5 p-4"
       >
         <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">
-          <CountUpValue target={50} suffix="+" /> Cuisines
+          <CountUpValue target={CUISINE_FLOOR} suffix="+" /> Cuisines
         </p>
         <div className="flex flex-wrap gap-1">
-          {["Turkish", "Moroccan", "Pakistani", "Afghan", "Gulf", "+45"].map(
+          {["Turkish", "Moroccan", "Pakistani", "Afghan", "Gulf", `+${CUISINE_COUNT - 5}`].map(
             (c) => (
               <span
                 key={c}
@@ -529,7 +541,7 @@ function WorkoutCards() {
           </svg>
         </div>
         <div>
-          <p className="text-xs font-semibold text-slate-700">318 Exercises</p>
+          <p className="text-xs font-semibold text-slate-700">{STRENGTH_EXERCISE_COUNT} Exercises</p>
           <p className="text-[11px] text-blue-500">Filter by muscle group</p>
         </div>
       </motion.div>
@@ -701,7 +713,7 @@ const featureGridItems: {
       </svg>
     ),
     name: "Color Guide",
-    desc: "6 food color groups with health benefits",
+    desc: `${FOOD_COLOR_GROUP_COUNT} food color groups with health benefits`,
     color: "text-orange-600",
     bg: "bg-orange-50",
     screenshot: "/screenshots/IMG_5865.PNG",
@@ -797,7 +809,7 @@ const featureGridItems: {
       </svg>
     ),
     name: "Export Data",
-    desc: "PDF reports from 7 to 90 day range",
+    desc: `PDF reports covering ${PDF_REPORT_RANGE}`,
     color: "text-slate-600",
     bg: "bg-slate-50",
     screenshot: "/screenshots/IMG_5885.PNG",
@@ -995,7 +1007,7 @@ export function Features({ showGrid = false }: { showGrid?: boolean }) {
               </h3>
               <p className="mt-4 text-base sm:text-lg leading-relaxed text-slate-500">
                 Every bite, fully understood. Our AI analyzes your meals in
-                real-time, tracking not just calories and macros, but 20+
+                real-time, tracking not just calories and macros, but {MICRONUTRIENT_COUNT}
                 essential micronutrients to give you the complete picture of
                 your nutrition.
               </p>
@@ -1003,10 +1015,11 @@ export function Features({ showGrid = false }: { showGrid?: boolean }) {
                 items={[
                   "AI Meal Scan — snap a photo for instant nutrition breakdown",
                   "Smart calorie & macro tracking with food database",
-                  "20+ micronutrient analysis (Iron, Calcium, Vitamins A-D-B12 & more)",
+                  `${MICRONUTRIENT_COUNT} key micronutrients — iron, calcium, vitamins A, C, D, B12 & more (Premium)`,
                   "Compare foods head-to-head with health scores",
                   "Meal timing analytics — eating patterns by time of day",
                   "Barcode scanner & voice logging for hands-free tracking",
+                  "Metric or imperial units, in every app language",
                 ]}
               />
             </AnimatedSection>
@@ -1037,12 +1050,13 @@ export function Features({ showGrid = false }: { showGrid?: boolean }) {
               </p>
               <BulletList
                 items={[
-                  "Intermittent fasting with 5+ protocols (16:8, 5:2, OMAD) + Masterclass",
-                  "9,000+ recipes with cultural diets (Afghan, Arabic, Bangladeshi & more)",
+                  `Intermittent fasting with ${FASTING_PLAN_COUNT} plans (16:8, 5:2, OMAD, Ramadan) + Masterclass`,
+                  `${RECIPES} recipes with cultural diets (Afghan, Arabic, Bangladeshi & more)`,
                   "AI meal plans — daily/weekly for Keto, Mediterranean, Vegan & more",
                   "Meal prep planner with auto-generated grocery lists",
-                  "1,000+ exercises — Walking, Running, Cycling, Gym, Yoga, Sports",
-                  "Water & sleep monitoring with daily targets",
+                  `${EXERCISES_AND_ACTIVITIES} exercises & activities — Walking, Running, Cycling, Gym, Yoga, Sports`,
+                  "Water tracking with a daily goal, plus sleep from Apple Health & Health Connect",
+                  "Live Activities for fasts and workouts on your iPhone Lock Screen",
                 ]}
               />
             </AnimatedSection>
@@ -1088,7 +1102,7 @@ export function Features({ showGrid = false }: { showGrid?: boolean }) {
                   "Weekly reports with consistency %, daily averages & sharing",
                   "Daily nutrition lessons with streaks & action items",
                   "Glucose tracking with 7-day average & estimated A1C",
-                  "Wearable sync — Apple Health, Google Fit, step tracking",
+                  "Health sync — reads steps, workouts & sleep from Apple Health and Health Connect",
                 ]}
               />
             </AnimatedSection>
@@ -1097,7 +1111,7 @@ export function Features({ showGrid = false }: { showGrid?: boolean }) {
       </div>
 
       {/* ---------------------------------------------------------- */}
-      {/*  Block — 9,000+ Recipes                                    */}
+      {/*  Block — Recipes                                           */}
       {/* ---------------------------------------------------------- */}
       <div className="bg-gradient-to-b from-amber-50/40 via-orange-50/20 to-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 py-20 lg:py-28">
@@ -1108,8 +1122,8 @@ export function Features({ showGrid = false }: { showGrid?: boolean }) {
                 Recipes
               </p>
               <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-800">
-                9,000+ Recipes{" "}
-                <span className="text-emerald-600">from 50+ Cuisines</span>
+                {RECIPES} Recipes{" "}
+                <span className="text-emerald-600">from {CUISINES} Cuisines</span>
               </h3>
               <p className="mt-4 text-base sm:text-lg leading-relaxed text-slate-500">
                 From Turkish kebabs to Afghan pulao — every recipe comes with
@@ -1118,10 +1132,10 @@ export function Features({ showGrid = false }: { showGrid?: boolean }) {
               </p>
               <BulletList
                 items={[
-                  "9,000+ recipes with calories, macros & serving sizes",
-                  "50+ cultural cuisine libraries — halal-friendly throughout",
-                  "Smart filters: vegetarian, vegan, keto, high-protein & gluten-free",
-                  "Import recipes from AllRecipes, BBC Good Food & any URL",
+                  `${RECIPES} recipes with real ingredient amounts & cooking steps`,
+                  `${CUISINES} world cuisines — halal-checked throughout`,
+                  "Smart filters: vegetarian, keto, high-protein & gluten-free",
+                  "Import recipes from AllRecipes, BBC Good Food & other recipe sites",
                   "Browse by category — Breakfast, Soups, Desserts & dozens more",
                   "Log any recipe to your day in one tap",
                 ]}
@@ -1165,7 +1179,7 @@ export function Features({ showGrid = false }: { showGrid?: boolean }) {
               </p>
               <BulletList
                 items={[
-                  "318-exercise library with muscle-group filters & video demos",
+                  `${STRENGTH_EXERCISE_COUNT} strength exercises with step-by-step instructions & muscle targets`,
                   "Prebuilt routines — Full Body, Push Day, Pull Day & more",
                   "Build custom routines with sets, reps & exercise history",
                   "Cardio tracking — walking, running, cycling, swimming, yoga & more",

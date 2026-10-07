@@ -3,12 +3,13 @@ import {
   StaggerContainer,
   StaggerItem,
 } from "@/components/ui/AnimatedSection";
+import { FREE_COACH_MESSAGES_PER_DAY, MICRONUTRIENT_COUNT, PREMIUM_COACH_MESSAGES_PER_DAY } from "@/data/facts";
 
 const heroFeatures = [
   {
     title: "Advanced Micronutrients",
     description:
-      "Track 20+ vitamins and minerals. Understand your nutritional gaps with detailed breakdowns and smart suggestions.",
+      `Track ${MICRONUTRIENT_COUNT} key vitamins and minerals. Understand your nutritional gaps with detailed breakdowns and smart suggestions.`,
     icon: (
       <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 0 1-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 0 1 4.5 0m0 0v5.714a2.25 2.25 0 0 0 .659 1.591L19 14.5M14.25 3.104c.251.023.501.05.75.082M19 14.5l-1.46 1.46a2.25 2.25 0 0 1-1.591.659H8.051a2.25 2.25 0 0 1-1.591-.659L5 14.5m14 0V19a2.25 2.25 0 0 1-2.25 2.25H7.25A2.25 2.25 0 0 1 5 19v-4.5" />
@@ -38,7 +39,7 @@ const heroFeatures = [
   {
     title: "Enhanced Coaching",
     description:
-      "Priority AI coaching with detailed meal analysis, recipe creation, and comprehensive wellness guidance.",
+      `More AI coaching — up to ${PREMIUM_COACH_MESSAGES_PER_DAY} coach messages a day instead of ${FREE_COACH_MESSAGES_PER_DAY}.`,
     icon: (
       <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
@@ -87,7 +88,7 @@ const moreFeatures = [
   },
   {
     title: "Food Comparison Tool",
-    description: "Compare foods side-by-side on calories, macros, and micronutrients to make smarter choices.",
+    description: "Compare two foods you've logged on calories, macros, and a health score to make smarter choices.",
     icon: (
       <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0 0 12 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52 2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 0 1-2.031.352 5.988 5.988 0 0 1-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971Zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0 2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 0 1-2.031.352 5.989 5.989 0 0 1-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971Z" />
