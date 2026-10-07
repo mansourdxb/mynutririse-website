@@ -31,7 +31,7 @@ export default (f: Facts) => ({
     { key: "Website", value: "www.mynutririse.com" },
   ],
   assetsTitle: "Brand assets",
-  logo: "App logo (SVG)",
+  logo: "App logo (PNG)",
   screenshots: "App screenshots: available on request, or use the screens shown throughout this site.",
   colors: "Brand colors: Emerald <code>#10b981</code>, White <code>#FFFFFF</code>, Slate <code>#1e293b</code>",
   contactTitle: "Media contact",

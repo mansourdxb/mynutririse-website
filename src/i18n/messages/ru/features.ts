@@ -3,7 +3,7 @@ import type en from "../en/features";
 
 export default (f: Facts): ReturnType<typeof en> => ({
   // /features page
-  metaTitle: "Возможности — ИИ-скан блюд, рецепты и трекер голодания",
+  metaTitle: "Возможности: ИИ-скан блюд, рецепты, голодание",
   metaDescription:
     "Узнай, какие возможности делают MyNutriRise самым умным способом считать питание, формировать здоровые привычки и достигать целей.",
   pageTitle: "Мощные возможности для здоровой жизни",

@@ -3,7 +3,7 @@ import type en from "../en/features";
 
 export default (f: Facts): ReturnType<typeof en> => ({
   // /features page
-  metaTitle: "المزايا — تحليل الوجبات بالذكاء الاصطناعي ووصفات الثقافات ومتتبّع الصيام",
+  metaTitle: "المزايا: تحليل الوجبات بالذكاء الاصطناعي والصيام",
   metaDescription:
     "استكشف المزايا القوية التي تجعل MyNutriRise الطريقة الأذكى لتتبّع التغذية وبناء عادات صحية وبلوغ أهداف عافيتك.",
   pageTitle: "مزايا قوية لحياة أكثر صحة",

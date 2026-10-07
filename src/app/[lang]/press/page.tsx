@@ -49,7 +49,7 @@ export default async function PressPage({ params }: PageProps<"/[lang]/press">) 
           <h2 className="text-2xl font-bold text-ink">{t.assetsTitle}</h2>
           <ul className="mt-4 list-disc space-y-2 ps-6 text-ink-2">
             <li>
-              <a href="/icon.svg" download className="font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300">
+              <a href="/logo.png" download className="font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300">
                 {t.logo}
               </a>
             </li>

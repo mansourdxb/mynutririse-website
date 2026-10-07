@@ -2,8 +2,8 @@ import type { Facts } from "@/data/facts";
 import type en from "../en/halal";
 
 export default (f: Facts): ReturnType<typeof en> => ({
-  metaTitle: "Contador de calorías halal y app de nutrición musulmana | MyNutriRise",
-  metaDescription: `Controla tus calorías con una app de nutrición apta para halal: ${f.CUISINES} cocinas del mundo, un horario de ayuno para el Ramadán, registro de comidas por foto con IA y soporte completo en árabe.`,
+  metaTitle: "Contador de calorías halal para musulmanes | MyNutriRise",
+  metaDescription: `App de nutrición apta para halal: ${f.CUISINES} cocinas del mundo, horario de ayuno para el Ramadán, registro de comidas por foto con IA y soporte en árabe.`,
   breadcrumb: "App de nutrición halal",
   title: "El contador de calorías apto para halal pensado para tu cocina",
   intro:

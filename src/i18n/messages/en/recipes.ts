@@ -2,7 +2,7 @@ import type { Facts } from "@/data/facts";
 
 export default (f: Facts) => ({
   metaTitle: `${f.RECIPES} Recipes — Halal, Cultural & Healthy`,
-  metaDescription: `Explore MyNutriRise recipes from ${f.CUISINES} world cuisines — Turkish, Moroccan, Pakistani, Afghan and more — with full calories and macros, plus breakfasts, soups, and high-protein mains.`,
+  metaDescription: `MyNutriRise recipes from ${f.CUISINES} world cuisines — Turkish, Moroccan, Pakistani, Afghan and more — with full calories and macros, from breakfasts to mains.`,
   title: `${f.RECIPES} recipes. <accent>Your culture included.</accent>`,
   intro: `From Turkish kebabs to Afghan pulao — ${f.CUISINES} world cuisines with full calories and macros, halal-friendly throughout — see the <link>halal nutrition app</link> page for the full story. A taste of what's in the app:`,
   featuredTitle: "Featured dishes from the library",

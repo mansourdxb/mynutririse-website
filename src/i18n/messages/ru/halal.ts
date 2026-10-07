@@ -2,7 +2,7 @@ import type { Facts } from "@/data/facts";
 import type en from "../en/halal";
 
 export default (f: Facts): ReturnType<typeof en> => ({
-  metaTitle: "Халяльный счётчик калорий и приложение для мусульман | MyNutriRise",
+  metaTitle: "Халяльный счётчик калорий для мусульман | MyNutriRise",
   metaDescription: `Считай калории в приложении для халяльного питания: ${f.CUISINES} кухонь мира, график Рамадана, запись блюд по фото с ИИ и полная поддержка арабского языка.`,
   breadcrumb: "Приложение для халяльного питания",
   title: "Халяльный счётчик калорий, созданный для твоей кухни",

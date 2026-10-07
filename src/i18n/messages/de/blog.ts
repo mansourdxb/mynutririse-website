@@ -31,6 +31,7 @@ export default (f: Facts): ReturnType<typeof en> => ({
   },
   intermittentFasting: {
     title: "Intervallfasten 16:8 – ein Leitfaden für Einsteiger",
+    metaTitle: "Intervallfasten 16:8 für Einsteiger",
     description:
       "Was die 16:8-Methode ist, wie sie funktioniert, für wen sie sich eignet und wie du ohne die typischen Fehler startest.",
     breadcrumb: "Intervallfasten 16:8",
@@ -75,6 +76,7 @@ export default (f: Facts): ReturnType<typeof en> => ({
   },
   aiPhoto: {
     title: "So funktioniert Kalorientracking per KI-Foto wirklich",
+    metaTitle: "So funktioniert KI-Kalorientracking per Foto",
     description:
       "Foto machen, Kalorien und Makros erhalten. Das passiert hinter den Kulissen – und so bekommst du die genauesten Ergebnisse.",
     breadcrumb: "Kalorientracking per KI-Foto",
@@ -115,6 +117,7 @@ export default (f: Facts): ReturnType<typeof en> => ({
   },
   halalMacros: {
     title: "Makros tracken mit halalen & kulturellen Gerichten",
+    metaTitle: "Makros tracken: halal & kulturelle Gerichte",
     description:
       "Kabuli Pulao, Mandi, Biryani – traditionelle Gerichte verdienen richtiges Tracking. So trägst du kulturelle Küche genau ein.",
     breadcrumb: "Makros tracken",

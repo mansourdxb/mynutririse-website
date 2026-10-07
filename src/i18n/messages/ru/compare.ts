@@ -2,7 +2,7 @@ import type { Facts } from "@/data/facts";
 import type en from "../en/compare";
 
 export default (f: Facts): ReturnType<typeof en> => ({
-  metaTitle: "Альтернатива MyFitnessPal: MyNutriRise vs MyFitnessPal (2026)",
+  metaTitle: "MyNutriRise vs MyFitnessPal: альтернатива 2026",
   metaDescription:
     "Чем MyNutriRise отличается от MyFitnessPal: учёт халяльной и национальной еды, запись по фото с ИИ, голодание и тренировки.",
   breadcrumb: "Сравнение",

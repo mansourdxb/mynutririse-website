@@ -5,7 +5,7 @@ import { StoreButtons } from "@/components/ui/Button";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { localePath, type Locale } from "@/i18n/config";
-import { pageMetadata } from "@/i18n/metadata";
+import { pageMetadata, webApplicationJsonLd } from "@/i18n/metadata";
 import { getMessages } from "@/i18n/messages";
 import { rich } from "@/i18n/rich";
 
@@ -37,6 +37,9 @@ export default async function Page({ params }: PageProps<"/[lang]/tools/bmi-calc
   return (
     <div className="wash-mint pt-24 pb-8">
       <JsonLd data={faqJsonLd} />
+      <JsonLd
+        data={webApplicationJsonLd(lang, "/tools/bmi-calculator", t.breadcrumb, t.metaDescription)}
+      />
       <div className="mx-auto max-w-3xl px-6 py-16">
         <Breadcrumbs
           lang={lang}

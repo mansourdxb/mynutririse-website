@@ -66,9 +66,9 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
   },
 
   bmi: {
-    metaTitle: "Calculateur d’IMC : calculez votre indice de masse corporelle",
+    metaTitle: "Calcul de l’IMC (indice de masse corporelle)",
     metaDescription:
-      "Calculateur d’IMC gratuit en unités métriques et impériales. Situez votre indice de masse corporelle par rapport aux valeurs de référence et comprenez ce que ce chiffre signifie vraiment.",
+      "Calculateur d’IMC gratuit (métrique et impérial). Comparez votre indice de masse corporelle aux valeurs de référence et comprenez ce chiffre.",
     breadcrumb: "Calculateur d’IMC",
     title: "Calculateur d’IMC",
     subtitle: "Calculez votre indice de masse corporelle en quelques secondes, gratuitement et sans inscription.",
@@ -126,7 +126,7 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
   bmr: {
     metaTitle: "Calculateur de métabolisme de base (MB)",
     metaDescription:
-      "Calculateur de métabolisme de base gratuit, basé sur l’équation de Mifflin–St Jeor. Découvrez les calories que votre corps brûle au repos et comment en faire un objectif quotidien.",
+      "Calculateur de métabolisme de base gratuit (Mifflin–St Jeor). Découvrez les calories brûlées au repos et comment en faire un objectif quotidien.",
     breadcrumb: "Calculateur de MB",
     title: "Calculateur de métabolisme de base",
     subtitle: "Découvrez combien de calories votre corps brûle au repos complet.",
@@ -175,9 +175,9 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
   },
 
   calorie: {
-    metaTitle: "Calculateur de calories : vos besoins pour maigrir ou grossir",
+    metaTitle: "Calculateur de besoins caloriques",
     metaDescription:
-      "Calculez vos besoins caloriques quotidiens avec l’équation de Mifflin–St Jeor. Des objectifs gratuits pour perdre du poids, le maintenir ou prendre du muscle, avec un guide pour le Ramadan.",
+      "Calculez vos besoins caloriques (Mifflin–St Jeor) : objectifs gratuits pour maigrir, maintenir ou prendre du muscle, et guide du Ramadan.",
     breadcrumb: "Calculateur de calories",
     title: "Calculateur de calories",
     subtitle:
@@ -306,9 +306,9 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
   },
 
   macro: {
-    metaTitle: "Calculateur de macros : protéines, glucides et lipides",
+    metaTitle: "Calculateur de macros nutritionnels",
     metaDescription:
-      "Calculateur de macros gratuit : transformez vos calories quotidiennes en objectifs de protéines, de glucides et de lipides avec une répartition équilibrée, protéinée, céto ou endurance.",
+      "Calculateur de macros gratuit : vos calories en objectifs de protéines, glucides et lipides, en répartition équilibrée, protéinée, céto ou endurance.",
     breadcrumb: "Calculateur de macros",
     title: "Calculateur de macros",
     subtitle: "Transformez votre objectif calorique en objectifs quotidiens de protéines, de glucides et de lipides, gratuitement et sans inscription.",

@@ -27,7 +27,7 @@ function article(key: ArticleKey) {
 export function articleMetadata(lang: Locale, key: ArticleKey): Metadata {
   const t = getMessages(lang).blog[key];
   return pageMetadata(lang, `/blog/${article(key).slug}`, {
-    title: t.title,
+    title: t.metaTitle,
     description: t.description,
   });
 }

@@ -2,9 +2,9 @@ import type { Facts } from "@/data/facts";
 import type en from "../en/compare";
 
 export default (f: Facts): ReturnType<typeof en> => ({
-  metaTitle: "Alternative à MyFitnessPal : MyNutriRise vs MyFitnessPal (2026)",
+  metaTitle: "MyNutriRise vs MyFitnessPal : l’alternative 2026",
   metaDescription:
-    "MyNutriRise face à MyFitnessPal pour le suivi de l’alimentation halal et des cuisines du monde, l’enregistrement des repas par photo avec l’IA, le jeûne et les entraînements.",
+    "MyNutriRise ou MyFitnessPal ? Comparatif pour l’alimentation halal et les cuisines du monde, le suivi des repas par photo IA, le jeûne et le sport.",
   breadcrumb: "Comparatif",
   title: "MyNutriRise vs MyFitnessPal",
   intro: "Les deux comptent bien les calories. La différence : ce que vous mangez, et l’effort que demande l’enregistrement.",

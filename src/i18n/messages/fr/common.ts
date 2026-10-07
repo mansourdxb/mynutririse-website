@@ -8,7 +8,7 @@ export default (f: Facts): ReturnType<typeof en> => ({
     title: "MyNutriRise : compteur de calories IA et nutrition halal",
     titleTemplate: "%s — MyNutriRise",
     description:
-      "Suivez vos calories, analysez vos repas grâce à l’IA, suivez des programmes alimentaires personnalisés et adoptez de meilleures habitudes avec MyNutriRise, votre compagnon bien-être intelligent.",
+      "Suivez vos calories, analysez vos repas avec l’IA, suivez un programme personnalisé et adoptez de meilleures habitudes avec MyNutriRise.",
     ogDescription:
       "Suivez vos calories, analysez vos repas grâce à l’IA, suivez des programmes alimentaires personnalisés et adoptez chaque jour de meilleures habitudes.",
     twitterDescription:

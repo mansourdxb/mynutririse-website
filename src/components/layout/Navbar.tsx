@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { localePath, type Locale } from "@/i18n/config";
 import type { Messages } from "@/i18n/messages";
@@ -50,23 +51,7 @@ export function Navbar({ lang, t }: { lang: Locale; t: Messages["common"]["nav"]
         <nav className="container-page flex items-center justify-between py-3.5">
           {/* Logo */}
           <Link href={localePath(lang, "/")} className="flex items-center gap-2">
-            <span className="flex h-7 w-7 items-center justify-center rounded-full bg-emerald-500">
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                className="text-white"
-              >
-                <path
-                  d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </span>
+            <Image src="/logo.png" alt="" width={28} height={28} className="h-7 w-7" priority />
             <span className="font-display text-lg font-bold tracking-tight text-ink">
               MyNutriRise
             </span>
