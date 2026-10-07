@@ -65,7 +65,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
       <HowItWorks t={t.howItWorks} />
       <Goals lang={lang} t={t.goals} />
       <Features lang={lang} t={m.features} />
-      <AppShowcase t={t.showcase} />
+      <AppShowcase lang={lang} t={t.showcase} />
       <Premium lang={lang} t={t.premium} store={m.common.store} />
       <Science t={t.science} />
       <Community t={t.community} />

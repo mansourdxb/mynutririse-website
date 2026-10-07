@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { AppStoreButton } from "@/components/ui/Button";
 import { PhoneMockup } from "@/components/ui/PhoneMockup";
-import { localePath, type Locale } from "@/i18n/config";
+import { localePath, screenshot, type Locale } from "@/i18n/config";
 import type { Messages } from "@/i18n/messages";
 import { rich } from "@/i18n/rich";
 
@@ -91,7 +91,7 @@ export function Hero({
               <PhoneMockup>
                 <div className="relative aspect-[9/19.5] w-full">
                   <Image
-                    src="/screenshots/today.png"
+                    src={screenshot(lang, "today")}
                     alt={t.screenshotAlt}
                     fill
                     className="object-cover object-top"

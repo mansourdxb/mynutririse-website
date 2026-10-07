@@ -1,34 +1,34 @@
 import Image from "next/image";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
+import { screenshot, type Locale } from "@/i18n/config";
 import type { Messages } from "@/i18n/messages";
 import { rich } from "@/i18n/rich";
 
-// Screens shown in the feature deep-dive phones (Today, AI Coach, Recipes,
-// Routines, Cardio, Scan, Leaderboard) are intentionally excluded here.
+// Screenshot names under public/screenshots/<lang>/, one per label in t.row1 / t.row2.
 const row1Screens = [
-  { src: "/screenshots/analytics.png" },
-  { src: "/screenshots/IMG_5847.PNG" },
-  { src: "/screenshots/IMG_5849.PNG" },
-  { src: "/screenshots/food-log.png" },
-  { src: "/screenshots/exercises.png" },
-  { src: "/screenshots/IMG_5873.PNG" },
-  { src: "/screenshots/IMG_5852.PNG" },
-  { src: "/screenshots/IMG_5869.PNG" },
-  { src: "/screenshots/IMG_5844.PNG" },
-  { src: "/screenshots/IMG_5858.PNG" },
+  "analytics",
+  "fasting",
+  "ai-coach",
+  "food-search",
+  "exercise",
+  "wellness",
+  "micros",
+  "meal-log",
+  "recipes",
+  "meal-templates",
 ];
 
 const row2Screens = [
-  { src: "/screenshots/diet-plans.png" },
-  { src: "/screenshots/IMG_5879.PNG" },
-  { src: "/screenshots/IMG_5880.PNG" },
-  { src: "/screenshots/IMG_5882.PNG" },
-  { src: "/screenshots/weekly-report.png" },
-  { src: "/screenshots/IMG_5867.PNG" },
-  { src: "/screenshots/IMG_5857.PNG" },
-  { src: "/screenshots/IMG_5887.PNG" },
-  { src: "/screenshots/cultural-diets.png" },
-  { src: "/screenshots/IMG_5864.PNG" },
+  "diet-plans",
+  "wearables",
+  "achievements",
+  "challenges",
+  "weekly",
+  "progress",
+  "meal-timing",
+  "quick-actions",
+  "cuisines",
+  "compare-foods",
 ];
 
 function ScreenCard({ src, label }: { src: string; label: string }) {
@@ -84,9 +84,15 @@ function MarqueeRow({
   );
 }
 
-export function AppShowcase({ t }: { t: Messages["home"]["showcase"] }) {
-  const row1 = row1Screens.map((s, i) => ({ ...s, label: t.row1[i] }));
-  const row2 = row2Screens.map((s, i) => ({ ...s, label: t.row2[i] }));
+export function AppShowcase({
+  lang,
+  t,
+}: {
+  lang: Locale;
+  t: Messages["home"]["showcase"];
+}) {
+  const row1 = row1Screens.map((name, i) => ({ src: screenshot(lang, name), label: t.row1[i] }));
+  const row2 = row2Screens.map((name, i) => ({ src: screenshot(lang, name), label: t.row2[i] }));
 
   return (
     <section className="relative overflow-hidden wash-mint section-y">

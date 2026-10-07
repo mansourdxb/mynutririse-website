@@ -31,6 +31,11 @@ export const ogLocale: Record<Locale, string> = {
  */
 export const noindexLocales: readonly Locale[] = [];
 
+/** App screenshot in the given language, served from public/screenshots/<lang>/. */
+export function screenshot(lang: Locale, name: string): string {
+  return `/screenshots/${lang}/${name}.webp`;
+}
+
 export function isLocale(value: string): value is Locale {
   return (locales as readonly string[]).includes(value);
 }
