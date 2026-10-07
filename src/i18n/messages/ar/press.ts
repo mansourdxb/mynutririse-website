@@ -32,7 +32,7 @@ export default (f: Facts): ReturnType<typeof en> => ({
     { key: "الموقع الإلكتروني", value: "www.mynutririse.com" },
   ],
   assetsTitle: "أصول العلامة التجارية",
-  logo: "شعار التطبيق (SVG)",
+  logo: "شعار التطبيق (PNG)",
   screenshots: "لقطات شاشة التطبيق: متاحة عند الطلب، أو استخدم الشاشات المعروضة في أنحاء هذا الموقع.",
   colors: "ألوان العلامة التجارية: الزمردي <code>#10b981</code>، والأبيض <code>#FFFFFF</code>، والأردوازي <code>#1e293b</code>",
   contactTitle: "التواصل الإعلامي",

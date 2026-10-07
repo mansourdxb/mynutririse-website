@@ -1,10 +1,14 @@
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 import { ImageResponse } from "next/og";
 
 export const alt = "MyNutriRise — Nutrition & Fitness tracking for real life";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function Image() {
+export default async function Image() {
+  const logo = `data:image/png;base64,${(await readFile(join(process.cwd(), "src/app/icon.png"))).toString("base64")}`;
+
   return new ImageResponse(
     (
       <div
@@ -26,21 +30,7 @@ export default function Image() {
             gap: 16,
           }}
         >
-          <div
-            style={{
-              width: 56,
-              height: 56,
-              borderRadius: 9999,
-              background: "#10b981",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              color: "white",
-              fontSize: 32,
-            }}
-          >
-            🌱
-          </div>
+          <img src={logo} width={64} height={64} alt="" />
           <div style={{ fontSize: 44, fontWeight: 700, color: "#047857" }}>
             MyNutriRise
           </div>

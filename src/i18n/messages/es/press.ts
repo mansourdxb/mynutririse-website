@@ -32,7 +32,7 @@ export default (f: Facts): ReturnType<typeof en> => ({
     { key: "Sitio web", value: "www.mynutririse.com" },
   ],
   assetsTitle: "Recursos de marca",
-  logo: "Logotipo de la app (SVG)",
+  logo: "Logotipo de la app (PNG)",
   screenshots: "Capturas de pantalla de la app: disponibles bajo petición, o usa las pantallas que se muestran en este sitio.",
   colors: "Colores de marca: esmeralda <code>#10b981</code>, blanco <code>#FFFFFF</code>, pizarra <code>#1e293b</code>",
   contactTitle: "Contacto para medios",

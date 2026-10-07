@@ -16,7 +16,7 @@ const organizationJsonLd = {
   "@id": "https://www.mynutririse.com/#organization",
   name: "MyNutriRise",
   url: "https://www.mynutririse.com",
-  logo: "https://www.mynutririse.com/icon.svg",
+  logo: "https://www.mynutririse.com/logo.png",
   sameAs: ["https://apps.apple.com/app/mynutririse/id6764006876"],
 };
 

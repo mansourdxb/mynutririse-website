@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect } from "react";
 import { StoreButtons } from "@/components/ui/Button";
 import type { Messages } from "@/i18n/messages";
@@ -27,17 +28,7 @@ export function DownloadRedirect({
 
   return (
     <div className="flex min-h-[70vh] flex-col items-center justify-center bg-surface px-6 pt-24 pb-16 text-center">
-      <span className="flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" className="text-white">
-          <path
-            d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </span>
+      <Image src="/logo.png" alt="" width={56} height={56} className="h-14 w-14" priority />
       <h1 className="mt-6 text-h2 text-ink">{t.title}</h1>
       <p className="mt-3 max-w-md text-ink-3">{t.body}</p>
       <StoreButtons t={store} reassurance className="mt-8" />
