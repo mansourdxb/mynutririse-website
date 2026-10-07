@@ -43,15 +43,15 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section className="relative bg-white py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section className="relative section-y">
+      <div className="container-page">
         <AnimatedSection className="mx-auto max-w-2xl text-center mb-14">
-          <p className="text-sm font-semibold tracking-widest uppercase text-emerald-600 mb-4">
+          <p className="eyebrow mb-4">
             How It Works
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-800">
+          <h2 className="text-h2 text-ink">
             Healthier in{" "}
-            <span className="text-emerald-600">
+            <span className="text-emerald-600 dark:text-emerald-400">
               three simple steps
             </span>
           </h2>
@@ -60,19 +60,19 @@ export function HowItWorks() {
         <StaggerContainer className="grid gap-8 md:grid-cols-3">
           {steps.map((step) => (
             <StaggerItem key={step.number}>
-              <div className="relative h-full rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-100 transition-shadow duration-300 hover:shadow-md">
+              <div className="relative h-full card p-8 card-hover">
                 <div className="flex items-center gap-4">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-600">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-50 dark:bg-emerald-400/10 text-emerald-600 dark:text-emerald-400">
                     {step.icon}
                   </div>
-                  <span className="text-5xl font-bold text-emerald-100">
+                  <span className="text-5xl font-bold text-emerald-100 dark:text-emerald-400/25">
                     {step.number}
                   </span>
                 </div>
-                <h3 className="mt-6 text-xl font-semibold text-slate-800">
+                <h3 className="mt-6 text-xl font-semibold text-ink">
                   {step.title}
                 </h3>
-                <p className="mt-3 leading-relaxed text-slate-500">
+                <p className="mt-3 leading-relaxed text-ink-3">
                   {step.description}
                 </p>
               </div>

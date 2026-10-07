@@ -36,8 +36,8 @@ const footerColumns = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-slate-700 bg-slate-800 text-slate-400">
-      <div className="mx-auto max-w-6xl px-6 py-16">
+    <footer className="border-t border-line bg-surface text-ink-3">
+      <div className="container-page py-16 sm:py-20">
         <div className="grid gap-12 md:grid-cols-5">
           {/* Brand column */}
           <div className="md:col-span-2">
@@ -59,11 +59,11 @@ export function Footer() {
                   />
                 </svg>
               </span>
-              <span className="text-lg font-semibold tracking-tight text-white">
+              <span className="font-display text-lg font-bold tracking-tight text-ink">
                 MyNutriRise
               </span>
             </Link>
-            <p className="mt-3 max-w-xs text-sm leading-relaxed text-slate-400">
+            <p className="mt-3 max-w-xs text-sm leading-relaxed text-ink-3">
               Your smart wellness companion — AI meal scanning, halal &amp;
               cultural recipes, fasting, and coaching in one app.
             </p>
@@ -76,7 +76,7 @@ export function Footer() {
           {/* Link columns */}
           {footerColumns.map((column) => (
             <div key={column.title}>
-              <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white">
+              <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-ink">
                 {column.title}
               </h3>
               <ul className="space-y-3">
@@ -84,7 +84,7 @@ export function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-sm transition-colors hover:text-emerald-400"
+                      className="text-sm transition-colors hover:text-accent-strong"
                     >
                       {link.label}
                     </Link>
@@ -96,13 +96,13 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-slate-700 pt-8 md:flex-row">
+        <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-line pt-8 md:flex-row">
           <div className="flex flex-col items-center gap-1 md:items-start">
             <p className="text-xs">
               &copy; {new Date().getFullYear()} MyNutriRise. All rights
               reserved.
             </p>
-            <p className="text-xs text-slate-500">
+            <p className="text-xs text-ink-3">
               Made with{" "}
               <span role="img" aria-label="green heart">
                 💚

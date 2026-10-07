@@ -4,88 +4,77 @@ import { PhoneMockup } from "@/components/ui/PhoneMockup";
 import { RECIPES } from "@/data/facts";
 
 const featurePills = [
-  { label: "AI Meal Scan", top: "10%", right: "-8%", delay: 0.6 },
-  { label: "Halal & Cultural Diets", top: "45%", right: "-12%", delay: 0.75 },
-  { label: `${RECIPES} Recipes`, bottom: "18%", left: "-6%", delay: 0.9 },
+  { label: "AI Meal Scan", dot: "bg-emerald-500", top: "12%", right: "-4%", delay: 0.6 },
+  { label: "Halal & Cultural Diets", dot: "bg-teal-500", top: "48%", right: "-10%", delay: 0.75 },
+  { label: `${RECIPES} Recipes`, dot: "bg-amber-500", bottom: "16%", left: "-4%", delay: 0.9 },
 ];
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-white via-[#f5faf6] to-white pt-32 pb-20 md:pt-36 md:pb-28 lg:pt-40 lg:pb-32">
-      {/* Ambient background gradients */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-24 right-[10%] h-[500px] w-[500px] rounded-full bg-emerald-300/15 blur-[120px]" />
-        <div className="absolute -bottom-32 -left-16 h-[450px] w-[450px] rounded-full bg-emerald-200/10 blur-[100px]" />
-        <div className="absolute left-1/2 top-1/3 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-emerald-400/[0.07] blur-[140px]" />
-        <div className="absolute right-[30%] top-[20%] h-[200px] w-[200px] rounded-full bg-amber-300/10 blur-[80px]" />
+    <section className="overflow-hidden wash-mint pt-28 pb-16 md:pt-36 md:pb-24 lg:pt-40 lg:pb-28">
+      {/* Ambient glow */}
+      <div className="pointer-events-none absolute inset-0 [mask-image:linear-gradient(to_bottom,#000_60%,transparent)]" aria-hidden="true">
+        <div className="absolute -top-32 right-[8%] h-[520px] w-[520px] rounded-full bg-emerald-300/20 blur-[130px] dark:bg-emerald-500/10" />
+        <div className="absolute -bottom-40 -left-24 h-[420px] w-[420px] rounded-full bg-amber-200/20 blur-[120px] dark:bg-amber-500/5" />
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:gap-16">
+      <div className="relative container-page">
+        <div className="grid items-center gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10">
           {/* Text content */}
-          <div className="flex-1 text-center lg:text-left">
-            {/* Headline */}
+          <div className="text-center lg:text-left">
             <h1
-              className="anim-fade-up text-5xl font-bold tracking-tight text-slate-800 sm:text-6xl lg:text-7xl"
-              style={{ animationDelay: "0.15s" }}
+              className="anim-fade-up text-display text-ink"
+              style={{ animationDelay: "0.1s" }}
             >
               Nutrition &amp; Fitness tracking{" "}
-              <span className="text-emerald-600">for real life</span>
+              <span className="bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent dark:from-emerald-300 dark:to-teal-300">
+                for real life
+              </span>
             </h1>
 
-            {/* Subtitle */}
             <p
-              className="anim-fade-up mt-6 max-w-xl text-lg leading-relaxed text-slate-500"
-              style={{ animationDelay: "0.25s" }}
+              className="anim-fade-up mx-auto mt-6 max-w-xl text-lead text-ink-3 lg:mx-0"
+              style={{ animationDelay: "0.2s" }}
             >
               Snap a photo and AI logs your meal. Follow halal and cultural
               meal plans, track fasting and workouts, and get intelligent
               coaching — everything you need for a healthier, happier life.
             </p>
 
-            {/* Warm gold accent line */}
             <div
-              className="anim-fade-up mx-auto mt-8 h-0.5 w-12 rounded-full bg-gradient-to-r from-amber-300 to-amber-200 lg:mx-0"
+              className="anim-fade-up mt-9 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start"
               style={{ animationDelay: "0.3s" }}
-            />
-
-            {/* App Store buttons */}
-            <div
-              className="anim-fade-up mt-8 flex flex-col items-center gap-4 sm:flex-row lg:justify-start"
-              style={{ animationDelay: "0.35s" }}
             >
               <AppStoreButton store="apple" />
               <AppStoreButton store="google" />
             </div>
 
-            {/* Risk reversal + quiz link */}
             <p
-              className="anim-fade-up mt-4 text-sm text-slate-500"
-              style={{ animationDelay: "0.45s" }}
+              className="anim-fade-up mt-5 text-sm text-ink-3"
+              style={{ animationDelay: "0.4s" }}
             >
               Free to download &middot; Premium optional &middot; Cancel anytime
             </p>
             <p
               className="anim-fade-up mt-3 text-sm"
-              style={{ animationDelay: "0.5s" }}
+              style={{ animationDelay: "0.45s" }}
             >
               <a
                 href="/quiz"
-                className="font-semibold text-emerald-600 transition-colors hover:text-emerald-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 rounded-sm"
+                className="rounded-sm font-semibold text-accent-strong transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
               >
                 Not sure where to start? Get your custom plan in 1 minute →
               </a>
             </p>
           </div>
 
-          {/* Phone mockup area */}
-          <div className="relative flex-1">
-            {/* Emerald glow behind phone */}
-            <div className="pointer-events-none absolute left-1/2 top-1/2 h-[340px] w-[340px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-emerald-400/[0.12] blur-[80px]" />
-            <div className="pointer-events-none absolute left-[40%] top-[40%] h-[220px] w-[220px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-emerald-300/20 blur-[60px]" />
-
-            {/* Floating phone */}
-            <div className="anim-float relative flex justify-center">
+          {/* Device */}
+          <div className="relative mx-auto w-full max-w-[420px]">
+            <div
+              className="pointer-events-none absolute left-1/2 top-1/2 h-[360px] w-[360px] max-w-full -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-emerald-300/40 to-teal-200/30 blur-[70px] dark:from-emerald-500/20 dark:to-teal-500/10"
+              aria-hidden="true"
+            />
+            <div className="anim-float relative">
               <PhoneMockup>
                 <div className="relative aspect-[9/19.5] w-full">
                   <Image
@@ -93,18 +82,17 @@ export function Hero() {
                     alt="MyNutriRise Dashboard"
                     fill
                     className="object-cover object-top"
-                    sizes="300px"
+                    sizes="290px"
                     priority
                   />
                 </div>
               </PhoneMockup>
             </div>
 
-            {/* Floating feature pills */}
             {featurePills.map((pill) => (
               <span
                 key={pill.label}
-                className="anim-fade-up absolute hidden rounded-full bg-white/80 px-3 py-1.5 text-xs font-medium text-slate-600 shadow-sm ring-1 ring-slate-200/60 backdrop-blur-sm md:block"
+                className="anim-fade-up glass absolute hidden items-center gap-2 rounded-2xl px-3.5 py-2 text-xs font-semibold text-ink md:inline-flex"
                 style={{
                   top: pill.top,
                   right: pill.right,
@@ -113,27 +101,11 @@ export function Hero() {
                   animationDelay: `${pill.delay}s`,
                 }}
               >
+                <span className={`h-2 w-2 rounded-full ${pill.dot}`} aria-hidden="true" />
                 {pill.label}
               </span>
             ))}
           </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <div className="anim-bounce-soft mt-16 flex justify-center">
-          <svg
-            className="h-5 w-5 text-slate-300"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M19 9l-7 7-7-7"
-            />
-          </svg>
         </div>
       </div>
     </section>

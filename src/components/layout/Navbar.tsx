@@ -39,11 +39,11 @@ export function Navbar() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-white/80 backdrop-blur-lg border-b border-amber-100/60 shadow-[0_1px_3px_rgba(0,0,0,0.04)]"
+            ? "bg-canvas/75 backdrop-blur-xl border-b border-line/70"
             : "bg-transparent"
         }`}
       >
-        <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+        <nav className="container-page flex items-center justify-between py-3.5">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <span className="flex h-7 w-7 items-center justify-center rounded-full bg-emerald-500">
@@ -63,7 +63,7 @@ export function Navbar() {
                 />
               </svg>
             </span>
-            <span className="text-lg font-semibold tracking-tight text-emerald-700">
+            <span className="font-display text-lg font-bold tracking-tight text-ink">
               MyNutriRise
             </span>
           </Link>
@@ -74,14 +74,14 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-slate-600 transition-colors duration-200 hover:text-emerald-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 rounded-sm"
+                className="text-sm font-medium text-ink-2 transition-colors duration-200 hover:text-emerald-600 dark:hover:text-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 rounded-sm"
               >
                 {link.label}
               </Link>
             ))}
             <Link
               href="/#download"
-              className="rounded-full bg-emerald-500 px-6 py-2.5 text-sm font-medium text-white shadow-sm shadow-emerald-500/20 transition-all duration-200 hover:bg-emerald-600 hover:shadow-md hover:shadow-emerald-500/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2"
+              className="btn-primary px-5 py-2.5 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
             >
               Download App
             </Link>
@@ -103,12 +103,12 @@ export function Navbar() {
                     : { rotate: 0, y: 0 }
                 }
                 transition={{ duration: 0.2 }}
-                className="block h-0.5 w-full rounded-full bg-slate-700"
+                className="block h-0.5 w-full rounded-full bg-ink-2"
               />
               <motion.span
                 animate={mobileOpen ? { opacity: 0 } : { opacity: 1 }}
                 transition={{ duration: 0.15 }}
-                className="block h-0.5 w-full rounded-full bg-slate-700"
+                className="block h-0.5 w-full rounded-full bg-ink-2"
               />
               <motion.span
                 animate={
@@ -117,7 +117,7 @@ export function Navbar() {
                     : { rotate: 0, y: 0 }
                 }
                 transition={{ duration: 0.2 }}
-                className="block h-0.5 w-full rounded-full bg-slate-700"
+                className="block h-0.5 w-full rounded-full bg-ink-2"
               />
             </div>
           </button>
@@ -143,7 +143,7 @@ export function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 28, stiffness: 220 }}
-              className="absolute right-0 top-0 bottom-0 w-full max-w-sm bg-white shadow-xl"
+              className="absolute right-0 top-0 bottom-0 w-full max-w-sm bg-surface shadow-xl"
             >
               <div className="flex h-full flex-col items-center justify-center gap-6 px-8">
                 {navLinks.map((link, i) => (
@@ -156,7 +156,7 @@ export function Navbar() {
                     <Link
                       href={link.href}
                       onClick={() => setMobileOpen(false)}
-                      className="text-2xl font-medium text-slate-700 transition-colors hover:text-emerald-600"
+                      className="text-2xl font-medium text-ink-2 transition-colors hover:text-emerald-600 dark:hover:text-emerald-400"
                     >
                       {link.label}
                     </Link>

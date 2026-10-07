@@ -32,7 +32,7 @@ const row2 = [
 function ScreenCard({ src, label }: { src: string; label: string }) {
   return (
     <div className="group relative flex-shrink-0 w-[160px] sm:w-[190px] lg:w-[210px] transition-transform duration-300 hover:scale-105 hover:-translate-y-2">
-      <div className="relative overflow-hidden rounded-2xl bg-white shadow-lg shadow-slate-200/60 ring-1 ring-slate-100 transition-shadow duration-300 group-hover:shadow-xl group-hover:shadow-emerald-200/30 group-hover:ring-emerald-200">
+      <div className="relative overflow-hidden rounded-2xl bg-surface shadow-lg shadow-slate-200/60 ring-1 ring-line transition-shadow duration-300 group-hover:shadow-xl group-hover:shadow-emerald-200/30 group-hover:ring-emerald-200 dark:group-hover:ring-emerald-400/20">
         <div className="relative aspect-[9/19.5] w-full">
           <Image
             src={src}
@@ -84,19 +84,19 @@ function MarqueeRow({
 
 export function AppShowcase() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-white via-emerald-50/30 to-white py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section className="relative overflow-hidden wash-mint section-y">
+      <div className="container-page">
         <AnimatedSection className="mx-auto max-w-2xl text-center mb-14">
-          <p className="text-sm font-semibold tracking-widest uppercase text-emerald-600 mb-4">
+          <p className="eyebrow mb-4">
             See It In Action
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-800">
+          <h2 className="text-h2 text-ink">
             Beautiful screens,{" "}
-            <span className="text-emerald-600">
+            <span className="text-emerald-600 dark:text-emerald-400">
               endless possibilities
             </span>
           </h2>
-          <p className="mt-4 text-lg text-slate-500">
+          <p className="mt-4 text-lead text-ink-3">
             Every screen designed with care. Explore the complete MyNutriRise experience.
           </p>
         </AnimatedSection>
@@ -108,8 +108,8 @@ export function AppShowcase() {
       </div>
 
       {/* Fade edges */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-20 sm:w-32 bg-gradient-to-r from-white to-transparent z-10" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-20 sm:w-32 bg-gradient-to-l from-white to-transparent z-10" />
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-20 sm:w-32 bg-gradient-to-r from-canvas to-transparent z-10" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-20 sm:w-32 bg-gradient-to-l from-canvas to-transparent z-10" />
     </section>
   );
 }
