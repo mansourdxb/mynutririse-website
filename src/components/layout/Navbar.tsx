@@ -3,18 +3,22 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { localePath, type Locale } from "@/i18n/config";
+import type { Messages } from "@/i18n/messages";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
-const navLinks = [
-  { href: "/features", label: "Features" },
-  { href: "/tools", label: "Tools" },
-  { href: "/quiz", label: "Custom Plan" },
-  { href: "/#premium", label: "Premium" },
-  { href: "/recipes", label: "Recipes" },
-  { href: "/blog", label: "Blog" },
-  { href: "/support", label: "Support" },
-];
+export function Navbar({ lang, t }: { lang: Locale; t: Messages["common"]["nav"] }) {
+  const navLinks = [
+    { href: "/features", label: t.features },
+    { href: "/tools", label: t.tools },
+    { href: "/quiz", label: t.customPlan },
+    { href: "/#premium", label: t.premium },
+    { href: "/recipes", label: t.recipes },
+    { href: "/blog", label: t.blog },
+    { href: "/support", label: t.support },
+  ].map((l) => ({ ...l, href: localePath(lang, l.href) }));
+  const slideFrom = lang === "ar" ? "-100%" : "100%";
 
-export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -37,15 +41,15 @@ export function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 start-0 end-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-white/80 backdrop-blur-lg border-b border-amber-100/60 shadow-[0_1px_3px_rgba(0,0,0,0.04)]"
+            ? "bg-canvas/75 backdrop-blur-xl border-b border-line/70"
             : "bg-transparent"
         }`}
       >
-        <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+        <nav className="container-page flex items-center justify-between py-3.5">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
+          <Link href={localePath(lang, "/")} className="flex items-center gap-2">
             <span className="flex h-7 w-7 items-center justify-center rounded-full bg-emerald-500">
               <svg
                 width="14"
@@ -63,7 +67,7 @@ export function Navbar() {
                 />
               </svg>
             </span>
-            <span className="text-lg font-semibold tracking-tight text-emerald-700">
+            <span className="font-display text-lg font-bold tracking-tight text-ink">
               MyNutriRise
             </span>
           </Link>
@@ -74,17 +78,18 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-slate-600 transition-colors duration-200 hover:text-emerald-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 rounded-sm"
+                className="text-sm font-medium text-ink-2 transition-colors duration-200 hover:text-emerald-600 dark:hover:text-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 rounded-sm"
               >
                 {link.label}
               </Link>
             ))}
             <Link
-              href="/#download"
-              className="rounded-full bg-emerald-500 px-6 py-2.5 text-sm font-medium text-white shadow-sm shadow-emerald-500/20 transition-all duration-200 hover:bg-emerald-600 hover:shadow-md hover:shadow-emerald-500/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2"
+              href={localePath(lang, "/#download")}
+              className="btn-primary px-5 py-2.5 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
             >
-              Download App
+              {t.download}
             </Link>
+            <LanguageSwitcher lang={lang} label={t.language} />
           </div>
 
           {/* Mobile hamburger */}
@@ -92,7 +97,7 @@ export function Navbar() {
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
             className="relative z-50 flex h-10 w-10 items-center justify-center rounded-lg md:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
-            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            aria-label={mobileOpen ? t.closeMenu : t.openMenu}
             aria-expanded={mobileOpen}
           >
             <div className="flex w-5 flex-col gap-1.5">
@@ -103,12 +108,12 @@ export function Navbar() {
                     : { rotate: 0, y: 0 }
                 }
                 transition={{ duration: 0.2 }}
-                className="block h-0.5 w-full rounded-full bg-slate-700"
+                className="block h-0.5 w-full rounded-full bg-ink-2"
               />
               <motion.span
                 animate={mobileOpen ? { opacity: 0 } : { opacity: 1 }}
                 transition={{ duration: 0.15 }}
-                className="block h-0.5 w-full rounded-full bg-slate-700"
+                className="block h-0.5 w-full rounded-full bg-ink-2"
               />
               <motion.span
                 animate={
@@ -117,7 +122,7 @@ export function Navbar() {
                     : { rotate: 0, y: 0 }
                 }
                 transition={{ duration: 0.2 }}
-                className="block h-0.5 w-full rounded-full bg-slate-700"
+                className="block h-0.5 w-full rounded-full bg-ink-2"
               />
             </div>
           </button>
@@ -139,11 +144,11 @@ export function Navbar() {
 
             {/* Panel */}
             <motion.div
-              initial={{ x: "100%" }}
+              initial={{ x: slideFrom }}
               animate={{ x: 0 }}
-              exit={{ x: "100%" }}
+              exit={{ x: slideFrom }}
               transition={{ type: "spring", damping: 28, stiffness: 220 }}
-              className="absolute right-0 top-0 bottom-0 w-full max-w-sm bg-white shadow-xl"
+              className="absolute end-0 top-0 bottom-0 w-full max-w-sm bg-surface shadow-xl"
             >
               <div className="flex h-full flex-col items-center justify-center gap-6 px-8">
                 {navLinks.map((link, i) => (
@@ -156,7 +161,7 @@ export function Navbar() {
                     <Link
                       href={link.href}
                       onClick={() => setMobileOpen(false)}
-                      className="text-2xl font-medium text-slate-700 transition-colors hover:text-emerald-600"
+                      className="text-2xl font-medium text-ink-2 transition-colors hover:text-emerald-600 dark:hover:text-emerald-400"
                     >
                       {link.label}
                     </Link>
@@ -168,13 +173,14 @@ export function Navbar() {
                   transition={{ delay: 0.1 + navLinks.length * 0.05 }}
                 >
                   <Link
-                    href="/#download"
+                    href={localePath(lang, "/#download")}
                     onClick={() => setMobileOpen(false)}
                     className="mt-4 inline-block rounded-full bg-emerald-500 px-8 py-3 text-base font-medium text-white shadow-sm shadow-emerald-500/20 transition-all duration-200 hover:bg-emerald-600 hover:shadow-md"
                   >
-                    Download App
+                    {t.download}
                   </Link>
                 </motion.div>
+                <LanguageSwitcher lang={lang} label={t.language} variant="list" />
               </div>
             </motion.div>
           </motion.div>

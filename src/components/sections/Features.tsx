@@ -6,6 +6,17 @@ import Image from "next/image";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { PhoneMockup } from "@/components/ui/PhoneMockup";
 import { CountUpValue } from "@/components/ui/CountUp";
+import { CUISINE_COUNT, CUISINE_FLOOR } from "@/data/facts";
+import { localePath, type Locale } from "@/i18n/config";
+import type { Messages } from "@/i18n/messages";
+import { fill, rich } from "@/i18n/rich";
+
+type T = Messages["features"];
+type CardsT = T["cards"];
+
+const hl = (c: React.ReactNode) => (
+  <span className="text-emerald-600 dark:text-emerald-400">{c}</span>
+);
 
 function BlockPhone({ src, alt }: { src: string; alt: string }) {
   return (
@@ -85,10 +96,10 @@ function BulletList({ items }: { items: string[] }) {
     <ul className="mt-6 space-y-3">
       {items.map((item) => (
         <li key={item} className="flex items-start gap-3">
-          <span className="mt-0.5 flex-shrink-0 rounded-full bg-emerald-100 p-1 text-emerald-600">
+          <span className="mt-0.5 flex-shrink-0 rounded-full bg-emerald-100 dark:bg-emerald-400/15 p-1 text-emerald-600 dark:text-emerald-400">
             <CheckIcon className="w-3.5 h-3.5" />
           </span>
-          <span className="text-[15px] leading-relaxed text-slate-600">
+          <span className="text-[15px] leading-relaxed text-ink-2">
             {item}
           </span>
         </li>
@@ -157,14 +168,14 @@ function MacroRing({
           />
         </svg>
         <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <span className="text-sm font-bold text-slate-800">{value}</span>
-          <span className="text-[9px] text-slate-500">{unit}</span>
+          <span className="text-sm font-bold text-ink">{value}</span>
+          <span className="text-[9px] text-ink-3">{unit}</span>
         </div>
       </div>
       <span className="text-[11px] font-medium" style={{ color }}>
         {label}
       </span>
-      <span className="text-[9px] text-slate-500">
+      <span className="text-[9px] text-ink-3">
         / {total}
         {unit}
       </span>
@@ -176,28 +187,28 @@ function MacroRing({
 /*  Block 1 : Smart Nutrition Intelligence                            */
 /* ================================================================== */
 
-function NutritionCards() {
+function NutritionCards({ t }: { t: CardsT }) {
   return (
     <div className="relative mx-auto w-full max-w-md py-6">
       <BlockPhone
         src="/screenshots/scanned-food.png"
-        alt="AI meal scan result in MyNutriRise showing calories, macros and health score"
+        alt={t.nutritionAlt}
       />
       {/* Calories card */}
       <motion.div
         animate={float1}
-        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:top-10 sm:left-0 w-56 rounded-2xl bg-white/90 backdrop-blur border border-emerald-100/60 shadow-lg shadow-emerald-900/5 p-5"
+        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:top-10 sm:start-0 w-56 rounded-2xl bg-surface/90 backdrop-blur border border-emerald-100/60 dark:border-emerald-400/20 shadow-lg shadow-emerald-900/5 p-5"
       >
-        <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">
-          Calories
+        <p className="text-xs font-semibold uppercase tracking-wider text-ink-3 mb-2">
+          {t.calories}
         </p>
         <div className="flex items-end gap-1.5">
-          <span className="text-3xl font-bold text-slate-800">
+          <span className="text-3xl font-bold text-ink">
             <CountUpValue target={1693} />
           </span>
-          <span className="text-sm text-slate-500 mb-1">/ 2,100 kcal</span>
+          <span className="text-sm text-ink-3 mb-1">{fill(t.caloriesOf, { n: "2,100" })}</span>
         </div>
-        <div className="mt-3 h-2 rounded-full bg-emerald-100 overflow-hidden">
+        <div className="mt-3 h-2 rounded-full bg-emerald-100 dark:bg-emerald-400/15 overflow-hidden">
           <motion.div
             className="h-full rounded-full bg-gradient-to-r from-emerald-400 to-emerald-500"
             initial={{ width: 0 }}
@@ -206,43 +217,43 @@ function NutritionCards() {
             transition={{ duration: 1.2, ease: "easeOut", delay: 0.3 }}
           />
         </div>
-        <p className="mt-2 text-xs text-emerald-600 font-medium">
-          407 kcal remaining
+        <p className="mt-2 text-xs text-emerald-600 dark:text-emerald-400 font-medium">
+          {fill(t.kcalRemaining, { n: 407 })}
         </p>
       </motion.div>
 
       {/* Macros rings card */}
       <motion.div
         animate={float2}
-        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:bottom-16 sm:right-0 w-60 rounded-2xl bg-white/90 backdrop-blur border border-purple-100/60 shadow-lg shadow-purple-900/5 p-5"
+        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:bottom-16 sm:end-0 w-60 rounded-2xl bg-surface/90 backdrop-blur border border-purple-100/60 dark:border-purple-400/20 shadow-lg shadow-purple-900/5 p-5"
       >
-        <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-4">
-          Macros
+        <p className="text-xs font-semibold uppercase tracking-wider text-ink-3 mb-4">
+          {t.macros}
         </p>
         <div className="flex justify-around">
           <MacroRing
-            label="Protein"
+            label={t.protein}
             value={120}
             total={150}
-            unit="g"
+            unit={t.gramUnit}
             color="#8B5CF6"
             percent={80}
             delay={0.3}
           />
           <MacroRing
-            label="Carbs"
+            label={t.carbs}
             value={159}
             total={230}
-            unit="g"
+            unit={t.gramUnit}
             color="#F59E0B"
             percent={69}
             delay={0.5}
           />
           <MacroRing
-            label="Fat"
+            label={t.fat}
             value={53}
             total={70}
-            unit="g"
+            unit={t.gramUnit}
             color="#FF7A6B"
             percent={76}
             delay={0.7}
@@ -258,20 +269,20 @@ function NutritionCards() {
 /*  Block 2 : Your Wellness Ecosystem                                 */
 /* ================================================================== */
 
-function WellnessCards() {
+function WellnessCards({ t }: { t: CardsT }) {
   return (
     <div className="relative mx-auto w-full max-w-md py-6">
       <BlockPhone
         src="/screenshots/today.png"
-        alt="MyNutriRise dashboard with calories, water, exercise and sleep tracking"
+        alt={t.wellnessAlt}
       />
       {/* Fasting timer circle */}
       <motion.div
         animate={float2}
-        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:top-10 sm:right-0 w-48 rounded-2xl bg-white/90 backdrop-blur border border-emerald-100/60 shadow-lg shadow-emerald-900/5 p-5 flex flex-col items-center"
+        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:top-10 sm:end-0 w-48 rounded-2xl bg-surface/90 backdrop-blur border border-emerald-100/60 dark:border-emerald-400/20 shadow-lg shadow-emerald-900/5 p-5 flex flex-col items-center"
       >
-        <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-3">
-          Fasting
+        <p className="text-xs font-semibold uppercase tracking-wider text-ink-3 mb-3">
+          {t.fasting}
         </p>
         <div className="relative w-24 h-24">
           <svg viewBox="0 0 100 100" className="w-full h-full -rotate-90">
@@ -305,28 +316,28 @@ function WellnessCards() {
             </defs>
           </svg>
           <div className="absolute inset-0 flex flex-col items-center justify-center">
-            <span className="text-lg font-bold text-slate-800">16:08</span>
-            <span className="text-[10px] text-emerald-600 font-medium">
-              remaining
+            <span className="text-lg font-bold text-ink">16:08</span>
+            <span className="text-[10px] text-emerald-600 dark:text-emerald-400 font-medium">
+              {t.remaining}
             </span>
           </div>
         </div>
-        <p className="mt-2 text-xs text-slate-500">16:8 Protocol</p>
+        <p className="mt-2 text-xs text-ink-3">{t.protocol}</p>
       </motion.div>
 
       {/* Sleep badge */}
       <motion.div
         animate={float4}
-        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:bottom-16 sm:left-0 flex items-center gap-2.5 rounded-xl bg-white/90 backdrop-blur border border-indigo-100/60 shadow-md shadow-indigo-900/5 px-4 py-3"
+        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:bottom-16 sm:start-0 flex items-center gap-2.5 rounded-xl bg-surface/90 backdrop-blur border border-indigo-100/60 dark:border-indigo-400/20 shadow-md shadow-indigo-900/5 px-4 py-3"
       >
-        <div className="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-4 h-4 text-indigo-500">
+        <div className="w-8 h-8 rounded-lg bg-indigo-50 dark:bg-indigo-400/10 flex items-center justify-center">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-4 h-4 text-indigo-500 dark:text-indigo-400">
             <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>
         <div>
-          <p className="text-xs font-semibold text-slate-700">7h 42m Sleep</p>
-          <p className="text-[11px] text-indigo-500">Good quality</p>
+          <p className="text-xs font-semibold text-ink-2">{fill(t.sleep, { h: 7, m: 42 })}</p>
+          <p className="text-[11px] text-indigo-500 dark:text-indigo-400">{t.goodQuality}</p>
         </div>
       </motion.div>
     </div>
@@ -337,20 +348,20 @@ function WellnessCards() {
 /*  Block 3 : Intelligent Coaching & Insights                         */
 /* ================================================================== */
 
-function CoachingCards() {
+function CoachingCards({ t }: { t: CardsT }) {
   return (
     <div className="relative mx-auto w-full max-w-md py-6">
       <BlockPhone
         src="/screenshots/ai-coach.png"
-        alt="MyNutriRise AI coach chat with meal, exercise and weight guidance"
+        alt={t.coachingAlt}
       />
       {/* Weekly report card */}
       <motion.div
         animate={float2}
-        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:bottom-16 sm:left-0 w-56 rounded-2xl bg-white/90 backdrop-blur border border-violet-100/60 shadow-lg shadow-violet-900/5 p-4"
+        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:bottom-16 sm:start-0 w-56 rounded-2xl bg-surface/90 backdrop-blur border border-violet-100/60 dark:border-violet-400/20 shadow-lg shadow-violet-900/5 p-4"
       >
         <div className="flex items-center gap-2 mb-3">
-          <div className="w-8 h-8 rounded-lg bg-violet-50 flex items-center justify-center">
+          <div className="w-8 h-8 rounded-lg bg-violet-50 dark:bg-violet-400/10 flex items-center justify-center">
             <svg
               viewBox="0 0 24 24"
               fill="none"
@@ -358,37 +369,37 @@ function CoachingCards() {
               strokeWidth={1.5}
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="w-4 h-4 text-violet-500"
+              className="w-4 h-4 text-violet-500 dark:text-violet-400"
             >
               <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
               <polyline points="17 6 23 6 23 12" />
             </svg>
           </div>
-          <p className="text-xs font-semibold text-slate-700">Weekly Report</p>
+          <p className="text-xs font-semibold text-ink-2">{t.weeklyReport}</p>
         </div>
         <div className="grid grid-cols-2 gap-2">
-          <div className="bg-violet-50/60 rounded-lg p-2 text-center">
-            <p className="text-sm font-bold text-violet-600">
+          <div className="bg-violet-50/60 dark:bg-violet-400/10 rounded-lg p-2 text-center">
+            <p className="text-sm font-bold text-violet-600 dark:text-violet-400">
               <CountUpValue target={86} suffix="%" />
             </p>
-            <p className="text-[9px] text-slate-500">Consistency</p>
+            <p className="text-[9px] text-ink-3">{t.consistency}</p>
           </div>
-          <div className="bg-emerald-50/60 rounded-lg p-2 text-center">
-            <p className="text-sm font-bold text-emerald-600">
+          <div className="bg-emerald-50/60 dark:bg-emerald-400/10 rounded-lg p-2 text-center">
+            <p className="text-sm font-bold text-emerald-600 dark:text-emerald-400">
               <CountUpValue target={2113} />
             </p>
-            <p className="text-[9px] text-slate-500">Avg kcal</p>
+            <p className="text-[9px] text-ink-3">{t.avgKcal}</p>
           </div>
         </div>
-        <p className="mt-2 text-[10px] text-slate-500 text-center">
-          Shareable &middot; PDF Export
+        <p className="mt-2 text-[10px] text-ink-3 text-center">
+          {t.shareable}
         </p>
       </motion.div>
 
       {/* AI coach reply bubble */}
       <motion.div
         animate={float4}
-        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:top-12 sm:right-0 w-52 rounded-2xl bg-white/90 backdrop-blur border border-emerald-100/60 shadow-lg shadow-emerald-900/5 p-4"
+        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:top-12 sm:end-0 w-52 rounded-2xl bg-surface/90 backdrop-blur border border-emerald-100/60 dark:border-emerald-400/20 shadow-lg shadow-emerald-900/5 p-4"
       >
         <div className="flex items-center gap-2 mb-2.5">
           <div className="w-7 h-7 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center">
@@ -405,14 +416,13 @@ function CoachingCards() {
             </svg>
           </div>
           <div>
-            <p className="text-xs font-semibold text-slate-700">Nutri &middot; AI Coach</p>
-            <p className="text-[10px] text-emerald-500">Online</p>
+            <p className="text-xs font-semibold text-ink-2">{t.coachName}</p>
+            <p className="text-[10px] text-emerald-500 dark:text-emerald-400">{t.online}</p>
           </div>
         </div>
-        <div className="bg-emerald-50 rounded-2xl rounded-tl-sm px-3 py-2">
-          <p className="text-[11px] text-slate-700 leading-relaxed">
-            Your mornings average 15g protein — try Greek yogurt with nuts.
-            Added to your plan ✓
+        <div className="bg-emerald-50 dark:bg-emerald-400/10 rounded-2xl rounded-ss-sm px-3 py-2">
+          <p className="text-[11px] text-ink-2 leading-relaxed">
+            {t.coachMessage}
           </p>
         </div>
       </motion.div>
@@ -421,58 +431,58 @@ function CoachingCards() {
 }
 
 /* ================================================================== */
-/*  Block : 9,000+ Recipes                                            */
+/*  Block : Recipes                                                   */
 /* ================================================================== */
 
-function RecipeCards() {
+function RecipeCards({ t }: { t: CardsT }) {
   return (
     <div className="relative mx-auto w-full max-w-md py-6">
       <BlockPhone
         src="/screenshots/recipes.png"
-        alt="MyNutriRise recipes screen with 9,000 healthy recipes and categories"
+        alt={t.recipesAlt}
       />
       {/* Dish nutrition card */}
       <motion.div
         animate={float1}
-        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:top-10 sm:left-0 w-52 rounded-2xl bg-white/90 backdrop-blur border border-amber-100/60 shadow-lg shadow-amber-900/5 p-4"
+        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:top-10 sm:start-0 w-52 rounded-2xl bg-surface/90 backdrop-blur border border-amber-100/60 dark:border-amber-400/20 shadow-lg shadow-amber-900/5 p-4"
       >
         <div className="flex items-start justify-between mb-1.5">
           <span className="text-2xl" aria-hidden="true">🍲</span>
-          <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-700">
-            <CountUpValue target={380} /> kcal
+          <span className="rounded-full bg-emerald-50 dark:bg-emerald-400/10 px-2 py-0.5 text-[10px] font-semibold text-emerald-700 dark:text-emerald-300">
+            {rich(t.dishKcal, { count: () => <CountUpValue target={380} /> })}
           </span>
         </div>
-        <p className="text-sm font-semibold text-slate-700">Chicken Tagine</p>
-        <p className="text-[11px] text-slate-500">Moroccan</p>
-        <div className="mt-2 flex gap-2.5 text-[10px] text-slate-500">
-          <span><strong className="text-rose-500">30g</strong> protein</span>
-          <span><strong className="text-blue-500">25g</strong> carbs</span>
-          <span><strong className="text-amber-500">18g</strong> fat</span>
+        <p className="text-sm font-semibold text-ink-2">{t.dishName}</p>
+        <p className="text-[11px] text-ink-3">{t.dishCuisine}</p>
+        <div className="mt-2 flex gap-2.5 text-[10px] text-ink-3">
+          <span>{rich(fill(t.dishProtein, { n: 30 }), { b: (c) => <strong className="text-rose-500 dark:text-rose-400">{c}</strong> })}</span>
+          <span>{rich(fill(t.dishCarbs, { n: 25 }), { b: (c) => <strong className="text-blue-500 dark:text-blue-400">{c}</strong> })}</span>
+          <span>{rich(fill(t.dishFat, { n: 18 }), { b: (c) => <strong className="text-amber-500 dark:text-amber-400">{c}</strong> })}</span>
         </div>
       </motion.div>
 
       {/* Cuisines badge */}
       <motion.div
         animate={float3}
-        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:bottom-16 sm:right-0 w-48 rounded-2xl bg-white/90 backdrop-blur border border-teal-100/60 shadow-lg shadow-teal-900/5 p-4"
+        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:bottom-16 sm:end-0 w-48 rounded-2xl bg-surface/90 backdrop-blur border border-teal-100/60 dark:border-teal-400/20 shadow-lg shadow-teal-900/5 p-4"
       >
-        <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">
-          <CountUpValue target={50} suffix="+" /> Cuisines
+        <p className="text-xs font-semibold uppercase tracking-wider text-ink-3 mb-2">
+          {rich(t.cuisinesCount, { count: () => <CountUpValue target={CUISINE_FLOOR} suffix="+" /> })}
         </p>
         <div className="flex flex-wrap gap-1">
-          {["Turkish", "Moroccan", "Pakistani", "Afghan", "Gulf", "+45"].map(
+          {[...t.cuisineChips, `+${CUISINE_COUNT - t.cuisineChips.length}`].map(
             (c) => (
               <span
                 key={c}
-                className="rounded-full bg-teal-50 px-2 py-0.5 text-[10px] font-medium text-teal-600"
+                className="rounded-full bg-teal-50 dark:bg-teal-400/10 px-2 py-0.5 text-[10px] font-medium text-teal-600 dark:text-teal-400"
               >
                 {c}
               </span>
             )
           )}
         </div>
-        <p className="mt-2 text-[10px] text-emerald-600 font-medium">
-          Your culture&apos;s food, included
+        <p className="mt-2 text-[10px] text-emerald-600 dark:text-emerald-400 font-medium">
+          {t.cultureIncluded}
         </p>
       </motion.div>
     </div>
@@ -483,39 +493,39 @@ function RecipeCards() {
 /*  Block : Workouts, Routines & Exercises                            */
 /* ================================================================== */
 
-function WorkoutCards() {
+function WorkoutCards({ t }: { t: CardsT }) {
   return (
     <div className="relative mx-auto w-full max-w-md py-6">
       <BlockPhone
         src="/screenshots/routines.png"
-        alt="MyNutriRise workout routines — Full Body, Push Day and Pull Day with start buttons"
+        alt={t.workoutsAlt}
       />
       {/* Cardio mini screen */}
       <motion.div
         animate={float2}
-        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:top-8 sm:right-0 w-32 rotate-3 overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-lg shadow-slate-900/10"
+        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:top-8 sm:end-0 w-32 rotate-3 overflow-hidden rounded-2xl border border-line/80 bg-surface shadow-lg shadow-slate-900/10"
       >
         <div className="relative aspect-[9/14] w-full">
           <Image
             src="/screenshots/cardio.png"
-            alt="MyNutriRise cardio tracker with walking, running, cycling and swimming"
+            alt={t.cardioAlt}
             fill
             className="object-cover object-top"
             sizes="128px"
             loading="lazy"
           />
         </div>
-        <p className="border-t border-slate-100 px-2.5 py-1.5 text-[10px] font-semibold text-slate-600">
-          Cardio Tracker
+        <p className="border-t border-line px-2.5 py-1.5 text-[10px] font-semibold text-ink-2">
+          {t.cardioTracker}
         </p>
       </motion.div>
 
       {/* Exercise library badge */}
       <motion.div
         animate={float1}
-        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:top-10 sm:left-0 flex items-center gap-2.5 rounded-xl bg-white/90 backdrop-blur border border-blue-100/60 shadow-md shadow-blue-900/5 px-4 py-3"
+        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:top-10 sm:start-0 flex items-center gap-2.5 rounded-xl bg-surface/90 backdrop-blur border border-blue-100/60 dark:border-blue-400/20 shadow-md shadow-blue-900/5 px-4 py-3"
       >
-        <div className="w-9 h-9 rounded-lg bg-blue-50 flex items-center justify-center">
+        <div className="w-9 h-9 rounded-lg bg-blue-50 dark:bg-blue-400/10 flex items-center justify-center">
           <svg
             viewBox="0 0 24 24"
             fill="none"
@@ -523,27 +533,27 @@ function WorkoutCards() {
             strokeWidth={1.5}
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="w-4.5 h-4.5 text-blue-500"
+            className="w-4.5 h-4.5 text-blue-500 dark:text-blue-400"
           >
             <path d="M6.5 6.5h11M6.5 17.5h11M4 9.5v5M20 9.5v5M6.5 4v16M17.5 4v16" />
           </svg>
         </div>
         <div>
-          <p className="text-xs font-semibold text-slate-700">318 Exercises</p>
-          <p className="text-[11px] text-blue-500">Filter by muscle group</p>
+          <p className="text-xs font-semibold text-ink-2">{t.exercisesCount}</p>
+          <p className="text-[11px] text-blue-500 dark:text-blue-400">{t.muscleTargets}</p>
         </div>
       </motion.div>
 
       {/* Weekly activity card */}
       <motion.div
         animate={float3}
-        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:bottom-16 sm:right-0 w-56 rounded-2xl bg-white/90 backdrop-blur border border-emerald-100/60 shadow-lg shadow-emerald-900/5 p-4"
+        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:bottom-16 sm:end-0 w-56 rounded-2xl bg-surface/90 backdrop-blur border border-emerald-100/60 dark:border-emerald-400/20 shadow-lg shadow-emerald-900/5 p-4"
       >
-        <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-3">
-          This Week&apos;s Activity
+        <p className="text-xs font-semibold uppercase tracking-wider text-ink-3 mb-3">
+          {t.weekActivity}
         </p>
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center">
+          <div className="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-400/10 flex items-center justify-center">
             <svg
               viewBox="0 0 24 24"
               fill="none"
@@ -551,17 +561,17 @@ function WorkoutCards() {
               strokeWidth={1.5}
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="w-5 h-5 text-emerald-500"
+              className="w-5 h-5 text-emerald-500 dark:text-emerald-400"
             >
               <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
             </svg>
           </div>
           <div>
-            <p className="text-sm font-semibold text-slate-700">
-              <CountUpValue target={1429} /> kcal burned
+            <p className="text-sm font-semibold text-ink-2">
+              {rich(t.kcalBurned, { count: () => <CountUpValue target={1429} /> })}
             </p>
-            <p className="text-[11px] text-slate-500">
-              230 min &middot; 6 workouts
+            <p className="text-[11px] text-ink-3">
+              {fill(t.activitySummary, { min: 230, n: 6 })}
             </p>
           </div>
         </div>
@@ -569,7 +579,7 @@ function WorkoutCards() {
           {[60, 80, 45, 90, 70, 100, 55].map((h, i) => (
             <div key={i} className="flex-1 flex items-end h-8">
               <motion.div
-                className="w-full rounded-sm bg-emerald-200"
+                className="w-full rounded-sm bg-emerald-200 dark:bg-emerald-400/25"
                 initial={{ height: 0 }}
                 whileInView={{ height: `${h}%` }}
                 viewport={{ once: true }}
@@ -587,32 +597,32 @@ function WorkoutCards() {
 /*  Block 4 : Stay Motivated Together                                 */
 /* ================================================================== */
 
-function MotivationCards() {
+function MotivationCards({ t }: { t: CardsT }) {
   return (
     <div className="relative mx-auto w-full max-w-md py-6">
       <BlockPhone
         src="/screenshots/IMG_5881.PNG"
-        alt="MyNutriRise friends and leaderboard screen with XP rankings"
+        alt={t.motivationAlt}
       />
       {/* Achievement badge */}
       <motion.div
         animate={float1}
-        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:top-10 sm:right-0 w-52 rounded-2xl bg-white/90 backdrop-blur border border-amber-100/60 shadow-lg shadow-amber-900/5 p-5"
+        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:top-10 sm:end-0 w-52 rounded-2xl bg-surface/90 backdrop-blur border border-amber-100/60 dark:border-amber-400/20 shadow-lg shadow-amber-900/5 p-5"
       >
         <div className="flex items-center gap-3 mb-3">
-          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-100 to-orange-100 flex items-center justify-center">
-            <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-amber-500">
+          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-100 dark:from-amber-400/[0.07] to-orange-100 dark:to-orange-400/[0.07] flex items-center justify-center">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-amber-500 dark:text-amber-400">
               <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
             </svg>
           </div>
           <div>
-            <p className="text-sm font-bold text-slate-800">Level 3</p>
-            <p className="text-[11px] text-amber-600 font-medium">
-              <CountUpValue target={240} suffix=" XP" />
+            <p className="text-sm font-bold text-ink">{fill(t.level, { n: 3 })}</p>
+            <p className="text-[11px] text-amber-600 dark:text-amber-400 font-medium">
+              <CountUpValue target={240} suffix={t.xpSuffix} />
             </p>
           </div>
         </div>
-        <div className="h-2 rounded-full bg-amber-100 overflow-hidden">
+        <div className="h-2 rounded-full bg-amber-100 dark:bg-amber-400/15 overflow-hidden">
           <motion.div
             className="h-full rounded-full bg-gradient-to-r from-amber-400 to-orange-400"
             initial={{ width: 0 }}
@@ -621,26 +631,26 @@ function MotivationCards() {
             transition={{ duration: 1, delay: 0.3 }}
           />
         </div>
-        <p className="mt-1.5 text-[10px] text-slate-500 text-right">240 / 400 XP</p>
+        <p className="mt-1.5 text-[10px] text-ink-3 text-end">{fill(t.xpProgress, { a: 240, b: 400 })}</p>
       </motion.div>
 
       {/* Streak fire */}
       <motion.div
         animate={float3}
-        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:bottom-16 sm:left-0 w-40 rounded-2xl bg-white/90 backdrop-blur border border-orange-100/60 shadow-lg shadow-orange-900/5 p-4 flex flex-col items-center"
+        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:bottom-16 sm:start-0 w-40 rounded-2xl bg-surface/90 backdrop-blur border border-orange-100/60 dark:border-orange-400/20 shadow-lg shadow-orange-900/5 p-4 flex flex-col items-center"
       >
-        <div className="w-14 h-14 rounded-full bg-gradient-to-br from-amber-100 to-orange-100 flex items-center justify-center mb-2">
+        <div className="w-14 h-14 rounded-full bg-gradient-to-br from-amber-100 dark:from-amber-400/[0.07] to-orange-100 dark:to-orange-400/[0.07] flex items-center justify-center mb-2">
           <span className="text-2xl">🔥</span>
         </div>
-        <p className="text-2xl font-bold text-slate-800">
+        <p className="text-2xl font-bold text-ink">
           <CountUpValue target={7} duration={900} />
         </p>
-        <p className="text-xs text-slate-500">Day Streak</p>
+        <p className="text-xs text-ink-3">{t.dayStreak}</p>
         <div className="mt-2 flex gap-0.5">
-          {["M", "T", "W", "T", "F", "S", "S"].map((d, i) => (
+          {t.weekdayInitials.map((d, i) => (
             <div
               key={`${d}-${i}`}
-              className="w-4 h-4 rounded-full text-[8px] flex items-center justify-center font-medium bg-emerald-100 text-emerald-600"
+              className="w-4 h-4 rounded-full text-[8px] flex items-center justify-center font-medium bg-emerald-100 dark:bg-emerald-400/15 text-emerald-600 dark:text-emerald-400"
             >
               ✓
             </div>
@@ -658,8 +668,6 @@ function MotivationCards() {
 
 const featureGridItems: {
   icon: React.ReactNode;
-  name: string;
-  desc: string;
   color: string;
   bg: string;
   screenshot: string;
@@ -672,10 +680,8 @@ const featureGridItems: {
         <path d="M21 15l-5-5L5 21" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    name: "Meal Photos",
-    desc: "Visual food diary with every meal",
-    color: "text-emerald-600",
-    bg: "bg-emerald-50",
+    color: "text-emerald-600 dark:text-emerald-400",
+    bg: "bg-emerald-50 dark:bg-emerald-400/10",
     screenshot: "/screenshots/IMG_5870.PNG",
   },
   {
@@ -687,10 +693,8 @@ const featureGridItems: {
         <line x1="3" y1="10" x2="21" y2="10" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    name: "Nutrition Calendar",
-    desc: "Monthly consistency tracking view",
-    color: "text-blue-600",
-    bg: "bg-blue-50",
+    color: "text-blue-600 dark:text-blue-400",
+    bg: "bg-blue-50 dark:bg-blue-400/10",
     screenshot: "/screenshots/IMG_5868.PNG",
   },
   {
@@ -700,10 +704,8 @@ const featureGridItems: {
         <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    name: "Color Guide",
-    desc: "6 food color groups with health benefits",
-    color: "text-orange-600",
-    bg: "bg-orange-50",
+    color: "text-orange-600 dark:text-orange-400",
+    bg: "bg-orange-50 dark:bg-orange-400/10",
     screenshot: "/screenshots/IMG_5865.PNG",
   },
   {
@@ -714,10 +716,8 @@ const featureGridItems: {
         <line x1="6" y1="20" x2="6" y2="14" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    name: "Compare Foods",
-    desc: "Head-to-head nutrition comparison",
-    color: "text-purple-600",
-    bg: "bg-purple-50",
+    color: "text-purple-600 dark:text-purple-400",
+    bg: "bg-purple-50 dark:bg-purple-400/10",
     screenshot: "/screenshots/IMG_5863.PNG",
   },
   {
@@ -728,10 +728,8 @@ const featureGridItems: {
         <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    name: "Cultural Diets",
-    desc: "Afghan, Arabic, Bangladeshi & more",
-    color: "text-teal-600",
-    bg: "bg-teal-50",
+    color: "text-teal-600 dark:text-teal-400",
+    bg: "bg-teal-50 dark:bg-teal-400/10",
     screenshot: "/screenshots/cultural-diets.png",
   },
   {
@@ -741,10 +739,8 @@ const featureGridItems: {
         <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    name: "Import Recipes",
-    desc: "From AllRecipes, BBC Good Food & more",
-    color: "text-rose-600",
-    bg: "bg-rose-50",
+    color: "text-rose-600 dark:text-rose-400",
+    bg: "bg-rose-50 dark:bg-rose-400/10",
     screenshot: "/screenshots/IMG_5862.PNG",
   },
   {
@@ -755,10 +751,8 @@ const featureGridItems: {
         <path d="M16 10a4 4 0 0 1-8 0" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    name: "Grocery List",
-    desc: "Categorized by Produce, Dairy, Meat, Grains",
-    color: "text-lime-600",
-    bg: "bg-lime-50",
+    color: "text-lime-600 dark:text-lime-400",
+    bg: "bg-lime-50 dark:bg-lime-400/10",
     screenshot: "/screenshots/IMG_5866.PNG",
   },
   {
@@ -767,10 +761,8 @@ const featureGridItems: {
         <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    name: "Meal Templates",
-    desc: "Quick-log your frequent meals",
-    color: "text-amber-600",
-    bg: "bg-amber-50",
+    color: "text-amber-600 dark:text-amber-400",
+    bg: "bg-amber-50 dark:bg-amber-400/10",
     screenshot: "/screenshots/IMG_5859.PNG",
   },
   {
@@ -781,10 +773,8 @@ const featureGridItems: {
         <line x1="12" y1="17" x2="12" y2="21" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    name: "Meal Prep",
-    desc: "Weekly planner with auto grocery list",
-    color: "text-cyan-600",
-    bg: "bg-cyan-50",
+    color: "text-cyan-600 dark:text-cyan-400",
+    bg: "bg-cyan-50 dark:bg-cyan-400/10",
     screenshot: "/screenshots/IMG_5860.PNG",
   },
   {
@@ -796,10 +786,8 @@ const featureGridItems: {
         <line x1="16" y1="17" x2="8" y2="17" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    name: "Export Data",
-    desc: "PDF reports from 7 to 90 day range",
-    color: "text-slate-600",
-    bg: "bg-slate-50",
+    color: "text-ink-2",
+    bg: "bg-surface-2",
     screenshot: "/screenshots/IMG_5885.PNG",
   },
   {
@@ -809,10 +797,8 @@ const featureGridItems: {
         <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    name: "Daily Lessons",
-    desc: "Nutrition education with streaks",
-    color: "text-indigo-600",
-    bg: "bg-indigo-50",
+    color: "text-indigo-600 dark:text-indigo-400",
+    bg: "bg-indigo-50 dark:bg-indigo-400/10",
     screenshot: "/screenshots/IMG_5878.PNG",
   },
   {
@@ -821,15 +807,19 @@ const featureGridItems: {
         <path d="M22 12h-4l-3 9L9 3l-3 9H2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    name: "Glucose Tracker",
-    desc: "7-day average & estimated A1C",
-    color: "text-rose-600",
-    bg: "bg-rose-50",
+    color: "text-rose-600 dark:text-rose-400",
+    bg: "bg-rose-50 dark:bg-rose-400/10",
     screenshot: "/screenshots/IMG_5874.PNG",
   },
 ];
 
-function FlipCard({ item }: { item: (typeof featureGridItems)[number] }) {
+function FlipCard({
+  item,
+  t,
+}: {
+  item: (typeof featureGridItems)[number] & T["grid"]["items"][number];
+  t: T["grid"];
+}) {
   const [showBack, setShowBack] = useState(false);
 
   const handleFlip = () => setShowBack((prev) => !prev);
@@ -838,7 +828,7 @@ function FlipCard({ item }: { item: (typeof featureGridItems)[number] }) {
     <div
       role="button"
       tabIndex={0}
-      aria-label={`${item.name} — ${showBack ? "hide" : "show"} screen preview`}
+      aria-label={fill(showBack ? t.hidePreview : t.showPreview, { name: item.name })}
       className="relative cursor-pointer [perspective:1000px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 rounded-xl"
       style={{ minHeight: showBack ? 320 : "auto" }}
       onClick={handleFlip}
@@ -860,7 +850,7 @@ function FlipCard({ item }: { item: (typeof featureGridItems)[number] }) {
           style={{ backfaceVisibility: "hidden" }}
           whileHover={{ scale: 1.03, y: -2 }}
           transition={{ duration: 0.25 }}
-          className={`group rounded-xl bg-white border border-slate-100 shadow-sm hover:shadow-md hover:border-emerald-200 transition-all duration-300 p-4 flex items-start gap-3 ${
+          className={`group rounded-xl bg-surface border border-line shadow-sm hover:shadow-md hover:border-emerald-200 dark:hover:border-emerald-400/20 transition-all duration-300 p-4 flex items-start gap-3 ${
             showBack ? "invisible" : ""
           }`}
         >
@@ -870,17 +860,17 @@ function FlipCard({ item }: { item: (typeof featureGridItems)[number] }) {
             {item.icon}
           </div>
           <div className="min-w-0 flex-1">
-            <p className="text-sm font-semibold text-slate-700 group-hover:text-emerald-600 transition-colors">
+            <p className="text-sm font-semibold text-ink-2 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
               {item.name}
             </p>
-            <p className="text-[12px] leading-relaxed text-slate-500 mt-0.5">
+            <p className="text-[12px] leading-relaxed text-ink-3 mt-0.5">
               {item.desc}
             </p>
           </div>
           <motion.span
             animate={{ scale: [1, 1.2, 1] }}
             transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
-            className="flex-shrink-0 mt-0.5 text-emerald-300 group-hover:text-emerald-500 transition-colors"
+            className="flex-shrink-0 mt-0.5 text-emerald-300 group-hover:text-emerald-500 dark:group-hover:text-emerald-400 transition-colors"
           >
             <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
               <path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" />
@@ -899,24 +889,24 @@ function FlipCard({ item }: { item: (typeof featureGridItems)[number] }) {
             left: 0,
             width: "100%",
           }}
-          className="rounded-xl bg-white border border-slate-200 shadow-lg overflow-hidden"
+          className="rounded-xl bg-surface border border-line shadow-lg overflow-hidden"
         >
-          <div className="relative aspect-[9/16] w-full bg-slate-50">
+          <div className="relative aspect-[9/16] w-full bg-surface-2">
             <Image
               src={item.screenshot}
-              alt={`${item.name} screen`}
+              alt={fill(t.screenAlt, { name: item.name })}
               fill
               className="object-contain object-top"
               sizes="(max-width: 768px) 50vw, 33vw"
             />
           </div>
-          <div className="p-3 flex items-center justify-between border-t border-slate-100">
-            <span className="text-xs font-semibold text-slate-700">{item.name}</span>
-            <span className="text-[10px] text-emerald-500 font-medium flex items-center gap-1">
+          <div className="p-3 flex items-center justify-between border-t border-line">
+            <span className="text-xs font-semibold text-ink-2">{item.name}</span>
+            <span className="text-[10px] text-emerald-500 dark:text-emerald-400 font-medium flex items-center gap-1">
               <svg viewBox="0 0 20 20" fill="currentColor" className="w-3 h-3">
                 <path fillRule="evenodd" d="M15.312 11.424a5.5 5.5 0 01-9.201 2.466l-.312-.311h2.433a.75.75 0 000-1.5H4.598a.75.75 0 00-.75.75v3.634a.75.75 0 001.5 0v-2.033l.312.311a7 7 0 0011.712-3.138.75.75 0 00-1.06-.18zm-1.624-7.848a7 7 0 00-11.712 3.138.75.75 0 001.06.18 5.5 5.5 0 019.201-2.466l.312.311H10.116a.75.75 0 000 1.5h3.634a.75.75 0 00.75-.75V1.855a.75.75 0 00-1.5 0v2.033l-.312-.312z" clipRule="evenodd" />
               </svg>
-              Tap to flip back
+              {t.flipBack}
             </span>
           </div>
         </motion.div>
@@ -925,7 +915,7 @@ function FlipCard({ item }: { item: (typeof featureGridItems)[number] }) {
   );
 }
 
-function FeatureGrid() {
+function FeatureGrid({ t }: { t: T["grid"] }) {
   return (
     <div>
       <div className="flex items-center justify-center gap-2 mb-6">
@@ -935,11 +925,11 @@ function FeatureGrid() {
             <path fillRule="evenodd" d="M.664 10.59a1.651 1.651 0 010-1.186A10.004 10.004 0 0110 3c4.257 0 7.893 2.66 9.336 6.41.147.381.146.804 0 1.186A10.004 10.004 0 0110 17c-4.257 0-7.893-2.66-9.336-6.41zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd" />
           </svg>
         </span>
-        <span className="text-sm text-slate-500 font-medium">Tap any card to preview the screen</span>
+        <span className="text-sm text-ink-3 font-medium">{t.hint}</span>
       </div>
       <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
-        {featureGridItems.map((f) => (
-          <FlipCard key={f.name} item={f} />
+        {featureGridItems.map((f, i) => (
+          <FlipCard key={f.screenshot} item={{ ...f, ...t.items[i] }} t={t} />
         ))}
       </div>
     </div>
@@ -950,25 +940,32 @@ function FeatureGrid() {
 /*  Main Features Component                                           */
 /* ================================================================== */
 
-export function Features({ showGrid = false }: { showGrid?: boolean }) {
+export function Features({
+  lang,
+  t,
+  showGrid = false,
+}: {
+  lang: Locale;
+  t: T;
+  showGrid?: boolean;
+}) {
   return (
     <section id="wellness" className="relative overflow-hidden">
       {/* ---------------------------------------------------------- */}
       {/*  Section header                                            */}
       {/* ---------------------------------------------------------- */}
-      <div className="py-20 lg:py-28 px-6 lg:px-8">
+      <div className="section-y px-6 lg:px-8">
         <AnimatedSection className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold tracking-widest uppercase text-emerald-600 mb-5">
-            All-in-one nutrition, fasting &amp; coaching
+          <p className="eyebrow mb-5">
+            {t.eyebrow}
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] xl:text-5xl font-bold leading-tight tracking-tight text-slate-800">
-            One app for your entire{" "}
+          <h2 className="text-h2 text-ink">
+            {t.titleLine1}{" "}
             <br className="hidden sm:block" />
-            wellness journey
+            {t.titleLine2}
           </h2>
-          <p className="mt-6 text-lg sm:text-xl leading-relaxed text-slate-500 max-w-2xl mx-auto">
-            From AI-powered meal scanning to personalized coaching, MyNutriRise
-            brings every aspect of healthy living into one beautiful experience.
+          <p className="mt-6 text-lg sm:text-xl leading-relaxed text-ink-3 max-w-2xl mx-auto">
+            {t.intro}
           </p>
         </AnimatedSection>
       </div>
@@ -976,39 +973,26 @@ export function Features({ showGrid = false }: { showGrid?: boolean }) {
       {/* ---------------------------------------------------------- */}
       {/*  Block 1 — Smart Nutrition Intelligence                    */}
       {/* ---------------------------------------------------------- */}
-      <div className="bg-gradient-to-b from-emerald-50/60 via-emerald-50/30 to-transparent">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 py-20 lg:py-28">
+      <div className="wash-mint">
+        <div className="container-page section-y">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Visual side */}
             <AnimatedSection className="order-2 lg:order-1">
-              <NutritionCards />
+              <NutritionCards t={t.cards} />
             </AnimatedSection>
 
             {/* Text side */}
             <AnimatedSection delay={0.15} className="order-1 lg:order-2">
-              <p className="text-xs font-semibold tracking-widest uppercase text-emerald-600 mb-3">
-                Nutrition
+              <p className="eyebrow mb-3">
+                {t.nutrition.eyebrow}
               </p>
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-800">
-                Smart Nutrition{" "}
-                <span className="text-emerald-600">Intelligence</span>
+              <h3 className="text-h3 text-ink">
+                {rich(t.nutrition.title, { hl })}
               </h3>
-              <p className="mt-4 text-base sm:text-lg leading-relaxed text-slate-500">
-                Every bite, fully understood. Our AI analyzes your meals in
-                real-time, tracking not just calories and macros, but 20+
-                essential micronutrients to give you the complete picture of
-                your nutrition.
+              <p className="mt-4 text-lead text-ink-3">
+                {t.nutrition.body}
               </p>
-              <BulletList
-                items={[
-                  "AI Meal Scan — snap a photo for instant nutrition breakdown",
-                  "Smart calorie & macro tracking with food database",
-                  "20+ micronutrient analysis (Iron, Calcium, Vitamins A-D-B12 & more)",
-                  "Compare foods head-to-head with health scores",
-                  "Meal timing analytics — eating patterns by time of day",
-                  "Barcode scanner & voice logging for hands-free tracking",
-                ]}
-              />
+              <BulletList items={t.nutrition.bullets} />
             </AnimatedSection>
           </div>
         </div>
@@ -1017,39 +1001,26 @@ export function Features({ showGrid = false }: { showGrid?: boolean }) {
       {/* ---------------------------------------------------------- */}
       {/*  Block 2 — Your Wellness Ecosystem                        */}
       {/* ---------------------------------------------------------- */}
-      <div className="bg-gradient-to-b from-white via-white to-white">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 py-20 lg:py-28">
+      <div className="">
+        <div className="container-page section-y">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Text side */}
             <AnimatedSection>
-              <p className="text-xs font-semibold tracking-widest uppercase text-emerald-600 mb-3">
-                Ecosystem
+              <p className="eyebrow mb-3">
+                {t.ecosystem.eyebrow}
               </p>
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-800">
-                Your Wellness{" "}
-                <span className="text-emerald-600">Ecosystem</span>
+              <h3 className="text-h3 text-ink">
+                {rich(t.ecosystem.title, { hl })}
               </h3>
-              <p className="mt-4 text-base sm:text-lg leading-relaxed text-slate-500">
-                Fasting, fitness, hydration, sleep, recipes, and meal
-                plans — all working together. MyNutriRise connects every
-                wellness habit into a single, intelligent system that adapts to
-                your lifestyle.
+              <p className="mt-4 text-lead text-ink-3">
+                {t.ecosystem.body}
               </p>
-              <BulletList
-                items={[
-                  "Intermittent fasting with 5+ protocols (16:8, 5:2, OMAD) + Masterclass",
-                  "9,000+ recipes with cultural diets (Afghan, Arabic, Bangladeshi & more)",
-                  "AI meal plans — daily/weekly for Keto, Mediterranean, Vegan & more",
-                  "Meal prep planner with auto-generated grocery lists",
-                  "1,000+ exercises — Walking, Running, Cycling, Gym, Yoga, Sports",
-                  "Water & sleep monitoring with daily targets",
-                ]}
-              />
+              <BulletList items={t.ecosystem.bullets} />
             </AnimatedSection>
 
             {/* Visual side */}
             <AnimatedSection delay={0.15}>
-              <WellnessCards />
+              <WellnessCards t={t.cards} />
             </AnimatedSection>
           </div>
         </div>
@@ -1058,85 +1029,60 @@ export function Features({ showGrid = false }: { showGrid?: boolean }) {
       {/* ---------------------------------------------------------- */}
       {/*  Block 3 — Intelligent Coaching & Insights                 */}
       {/* ---------------------------------------------------------- */}
-      <div className="bg-gradient-to-b from-violet-50/40 via-fuchsia-50/20 to-white">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 py-20 lg:py-28">
+      <div className="wash-lilac">
+        <div className="container-page section-y">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Visual side */}
             <AnimatedSection className="order-2 lg:order-1">
-              <CoachingCards />
+              <CoachingCards t={t.cards} />
             </AnimatedSection>
 
             {/* Text side */}
             <AnimatedSection delay={0.15} className="order-1 lg:order-2">
-              <p className="text-xs font-semibold tracking-widest uppercase text-emerald-600 mb-3">
-                AI Coaching
+              <p className="eyebrow mb-3">
+                {t.coaching.eyebrow}
               </p>
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-800">
-                Intelligent Coaching{" "}
-                <span className="text-emerald-600">& Insights</span>
+              <h3 className="text-h3 text-ink">
+                {rich(t.coaching.title, { hl })}
               </h3>
-              <p className="mt-4 text-base sm:text-lg leading-relaxed text-slate-500">
-                Your personal AI wellness coach understands your goals, habits,
-                and preferences. It connects every data point — from nutrition
-                to sleep — to deliver actionable guidance that actually helps
-                you improve.
+              <p className="mt-4 text-lead text-ink-3">
+                {t.coaching.body}
               </p>
-              <BulletList
-                items={[
-                  "AI nutritional coach with personalized meal ideas & guidance",
-                  "Wellness score (0-100) with 6-habit breakdown",
-                  "Weekly reports with consistency %, daily averages & sharing",
-                  "Daily nutrition lessons with streaks & action items",
-                  "Glucose tracking with 7-day average & estimated A1C",
-                  "Wearable sync — Apple Health, Google Fit, step tracking",
-                ]}
-              />
+              <BulletList items={t.coaching.bullets} />
             </AnimatedSection>
           </div>
         </div>
       </div>
 
       {/* ---------------------------------------------------------- */}
-      {/*  Block — 9,000+ Recipes                                    */}
+      {/*  Block — Recipes                                           */}
       {/* ---------------------------------------------------------- */}
-      <div className="bg-gradient-to-b from-amber-50/40 via-orange-50/20 to-white">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 py-20 lg:py-28">
+      <div className="wash-peach">
+        <div className="container-page section-y">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Text side */}
             <AnimatedSection>
-              <p className="text-xs font-semibold tracking-widest uppercase text-emerald-600 mb-3">
-                Recipes
+              <p className="eyebrow mb-3">
+                {t.recipes.eyebrow}
               </p>
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-800">
-                9,000+ Recipes{" "}
-                <span className="text-emerald-600">from 50+ Cuisines</span>
+              <h3 className="text-h3 text-ink">
+                {rich(t.recipes.title, { hl })}
               </h3>
-              <p className="mt-4 text-base sm:text-lg leading-relaxed text-slate-500">
-                From Turkish kebabs to Afghan pulao — every recipe comes with
-                full nutrition details, and your culture&apos;s food is a
-                first-class citizen, not a missing database entry.
+              <p className="mt-4 text-lead text-ink-3">
+                {t.recipes.body}
               </p>
-              <BulletList
-                items={[
-                  "9,000+ recipes with calories, macros & serving sizes",
-                  "50+ cultural cuisine libraries — halal-friendly throughout",
-                  "Smart filters: vegetarian, vegan, keto, high-protein & gluten-free",
-                  "Import recipes from AllRecipes, BBC Good Food & any URL",
-                  "Browse by category — Breakfast, Soups, Desserts & dozens more",
-                  "Log any recipe to your day in one tap",
-                ]}
-              />
+              <BulletList items={t.recipes.bullets} />
               <a
-                href="/halal-nutrition-app"
-                className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-600 transition-colors hover:text-emerald-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 rounded-sm"
+                href={localePath(lang, "/halal-nutrition-app")}
+                className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-600 dark:text-emerald-400 transition-colors hover:text-emerald-700 dark:hover:text-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 rounded-sm"
               >
-                Built for halal &amp; cultural eating — see how →
+                {t.recipes.halalLink}
               </a>
             </AnimatedSection>
 
             {/* Visual side */}
             <AnimatedSection delay={0.15}>
-              <RecipeCards />
+              <RecipeCards t={t.cards} />
             </AnimatedSection>
           </div>
         </div>
@@ -1145,39 +1091,26 @@ export function Features({ showGrid = false }: { showGrid?: boolean }) {
       {/* ---------------------------------------------------------- */}
       {/*  Block — Workouts, Routines & Exercises                    */}
       {/* ---------------------------------------------------------- */}
-      <div className="bg-gradient-to-b from-blue-50/30 via-emerald-50/20 to-white">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 py-20 lg:py-28">
+      <div className="wash-mint">
+        <div className="container-page section-y">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Text side */}
             <AnimatedSection className="order-1 lg:order-2">
-              <p className="text-xs font-semibold tracking-widest uppercase text-emerald-600 mb-3">
-                Fitness
+              <p className="eyebrow mb-3">
+                {t.fitness.eyebrow}
               </p>
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-800">
-                Workouts, Routines{" "}
-                <span className="text-emerald-600">& Exercises</span>
+              <h3 className="text-h3 text-ink">
+                {rich(t.fitness.title, { hl })}
               </h3>
-              <p className="mt-4 text-base sm:text-lg leading-relaxed text-slate-500">
-                Nutrition is half the story. Train with a full exercise
-                library, follow ready-made routines or build your own, and
-                watch every burned calorie flow straight into your daily
-                balance.
+              <p className="mt-4 text-lead text-ink-3">
+                {t.fitness.body}
               </p>
-              <BulletList
-                items={[
-                  "318-exercise library with muscle-group filters & video demos",
-                  "Prebuilt routines — Full Body, Push Day, Pull Day & more",
-                  "Build custom routines with sets, reps & exercise history",
-                  "Cardio tracking — walking, running, cycling, swimming, yoga & more",
-                  "Calories burned feed your daily energy balance automatically",
-                  "Syncs with Apple Health & Google Health Connect",
-                ]}
-              />
+              <BulletList items={t.fitness.bullets} />
             </AnimatedSection>
 
             {/* Visual side */}
             <AnimatedSection delay={0.15} className="order-2 lg:order-1">
-              <WorkoutCards />
+              <WorkoutCards t={t.cards} />
             </AnimatedSection>
           </div>
         </div>
@@ -1186,38 +1119,26 @@ export function Features({ showGrid = false }: { showGrid?: boolean }) {
       {/* ---------------------------------------------------------- */}
       {/*  Block 4 — Stay Motivated Together                        */}
       {/* ---------------------------------------------------------- */}
-      <div className="bg-gradient-to-b from-white via-amber-50/20 to-white">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 py-20 lg:py-28">
+      <div className="wash-peach">
+        <div className="container-page section-y">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Text side */}
             <AnimatedSection>
-              <p className="text-xs font-semibold tracking-widest uppercase text-emerald-600 mb-3">
-                Community
+              <p className="eyebrow mb-3">
+                {t.community.eyebrow}
               </p>
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-800">
-                Stay Motivated{" "}
-                <span className="text-emerald-600">Together</span>
+              <h3 className="text-h3 text-ink">
+                {rich(t.community.title, { hl })}
               </h3>
-              <p className="mt-4 text-base sm:text-lg leading-relaxed text-slate-500">
-                Wellness is better with friends. Earn achievements, compete on
-                leaderboards, tackle weekly challenges, and share your progress.
-                MyNutriRise turns healthy habits into a rewarding journey.
+              <p className="mt-4 text-lead text-ink-3">
+                {t.community.body}
               </p>
-              <BulletList
-                items={[
-                  "37 achievement badges & XP-based leveling system",
-                  "Daily & weekly challenges — Hydrate Habit, Fast Five, Streak Builder",
-                  "Friends & leaderboards for Streak, XP, Meals & Accuracy",
-                  "Streak tracking with daily & weekly motivation",
-                  "Progress photos & body measurements (waist, chest, arms)",
-                  "Shareable weekly reports & Premium/Pro features",
-                ]}
-              />
+              <BulletList items={t.community.bullets} />
             </AnimatedSection>
 
             {/* Visual side */}
             <AnimatedSection delay={0.15}>
-              <MotivationCards />
+              <MotivationCards t={t.cards} />
             </AnimatedSection>
           </div>
         </div>
@@ -1227,22 +1148,21 @@ export function Features({ showGrid = false }: { showGrid?: boolean }) {
       {/*  Feature Grid — "Everything you need" (detail page only)  */}
       {/* ---------------------------------------------------------- */}
       {showGrid && (
-        <div className="bg-gradient-to-b from-white to-white">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8 py-20 lg:py-28">
+        <div>
+          <div className="container-page section-y">
             <AnimatedSection className="text-center mb-12">
-              <p className="text-xs font-semibold tracking-widest uppercase text-emerald-600 mb-3">
-                And So Much More
+              <p className="eyebrow mb-3">
+                {t.grid.eyebrow}
               </p>
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-800">
-                Everything you need
+              <h3 className="text-h3 text-ink">
+                {t.grid.title}
               </h3>
-              <p className="mt-4 text-base sm:text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto">
-                Every tool, every insight, every feature — designed to support your
-                complete wellness journey.
+              <p className="mt-4 text-lead text-ink-3 max-w-2xl mx-auto">
+                {t.grid.body}
               </p>
             </AnimatedSection>
             <AnimatedSection delay={0.1}>
-              <FeatureGrid />
+              <FeatureGrid t={t.grid} />
             </AnimatedSection>
           </div>
         </div>

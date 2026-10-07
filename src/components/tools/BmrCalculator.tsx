@@ -1,9 +1,16 @@
 "use client";
 
 import { useState } from "react";
+import type { Messages } from "@/i18n/messages";
 import { LIMITS, NumberField, TogglePills, inRange } from "./shared";
 
-export function BmrCalculator() {
+export function BmrCalculator({
+  t,
+  s,
+}: {
+  t: Messages["tools"]["bmr"]["calc"];
+  s: Messages["tools"]["shared"];
+}) {
   const [sex, setSex] = useState<"male" | "female">("male");
   const [age, setAge] = useState("");
   const [height, setHeight] = useState("");
@@ -23,57 +30,60 @@ export function BmrCalculator() {
   }
 
   return (
-    <div className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-100 sm:p-8">
+    <div className="card p-6 sm:p-8">
       <TogglePills
         options={[
-          { value: "male", label: "Male" },
-          { value: "female", label: "Female" },
+          { value: "male", label: s.male },
+          { value: "female", label: s.female },
         ]}
         value={sex}
         onChange={setSex}
-        ariaLabel="Sex"
+        ariaLabel={s.sexAria}
       />
 
       <div className="mt-6 grid gap-4 sm:grid-cols-3">
         <NumberField
-          label="Age"
+          label={s.age}
           value={age}
           onChange={setAge}
           placeholder="30"
           limits={LIMITS.age}
-          unit="years"
+          unit={s.units.years}
+          rangeError={s.rangeError}
         />
         <NumberField
-          label="Height (cm)"
+          label={s.heightCm}
           value={height}
           onChange={setHeight}
           placeholder="170"
           limits={LIMITS.heightCm}
-          unit="cm"
+          unit={s.units.cm}
+          rangeError={s.rangeError}
         />
         <NumberField
-          label="Weight (kg)"
+          label={s.weightKg}
           value={weight}
           onChange={setWeight}
           placeholder="70"
           limits={LIMITS.weightKg}
-          unit="kg"
+          unit={s.units.kg}
+          rangeError={s.rangeError}
         />
       </div>
 
       {bmr ? (
-        <div className="mt-6 rounded-2xl bg-emerald-50 p-6 text-center">
-          <p className="text-sm font-medium text-slate-600">Your BMR</p>
-          <p className="mt-1 text-5xl font-bold text-slate-800">
+        <div className="mt-6 rounded-2xl bg-emerald-50 dark:bg-emerald-400/10 p-6 text-center">
+          <p className="text-sm font-medium text-ink-2">{t.result}</p>
+          <p className="mt-1 text-5xl font-bold text-ink">
             {bmr.toLocaleString()}
           </p>
-          <p className="mt-2 text-sm text-slate-500">
-            kcal/day burned at complete rest (Mifflin–St Jeor)
+          <p className="mt-2 text-sm text-ink-3">
+            {t.resultNote}
           </p>
         </div>
       ) : (
-        <p className="mt-6 text-center text-sm text-slate-500">
-          Fill in your details to see your basal metabolic rate.
+        <p className="mt-6 text-center text-sm text-ink-3">
+          {t.empty}
         </p>
       )}
     </div>

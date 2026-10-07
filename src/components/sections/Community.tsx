@@ -3,6 +3,7 @@ import {
   StaggerContainer,
   StaggerItem,
 } from "@/components/ui/AnimatedSection";
+import type { Messages } from "@/i18n/messages";
 
 /**
  * Add real creators/users who feature MyNutriRise and the section appears
@@ -23,18 +24,18 @@ const creators: {
   platform: string;
 }[] = [];
 
-export function Community() {
+export function Community({ t }: { t: Messages["home"]["community"] }) {
   if (creators.length === 0) return null;
 
   return (
-    <section className="relative bg-gradient-to-b from-white via-emerald-50/20 to-white py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section className="relative wash-mint section-y">
+      <div className="container-page">
         <AnimatedSection className="mx-auto max-w-2xl text-center mb-14">
-          <p className="text-sm font-semibold tracking-widest uppercase text-emerald-600 mb-4">
-            Community
+          <p className="eyebrow mb-4">
+            {t.eyebrow}
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-800">
-            Creators who track with us
+          <h2 className="text-h2 text-ink">
+            {t.title}
           </h2>
         </AnimatedSection>
 
@@ -45,16 +46,16 @@ export function Community() {
                 href={creator.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex h-full flex-col rounded-3xl bg-white p-7 shadow-sm ring-1 ring-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:ring-emerald-200"
+                className="group flex h-full flex-col card p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:ring-emerald-200 dark:hover:ring-emerald-400/20"
               >
-                <p className="flex-1 text-[15px] italic leading-relaxed text-slate-600">
+                <p className="flex-1 text-[15px] italic leading-relaxed text-ink-2">
                   &ldquo;{creator.quote}&rdquo;
                 </p>
                 <div className="mt-5 flex items-center justify-between">
-                  <span className="font-semibold text-emerald-600">
+                  <span className="font-semibold text-emerald-600 dark:text-emerald-400">
                     {creator.handle}
                   </span>
-                  <span className="text-xs text-slate-500">{creator.platform}</span>
+                  <span className="text-xs text-ink-3">{creator.platform}</span>
                 </div>
               </a>
             </StaggerItem>

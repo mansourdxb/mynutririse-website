@@ -5,6 +5,11 @@ import nextTs from "eslint-config-next/typescript";
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
+  // Message files are `export default (f: Facts) => ({...})` by design.
+  {
+    files: ["src/i18n/messages/**/*.ts"],
+    rules: { "import/no-anonymous-default-export": "off" },
+  },
   // Override default ignores of eslint-config-next.
   globalIgnores([
     // Default ignores of eslint-config-next:
