@@ -46,7 +46,7 @@ export default function TermsPage() {
               <li>Meal logging and calorie/macro tracking</li>
               <li>Intermittent fasting timer and tracking</li>
               <li>AI-powered nutrition coaching</li>
-              <li>Cultural diet database with {DISHES} dishes</li>
+              <li>Cultural diet database with {DISHES}{" "}dishes</li>
               <li>Grocery list generation</li>
               <li>Water intake tracking</li>
               <li>Body progress tracking with photos</li>

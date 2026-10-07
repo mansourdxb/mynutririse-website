@@ -78,7 +78,7 @@ export default function HalalNutritionAppPage() {
 
         <section className="mt-14">
           <h2 className="text-2xl font-bold text-slate-800">
-            Halal-checked across {DISHES} dishes and {CUISINES} cuisines
+            Halal-checked across {DISHES}{" "}dishes and {CUISINES}{" "}cuisines
           </h2>
           <p className="mt-4 leading-7 text-slate-600">
             Every dish comes with calories, protein, carbs, and fat per serving
@@ -113,7 +113,7 @@ export default function HalalNutritionAppPage() {
             Ramadan-ready fasting
           </h2>
           <p className="mt-4 leading-7 text-slate-600">
-            MyNutriRise includes {FASTING_PLAN_COUNT} fasting plans — and one of them is a
+            MyNutriRise includes {FASTING_PLAN_COUNT}{" "}fasting plans — and one of them is a
             dedicated <strong>Ramadan schedule</strong> that tracks your
             dawn-to-sunset fast. Keep logging your meals to hold calories and
             protein steady through the month. Outside

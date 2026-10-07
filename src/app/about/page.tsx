@@ -46,12 +46,12 @@ export default function AboutPage() {
           </p>
           <p>
             MyNutriRise was built to remove that choice. Our food libraries
-            cover {CUISINES} world cuisines — Turkish, Moroccan, Persian,
+            cover {CUISINES}{" "}world cuisines — Turkish, Moroccan, Persian,
             Pakistani, Afghan, Bangladeshi, Gulf &amp; Emirati, and many more —
             with halal-friendly recipes and meal plans as first-class features,
             not afterthoughts. The app speaks {LANGUAGE_LIST}, and even
             includes a Ramadan fasting schedule among its{" "}
-            {FASTING_PLAN_COUNT} fasting plans, alongside 16:8 and 5:2.
+            {FASTING_PLAN_COUNT}{" "}fasting plans, alongside 16:8 and 5:2.
           </p>
           <p>
             The second thing we removed is friction. Tracking fails when it

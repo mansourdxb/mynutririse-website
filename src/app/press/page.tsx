@@ -47,9 +47,9 @@ export default function PressPage() {
           <p className="mt-4 rounded-2xl bg-white p-6 leading-7 text-slate-600 shadow-sm ring-1 ring-slate-100">
             MyNutriRise is an AI-powered nutrition and fitness app built for
             people the big trackers overlook. Users snap a photo of any meal
-            and AI logs the calories and macros instantly — across {RECIPES}
-            recipes and {CUISINES} world cuisines, with halal-friendly
-            meal plans, {FASTING_PLAN_COUNT} intermittent-fasting plans including a Ramadan
+            and AI logs the calories and macros instantly — across {RECIPES}{" "}
+            recipes and {CUISINES}{" "}world cuisines, with halal-friendly
+            meal plans, {FASTING_PLAN_COUNT}{" "}intermittent-fasting plans including a Ramadan
             schedule, workout tracking, and an AI coach. Available on iOS and
             Android in {LANGUAGE_LIST}.
           </p>

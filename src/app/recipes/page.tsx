@@ -60,13 +60,13 @@ export default function RecipesPage() {
       <JsonLd data={itemListJsonLd} />
       <div className="mx-auto max-w-6xl px-6 py-16">
         <h1 className="text-center text-4xl font-bold tracking-tight text-slate-800 sm:text-5xl">
-          {RECIPES} recipes.{" "}
+          {RECIPES}{" "}recipes.{" "}
           <span className="text-emerald-600">
             Your culture included.
           </span>
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-slate-500">
-          From Turkish kebabs to Afghan pulao — {CUISINES} world cuisines with full
+          From Turkish kebabs to Afghan pulao — {CUISINES}{" "}world cuisines with full
           calories and macros, halal-friendly throughout — see the{" "}
           <Link href="/halal-nutrition-app" className="font-medium text-emerald-600 hover:text-emerald-700">
             halal nutrition app

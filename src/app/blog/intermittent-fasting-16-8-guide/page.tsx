@@ -110,7 +110,7 @@ export default function Article() {
               calorie calculator
             </a>{" "}
             to find that number, and note that MyNutriRise includes a
-            dedicated Ramadan schedule among its {FASTING_PLAN_COUNT} fasting
+            dedicated Ramadan schedule among its {FASTING_PLAN_COUNT}{" "}fasting
             plans.
           </p>
 
