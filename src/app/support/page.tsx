@@ -198,22 +198,22 @@ function FaqItem({
 }) {
   const panelId = `faq-${question.replace(/\W+/g, "-").toLowerCase()}`;
   return (
-    <div className="border-b border-slate-100 last:border-b-0">
+    <div className="border-b border-line last:border-b-0">
       <button
         onClick={onToggle}
         aria-expanded={isOpen}
         aria-controls={panelId}
-        className="flex w-full items-center justify-between gap-4 px-5 py-5 text-left transition-colors hover:bg-emerald-50/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-emerald-500 sm:px-6"
+        className="flex w-full items-center justify-between gap-4 px-5 py-5 text-left transition-colors hover:bg-emerald-50/40 dark:hover:bg-emerald-400/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-emerald-500 sm:px-6"
       >
         <span
-          className={`text-sm font-medium transition-colors sm:text-[15px] ${isOpen ? "text-emerald-600" : "text-slate-700"}`}
+          className={`text-sm font-medium transition-colors sm:text-[15px] ${isOpen ? "text-emerald-600 dark:text-emerald-400" : "text-ink-2"}`}
         >
           {question}
         </span>
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-          className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full transition-colors ${isOpen ? "bg-emerald-100 text-emerald-600" : "bg-slate-100 text-slate-500"}`}
+          className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full transition-colors ${isOpen ? "bg-emerald-100 dark:bg-emerald-400/15 text-emerald-600 dark:text-emerald-400" : "bg-surface-2 text-ink-3"}`}
         >
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
             <path d="M2 4.5L6 8.5L10 4.5" />
@@ -231,7 +231,7 @@ function FaqItem({
             id={panelId}
           >
             <div className="px-5 pb-5 sm:px-6">
-              <p className="text-sm leading-relaxed text-slate-500 sm:text-[15px] sm:leading-7">
+              <p className="text-sm leading-relaxed text-ink-3 sm:text-[15px] sm:leading-7">
                 {answer}
               </p>
             </div>
@@ -257,55 +257,55 @@ export default function SupportPage() {
   };
 
   return (
-    <div className="pt-24">
+    <div className="wash-mint pt-24 pb-8">
       {/* Hero */}
       <section className="mx-auto max-w-4xl px-6 py-20">
         <div className="text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-slate-800 sm:text-5xl">
+          <h1 className="text-h1 text-ink">
             How can we help?
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-500">
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-ink-3">
             Whether you have a question, need troubleshooting help, or want to
             share an idea — we&apos;re here for you.
           </p>
         </div>
 
         <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          <div className="group rounded-2xl border border-slate-100 bg-white p-8 transition-all hover:border-emerald-200 hover:shadow-lg hover:shadow-emerald-50">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600">
+          <div className="group rounded-2xl border border-line bg-surface p-8 transition-all hover:border-emerald-200 dark:hover:border-emerald-400/20 hover:shadow-lg hover:shadow-emerald-50">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 dark:bg-emerald-400/10 text-emerald-600 dark:text-emerald-400">
               <svg fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-6 w-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
               </svg>
             </div>
-            <h2 className="mt-6 text-lg font-semibold text-slate-800">Email Support</h2>
-            <p className="mt-2 text-sm leading-6 text-slate-500">We typically respond within 24 hours.</p>
-            <a href="mailto:support@mynutririse.com" className="mt-4 inline-block text-sm font-medium text-emerald-600 hover:text-emerald-700">
+            <h2 className="mt-6 text-lg font-semibold text-ink">Email Support</h2>
+            <p className="mt-2 text-sm leading-6 text-ink-3">We typically respond within 24 hours.</p>
+            <a href="mailto:support@mynutririse.com" className="mt-4 inline-block text-sm font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300">
               support@mynutririse.com
             </a>
           </div>
 
-          <div className="group rounded-2xl border border-slate-100 bg-white p-8 transition-all hover:border-emerald-200 hover:shadow-lg hover:shadow-emerald-50">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600">
+          <div className="group rounded-2xl border border-line bg-surface p-8 transition-all hover:border-emerald-200 dark:hover:border-emerald-400/20 hover:shadow-lg hover:shadow-emerald-50">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 dark:bg-emerald-400/10 text-emerald-600 dark:text-emerald-400">
               <svg fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-6 w-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
               </svg>
             </div>
-            <h2 className="mt-6 text-lg font-semibold text-slate-800">FAQ</h2>
-            <p className="mt-2 text-sm leading-6 text-slate-500">Find answers to common questions about the app.</p>
-            <a href="#faq" className="mt-4 inline-block text-sm font-medium text-emerald-600 hover:text-emerald-700">
+            <h2 className="mt-6 text-lg font-semibold text-ink">FAQ</h2>
+            <p className="mt-2 text-sm leading-6 text-ink-3">Find answers to common questions about the app.</p>
+            <a href="#faq" className="mt-4 inline-block text-sm font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300">
               Browse FAQ &rarr;
             </a>
           </div>
 
-          <div className="group rounded-2xl border border-slate-100 bg-white p-8 transition-all hover:border-emerald-200 hover:shadow-lg hover:shadow-emerald-50 sm:col-span-2 lg:col-span-1">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600">
+          <div className="group rounded-2xl border border-line bg-surface p-8 transition-all hover:border-emerald-200 dark:hover:border-emerald-400/20 hover:shadow-lg hover:shadow-emerald-50 sm:col-span-2 lg:col-span-1">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 dark:bg-emerald-400/10 text-emerald-600 dark:text-emerald-400">
               <svg fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-6 w-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
               </svg>
             </div>
-            <h2 className="mt-6 text-lg font-semibold text-slate-800">Feature Request</h2>
-            <p className="mt-2 text-sm leading-6 text-slate-500">Tell us what you&apos;d like to see next.</p>
-            <a href="mailto:contact@mynutririse.com" className="mt-4 inline-block text-sm font-medium text-emerald-600 hover:text-emerald-700">
+            <h2 className="mt-6 text-lg font-semibold text-ink">Feature Request</h2>
+            <p className="mt-2 text-sm leading-6 text-ink-3">Tell us what you&apos;d like to see next.</p>
+            <a href="mailto:contact@mynutririse.com" className="mt-4 inline-block text-sm font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300">
               contact@mynutririse.com
             </a>
           </div>
@@ -313,16 +313,16 @@ export default function SupportPage() {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="bg-gradient-to-b from-white to-emerald-50/30 py-20 lg:py-28">
+      <section id="faq" className="wash-lilac section-y">
         <div className="mx-auto max-w-4xl px-6">
           <div className="text-center">
-            <p className="text-sm font-semibold tracking-widest uppercase text-emerald-600 mb-3">
+            <p className="eyebrow mb-3">
               Support Center
             </p>
-            <h2 className="text-3xl font-bold tracking-tight text-slate-800 sm:text-4xl">
+            <h2 className="text-h2 text-ink">
               Frequently Asked Questions
             </h2>
-            <p className="mt-4 text-base text-slate-500 max-w-xl mx-auto">
+            <p className="mt-4 text-base text-ink-3 max-w-xl mx-auto">
               Browse help topics from the MyNutriRise app. Can&apos;t find what you need? Reach out to our support team.
             </p>
           </div>
@@ -337,7 +337,7 @@ export default function SupportPage() {
                 className={`inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 ${
                   activeCategory === cat.id
                     ? "bg-emerald-500 text-white shadow-md shadow-emerald-500/25"
-                    : "bg-white text-slate-600 border border-slate-200 hover:border-emerald-300 hover:text-emerald-600 hover:bg-emerald-50"
+                    : "bg-surface text-ink-2 border border-line hover:border-emerald-300 dark:hover:border-emerald-400/30 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-400/10"
                 }`}
               >
                 <span className="text-sm">{cat.emoji}</span>
@@ -348,7 +348,7 @@ export default function SupportPage() {
 
           {/* Count badge */}
           <div className="mt-6 text-center">
-            <span className="text-xs text-slate-500">
+            <span className="text-xs text-ink-3">
               {filtered.length} {filtered.length === 1 ? "question" : "questions"}
             </span>
           </div>
@@ -356,7 +356,7 @@ export default function SupportPage() {
           {/* FAQ list */}
           <motion.div
             layout
-            className="mt-6 overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-sm"
+            className="mt-6 overflow-hidden rounded-2xl border border-line/80 bg-surface shadow-sm"
           >
             <AnimatePresence mode="wait">
               <motion.div

@@ -99,7 +99,7 @@ const rows: [string, string, string][] = [
 
 export default function ComparePage() {
   return (
-    <div className="bg-white pt-24">
+    <div className="wash-mint pt-24 pb-8">
       <JsonLd data={compareFaqJsonLd} />
       <div className="mx-auto max-w-4xl px-6 py-16">
         <Breadcrumbs
@@ -107,45 +107,45 @@ export default function ComparePage() {
             { name: "Compare", href: "/compare/mynutririse-vs-myfitnesspal" },
           ]}
         />
-        <h1 className="mt-6 text-center text-4xl font-bold tracking-tight text-slate-800 sm:text-5xl">
+        <h1 className="mt-6 text-center text-h1 text-ink">
           MyNutriRise vs MyFitnessPal
         </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-slate-500">
+        <p className="mx-auto mt-4 max-w-2xl text-center text-lead text-ink-3">
           Both track calories well. The difference is what you eat — and how
           much effort logging takes.
         </p>
 
-        <div className="mt-12 overflow-x-auto rounded-2xl bg-white shadow-sm ring-1 ring-slate-100">
+        <div className="mt-12 overflow-x-auto card">
           <table className="w-full min-w-[640px] text-sm">
             <thead>
-              <tr className="border-b border-slate-100 bg-emerald-50/50">
-                <th className="px-5 py-4 text-left font-semibold text-slate-700">Feature</th>
-                <th className="px-5 py-4 text-left font-semibold text-emerald-700">MyNutriRise</th>
-                <th className="px-5 py-4 text-left font-semibold text-slate-700">MyFitnessPal</th>
+              <tr className="border-b border-line bg-emerald-50/50 dark:bg-emerald-400/10">
+                <th className="px-5 py-4 text-left font-semibold text-ink-2">Feature</th>
+                <th className="px-5 py-4 text-left font-semibold text-emerald-700 dark:text-emerald-300">MyNutriRise</th>
+                <th className="px-5 py-4 text-left font-semibold text-ink-2">MyFitnessPal</th>
               </tr>
             </thead>
             <tbody>
               {rows.map(([feature, ours, theirs]) => (
-                <tr key={feature} className="border-b border-slate-100 last:border-b-0 align-top">
-                  <th scope="row" className="px-5 py-4 text-left font-medium text-slate-700">
+                <tr key={feature} className="border-b border-line last:border-b-0 align-top">
+                  <th scope="row" className="px-5 py-4 text-left font-medium text-ink-2">
                     {feature}
                   </th>
-                  <td className="px-5 py-4 text-slate-600">{ours}</td>
-                  <td className="px-5 py-4 text-slate-600">{theirs}</td>
+                  <td className="px-5 py-4 text-ink-2">{ours}</td>
+                  <td className="px-5 py-4 text-ink-2">{theirs}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
 
-        <p className="mt-4 text-center text-xs text-slate-500">
+        <p className="mt-4 text-center text-xs text-ink-3">
           Comparison based on publicly available information, June 2026.
           Features and pricing may change — check both apps for current
           details.
         </p>
 
-        <div className="mt-12 space-y-4 text-slate-600">
-          <h2 className="text-2xl font-bold text-slate-800">
+        <div className="mt-12 space-y-4 text-ink-2">
+          <h2 className="text-2xl font-bold text-ink">
             Who should pick MyFitnessPal
           </h2>
           <p>
@@ -155,7 +155,7 @@ export default function ComparePage() {
             decade and its logging flow is excellent for that use case —
             especially if you already have years of history in it.
           </p>
-          <h2 className="text-2xl font-bold text-slate-800">
+          <h2 className="text-2xl font-bold text-ink">
             Who should pick MyNutriRise
           </h2>
           <p>
@@ -164,12 +164,12 @@ export default function ComparePage() {
             a Ramadan fasting schedule, an app that speaks Arabic, and AI
             photo logging without paying first. That is exactly
             the gap MyNutriRise was built to fill — see the{" "}
-            <Link href="/halal-nutrition-app" className="font-medium text-emerald-600 hover:text-emerald-700">
+            <Link href="/halal-nutrition-app" className="font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300">
               halal nutrition app
             </Link>{" "}
             page for the full story.
           </p>
-          <h2 className="text-2xl font-bold text-slate-800">
+          <h2 className="text-2xl font-bold text-ink">
             Pricing compared
           </h2>
           <p>
@@ -179,16 +179,16 @@ export default function ComparePage() {
             its cultural food libraries from the free tier, with Premium
             unlocking higher AI limits, full analytics, and all fasting plans.
           </p>
-          <h2 className="text-2xl font-bold text-slate-800">
+          <h2 className="text-2xl font-bold text-ink">
             Frequently asked questions
           </h2>
           {compareFaqs.map((faq) => (
             <div key={faq.question}>
-              <h3 className="font-semibold text-slate-800">{faq.question}</h3>
+              <h3 className="font-semibold text-ink">{faq.question}</h3>
               <p className="mt-2">{faq.answer}</p>
             </div>
           ))}
-          <h2 className="text-2xl font-bold text-slate-800">
+          <h2 className="text-2xl font-bold text-ink">
             The honest summary
           </h2>
           <p>
@@ -203,15 +203,15 @@ export default function ComparePage() {
           </p>
           <p>
             Try the{" "}
-            <Link href="/quiz" className="font-medium text-emerald-600 hover:text-emerald-700">
+            <Link href="/quiz" className="font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300">
               1-minute plan quiz
             </Link>{" "}
             to see what your plan would look like.
           </p>
         </div>
 
-        <div className="mt-12 rounded-3xl bg-gradient-to-br from-emerald-500 to-teal-400 p-8 text-center sm:p-10">
-          <h2 className="text-2xl font-bold text-white sm:text-3xl">
+        <div className="mt-12 rounded-[2rem] bg-gradient-to-br from-emerald-700 via-emerald-600 to-teal-600 shadow-[0_30px_60px_-30px_rgb(4_120_87/0.55)] dark:from-emerald-900 dark:via-emerald-800 dark:to-teal-900 dark:shadow-none dark:ring-1 dark:ring-white/10 p-8 text-center sm:p-10">
+          <h2 className="text-h3 text-white">
             Track the food you actually eat
           </h2>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-4">

@@ -30,13 +30,13 @@ const facts = [
 
 export default function AboutPage() {
   return (
-    <div className="bg-white pt-24">
+    <div className="wash-mint pt-24 pb-8">
       <div className="mx-auto max-w-3xl px-6 py-16">
-        <h1 className="text-center text-4xl font-bold tracking-tight text-slate-800 sm:text-5xl">
+        <h1 className="text-center text-h1 text-ink">
           Nutrition tracking that speaks your language
         </h1>
 
-        <div className="mt-12 space-y-6 text-base leading-7 text-slate-600">
+        <div className="mt-12 space-y-6 text-base leading-7 text-ink-2">
           <p>
             Most nutrition apps were built around Western menus. Search for
             kabuli pulao, mandi, or nihari and you get a shrug — or a generic
@@ -69,21 +69,21 @@ export default function AboutPage() {
 
         <div className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3">
           {facts.map((fact) => (
-            <div key={fact.label} className="rounded-2xl bg-white p-5 text-center shadow-sm ring-1 ring-slate-100">
-              <p className="text-2xl font-bold text-emerald-600">{fact.value}</p>
-              <p className="mt-1 text-xs leading-relaxed text-slate-500">{fact.label}</p>
+            <div key={fact.label} className="rounded-2xl bg-surface p-5 text-center shadow-sm ring-1 ring-line">
+              <p className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">{fact.value}</p>
+              <p className="mt-1 text-xs leading-relaxed text-ink-3">{fact.label}</p>
             </div>
           ))}
         </div>
 
         <div className="mt-14 text-center">
-          <p className="text-slate-600">
+          <p className="text-ink-2">
             Questions, feedback, or press inquiries?{" "}
-            <Link href="/support" className="font-medium text-emerald-600 hover:text-emerald-700">
+            <Link href="/support" className="font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300">
               Get in touch
             </Link>{" "}
             or see our{" "}
-            <Link href="/press" className="font-medium text-emerald-600 hover:text-emerald-700">
+            <Link href="/press" className="font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300">
               press kit
             </Link>
             .

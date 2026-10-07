@@ -47,7 +47,7 @@ const faqJsonLd = {
 
 export default function Page() {
   return (
-    <div className="bg-white pt-24">
+    <div className="wash-mint pt-24 pb-8">
       <JsonLd data={faqJsonLd} />
       <div className="mx-auto max-w-3xl px-6 py-16">
         <Breadcrumbs
@@ -56,10 +56,10 @@ export default function Page() {
             { name: "BMR Calculator", href: "/tools/bmr-calculator" },
           ]}
         />
-        <h1 className="mt-6 text-center text-4xl font-bold tracking-tight text-slate-800 sm:text-5xl">
+        <h1 className="mt-6 text-center text-h1 text-ink">
           BMR Calculator
         </h1>
-        <p className="mx-auto mt-4 max-w-xl text-center text-lg text-slate-500">
+        <p className="mx-auto mt-4 max-w-xl text-center text-lead text-ink-3">
           Find out how many calories your body burns at complete rest.
         </p>
 
@@ -67,8 +67,8 @@ export default function Page() {
           <BmrCalculator />
         </div>
 
-        <div className="mt-12 space-y-4 text-slate-600">
-          <h2 className="text-2xl font-bold text-slate-800">What is BMR?</h2>
+        <div className="mt-12 space-y-4 text-ink-2">
+          <h2 className="text-2xl font-bold text-ink">What is BMR?</h2>
           <p>
             Your basal metabolic rate is the energy your body needs just to
             stay alive — breathing, circulation, cell repair — before any
@@ -79,7 +79,7 @@ export default function Page() {
           <p>
             This calculator uses the <strong>Mifflin–St Jeor equation</strong>:
           </p>
-          <div className="rounded-2xl bg-slate-50 p-5 font-mono text-sm leading-7">
+          <div className="rounded-2xl bg-surface-2 p-5 font-mono text-sm leading-7">
             <p>Men: BMR = 10 × weight(kg) + 6.25 × height(cm) − 5 × age + 5</p>
             <p>Women: BMR = 10 × weight(kg) + 6.25 × height(cm) − 5 × age − 161</p>
           </div>
@@ -88,19 +88,19 @@ export default function Page() {
             kg: 10×60 + 6.25×162 − 5×28 − 161 = <strong>1,312 kcal/day</strong>{" "}
             at complete rest.
           </p>
-          <h2 className="pt-4 text-2xl font-bold text-slate-800">
+          <h2 className="pt-4 text-2xl font-bold text-ink">
             From BMR to a daily target
           </h2>
           <p>
             BMR is only the resting half of the picture. Multiply it by an
             activity factor (1.2–1.9) to get your total daily energy
             expenditure — that is exactly what our{" "}
-            <Link href="/tools/calorie-calculator" className="font-medium text-emerald-600 hover:text-emerald-700">calorie calculator</Link>{" "}
+            <Link href="/tools/calorie-calculator" className="font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300">calorie calculator</Link>{" "}
             does, and the{" "}
-            <Link href="/tools/macro-calculator" className="font-medium text-emerald-600 hover:text-emerald-700">macro calculator</Link>{" "}
+            <Link href="/tools/macro-calculator" className="font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300">macro calculator</Link>{" "}
             then splits the result into protein, carbs, and fat.
           </p>
-          <h2 className="pt-4 text-2xl font-bold text-slate-800">
+          <h2 className="pt-4 text-2xl font-bold text-ink">
             BMR while fasting
           </h2>
           <p>
@@ -109,23 +109,23 @@ export default function Page() {
             concern with prolonged, very low intake. During Ramadan, your
             resting needs stay the same; plan suhoor and iftar to cover them.
           </p>
-          <h2 className="pt-4 text-2xl font-bold text-slate-800">
+          <h2 className="pt-4 text-2xl font-bold text-ink">
             Frequently asked questions
           </h2>
           {faqs.map((faq) => (
             <div key={faq.question}>
-              <h3 className="font-semibold text-slate-800">{faq.question}</h3>
+              <h3 className="font-semibold text-ink">{faq.question}</h3>
               <p className="mt-2">{faq.answer}</p>
             </div>
           ))}
-          <p className="text-sm text-slate-500">
+          <p className="text-sm text-ink-3">
             This tool provides general estimates, not medical advice. Consult a
             professional before major dietary changes.
           </p>
         </div>
 
-        <div className="mt-12 rounded-3xl bg-gradient-to-br from-emerald-500 to-teal-400 p-8 text-center sm:p-10">
-          <h2 className="text-2xl font-bold text-white sm:text-3xl">
+        <div className="mt-12 rounded-[2rem] bg-gradient-to-br from-emerald-700 via-emerald-600 to-teal-600 shadow-[0_30px_60px_-30px_rgb(4_120_87/0.55)] dark:from-emerald-900 dark:via-emerald-800 dark:to-teal-900 dark:shadow-none dark:ring-1 dark:ring-white/10 p-8 text-center sm:p-10">
+          <h2 className="text-h3 text-white">
             Put your number to work
           </h2>
           <p className="mx-auto mt-3 max-w-md text-white/85">

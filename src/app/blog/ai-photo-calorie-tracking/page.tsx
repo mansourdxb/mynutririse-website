@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 
 export default function Article() {
   return (
-    <div className="bg-white pt-24">
+    <div className="wash-mint pt-24 pb-8">
       <article className="mx-auto max-w-3xl px-6 py-16">
         <JsonLd data={articleJsonLd} />
         <Breadcrumbs
@@ -34,14 +34,14 @@ export default function Article() {
             { name: "How AI Photo Calorie Trackin", href: "/blog/ai-photo-calorie-tracking" },
           ]}
         />
-        <h1 className="mt-6 text-3xl font-bold tracking-tight text-slate-800 sm:text-4xl">
+        <h1 className="mt-6 text-h2 text-ink">
           How AI Photo Calorie Tracking Actually Works
         </h1>
-        <p className="mt-3 text-sm text-slate-500">
+        <p className="mt-3 text-sm text-ink-3">
           <time dateTime="2026-06-09">June 9, 2026</time> &middot; 4 min read
         </p>
 
-        <div className="mt-10 space-y-6 text-base leading-7 text-slate-600">
+        <div className="mt-10 space-y-6 text-base leading-7 text-ink-2">
           <p>
             The biggest reason people quit calorie tracking is friction:
             searching databases, weighing portions, logging ingredient by
@@ -49,7 +49,7 @@ export default function Article() {
             photograph your plate and the app does the rest.
           </p>
 
-          <h2 className="pt-4 text-2xl font-bold text-slate-800">
+          <h2 className="pt-4 text-2xl font-bold text-ink">
             What happens when you snap a photo
           </h2>
           <p>
@@ -61,7 +61,7 @@ export default function Article() {
             and fat — and presents the result for you to confirm or adjust.
           </p>
 
-          <h2 className="pt-4 text-2xl font-bold text-slate-800">
+          <h2 className="pt-4 text-2xl font-bold text-ink">
             How accurate is it?
           </h2>
           <p>
@@ -74,7 +74,7 @@ export default function Article() {
             the AI&apos;s guess in one tap.
           </p>
 
-          <h2 className="pt-4 text-2xl font-bold text-slate-800">
+          <h2 className="pt-4 text-2xl font-bold text-ink">
             Five tips for better scans
           </h2>
           <ul className="list-disc space-y-2 pl-6">
@@ -85,7 +85,7 @@ export default function Article() {
             <li>Spot-check the portion the AI guessed for calorie-dense items like rice, oil, and nuts.</li>
           </ul>
 
-          <h2 className="pt-4 text-2xl font-bold text-slate-800">
+          <h2 className="pt-4 text-2xl font-bold text-ink">
             When to use other logging methods
           </h2>
           <p>

@@ -10,19 +10,19 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <div className="pt-24">
+    <div className="wash-mint pt-24 pb-8">
       <article className="mx-auto max-w-3xl px-6 py-20">
-        <h1 className="text-4xl font-bold tracking-tight text-slate-800">
+        <h1 className="text-4xl font-bold tracking-tight text-ink">
           Terms of Service
         </h1>
-        <p className="mt-4 text-sm text-slate-500">
+        <p className="mt-4 text-sm text-ink-3">
           Last updated: May 15, 2026
         </p>
 
-        <div className="mt-12 space-y-10 text-base leading-7 text-slate-600">
+        <div className="mt-12 space-y-10 text-base leading-7 text-ink-2">
           {/* 1. Acceptance of Terms */}
           <section>
-            <h2 className="text-xl font-semibold text-slate-800">
+            <h2 className="text-h4 text-ink">
               1. Acceptance of Terms
             </h2>
             <p className="mt-3">
@@ -34,7 +34,7 @@ export default function TermsPage() {
 
           {/* 2. Description of Service */}
           <section>
-            <h2 className="text-xl font-semibold text-slate-800">
+            <h2 className="text-h4 text-ink">
               2. Description of Service
             </h2>
             <p className="mt-3">
@@ -57,10 +57,10 @@ export default function TermsPage() {
 
           {/* 3. Not Medical Advice */}
           <section>
-            <h2 className="text-xl font-semibold text-slate-800">
+            <h2 className="text-h4 text-ink">
               3. Not Medical Advice
             </h2>
-            <p className="mt-3 font-semibold text-slate-800">
+            <p className="mt-3 font-semibold text-ink">
               IMPORTANT: MyNutriRise is NOT a medical application and does NOT
               provide medical advice. The information provided is for general
               educational and informational purposes only.
@@ -87,7 +87,7 @@ export default function TermsPage() {
 
           {/* 4. User Accounts */}
           <section>
-            <h2 className="text-xl font-semibold text-slate-800">
+            <h2 className="text-h4 text-ink">
               4. User Accounts
             </h2>
             <ul className="mt-3 list-disc space-y-2 pl-6">
@@ -105,7 +105,7 @@ export default function TermsPage() {
 
           {/* 5. Subscription & Payments */}
           <section>
-            <h2 className="text-xl font-semibold text-slate-800">
+            <h2 className="text-h4 text-ink">
               5. Subscription &amp; Payments
             </h2>
             <ul className="mt-3 list-disc space-y-2 pl-6">
@@ -132,7 +132,7 @@ export default function TermsPage() {
 
           {/* 6. Acceptable Use */}
           <section>
-            <h2 className="text-xl font-semibold text-slate-800">
+            <h2 className="text-h4 text-ink">
               6. Acceptable Use
             </h2>
             <p className="mt-3">You agree NOT to:</p>
@@ -152,7 +152,7 @@ export default function TermsPage() {
 
           {/* 7. Intellectual Property */}
           <section>
-            <h2 className="text-xl font-semibold text-slate-800">
+            <h2 className="text-h4 text-ink">
               7. Intellectual Property
             </h2>
             <ul className="mt-3 list-disc space-y-2 pl-6">
@@ -171,7 +171,7 @@ export default function TermsPage() {
 
           {/* 8. Third-Party Content */}
           <section>
-            <h2 className="text-xl font-semibold text-slate-800">
+            <h2 className="text-h4 text-ink">
               8. Third-Party Content
             </h2>
             <p className="mt-3">
@@ -182,7 +182,7 @@ export default function TermsPage() {
                 href="https://platform.fatsecret.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-medium text-emerald-600 underline underline-offset-4 hover:text-emerald-700"
+                className="font-medium text-emerald-600 dark:text-emerald-400 underline underline-offset-4 hover:text-emerald-700 dark:hover:text-emerald-300"
               >
                 https://platform.fatsecret.com
               </a>
@@ -192,7 +192,7 @@ export default function TermsPage() {
 
           {/* 9. User Content */}
           <section>
-            <h2 className="text-xl font-semibold text-slate-800">
+            <h2 className="text-h4 text-ink">
               9. User Content
             </h2>
             <ul className="mt-3 list-disc space-y-2 pl-6">
@@ -209,10 +209,10 @@ export default function TermsPage() {
 
           {/* 10. Limitation of Liability */}
           <section>
-            <h2 className="text-xl font-semibold text-slate-800">
+            <h2 className="text-h4 text-ink">
               10. Limitation of Liability
             </h2>
-            <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-slate-500">
+            <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-ink-3">
               To the maximum extent permitted by law:
             </p>
             <ul className="mt-3 list-disc space-y-2 pl-6">
@@ -237,7 +237,7 @@ export default function TermsPage() {
 
           {/* 11. Termination */}
           <section>
-            <h2 className="text-xl font-semibold text-slate-800">
+            <h2 className="text-h4 text-ink">
               11. Termination
             </h2>
             <ul className="mt-3 list-disc space-y-2 pl-6">
@@ -255,7 +255,7 @@ export default function TermsPage() {
 
           {/* 12. Changes to Terms */}
           <section>
-            <h2 className="text-xl font-semibold text-slate-800">
+            <h2 className="text-h4 text-ink">
               12. Changes to Terms
             </h2>
             <p className="mt-3">
@@ -266,7 +266,7 @@ export default function TermsPage() {
 
           {/* 13. Contact */}
           <section>
-            <h2 className="text-xl font-semibold text-slate-800">
+            <h2 className="text-h4 text-ink">
               13. Contact
             </h2>
             <p className="mt-3">For questions about these Terms:</p>
@@ -274,7 +274,7 @@ export default function TermsPage() {
               Email:{" "}
               <a
                 href="mailto:support@mynutririse.com"
-                className="font-medium text-emerald-600 underline underline-offset-4 hover:text-emerald-700"
+                className="font-medium text-emerald-600 dark:text-emerald-400 underline underline-offset-4 hover:text-emerald-700 dark:hover:text-emerald-300"
               >
                 support@mynutririse.com
               </a>
@@ -283,7 +283,7 @@ export default function TermsPage() {
               Website:{" "}
               <a
                 href="https://mynutririse.com"
-                className="font-medium text-emerald-600 underline underline-offset-4 hover:text-emerald-700"
+                className="font-medium text-emerald-600 dark:text-emerald-400 underline underline-offset-4 hover:text-emerald-700 dark:hover:text-emerald-300"
               >
                 https://mynutririse.com
               </a>

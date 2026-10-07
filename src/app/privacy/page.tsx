@@ -9,19 +9,19 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <div className="pt-24">
+    <div className="wash-mint pt-24 pb-8">
       <article className="mx-auto max-w-3xl px-6 py-20">
-        <h1 className="text-4xl font-bold tracking-tight text-slate-800">
+        <h1 className="text-4xl font-bold tracking-tight text-ink">
           Privacy Policy
         </h1>
-        <p className="mt-4 text-sm text-slate-500">
+        <p className="mt-4 text-sm text-ink-3">
           Last updated: May 29, 2026
         </p>
 
-        <div className="mt-12 space-y-10 text-base leading-7 text-slate-600">
+        <div className="mt-12 space-y-10 text-base leading-7 text-ink-2">
           {/* 1. Information We Collect */}
           <section>
-            <h2 className="text-xl font-semibold text-slate-800">
+            <h2 className="text-h4 text-ink">
               1. Information We Collect
             </h2>
             <p className="mt-3">
@@ -55,7 +55,7 @@ export default function PrivacyPage() {
 
           {/* 2. How We Use Your Information */}
           <section>
-            <h2 className="text-xl font-semibold text-slate-800">
+            <h2 className="text-h4 text-ink">
               2. How We Use Your Information
             </h2>
             <p className="mt-3">We use your information to:</p>
@@ -87,7 +87,7 @@ export default function PrivacyPage() {
 
           {/* 3. Data Storage & Security */}
           <section>
-            <h2 className="text-xl font-semibold text-slate-800">
+            <h2 className="text-h4 text-ink">
               3. Data Storage &amp; Security
             </h2>
             <p className="mt-3">
@@ -112,7 +112,7 @@ export default function PrivacyPage() {
               personal information from unauthorized access, alteration,
               disclosure, or destruction.
             </p>
-            <h3 className="mt-6 font-semibold text-slate-800">Data Retention</h3>
+            <h3 className="mt-6 font-semibold text-ink">Data Retention</h3>
             <p className="mt-3">
               We retain your personal, nutrition, and health data for as long as
               your account remains active, so the app can show your history,
@@ -126,7 +126,7 @@ export default function PrivacyPage() {
 
           {/* 4. Health Data */}
           <section>
-            <h2 className="text-xl font-semibold text-slate-800">
+            <h2 className="text-h4 text-ink">
               4. Health Data
             </h2>
             <p className="mt-3">
@@ -189,7 +189,7 @@ export default function PrivacyPage() {
 
           {/* 5. Data Sharing */}
           <section>
-            <h2 className="text-xl font-semibold text-slate-800">
+            <h2 className="text-h4 text-ink">
               5. Data Sharing
             </h2>
             <p className="mt-3">We do NOT:</p>
@@ -208,7 +208,7 @@ export default function PrivacyPage() {
 
           {/* 6. Third-Party Services */}
           <section>
-            <h2 className="text-xl font-semibold text-slate-800">
+            <h2 className="text-h4 text-ink">
               6. Third-Party Services
             </h2>
             <p className="mt-3">
@@ -219,7 +219,7 @@ export default function PrivacyPage() {
                 href="https://platform.fatsecret.com/privacy"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-medium text-emerald-600 underline underline-offset-4 hover:text-emerald-700"
+                className="font-medium text-emerald-600 dark:text-emerald-400 underline underline-offset-4 hover:text-emerald-700 dark:hover:text-emerald-300"
               >
                 https://platform.fatsecret.com/privacy
               </a>
@@ -229,7 +229,7 @@ export default function PrivacyPage() {
 
           {/* 7. Your Rights */}
           <section>
-            <h2 className="text-xl font-semibold text-slate-800">
+            <h2 className="text-h4 text-ink">
               7. Your Rights
             </h2>
             <p className="mt-3">You have the right to:</p>
@@ -247,7 +247,7 @@ export default function PrivacyPage() {
                 stored health data. You can also request deletion by emailing{" "}
                 <a
                   href="mailto:support@mynutririse.com"
-                  className="font-medium text-emerald-600 underline underline-offset-4 hover:text-emerald-700"
+                  className="font-medium text-emerald-600 dark:text-emerald-400 underline underline-offset-4 hover:text-emerald-700 dark:hover:text-emerald-300"
                 >
                   support@mynutririse.com
                 </a>
@@ -261,7 +261,7 @@ export default function PrivacyPage() {
 
           {/* 8. Children's Privacy */}
           <section>
-            <h2 className="text-xl font-semibold text-slate-800">
+            <h2 className="text-h4 text-ink">
               8. Children&apos;s Privacy
             </h2>
             <p className="mt-3">
@@ -274,7 +274,7 @@ export default function PrivacyPage() {
 
           {/* 9. Changes to This Policy */}
           <section>
-            <h2 className="text-xl font-semibold text-slate-800">
+            <h2 className="text-h4 text-ink">
               9. Changes to This Policy
             </h2>
             <p className="mt-3">
@@ -286,7 +286,7 @@ export default function PrivacyPage() {
 
           {/* 10. Contact Us */}
           <section>
-            <h2 className="text-xl font-semibold text-slate-800">
+            <h2 className="text-h4 text-ink">
               10. Contact Us
             </h2>
             <p className="mt-3">
@@ -297,7 +297,7 @@ export default function PrivacyPage() {
               Email:{" "}
               <a
                 href="mailto:support@mynutririse.com"
-                className="font-medium text-emerald-600 underline underline-offset-4 hover:text-emerald-700"
+                className="font-medium text-emerald-600 dark:text-emerald-400 underline underline-offset-4 hover:text-emerald-700 dark:hover:text-emerald-300"
               >
                 support@mynutririse.com
               </a>
@@ -306,7 +306,7 @@ export default function PrivacyPage() {
               Website:{" "}
               <a
                 href="https://mynutririse.com"
-                className="font-medium text-emerald-600 underline underline-offset-4 hover:text-emerald-700"
+                className="font-medium text-emerald-600 dark:text-emerald-400 underline underline-offset-4 hover:text-emerald-700 dark:hover:text-emerald-300"
               >
                 https://mynutririse.com
               </a>

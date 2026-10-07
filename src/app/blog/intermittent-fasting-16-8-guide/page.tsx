@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 
 export default function Article() {
   return (
-    <div className="bg-white pt-24">
+    <div className="wash-mint pt-24 pb-8">
       <article className="mx-auto max-w-3xl px-6 py-16">
         <JsonLd data={articleJsonLd} />
         <Breadcrumbs
@@ -35,14 +35,14 @@ export default function Article() {
             { name: "Intermittent Fasting 16:8", href: "/blog/intermittent-fasting-16-8-guide" },
           ]}
         />
-        <h1 className="mt-6 text-3xl font-bold tracking-tight text-slate-800 sm:text-4xl">
+        <h1 className="mt-6 text-h2 text-ink">
           Intermittent Fasting 16:8 — A Beginner&apos;s Guide
         </h1>
-        <p className="mt-3 text-sm text-slate-500">
+        <p className="mt-3 text-sm text-ink-3">
           <time dateTime="2026-06-09">June 9, 2026</time> &middot; 5 min read
         </p>
 
-        <div className="mt-10 space-y-6 text-base leading-7 text-slate-600">
+        <div className="mt-10 space-y-6 text-base leading-7 text-ink-2">
           <p>
             The 16:8 method is the most popular form of intermittent fasting,
             and for good reason: it&apos;s simple. You eat during an 8-hour
@@ -50,7 +50,7 @@ export default function Article() {
             you spend asleep anyway.
           </p>
 
-          <h2 className="pt-4 text-2xl font-bold text-slate-800">How it works</h2>
+          <h2 className="pt-4 text-2xl font-bold text-ink">How it works</h2>
           <p>
             A typical 16:8 schedule means finishing dinner by 8 PM and eating
             your first meal at noon the next day. During the fasting window you
@@ -60,7 +60,7 @@ export default function Article() {
             intake.
           </p>
 
-          <h2 className="pt-4 text-2xl font-bold text-slate-800">
+          <h2 className="pt-4 text-2xl font-bold text-ink">
             Picking your eating window
           </h2>
           <p>
@@ -71,7 +71,7 @@ export default function Article() {
             intensity.
           </p>
 
-          <h2 className="pt-4 text-2xl font-bold text-slate-800">
+          <h2 className="pt-4 text-2xl font-bold text-ink">
             Common beginner mistakes
           </h2>
           <ul className="list-disc space-y-2 pl-6">
@@ -96,7 +96,7 @@ export default function Article() {
             </li>
           </ul>
 
-          <h2 className="pt-4 text-2xl font-bold text-slate-800">
+          <h2 className="pt-4 text-2xl font-bold text-ink">
             16:8 and Ramadan — how they differ
           </h2>
           <p>
@@ -106,7 +106,7 @@ export default function Article() {
             front-load fluids at suhoor and iftar. The nutrition logic is the
             same in both — your daily calorie needs do not change, so plan
             your two meals to cover them. Use our free{" "}
-            <a href="/tools/calorie-calculator" className="font-medium text-emerald-600 hover:text-emerald-700">
+            <a href="/tools/calorie-calculator" className="font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300">
               calorie calculator
             </a>{" "}
             to find that number, and note that MyNutriRise includes a
@@ -114,7 +114,7 @@ export default function Article() {
             plans.
           </p>
 
-          <h2 className="pt-4 text-2xl font-bold text-slate-800">
+          <h2 className="pt-4 text-2xl font-bold text-ink">
             Who should be careful
           </h2>
           <p>

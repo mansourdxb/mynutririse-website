@@ -23,7 +23,7 @@ export function MacroCalculator() {
   const fat = valid ? Math.round((cal * split.f) / 100 / 9) : null;
 
   return (
-    <div className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-100 sm:p-8">
+    <div className="card p-6 sm:p-8">
       <NumberField
         label="Daily calories"
         value={calories}
@@ -32,11 +32,11 @@ export function MacroCalculator() {
         limits={LIMITS.calories}
         unit="kcal"
       />
-      <p className="mt-1.5 text-xs text-slate-500">
+      <p className="mt-1.5 text-xs text-ink-3">
         Don&apos;t know yours? Use the{" "}
         <a
           href="/tools/calorie-calculator"
-          className="font-medium text-emerald-600 hover:text-emerald-700"
+          className="font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300"
         >
           calorie calculator
         </a>{" "}
@@ -52,34 +52,34 @@ export function MacroCalculator() {
             className={`rounded-full px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 ${
               splitId === s.id
                 ? "bg-emerald-500 text-white"
-                : "bg-slate-100 text-slate-600 hover:bg-emerald-50"
+                : "bg-surface-2 text-ink-2 hover:bg-emerald-50 dark:hover:bg-emerald-400/10"
             }`}
           >
             {s.label}
           </button>
         ))}
       </div>
-      <p className="mt-2 text-xs text-slate-500">
+      <p className="mt-2 text-xs text-ink-3">
         {split.p}% protein · {split.c}% carbs · {split.f}% fat
       </p>
 
       {protein !== null ? (
         <div className="mt-6 grid gap-3 sm:grid-cols-3">
-          <div className="rounded-2xl bg-rose-50 p-5 text-center">
-            <p className="text-xs font-medium uppercase tracking-wide text-slate-600">Protein</p>
-            <p className="mt-1 text-2xl font-bold text-rose-600">{protein}g</p>
+          <div className="rounded-2xl bg-rose-50 dark:bg-rose-400/10 p-5 text-center">
+            <p className="text-xs font-medium uppercase tracking-wide text-ink-2">Protein</p>
+            <p className="mt-1 text-2xl font-bold text-rose-600 dark:text-rose-400">{protein}g</p>
           </div>
-          <div className="rounded-2xl bg-blue-50 p-5 text-center">
-            <p className="text-xs font-medium uppercase tracking-wide text-slate-600">Carbs</p>
-            <p className="mt-1 text-2xl font-bold text-blue-600">{carbs}g</p>
+          <div className="rounded-2xl bg-blue-50 dark:bg-blue-400/10 p-5 text-center">
+            <p className="text-xs font-medium uppercase tracking-wide text-ink-2">Carbs</p>
+            <p className="mt-1 text-2xl font-bold text-blue-600 dark:text-blue-400">{carbs}g</p>
           </div>
-          <div className="rounded-2xl bg-amber-50 p-5 text-center">
-            <p className="text-xs font-medium uppercase tracking-wide text-slate-600">Fat</p>
-            <p className="mt-1 text-2xl font-bold text-amber-600">{fat}g</p>
+          <div className="rounded-2xl bg-amber-50 dark:bg-amber-400/10 p-5 text-center">
+            <p className="text-xs font-medium uppercase tracking-wide text-ink-2">Fat</p>
+            <p className="mt-1 text-2xl font-bold text-amber-600 dark:text-amber-400">{fat}g</p>
           </div>
         </div>
       ) : (
-        <p className="mt-6 text-center text-sm text-slate-500">
+        <p className="mt-6 text-center text-sm text-ink-3">
           Enter your daily calories to see your macro targets.
         </p>
       )}

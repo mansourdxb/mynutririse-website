@@ -40,7 +40,7 @@ export function CalorieCalculator() {
   }
 
   return (
-    <div className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-100 sm:p-8">
+    <div className="card p-6 sm:p-8">
       <TogglePills
         options={[
           { value: "male", label: "Male" },
@@ -79,7 +79,7 @@ export function CalorieCalculator() {
       </div>
 
       <label className="mt-4 block">
-        <span className="mb-1.5 block text-sm font-medium text-slate-700">
+        <span className="mb-1.5 block text-sm font-medium text-ink-2">
           Activity level
         </span>
         <select
@@ -97,36 +97,36 @@ export function CalorieCalculator() {
 
       {maintenance ? (
         <div className="mt-6 grid gap-3 sm:grid-cols-3">
-          <div className="rounded-2xl bg-blue-50 p-5 text-center">
-            <p className="text-xs font-medium uppercase tracking-wide text-slate-600">
+          <div className="rounded-2xl bg-blue-50 dark:bg-blue-400/10 p-5 text-center">
+            <p className="text-xs font-medium uppercase tracking-wide text-ink-2">
               Lose weight
             </p>
-            <p className="mt-1 text-2xl font-bold text-blue-600">
+            <p className="mt-1 text-2xl font-bold text-blue-600 dark:text-blue-400">
               {Math.max(1200, maintenance - 500).toLocaleString()}
             </p>
-            <p className="text-xs text-slate-500">kcal/day</p>
+            <p className="text-xs text-ink-3">kcal/day</p>
           </div>
-          <div className="rounded-2xl bg-emerald-50 p-5 text-center">
-            <p className="text-xs font-medium uppercase tracking-wide text-slate-600">
+          <div className="rounded-2xl bg-emerald-50 dark:bg-emerald-400/10 p-5 text-center">
+            <p className="text-xs font-medium uppercase tracking-wide text-ink-2">
               Maintain
             </p>
-            <p className="mt-1 text-2xl font-bold text-emerald-600">
+            <p className="mt-1 text-2xl font-bold text-emerald-600 dark:text-emerald-400">
               {maintenance.toLocaleString()}
             </p>
-            <p className="text-xs text-slate-500">kcal/day</p>
+            <p className="text-xs text-ink-3">kcal/day</p>
           </div>
-          <div className="rounded-2xl bg-amber-50 p-5 text-center">
-            <p className="text-xs font-medium uppercase tracking-wide text-slate-600">
+          <div className="rounded-2xl bg-amber-50 dark:bg-amber-400/10 p-5 text-center">
+            <p className="text-xs font-medium uppercase tracking-wide text-ink-2">
               Gain muscle
             </p>
-            <p className="mt-1 text-2xl font-bold text-amber-600">
+            <p className="mt-1 text-2xl font-bold text-amber-600 dark:text-amber-400">
               {(maintenance + 300).toLocaleString()}
             </p>
-            <p className="text-xs text-slate-500">kcal/day</p>
+            <p className="text-xs text-ink-3">kcal/day</p>
           </div>
         </div>
       ) : (
-        <p className="mt-6 text-center text-sm text-slate-500">
+        <p className="mt-6 text-center text-sm text-ink-3">
           Fill in your details to see your daily calorie targets.
         </p>
       )}

@@ -56,66 +56,66 @@ const itemListJsonLd = {
 
 export default function RecipesPage() {
   return (
-    <div className="bg-white pt-24">
+    <div className="wash-mint pt-24 pb-8">
       <JsonLd data={itemListJsonLd} />
       <div className="mx-auto max-w-6xl px-6 py-16">
-        <h1 className="text-center text-4xl font-bold tracking-tight text-slate-800 sm:text-5xl">
+        <h1 className="text-center text-h1 text-ink">
           {RECIPES}{" "}recipes.{" "}
-          <span className="text-emerald-600">
+          <span className="text-emerald-600 dark:text-emerald-400">
             Your culture included.
           </span>
         </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-slate-500">
+        <p className="mx-auto mt-4 max-w-2xl text-center text-lead text-ink-3">
           From Turkish kebabs to Afghan pulao — {CUISINES}{" "}world cuisines with full
           calories and macros, halal-friendly throughout — see the{" "}
-          <Link href="/halal-nutrition-app" className="font-medium text-emerald-600 hover:text-emerald-700">
+          <Link href="/halal-nutrition-app" className="font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300">
             halal nutrition app
           </Link>{" "}
           page for the full story. A taste of what&apos;s in the app:
         </p>
 
-        <h2 className="mt-12 text-center text-2xl font-bold text-slate-800">
+        <h2 className="mt-12 text-center text-2xl font-bold text-ink">
           Featured dishes from the library
         </h2>
         <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {featuredDishes.map((dish) => (
             <div
               key={dish.name}
-              className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-100 transition-shadow duration-300 hover:shadow-md"
+              className="card p-6 card-hover"
             >
               <div className="flex items-start justify-between">
                 <span className="text-3xl" aria-hidden="true">{dish.emoji}</span>
-                <span className="rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-700">
+                <span className="rounded-full bg-emerald-50 dark:bg-emerald-400/10 px-2.5 py-1 text-xs font-semibold text-emerald-700 dark:text-emerald-300">
                   {dish.kcal} kcal
                 </span>
               </div>
-              <h3 className="mt-3 font-semibold text-slate-800">{dish.name}</h3>
-              <p className="text-xs text-slate-500">{dish.cuisine}</p>
-              <div className="mt-3 flex gap-3 text-xs text-slate-500">
-                <span><strong className="text-rose-500">{dish.p}g</strong> protein</span>
-                <span><strong className="text-blue-500">{dish.c}g</strong> carbs</span>
-                <span><strong className="text-amber-500">{dish.f}g</strong> fat</span>
+              <h3 className="mt-3 font-semibold text-ink">{dish.name}</h3>
+              <p className="text-xs text-ink-3">{dish.cuisine}</p>
+              <div className="mt-3 flex gap-3 text-xs text-ink-3">
+                <span><strong className="text-rose-500 dark:text-rose-400">{dish.p}g</strong> protein</span>
+                <span><strong className="text-blue-500 dark:text-blue-400">{dish.c}g</strong> carbs</span>
+                <span><strong className="text-amber-500 dark:text-amber-400">{dish.f}g</strong> fat</span>
               </div>
             </div>
           ))}
         </div>
 
-        <h2 className="mt-16 text-center text-2xl font-bold text-slate-800">
+        <h2 className="mt-16 text-center text-2xl font-bold text-ink">
           And thousands more, organized your way
         </h2>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           {categories.map((cat) => (
             <span
               key={cat.name}
-              className="rounded-full bg-white px-4 py-2 text-sm font-medium text-slate-600 shadow-sm ring-1 ring-slate-100"
+              className="rounded-full bg-surface px-4 py-2 text-sm font-medium text-ink-2 shadow-sm ring-1 ring-line"
             >
-              {cat.name} <span className="text-emerald-600">{cat.count}</span>
+              {cat.name} <span className="text-emerald-600 dark:text-emerald-400">{cat.count}</span>
             </span>
           ))}
         </div>
 
-        <div className="mx-auto mt-14 max-w-3xl rounded-3xl bg-gradient-to-br from-emerald-500 to-teal-400 p-8 text-center sm:p-10">
-          <h2 className="text-2xl font-bold text-white sm:text-3xl">
+        <div className="mx-auto mt-14 max-w-3xl rounded-[2rem] bg-gradient-to-br from-emerald-700 via-emerald-600 to-teal-600 shadow-[0_30px_60px_-30px_rgb(4_120_87/0.55)] dark:from-emerald-900 dark:via-emerald-800 dark:to-teal-900 dark:shadow-none dark:ring-1 dark:ring-white/10 p-8 text-center sm:p-10">
+          <h2 className="text-h3 text-white">
             Every recipe, fully tracked
           </h2>
           <p className="mx-auto mt-3 max-w-md text-white/85">

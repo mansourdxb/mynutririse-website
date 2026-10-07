@@ -27,7 +27,7 @@ export function IdealWeightCalculator() {
   }
 
   return (
-    <div className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-100 sm:p-8">
+    <div className="card p-6 sm:p-8">
       <TogglePills
         options={[
           { value: "male", label: "Male" },
@@ -51,35 +51,35 @@ export function IdealWeightCalculator() {
 
       {devine && robinson && healthyMin && healthyMax ? (
         <div className="mt-6 space-y-3">
-          <div className="rounded-2xl bg-emerald-50 p-6 text-center">
-            <p className="text-sm font-medium text-slate-600">
+          <div className="rounded-2xl bg-emerald-50 dark:bg-emerald-400/10 p-6 text-center">
+            <p className="text-sm font-medium text-ink-2">
               Healthy weight range (BMI 18.5–24.9)
             </p>
-            <p className="mt-1 text-3xl font-bold text-emerald-600">
+            <p className="mt-1 text-3xl font-bold text-emerald-600 dark:text-emerald-400">
               {healthyMin.toFixed(0)}–{healthyMax.toFixed(0)} kg
             </p>
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
-            <div className="rounded-2xl bg-slate-50 p-5 text-center">
-              <p className="text-xs font-medium uppercase tracking-wide text-slate-600">
+            <div className="rounded-2xl bg-surface-2 p-5 text-center">
+              <p className="text-xs font-medium uppercase tracking-wide text-ink-2">
                 Devine formula
               </p>
-              <p className="mt-1 text-2xl font-bold text-slate-800">
+              <p className="mt-1 text-2xl font-bold text-ink">
                 {devine.toFixed(1)} kg
               </p>
             </div>
-            <div className="rounded-2xl bg-slate-50 p-5 text-center">
-              <p className="text-xs font-medium uppercase tracking-wide text-slate-600">
+            <div className="rounded-2xl bg-surface-2 p-5 text-center">
+              <p className="text-xs font-medium uppercase tracking-wide text-ink-2">
                 Robinson formula
               </p>
-              <p className="mt-1 text-2xl font-bold text-slate-800">
+              <p className="mt-1 text-2xl font-bold text-ink">
                 {robinson.toFixed(1)} kg
               </p>
             </div>
           </div>
         </div>
       ) : (
-        <p className="mt-6 text-center text-sm text-slate-500">
+        <p className="mt-6 text-center text-sm text-ink-3">
           Enter your height to see your estimated ideal weight range.
         </p>
       )}

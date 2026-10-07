@@ -47,7 +47,7 @@ const faqJsonLd = {
 
 export default function Page() {
   return (
-    <div className="bg-white pt-24">
+    <div className="wash-mint pt-24 pb-8">
       <JsonLd data={faqJsonLd} />
       <div className="mx-auto max-w-3xl px-6 py-16">
         <Breadcrumbs
@@ -56,10 +56,10 @@ export default function Page() {
             { name: "Ideal Weight", href: "/tools/ideal-weight-calculator" },
           ]}
         />
-        <h1 className="mt-6 text-center text-4xl font-bold tracking-tight text-slate-800 sm:text-5xl">
+        <h1 className="mt-6 text-center text-h1 text-ink">
           Ideal Weight Calculator
         </h1>
-        <p className="mx-auto mt-4 max-w-xl text-center text-lg text-slate-500">
+        <p className="mx-auto mt-4 max-w-xl text-center text-lead text-ink-3">
           Estimate a healthy weight range for your height — free, no sign-up needed.
         </p>
 
@@ -67,8 +67,8 @@ export default function Page() {
           <IdealWeightCalculator />
         </div>
 
-        <div className="mt-12 space-y-4 text-slate-600">
-          <h2 className="text-2xl font-bold text-slate-800">
+        <div className="mt-12 space-y-4 text-ink-2">
+          <h2 className="text-2xl font-bold text-ink">
             What &ldquo;ideal weight&rdquo; really means
           </h2>
           <p>
@@ -77,7 +77,7 @@ export default function Page() {
             dosing and give a useful midpoint, while the BMI-based range
             (18.5–24.9) shows the span generally associated with good health:
           </p>
-          <div className="rounded-2xl bg-slate-50 p-5 font-mono text-sm leading-7">
+          <div className="rounded-2xl bg-surface-2 p-5 font-mono text-sm leading-7">
             <p>Devine (men): 50 kg + 2.3 kg per inch over 5 ft</p>
             <p>Devine (women): 45.5 kg + 2.3 kg per inch over 5 ft</p>
             <p>Robinson (men): 52 kg + 1.9 kg per inch over 5 ft</p>
@@ -87,33 +87,33 @@ export default function Page() {
             Muscle mass, frame size, and ethnicity all shift what is right for
             you — use the range as a direction, not a deadline.
           </p>
-          <h2 className="pt-4 text-2xl font-bold text-slate-800">
+          <h2 className="pt-4 text-2xl font-bold text-ink">
             Getting there sustainably
           </h2>
           <p>
             Pick a target inside your healthy range, then work backwards: the{" "}
-            <Link href="/tools/calorie-calculator" className="font-medium text-emerald-600 hover:text-emerald-700">calorie calculator</Link>{" "}
+            <Link href="/tools/calorie-calculator" className="font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300">calorie calculator</Link>{" "}
             gives you the daily intake for 0.25–0.5 kg of change per week, and
-            the <Link href="/tools/bmi-calculator" className="font-medium text-emerald-600 hover:text-emerald-700">BMI calculator</Link> lets you
+            the <Link href="/tools/bmi-calculator" className="font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300">BMI calculator</Link> lets you
             sanity-check progress along the way.
           </p>
-          <h2 className="pt-4 text-2xl font-bold text-slate-800">
+          <h2 className="pt-4 text-2xl font-bold text-ink">
             Frequently asked questions
           </h2>
           {faqs.map((faq) => (
             <div key={faq.question}>
-              <h3 className="font-semibold text-slate-800">{faq.question}</h3>
+              <h3 className="font-semibold text-ink">{faq.question}</h3>
               <p className="mt-2">{faq.answer}</p>
             </div>
           ))}
-          <p className="text-sm text-slate-500">
+          <p className="text-sm text-ink-3">
             This tool provides general estimates, not medical advice. Consult a
             professional before major dietary changes.
           </p>
         </div>
 
-        <div className="mt-12 rounded-3xl bg-gradient-to-br from-emerald-500 to-teal-400 p-8 text-center sm:p-10">
-          <h2 className="text-2xl font-bold text-white sm:text-3xl">
+        <div className="mt-12 rounded-[2rem] bg-gradient-to-br from-emerald-700 via-emerald-600 to-teal-600 shadow-[0_30px_60px_-30px_rgb(4_120_87/0.55)] dark:from-emerald-900 dark:via-emerald-800 dark:to-teal-900 dark:shadow-none dark:ring-1 dark:ring-white/10 p-8 text-center sm:p-10">
+          <h2 className="text-h3 text-white">
             Get there sustainably
           </h2>
           <p className="mx-auto mt-3 max-w-md text-white/85">

@@ -55,7 +55,7 @@ const activityTable = [
 
 export default function CalorieCalculatorPage() {
   return (
-    <div className="bg-white pt-24">
+    <div className="wash-mint pt-24 pb-8">
       <JsonLd data={faqJsonLd} />
       <div className="mx-auto max-w-3xl px-6 py-16">
         <Breadcrumbs
@@ -64,10 +64,10 @@ export default function CalorieCalculatorPage() {
             { name: "Calorie Calculator", href: "/tools/calorie-calculator" },
           ]}
         />
-        <h1 className="mt-6 text-center text-4xl font-bold tracking-tight text-slate-800 sm:text-5xl">
+        <h1 className="mt-6 text-center text-h1 text-ink">
           Calorie Calculator
         </h1>
-        <p className="mx-auto mt-4 max-w-xl text-center text-lg text-slate-500">
+        <p className="mx-auto mt-4 max-w-xl text-center text-lead text-ink-3">
           See how many calories you need each day to lose weight, maintain, or
           build muscle — free, no sign-up needed.
         </p>
@@ -76,8 +76,8 @@ export default function CalorieCalculatorPage() {
           <CalorieCalculator />
         </div>
 
-        <div className="mt-12 space-y-4 text-slate-600">
-          <h2 className="text-2xl font-bold text-slate-800">
+        <div className="mt-12 space-y-4 text-ink-2">
+          <h2 className="text-2xl font-bold text-ink">
             How your calorie needs are calculated
           </h2>
           <p>
@@ -85,7 +85,7 @@ export default function CalorieCalculatorPage() {
             the formula dietitians most commonly rely on for estimating basal
             metabolic rate (BMR) — the energy your body burns at rest:
           </p>
-          <div className="rounded-2xl bg-slate-50 p-5 font-mono text-sm leading-7">
+          <div className="rounded-2xl bg-surface-2 p-5 font-mono text-sm leading-7">
             <p>Men: BMR = 10 × weight(kg) + 6.25 × height(cm) − 5 × age + 5</p>
             <p>Women: BMR = 10 × weight(kg) + 6.25 × height(cm) − 5 × age − 161</p>
           </div>
@@ -93,21 +93,21 @@ export default function CalorieCalculatorPage() {
             Your BMR is then multiplied by an activity factor to estimate your
             total daily energy expenditure (TDEE):
           </p>
-          <div className="overflow-hidden rounded-2xl ring-1 ring-slate-100">
+          <div className="overflow-hidden rounded-2xl ring-1 ring-line">
             <table className="w-full text-sm">
               <thead>
-                <tr className="bg-emerald-50/60 text-left">
-                  <th className="px-4 py-3 font-semibold text-slate-700">Activity level</th>
-                  <th className="px-4 py-3 font-semibold text-slate-700">Multiplier</th>
-                  <th className="px-4 py-3 font-semibold text-slate-700">Typical week</th>
+                <tr className="bg-emerald-50/60 dark:bg-emerald-400/10 text-left">
+                  <th className="px-4 py-3 font-semibold text-ink-2">Activity level</th>
+                  <th className="px-4 py-3 font-semibold text-ink-2">Multiplier</th>
+                  <th className="px-4 py-3 font-semibold text-ink-2">Typical week</th>
                 </tr>
               </thead>
               <tbody>
                 {activityTable.map(([level, factor, desc]) => (
-                  <tr key={level} className="border-t border-slate-100">
-                    <td className="px-4 py-3 font-medium text-slate-700">{level}</td>
+                  <tr key={level} className="border-t border-line">
+                    <td className="px-4 py-3 font-medium text-ink-2">{level}</td>
                     <td className="px-4 py-3">{factor}</td>
-                    <td className="px-4 py-3 text-slate-500">{desc}</td>
+                    <td className="px-4 py-3 text-ink-3">{desc}</td>
                   </tr>
                 ))}
               </tbody>
@@ -121,25 +121,25 @@ export default function CalorieCalculatorPage() {
             muscle in a lean surplus.
           </p>
 
-          <h2 className="pt-4 text-2xl font-bold text-slate-800">
+          <h2 className="pt-4 text-2xl font-bold text-ink">
             What to do with your number
           </h2>
           <p>
             A target only works if you track against it. Split your calories
             sensibly across the day — our free{" "}
-            <Link href="/tools/macro-calculator" className="font-medium text-emerald-600 hover:text-emerald-700">
+            <Link href="/tools/macro-calculator" className="font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300">
               macro calculator
             </Link>{" "}
             turns the number into protein, carb, and fat targets — and weigh in
             weekly, adjusting by 100–200 kcal if your trend is off. If you want
             to understand the resting-energy half of the math, see the{" "}
-            <Link href="/tools/bmr-calculator" className="font-medium text-emerald-600 hover:text-emerald-700">
+            <Link href="/tools/bmr-calculator" className="font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300">
               BMR calculator
             </Link>
             .
           </p>
 
-          <h2 className="pt-4 text-2xl font-bold text-slate-800">
+          <h2 className="pt-4 text-2xl font-bold text-ink">
             Calories during Ramadan and fasting
           </h2>
           <p>
@@ -149,29 +149,29 @@ export default function CalorieCalculatorPage() {
             fast with fluids and dates, and keep the main iftar meal balanced
             rather than compressed into one oversized plate. The same logic
             applies to 16:8 and other protocols — our{" "}
-            <Link href="/blog/intermittent-fasting-16-8-guide" className="font-medium text-emerald-600 hover:text-emerald-700">
+            <Link href="/blog/intermittent-fasting-16-8-guide" className="font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300">
               16:8 beginner&apos;s guide
             </Link>{" "}
             covers the details.
           </p>
 
-          <h2 className="pt-4 text-2xl font-bold text-slate-800">
+          <h2 className="pt-4 text-2xl font-bold text-ink">
             Frequently asked questions
           </h2>
           {faqs.map((faq) => (
             <div key={faq.question}>
-              <h3 className="font-semibold text-slate-800">{faq.question}</h3>
+              <h3 className="font-semibold text-ink">{faq.question}</h3>
               <p className="mt-2">{faq.answer}</p>
             </div>
           ))}
-          <p className="text-sm text-slate-500">
+          <p className="text-sm text-ink-3">
             This tool provides general estimates, not medical advice. Consult a
             professional before major dietary changes.
           </p>
         </div>
 
-        <div className="mt-12 rounded-3xl bg-gradient-to-br from-emerald-500 to-teal-400 p-8 text-center sm:p-10">
-          <h2 className="text-2xl font-bold text-white sm:text-3xl">
+        <div className="mt-12 rounded-[2rem] bg-gradient-to-br from-emerald-700 via-emerald-600 to-teal-600 shadow-[0_30px_60px_-30px_rgb(4_120_87/0.55)] dark:from-emerald-900 dark:via-emerald-800 dark:to-teal-900 dark:shadow-none dark:ring-1 dark:ring-white/10 p-8 text-center sm:p-10">
+          <h2 className="text-h3 text-white">
             Hit your target every day
           </h2>
           <p className="mx-auto mt-3 max-w-md text-white/85">

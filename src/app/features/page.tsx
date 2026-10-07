@@ -12,12 +12,12 @@ export const metadata: Metadata = {
 export default function FeaturesPage() {
   return (
     <>
-      <div className="pt-24">
+      <div className="wash-mint pt-24 pb-8">
         <section className="mx-auto max-w-4xl px-6 py-12 text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-slate-800 sm:text-5xl">
+          <h1 className="text-h1 text-ink">
             Powerful Features for Healthier Living
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-500">
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-ink-3">
             Everything you need to understand your nutrition, optimize your
             habits, and feel your best — all in one beautifully designed app.
           </p>

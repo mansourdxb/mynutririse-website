@@ -22,18 +22,18 @@ export function Breadcrumbs({
   };
 
   return (
-    <nav aria-label="Breadcrumb" className="text-sm text-slate-500">
+    <nav aria-label="Breadcrumb" className="text-sm text-ink-3">
       <JsonLd data={jsonLd} />
       <ol className="flex flex-wrap items-center gap-1.5">
         {trail.map((item, i) => (
           <li key={item.href} className="flex items-center gap-1.5">
             {i > 0 && <span aria-hidden="true">/</span>}
             {i === trail.length - 1 ? (
-              <span className="font-medium text-slate-700">{item.name}</span>
+              <span className="font-medium text-ink-2">{item.name}</span>
             ) : (
               <Link
                 href={item.href}
-                className="transition-colors hover:text-emerald-600"
+                className="transition-colors hover:text-emerald-600 dark:hover:text-emerald-400"
               >
                 {item.name}
               </Link>

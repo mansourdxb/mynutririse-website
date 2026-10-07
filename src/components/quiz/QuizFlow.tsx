@@ -88,8 +88,8 @@ const macroSplit: Record<EatingStyle, [number, number, number]> = {
 const optionClass = (selected: boolean) =>
   `w-full rounded-2xl border-2 p-4 text-left transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 ${
     selected
-      ? "border-emerald-500 bg-emerald-50"
-      : "border-slate-200 bg-white hover:border-emerald-300"
+      ? "border-emerald-500 bg-emerald-50 dark:bg-emerald-400/10"
+      : "border-line bg-surface hover:border-emerald-300 dark:hover:border-emerald-400/30"
   }`;
 
 const TOTAL_STEPS = 5;
@@ -152,11 +152,11 @@ export function QuizFlow() {
     <div className="mx-auto max-w-xl">
       {/* Progress bar */}
       <div className="mb-8">
-        <div className="flex items-center justify-between text-xs font-medium text-slate-500">
+        <div className="flex items-center justify-between text-xs font-medium text-ink-3">
           <span>{isResult ? "Your plan" : `Step ${step + 1} of ${TOTAL_STEPS - 1}`}</span>
           <span>{Math.round((step / (TOTAL_STEPS - 1)) * 100)}%</span>
         </div>
-        <div className="mt-2 h-2 overflow-hidden rounded-full bg-slate-100">
+        <div className="mt-2 h-2 overflow-hidden rounded-full bg-surface-2">
           <motion.div
             className="h-full rounded-full bg-gradient-to-r from-emerald-500 to-teal-400"
             animate={{ width: `${(step / (TOTAL_STEPS - 1)) * 100}%` }}
@@ -175,7 +175,7 @@ export function QuizFlow() {
         >
           {step === 0 && (
             <div>
-              <h2 className="text-2xl font-bold text-slate-800 sm:text-3xl">
+              <h2 className="text-h3 text-ink">
                 What&apos;s your main goal?
               </h2>
               <div className="mt-6 space-y-3">
@@ -187,8 +187,8 @@ export function QuizFlow() {
                     className={optionClass(goal === g.value)}
                   >
                     <span className="mr-3">{g.emoji}</span>
-                    <span className="font-semibold text-slate-800">{g.label}</span>
-                    <span className="block pl-8 text-sm text-slate-500">{g.sub}</span>
+                    <span className="font-semibold text-ink">{g.label}</span>
+                    <span className="block pl-8 text-sm text-ink-3">{g.sub}</span>
                   </button>
                 ))}
               </div>
@@ -197,10 +197,10 @@ export function QuizFlow() {
 
           {step === 1 && (
             <div>
-              <h2 className="text-2xl font-bold text-slate-800 sm:text-3xl">
+              <h2 className="text-h3 text-ink">
                 Tell us about yourself
               </h2>
-              <p className="mt-2 text-sm text-slate-500">
+              <p className="mt-2 text-sm text-ink-3">
                 Age tunes calorie targets to your metabolism. We keep this
                 private.
               </p>
@@ -213,7 +213,7 @@ export function QuizFlow() {
                     className={`flex-1 rounded-full px-5 py-2.5 text-sm font-medium capitalize transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 ${
                       sex === s
                         ? "bg-emerald-500 text-white"
-                        : "bg-slate-100 text-slate-600 hover:bg-emerald-50"
+                        : "bg-surface-2 text-ink-2 hover:bg-emerald-50 dark:hover:bg-emerald-400/10"
                     }`}
                   >
                     {s}
@@ -230,7 +230,7 @@ export function QuizFlow() {
 
           {step === 2 && (
             <div>
-              <h2 className="text-2xl font-bold text-slate-800 sm:text-3xl">
+              <h2 className="text-h3 text-ink">
                 How often do you work out?
               </h2>
               <div className="mt-6 space-y-3">
@@ -241,8 +241,8 @@ export function QuizFlow() {
                     aria-pressed={activity === level.value}
                     className={optionClass(activity === level.value)}
                   >
-                    <span className="block font-semibold text-slate-800">{level.label}</span>
-                    <span className="text-sm text-slate-500">{level.sub}</span>
+                    <span className="block font-semibold text-ink">{level.label}</span>
+                    <span className="text-sm text-ink-3">{level.sub}</span>
                   </button>
                 ))}
               </div>
@@ -251,7 +251,7 @@ export function QuizFlow() {
 
           {step === 3 && (
             <div>
-              <h2 className="text-2xl font-bold text-slate-800 sm:text-3xl">
+              <h2 className="text-h3 text-ink">
                 Pick your eating style
               </h2>
               <div className="mt-6 space-y-3">
@@ -262,8 +262,8 @@ export function QuizFlow() {
                     aria-pressed={style === s.value}
                     className={optionClass(style === s.value)}
                   >
-                    <span className="block font-semibold text-slate-800">{s.label}</span>
-                    <span className="text-sm text-slate-500">{s.sub}</span>
+                    <span className="block font-semibold text-ink">{s.label}</span>
+                    <span className="text-sm text-ink-3">{s.sub}</span>
                   </button>
                 ))}
               </div>
@@ -272,13 +272,13 @@ export function QuizFlow() {
 
           {isResult && plan && calories && (
             <div className="text-center">
-              <p className="text-sm font-semibold uppercase tracking-widest text-emerald-600">
+              <p className="text-sm font-semibold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">
                 Your custom plan
               </p>
-              <h2 className="mt-3 text-3xl font-bold text-slate-800 sm:text-4xl">
+              <h2 className="mt-3 text-3xl font-bold text-ink sm:text-4xl">
                 {plan.emoji} {plan.name}
               </h2>
-              <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-slate-500">
+              <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-ink-3">
                 {plan.blurb}
               </p>
 
@@ -305,7 +305,7 @@ export function QuizFlow() {
                 </p>
               </div>
 
-              <p className="mx-auto mt-6 max-w-md leading-relaxed text-slate-500">
+              <p className="mx-auto mt-6 max-w-md leading-relaxed text-ink-3">
                 This is the same math the app uses. Download MyNutriRise and
                 your plan is ready — a guided meal plan (week 1 free, all 4 weeks with Premium), AI photo logging, and
                 coaching included.
@@ -313,7 +313,7 @@ export function QuizFlow() {
               <StoreButtons reassurance className="mt-8" />
               <a
                 href={`mailto:?subject=${encodeURIComponent("My MyNutriRise plan")}&body=${emailBody}`}
-                className="mt-3 inline-block text-sm font-medium text-emerald-600 hover:text-emerald-700"
+                className="mt-3 inline-block text-sm font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300"
               >
                 Email me my plan →
               </a>
@@ -328,7 +328,7 @@ export function QuizFlow() {
           <button
             onClick={() => setStep((s) => Math.max(0, s - 1))}
             disabled={step === 0}
-            className="rounded-full px-6 py-2.5 text-sm font-medium text-slate-600 transition-colors hover:text-emerald-600 disabled:invisible focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2"
+            className="rounded-full px-6 py-2.5 text-sm font-medium text-ink-2 transition-colors hover:text-emerald-600 dark:hover:text-emerald-400 disabled:invisible focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2"
           >
             ← Back
           </button>

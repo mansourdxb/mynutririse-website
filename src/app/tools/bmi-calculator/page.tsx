@@ -47,7 +47,7 @@ const faqJsonLd = {
 
 export default function Page() {
   return (
-    <div className="bg-white pt-24">
+    <div className="wash-mint pt-24 pb-8">
       <JsonLd data={faqJsonLd} />
       <div className="mx-auto max-w-3xl px-6 py-16">
         <Breadcrumbs
@@ -56,10 +56,10 @@ export default function Page() {
             { name: "BMI Calculator", href: "/tools/bmi-calculator" },
           ]}
         />
-        <h1 className="mt-6 text-center text-4xl font-bold tracking-tight text-slate-800 sm:text-5xl">
+        <h1 className="mt-6 text-center text-h1 text-ink">
           BMI Calculator
         </h1>
-        <p className="mx-auto mt-4 max-w-xl text-center text-lg text-slate-500">
+        <p className="mx-auto mt-4 max-w-xl text-center text-lead text-ink-3">
           Find out your Body Mass Index in seconds — free, no sign-up needed.
         </p>
 
@@ -67,8 +67,8 @@ export default function Page() {
           <BmiCalculator />
         </div>
 
-        <div className="mt-12 space-y-4 text-slate-600">
-          <h2 className="text-2xl font-bold text-slate-800">What is BMI?</h2>
+        <div className="mt-12 space-y-4 text-ink-2">
+          <h2 className="text-2xl font-bold text-ink">What is BMI?</h2>
           <p>
             Body Mass Index compares your weight to your height:{" "}
             <strong>BMI = weight(kg) ÷ height(m)²</strong>. For adults, 18.5 to
@@ -81,35 +81,35 @@ export default function Page() {
             healthy, and healthy ranges can shift slightly by ethnicity. Treat
             it as a screening signal, not a verdict.
           </p>
-          <h2 className="pt-4 text-2xl font-bold text-slate-800">
+          <h2 className="pt-4 text-2xl font-bold text-ink">
             What to do with your result
           </h2>
           <p>
             If your BMI sits outside the healthy band, the sustainable response
             is a modest calorie adjustment, not a crash diet. Find your daily
             target with the{" "}
-            <Link href="/tools/calorie-calculator" className="font-medium text-emerald-600 hover:text-emerald-700">calorie calculator</Link>, see the
+            <Link href="/tools/calorie-calculator" className="font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300">calorie calculator</Link>, see the
             weight range behind the math in the{" "}
-            <Link href="/tools/ideal-weight-calculator" className="font-medium text-emerald-600 hover:text-emerald-700">ideal weight calculator</Link>,
+            <Link href="/tools/ideal-weight-calculator" className="font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300">ideal weight calculator</Link>,
             and aim for 0.25–0.5 kg of change per week.
           </p>
-          <h2 className="pt-4 text-2xl font-bold text-slate-800">
+          <h2 className="pt-4 text-2xl font-bold text-ink">
             Frequently asked questions
           </h2>
           {faqs.map((faq) => (
             <div key={faq.question}>
-              <h3 className="font-semibold text-slate-800">{faq.question}</h3>
+              <h3 className="font-semibold text-ink">{faq.question}</h3>
               <p className="mt-2">{faq.answer}</p>
             </div>
           ))}
-          <p className="text-sm text-slate-500">
+          <p className="text-sm text-ink-3">
             This tool provides general estimates, not medical advice. Consult a
             professional before major dietary changes.
           </p>
         </div>
 
-        <div className="mt-12 rounded-3xl bg-gradient-to-br from-emerald-500 to-teal-400 p-8 text-center sm:p-10">
-          <h2 className="text-2xl font-bold text-white sm:text-3xl">
+        <div className="mt-12 rounded-[2rem] bg-gradient-to-br from-emerald-700 via-emerald-600 to-teal-600 shadow-[0_30px_60px_-30px_rgb(4_120_87/0.55)] dark:from-emerald-900 dark:via-emerald-800 dark:to-teal-900 dark:shadow-none dark:ring-1 dark:ring-white/10 p-8 text-center sm:p-10">
+          <h2 className="text-h3 text-white">
             Ready to act on your number?
           </h2>
           <p className="mx-auto mt-3 max-w-md text-white/85">

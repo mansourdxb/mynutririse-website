@@ -23,7 +23,7 @@ export function BmrCalculator() {
   }
 
   return (
-    <div className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-100 sm:p-8">
+    <div className="card p-6 sm:p-8">
       <TogglePills
         options={[
           { value: "male", label: "Male" },
@@ -62,17 +62,17 @@ export function BmrCalculator() {
       </div>
 
       {bmr ? (
-        <div className="mt-6 rounded-2xl bg-emerald-50 p-6 text-center">
-          <p className="text-sm font-medium text-slate-600">Your BMR</p>
-          <p className="mt-1 text-5xl font-bold text-slate-800">
+        <div className="mt-6 rounded-2xl bg-emerald-50 dark:bg-emerald-400/10 p-6 text-center">
+          <p className="text-sm font-medium text-ink-2">Your BMR</p>
+          <p className="mt-1 text-5xl font-bold text-ink">
             {bmr.toLocaleString()}
           </p>
-          <p className="mt-2 text-sm text-slate-500">
+          <p className="mt-2 text-sm text-ink-3">
             kcal/day burned at complete rest (Mifflin–St Jeor)
           </p>
         </div>
       ) : (
-        <p className="mt-6 text-center text-sm text-slate-500">
+        <p className="mt-6 text-center text-sm text-ink-3">
           Fill in your details to see your basal metabolic rate.
         </p>
       )}

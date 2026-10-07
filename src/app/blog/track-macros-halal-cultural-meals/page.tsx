@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 
 export default function Article() {
   return (
-    <div className="bg-white pt-24">
+    <div className="wash-mint pt-24 pb-8">
       <article className="mx-auto max-w-3xl px-6 py-16">
         <JsonLd data={articleJsonLd} />
         <Breadcrumbs
@@ -34,14 +34,14 @@ export default function Article() {
             { name: "Tracking Macros", href: "/blog/track-macros-halal-cultural-meals" },
           ]}
         />
-        <h1 className="mt-6 text-3xl font-bold tracking-tight text-slate-800 sm:text-4xl">
+        <h1 className="mt-6 text-h2 text-ink">
           Tracking Macros with Halal &amp; Cultural Meals
         </h1>
-        <p className="mt-3 text-sm text-slate-500">
+        <p className="mt-3 text-sm text-ink-3">
           <time dateTime="2026-06-09">June 9, 2026</time> &middot; 5 min read
         </p>
 
-        <div className="mt-10 space-y-6 text-base leading-7 text-slate-600">
+        <div className="mt-10 space-y-6 text-base leading-7 text-ink-2">
           <p>
             Most nutrition apps were built around Western menus. Search for
             &ldquo;kabuli pulao&rdquo;, &ldquo;mandi&rdquo;, or
@@ -51,7 +51,7 @@ export default function Article() {
             database, you either guess badly or stop tracking altogether.
           </p>
 
-          <h2 className="pt-4 text-2xl font-bold text-slate-800">
+          <h2 className="pt-4 text-2xl font-bold text-ink">
             Why cultural dishes are tricky to track
           </h2>
           <p>
@@ -63,7 +63,7 @@ export default function Article() {
             ingredient of a family recipe is unrealistic.
           </p>
 
-          <h2 className="pt-4 text-2xl font-bold text-slate-800">
+          <h2 className="pt-4 text-2xl font-bold text-ink">
             A practical approach
           </h2>
           <ul className="list-disc space-y-2 pl-6">
@@ -90,22 +90,22 @@ export default function Article() {
             </li>
           </ul>
 
-          <h2 className="pt-4 text-2xl font-bold text-slate-800">
+          <h2 className="pt-4 text-2xl font-bold text-ink">
             Macros for popular dishes (per serving)
           </h2>
           <p>
             Real numbers from the MyNutriRise food library — use them as
             reference points when you estimate restaurant or home portions:
           </p>
-          <div className="overflow-hidden rounded-2xl ring-1 ring-slate-100">
+          <div className="overflow-hidden rounded-2xl ring-1 ring-line">
             <table className="w-full text-sm">
               <thead>
-                <tr className="bg-emerald-50/60 text-left">
-                  <th className="px-4 py-3 font-semibold text-slate-700">Dish</th>
-                  <th className="px-4 py-3 font-semibold text-slate-700">kcal</th>
-                  <th className="px-4 py-3 font-semibold text-slate-700">Protein</th>
-                  <th className="px-4 py-3 font-semibold text-slate-700">Carbs</th>
-                  <th className="px-4 py-3 font-semibold text-slate-700">Fat</th>
+                <tr className="bg-emerald-50/60 dark:bg-emerald-400/10 text-left">
+                  <th className="px-4 py-3 font-semibold text-ink-2">Dish</th>
+                  <th className="px-4 py-3 font-semibold text-ink-2">kcal</th>
+                  <th className="px-4 py-3 font-semibold text-ink-2">Protein</th>
+                  <th className="px-4 py-3 font-semibold text-ink-2">Carbs</th>
+                  <th className="px-4 py-3 font-semibold text-ink-2">Fat</th>
                 </tr>
               </thead>
               <tbody>
@@ -118,8 +118,8 @@ export default function Article() {
                   ["Koshari (Egyptian)", "380", "14g", "62g", "8g"],
                   ["Shakshuka", "354", "18g", "14g", "24g"],
                 ].map(([dish, kcal, pr, cb, ft]) => (
-                  <tr key={dish} className="border-t border-slate-100">
-                    <td className="px-4 py-3 font-medium text-slate-700">{dish}</td>
+                  <tr key={dish} className="border-t border-line">
+                    <td className="px-4 py-3 font-medium text-ink-2">{dish}</td>
                     <td className="px-4 py-3">{kcal}</td>
                     <td className="px-4 py-3">{pr}</td>
                     <td className="px-4 py-3">{cb}</td>
@@ -131,12 +131,12 @@ export default function Article() {
           </div>
           <p>
             More dishes with full nutrition are on our{" "}
-            <a href="/recipes" className="font-medium text-emerald-600 hover:text-emerald-700">recipes page</a>;
+            <a href="/recipes" className="font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300">recipes page</a>;
             to turn your calorie goal into gram targets, use the{" "}
-            <a href="/tools/macro-calculator" className="font-medium text-emerald-600 hover:text-emerald-700">macro calculator</a>.
+            <a href="/tools/macro-calculator" className="font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300">macro calculator</a>.
           </p>
 
-          <h2 className="pt-4 text-2xl font-bold text-slate-800">
+          <h2 className="pt-4 text-2xl font-bold text-ink">
             Halal tracking is about more than ingredients
           </h2>
           <p>
@@ -148,7 +148,7 @@ export default function Article() {
             tracker also helps you keep suhoor and iftar balanced instead of
             swinging between extremes. For the full picture of halal-friendly
             tracking, see our{" "}
-            <a href="/halal-nutrition-app" className="font-medium text-emerald-600 hover:text-emerald-700">halal nutrition app</a>{" "}
+            <a href="/halal-nutrition-app" className="font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300">halal nutrition app</a>{" "}
             page.
           </p>
         </div>

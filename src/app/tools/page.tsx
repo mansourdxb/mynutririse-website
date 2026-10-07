@@ -43,12 +43,12 @@ const tools = [
 
 export default function ToolsPage() {
   return (
-    <div className="bg-white pt-24">
+    <div className="wash-mint pt-24 pb-8">
       <div className="mx-auto max-w-4xl px-6 py-16">
-        <h1 className="text-center text-4xl font-bold tracking-tight text-slate-800 sm:text-5xl">
+        <h1 className="text-center text-h1 text-ink">
           Free Nutrition Tools
         </h1>
-        <p className="mx-auto mt-4 max-w-xl text-center text-lg text-slate-500">
+        <p className="mx-auto mt-4 max-w-xl text-center text-lead text-ink-3">
           Five calculators, zero sign-up. The same math MyNutriRise uses to
           build your plan.
         </p>
@@ -58,20 +58,20 @@ export default function ToolsPage() {
             <Link
               key={tool.href}
               href={tool.href}
-              className="group flex h-full flex-col rounded-3xl bg-white p-7 shadow-sm ring-1 ring-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:ring-emerald-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2"
+              className="group flex h-full flex-col card p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:ring-emerald-200 dark:hover:ring-emerald-400/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2"
             >
               <span className="text-3xl" aria-hidden="true">{tool.emoji}</span>
-              <h2 className="mt-4 font-semibold text-slate-800 group-hover:text-emerald-600 transition-colors">
+              <h2 className="mt-4 font-semibold text-ink group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
                 {tool.title}
               </h2>
-              <p className="mt-1.5 flex-1 text-sm leading-relaxed text-slate-500">
+              <p className="mt-1.5 flex-1 text-sm leading-relaxed text-ink-3">
                 {tool.description}
               </p>
             </Link>
           ))}
           <Link
             href="/quiz"
-            className="group flex h-full flex-col rounded-3xl bg-gradient-to-br from-emerald-500 to-teal-400 p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2"
+            className="group flex h-full flex-col rounded-[2rem] bg-gradient-to-br from-emerald-700 via-emerald-600 to-teal-600 shadow-[0_30px_60px_-30px_rgb(4_120_87/0.55)] dark:from-emerald-900 dark:via-emerald-800 dark:to-teal-900 dark:shadow-none dark:ring-1 dark:ring-white/10 p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2"
           >
             <span className="text-3xl" aria-hidden="true">✨</span>
             <h2 className="mt-4 font-semibold text-white">Custom Plan Quiz</h2>

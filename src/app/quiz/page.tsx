@@ -10,15 +10,15 @@ export const metadata: Metadata = {
 
 export default function QuizPage() {
   return (
-    <div className="bg-white pt-24">
+    <div className="wash-mint pt-24 pb-8">
       <div className="mx-auto max-w-3xl px-6 py-16">
-        <h1 className="text-center text-3xl font-bold tracking-tight text-slate-800 sm:text-4xl">
+        <h1 className="text-center text-h2 text-ink">
           Get your custom plan{" "}
-          <span className="text-emerald-600">
+          <span className="text-emerald-600 dark:text-emerald-400">
             in 1 minute
           </span>
         </h1>
-        <p className="mx-auto mt-4 max-w-xl text-center text-slate-500">
+        <p className="mx-auto mt-4 max-w-xl text-center text-ink-3">
           Four quick questions — no sign-up needed.
         </p>
         <div className="mt-12">

@@ -59,15 +59,15 @@ const faqJsonLd = {
 
 export default function HalalNutritionAppPage() {
   return (
-    <div className="bg-white pt-24">
+    <div className="wash-mint pt-24 pb-8">
       <JsonLd data={faqJsonLd} />
       <div className="mx-auto max-w-3xl px-6 py-16">
         <Breadcrumbs items={[{ name: "Halal Nutrition App", href: "/halal-nutrition-app" }]} />
 
-        <h1 className="mt-6 text-4xl font-bold tracking-tight text-slate-800 sm:text-5xl">
+        <h1 className="mt-6 text-h1 text-ink">
           The halal-friendly calorie tracker built for your kitchen
         </h1>
-        <p className="mt-6 text-lg leading-relaxed text-slate-500">
+        <p className="mt-6 text-lead text-ink-3">
           Most calorie apps were built around Western menus — search for
           biryani, mandi, or kabuli pulao and you get a shrug. MyNutriRise is
           different: halal food tracking is a first-class feature, not an
@@ -77,10 +77,10 @@ export default function HalalNutritionAppPage() {
         <StoreButtons reassurance className="mt-8" />
 
         <section className="mt-14">
-          <h2 className="text-2xl font-bold text-slate-800">
+          <h2 className="text-2xl font-bold text-ink">
             Halal-checked across {DISHES}{" "}dishes and {CUISINES}{" "}cuisines
           </h2>
-          <p className="mt-4 leading-7 text-slate-600">
+          <p className="mt-4 leading-7 text-ink-2">
             Every dish comes with calories, protein, carbs, and fat per serving
             — from Adana kebab (380 kcal) to chicken tagine (380 kcal) to
             kabuli pulao (480 kcal). Browse the libraries your family actually
@@ -90,18 +90,18 @@ export default function HalalNutritionAppPage() {
             {cuisines.map((cuisine) => (
               <span
                 key={cuisine}
-                className="rounded-full bg-emerald-50 px-3 py-1.5 text-sm font-medium text-emerald-700"
+                className="rounded-full bg-emerald-50 dark:bg-emerald-400/10 px-3 py-1.5 text-sm font-medium text-emerald-700 dark:text-emerald-300"
               >
                 {cuisine}
               </span>
             ))}
-            <span className="rounded-full bg-slate-100 px-3 py-1.5 text-sm font-medium text-slate-600">
+            <span className="rounded-full bg-surface-2 px-3 py-1.5 text-sm font-medium text-ink-2">
               + many more
             </span>
           </div>
-          <p className="mt-4 leading-7 text-slate-600">
+          <p className="mt-4 leading-7 text-ink-2">
             See a sample of the dishes on our{" "}
-            <Link href="/recipes" className="font-medium text-emerald-600 hover:text-emerald-700">
+            <Link href="/recipes" className="font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300">
               recipes page
             </Link>
             .
@@ -109,10 +109,10 @@ export default function HalalNutritionAppPage() {
         </section>
 
         <section className="mt-12">
-          <h2 className="text-2xl font-bold text-slate-800">
+          <h2 className="text-2xl font-bold text-ink">
             Ramadan-ready fasting
           </h2>
-          <p className="mt-4 leading-7 text-slate-600">
+          <p className="mt-4 leading-7 text-ink-2">
             MyNutriRise includes {FASTING_PLAN_COUNT}{" "}fasting plans — and one of them is a
             dedicated <strong>Ramadan schedule</strong> that tracks your
             dawn-to-sunset fast. Keep logging your meals to hold calories and
@@ -121,7 +121,7 @@ export default function HalalNutritionAppPage() {
             see our{" "}
             <Link
               href="/blog/intermittent-fasting-16-8-guide"
-              className="font-medium text-emerald-600 hover:text-emerald-700"
+              className="font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300"
             >
               beginner&apos;s guide to 16:8 fasting
             </Link>
@@ -130,17 +130,17 @@ export default function HalalNutritionAppPage() {
         </section>
 
         <section className="mt-12">
-          <h2 className="text-2xl font-bold text-slate-800">
+          <h2 className="text-2xl font-bold text-ink">
             Snap a photo — AI does the logging
           </h2>
-          <p className="mt-4 leading-7 text-slate-600">
+          <p className="mt-4 leading-7 text-ink-2">
             Family-style meals make &ldquo;one serving&rdquo; hard to estimate.
             Photograph your plate and the AI identifies the dish, estimates
             your portion, and logs calories and macros in seconds. Set your
             daily target with our free{" "}
             <Link
               href="/tools/calorie-calculator"
-              className="font-medium text-emerald-600 hover:text-emerald-700"
+              className="font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300"
             >
               calorie calculator
             </Link>{" "}
@@ -149,10 +149,10 @@ export default function HalalNutritionAppPage() {
         </section>
 
         <section className="mt-12">
-          <h2 className="text-2xl font-bold text-slate-800">
+          <h2 className="text-2xl font-bold text-ink">
             In your language
           </h2>
-          <p className="mt-4 leading-7 text-slate-600">
+          <p className="mt-4 leading-7 text-ink-2">
             The app speaks <strong>{LANGUAGE_LIST}</strong>{" "}
             — including the AI coach and meal plans like{" "}
             <strong>Middle Eastern Healthy</strong>, a 4-week halal-friendly
@@ -162,21 +162,21 @@ export default function HalalNutritionAppPage() {
         </section>
 
         <section className="mt-12">
-          <h2 className="text-2xl font-bold text-slate-800">
+          <h2 className="text-2xl font-bold text-ink">
             Frequently asked questions
           </h2>
           <div className="mt-6 space-y-6">
             {faqs.map((faq) => (
               <div key={faq.question}>
-                <h3 className="font-semibold text-slate-800">{faq.question}</h3>
-                <p className="mt-2 leading-7 text-slate-600">{faq.answer}</p>
+                <h3 className="font-semibold text-ink">{faq.question}</h3>
+                <p className="mt-2 leading-7 text-ink-2">{faq.answer}</p>
               </div>
             ))}
           </div>
         </section>
 
-        <div className="mt-14 rounded-3xl bg-gradient-to-br from-emerald-500 to-teal-400 p-8 text-center sm:p-10">
-          <h2 className="text-2xl font-bold text-white sm:text-3xl">
+        <div className="mt-14 rounded-[2rem] bg-gradient-to-br from-emerald-700 via-emerald-600 to-teal-600 shadow-[0_30px_60px_-30px_rgb(4_120_87/0.55)] dark:from-emerald-900 dark:via-emerald-800 dark:to-teal-900 dark:shadow-none dark:ring-1 dark:ring-white/10 p-8 text-center sm:p-10">
+          <h2 className="text-h3 text-white">
             Your culture&apos;s food, tracked properly
           </h2>
           <p className="mx-auto mt-3 max-w-md text-white/85">

@@ -19,7 +19,7 @@ export function DownloadRedirect() {
   }, []);
 
   return (
-    <div className="flex min-h-[70vh] flex-col items-center justify-center bg-white px-6 pt-24 pb-16 text-center">
+    <div className="flex min-h-[70vh] flex-col items-center justify-center bg-surface px-6 pt-24 pb-16 text-center">
       <span className="flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" className="text-white">
           <path
@@ -31,10 +31,10 @@ export function DownloadRedirect() {
           />
         </svg>
       </span>
-      <h1 className="mt-6 text-3xl font-bold tracking-tight text-slate-800 sm:text-4xl">
+      <h1 className="mt-6 text-h2 text-ink">
         Get MyNutriRise
       </h1>
-      <p className="mt-3 max-w-md text-slate-500">
+      <p className="mt-3 max-w-md text-ink-3">
         On your phone, you&apos;ll be taken straight to your app store. On
         desktop, pick your platform:
       </p>
