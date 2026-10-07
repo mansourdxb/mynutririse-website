@@ -1,5 +1,7 @@
 "use client";
 
+import { fill } from "@/i18n/rich";
+
 // Sensible physiological ranges shared by all calculators and the quiz.
 export const LIMITS = {
   age: [13, 100],
@@ -26,6 +28,7 @@ export function NumberField({
   placeholder,
   limits,
   unit,
+  rangeError = "Enter {min}–{max} {unit}",
 }: {
   label: string;
   value: string;
@@ -33,6 +36,8 @@ export function NumberField({
   placeholder: string;
   limits: Range;
   unit?: string;
+  /** Validation template, e.g. tools.shared.rangeError: "Enter {min}–{max} {unit}". */
+  rangeError?: string;
 }) {
   const parsed = parseFloat(value);
   const showError = value !== "" && !Number.isNaN(parsed) && !inRange(parsed, limits);
@@ -55,8 +60,7 @@ export function NumberField({
       />
       {showError && (
         <span className="mt-1 block text-xs text-rose-500 dark:text-rose-400">
-          Enter {limits[0]}–{limits[1]}
-          {unit ? ` ${unit}` : ""}
+          {fill(rangeError, { min: limits[0], max: limits[1], unit: unit ?? "" }).trim()}
         </span>
       )}
     </label>

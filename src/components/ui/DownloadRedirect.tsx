@@ -2,12 +2,19 @@
 
 import { useEffect } from "react";
 import { StoreButtons } from "@/components/ui/Button";
+import type { Messages } from "@/i18n/messages";
 
 const APP_STORE_URL = "https://apps.apple.com/app/mynutririse/id6764006876";
 const PLAY_STORE_URL =
   "https://play.google.com/store/apps/details?id=com.nutririse.app";
 
-export function DownloadRedirect() {
+export function DownloadRedirect({
+  t,
+  store,
+}: {
+  t: Messages["common"]["download"];
+  store: Messages["common"]["store"];
+}) {
   useEffect(() => {
     const ua = navigator.userAgent;
     if (/iPhone|iPad|iPod/i.test(ua)) {
@@ -31,14 +38,9 @@ export function DownloadRedirect() {
           />
         </svg>
       </span>
-      <h1 className="mt-6 text-h2 text-ink">
-        Get MyNutriRise
-      </h1>
-      <p className="mt-3 max-w-md text-ink-3">
-        On your phone, you&apos;ll be taken straight to your app store. On
-        desktop, pick your platform:
-      </p>
-      <StoreButtons reassurance className="mt-8" />
+      <h1 className="mt-6 text-h2 text-ink">{t.title}</h1>
+      <p className="mt-3 max-w-md text-ink-3">{t.body}</p>
+      <StoreButtons t={store} reassurance className="mt-8" />
     </div>
   );
 }

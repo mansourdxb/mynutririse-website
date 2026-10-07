@@ -1,69 +1,82 @@
 import Image from "next/image";
 import { AppStoreButton } from "@/components/ui/Button";
 import { PhoneMockup } from "@/components/ui/PhoneMockup";
-import { RECIPES } from "@/data/facts";
+import { localePath, type Locale } from "@/i18n/config";
+import type { Messages } from "@/i18n/messages";
+import { rich } from "@/i18n/rich";
 
-const featurePills = [
-  { label: "AI Meal Scan", dot: "bg-emerald-500", top: "12%", right: "-4%", delay: 0.6 },
-  { label: "Halal & Cultural Diets", dot: "bg-teal-500", top: "48%", right: "-10%", delay: 0.75 },
-  { label: `${RECIPES} Recipes`, dot: "bg-amber-500", bottom: "16%", left: "-4%", delay: 0.9 },
+const pillStyles = [
+  { dot: "bg-emerald-500", top: "12%", right: "-4%", delay: 0.6 },
+  { dot: "bg-teal-500", top: "48%", right: "-10%", delay: 0.75 },
+  { dot: "bg-amber-500", bottom: "16%", left: "-4%", delay: 0.9 },
 ];
 
-export function Hero() {
+export function Hero({
+  lang,
+  t,
+  store,
+}: {
+  lang: Locale;
+  t: Messages["home"]["hero"];
+  store: Messages["common"]["store"];
+}) {
+  const featurePills = pillStyles.map((s, i) => ({ ...s, label: t.pills[i] }));
+
   return (
     <section className="overflow-hidden wash-mint pt-28 pb-16 md:pt-36 md:pb-24 lg:pt-40 lg:pb-28">
       {/* Ambient glow */}
       <div className="pointer-events-none absolute inset-0 [mask-image:linear-gradient(to_bottom,#000_60%,transparent)]" aria-hidden="true">
-        <div className="absolute -top-32 right-[8%] h-[520px] w-[520px] rounded-full bg-emerald-300/20 blur-[130px] dark:bg-emerald-500/10" />
-        <div className="absolute -bottom-40 -left-24 h-[420px] w-[420px] rounded-full bg-amber-200/20 blur-[120px] dark:bg-amber-500/5" />
+        <div className="absolute -top-32 end-[8%] h-[520px] w-[520px] rounded-full bg-emerald-300/20 blur-[130px] dark:bg-emerald-500/10" />
+        <div className="absolute -bottom-40 -start-24 h-[420px] w-[420px] rounded-full bg-amber-200/20 blur-[120px] dark:bg-amber-500/5" />
       </div>
 
       <div className="relative container-page">
         <div className="grid items-center gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10">
           {/* Text content */}
-          <div className="text-center lg:text-left">
+          <div className="text-center lg:text-start">
             <h1
               className="anim-fade-up text-display text-ink"
               style={{ animationDelay: "0.1s" }}
             >
-              Nutrition &amp; Fitness tracking{" "}
-              <span className="bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent dark:from-emerald-300 dark:to-teal-300">
-                for real life
-              </span>
+              {rich(t.title, {
+                hl: (c) => (
+                  <span className="bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent dark:from-emerald-300 dark:to-teal-300">
+                    {c}
+                  </span>
+                ),
+              })}
             </h1>
 
             <p
               className="anim-fade-up mx-auto mt-6 max-w-xl text-lead text-ink-3 lg:mx-0"
               style={{ animationDelay: "0.2s" }}
             >
-              Snap a photo and AI logs your meal. Follow halal and cultural
-              meal plans, track fasting and workouts, and get intelligent
-              coaching — everything you need for a healthier, happier life.
+              {t.lead}
             </p>
 
             <div
               className="anim-fade-up mt-9 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start"
               style={{ animationDelay: "0.3s" }}
             >
-              <AppStoreButton store="apple" />
-              <AppStoreButton store="google" />
+              <AppStoreButton store="apple" t={store} />
+              <AppStoreButton store="google" t={store} />
             </div>
 
             <p
               className="anim-fade-up mt-5 text-sm text-ink-3"
               style={{ animationDelay: "0.4s" }}
             >
-              Free to download &middot; Premium optional &middot; Cancel anytime
+              {store.reassurance}
             </p>
             <p
               className="anim-fade-up mt-3 text-sm"
               style={{ animationDelay: "0.45s" }}
             >
               <a
-                href="/quiz"
+                href={localePath(lang, "/quiz")}
                 className="rounded-sm font-semibold text-accent-strong transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
               >
-                Not sure where to start? Get your custom plan in 1 minute →
+                {t.quizLink}
               </a>
             </p>
           </div>
@@ -79,7 +92,7 @@ export function Hero() {
                 <div className="relative aspect-[9/19.5] w-full">
                   <Image
                     src="/screenshots/today.png"
-                    alt="MyNutriRise Dashboard"
+                    alt={t.screenshotAlt}
                     fill
                     className="object-cover object-top"
                     sizes="290px"

@@ -3,13 +3,13 @@ import {
   StaggerContainer,
   StaggerItem,
 } from "@/components/ui/AnimatedSection";
-import { CUISINES, RECIPES } from "@/data/facts";
+import { localePath, type Locale } from "@/i18n/config";
+import type { Messages } from "@/i18n/messages";
+import { rich } from "@/i18n/rich";
 
-const goals = [
+const goalStyles = [
   {
-    title: "Lose weight",
     href: "/tools/calorie-calculator",
-    description: "Calorie targets and plans calibrated to a healthy pace.",
     color: "text-emerald-600 dark:text-emerald-400",
     bg: "bg-emerald-50 dark:bg-emerald-400/10",
     icon: (
@@ -19,9 +19,7 @@ const goals = [
     ),
   },
   {
-    title: "Build muscle",
     href: "/tools/macro-calculator",
-    description: "High-protein plans plus workout routines and exercise logs.",
     color: "text-orange-600 dark:text-orange-400",
     bg: "bg-orange-50 dark:bg-orange-400/10",
     icon: (
@@ -31,9 +29,7 @@ const goals = [
     ),
   },
   {
-    title: "Eat halal & cultural",
     href: "/halal-nutrition-app",
-    description: `${CUISINES} cuisines — Turkish, Pakistani, Afghan & more, halal-checked throughout.`,
     color: "text-teal-600 dark:text-teal-400",
     bg: "bg-teal-50 dark:bg-teal-400/10",
     icon: (
@@ -43,9 +39,7 @@ const goals = [
     ),
   },
   {
-    title: "Try intermittent fasting",
     href: "/blog/intermittent-fasting-16-8-guide",
-    description: "16:8, 5:2 and more, with timers and fasting insights.",
     color: "text-violet-600 dark:text-violet-400",
     bg: "bg-violet-50 dark:bg-violet-400/10",
     icon: (
@@ -55,9 +49,7 @@ const goals = [
     ),
   },
   {
-    title: "Track macros",
     href: "/tools/macro-calculator",
-    description: "Protein, carbs and fat with precise daily breakdowns.",
     color: "text-blue-600 dark:text-blue-400",
     bg: "bg-blue-50 dark:bg-blue-400/10",
     icon: (
@@ -68,9 +60,7 @@ const goals = [
     ),
   },
   {
-    title: "Eat balanced meals",
     href: "/recipes",
-    description: `${RECIPES} healthy recipes and AI-generated meal plans.`,
     color: "text-rose-600 dark:text-rose-400",
     bg: "bg-rose-50 dark:bg-rose-400/10",
     icon: (
@@ -80,9 +70,7 @@ const goals = [
     ),
   },
   {
-    title: "Get fitter",
     href: "/#download",
-    description: "Workouts, cardio and wearable sync with Apple Health & Health Connect.",
     color: "text-amber-600 dark:text-amber-400",
     bg: "bg-amber-50 dark:bg-amber-400/10",
     icon: (
@@ -92,9 +80,7 @@ const goals = [
     ),
   },
   {
-    title: "Build healthy habits",
     href: "/quiz",
-    description: "Streaks, daily lessons and a wellness score that keeps you going.",
     color: "text-cyan-600 dark:text-cyan-400",
     bg: "bg-cyan-50 dark:bg-cyan-400/10",
     icon: (
@@ -105,19 +91,20 @@ const goals = [
   },
 ];
 
-export function Goals() {
+export function Goals({ lang, t }: { lang: Locale; t: Messages["home"]["goals"] }) {
+  const goals = goalStyles.map((s, i) => ({ ...s, ...t.items[i] }));
+
   return (
     <section className="relative wash-mint section-y">
       <div className="container-page">
         <AnimatedSection className="mx-auto max-w-2xl text-center mb-14">
           <p className="eyebrow mb-4">
-            Your Goal, Your Way
+            {t.eyebrow}
           </p>
           <h2 className="text-h2 text-ink">
-            Whatever you&apos;re working toward,{" "}
-            <span className="text-emerald-600 dark:text-emerald-400">
-              we&apos;ve got you
-            </span>
+            {rich(t.title, {
+              hl: (c) => <span className="text-emerald-600 dark:text-emerald-400">{c}</span>,
+            })}
           </h2>
         </AnimatedSection>
 
@@ -125,7 +112,7 @@ export function Goals() {
           {goals.map((goal) => (
             <StaggerItem key={goal.title}>
               <a
-                href={goal.href}
+                href={localePath(lang, goal.href)}
                 className="group block h-full card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:ring-emerald-200 dark:hover:ring-emerald-400/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2"
               >
                 <div

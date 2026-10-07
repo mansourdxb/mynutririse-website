@@ -3,6 +3,7 @@ import {
   StaggerContainer,
   StaggerItem,
 } from "@/components/ui/AnimatedSection";
+import type { Messages } from "@/i18n/messages";
 
 /**
  * Add real creators/users who feature MyNutriRise and the section appears
@@ -23,7 +24,7 @@ const creators: {
   platform: string;
 }[] = [];
 
-export function Community() {
+export function Community({ t }: { t: Messages["home"]["community"] }) {
   if (creators.length === 0) return null;
 
   return (
@@ -31,10 +32,10 @@ export function Community() {
       <div className="container-page">
         <AnimatedSection className="mx-auto max-w-2xl text-center mb-14">
           <p className="eyebrow mb-4">
-            Community
+            {t.eyebrow}
           </p>
           <h2 className="text-h2 text-ink">
-            Creators who track with us
+            {t.title}
           </h2>
         </AnimatedSection>
 

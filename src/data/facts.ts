@@ -97,3 +97,59 @@ export const PDF_REPORT_RANGE = "7 to 90 days";
 
 // Verified: app food_color_guide.dart:24-77.
 export const FOOD_COLOR_GROUP_COUNT = 6;
+
+// Verified: app data_export_view.dart:400.
+export const PDF_REPORT_MIN_DAYS = 7;
+export const PDF_REPORT_MAX_DAYS = 90;
+
+/* ------------------------------------------------------------------ */
+/*  Per-language formatting                                            */
+/* ------------------------------------------------------------------ */
+
+// Western digits in every language, matching the app (its Arabic strings use 0-9).
+const NUMBER_LOCALE: Record<string, string> = {
+  en: "en-US",
+  ar: "ar-u-nu-latn",
+  de: "de-DE",
+  es: "es-ES",
+  fr: "fr-FR",
+  ru: "ru-RU",
+};
+
+/** Formats a whole number for a language: 4800 -> "4,800" / "4.800" / "4 800". */
+export function formatNumber(n: number, lang: string): string {
+  return n.toLocaleString(NUMBER_LOCALE[lang] ?? "en-US", { useGrouping: "always" } as Intl.NumberFormatOptions);
+}
+
+/** Rounded-down "at least" figure for a language: "4,800+", "4.800+", "4 800+". */
+export function atLeastFor(n: number, step: number, lang: string): string {
+  return `${formatNumber(Math.floor(n / step) * step, lang)}+`;
+}
+
+/** Every displayed fact, formatted for one language. Messages interpolate these. */
+export function factsFor(lang: string) {
+  const num = (n: number) => formatNumber(n, lang);
+  return {
+    RECIPES: atLeastFor(RECIPE_COUNT, 100, lang),
+    DISHES: atLeastFor(DISH_COUNT, 100, lang),
+    INGREDIENT_LINES: atLeastFor(INGREDIENT_LINE_COUNT, 1000, lang),
+    COOKING_METHODS: atLeastFor(COOKING_METHOD_COUNT, 100, lang),
+    CUISINES: atLeastFor(CUISINE_COUNT, 10, lang),
+    EXERCISES_AND_ACTIVITIES: atLeastFor(STRENGTH_EXERCISE_COUNT + CARDIO_ACTIVITY_COUNT, 10, lang),
+    LANGUAGE_COUNT: num(LANGUAGE_COUNT),
+    FASTING_PLAN_COUNT: num(FASTING_PLAN_COUNT),
+    STRENGTH_EXERCISE_COUNT: num(STRENGTH_EXERCISE_COUNT),
+    WORKOUT_ROUTINE_COUNT: num(WORKOUT_ROUTINE_COUNT),
+    CARDIO_ACTIVITY_COUNT: num(CARDIO_ACTIVITY_COUNT),
+    MICRONUTRIENT_COUNT: num(MICRONUTRIENT_COUNT),
+    DIET_PLAN_COUNT: num(DIET_PLAN_COUNT),
+    FREE_COACH_MESSAGES_PER_DAY: num(FREE_COACH_MESSAGES_PER_DAY),
+    PREMIUM_COACH_MESSAGES_PER_DAY: num(PREMIUM_COACH_MESSAGES_PER_DAY),
+    FREE_PHOTO_SCANS_PER_DAY: num(FREE_PHOTO_SCANS_PER_DAY),
+    PREMIUM_PHOTO_SCANS_PER_DAY: num(PREMIUM_PHOTO_SCANS_PER_DAY),
+    FOOD_COLOR_GROUP_COUNT: num(FOOD_COLOR_GROUP_COUNT),
+    PDF_REPORT_MIN_DAYS: num(PDF_REPORT_MIN_DAYS),
+    PDF_REPORT_MAX_DAYS: num(PDF_REPORT_MAX_DAYS),
+  };
+}
+export type Facts = ReturnType<typeof factsFor>;

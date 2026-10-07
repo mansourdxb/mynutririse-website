@@ -6,18 +6,17 @@ import Image from "next/image";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { PhoneMockup } from "@/components/ui/PhoneMockup";
 import { CountUpValue } from "@/components/ui/CountUp";
-import {
-  CUISINES,
-  CUISINE_COUNT,
-  CUISINE_FLOOR,
-  EXERCISES_AND_ACTIVITIES,
-  FASTING_PLAN_COUNT,
-  FOOD_COLOR_GROUP_COUNT,
-  MICRONUTRIENT_COUNT,
-  PDF_REPORT_RANGE,
-  RECIPES,
-  STRENGTH_EXERCISE_COUNT,
-} from "@/data/facts";
+import { CUISINE_COUNT, CUISINE_FLOOR } from "@/data/facts";
+import { localePath, type Locale } from "@/i18n/config";
+import type { Messages } from "@/i18n/messages";
+import { fill, rich } from "@/i18n/rich";
+
+type T = Messages["features"];
+type CardsT = T["cards"];
+
+const hl = (c: React.ReactNode) => (
+  <span className="text-emerald-600 dark:text-emerald-400">{c}</span>
+);
 
 function BlockPhone({ src, alt }: { src: string; alt: string }) {
   return (
@@ -188,26 +187,26 @@ function MacroRing({
 /*  Block 1 : Smart Nutrition Intelligence                            */
 /* ================================================================== */
 
-function NutritionCards() {
+function NutritionCards({ t }: { t: CardsT }) {
   return (
     <div className="relative mx-auto w-full max-w-md py-6">
       <BlockPhone
         src="/screenshots/scanned-food.png"
-        alt="AI meal scan result in MyNutriRise showing calories, macros and health score"
+        alt={t.nutritionAlt}
       />
       {/* Calories card */}
       <motion.div
         animate={float1}
-        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:top-10 sm:left-0 w-56 rounded-2xl bg-surface/90 backdrop-blur border border-emerald-100/60 dark:border-emerald-400/20 shadow-lg shadow-emerald-900/5 p-5"
+        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:top-10 sm:start-0 w-56 rounded-2xl bg-surface/90 backdrop-blur border border-emerald-100/60 dark:border-emerald-400/20 shadow-lg shadow-emerald-900/5 p-5"
       >
         <p className="text-xs font-semibold uppercase tracking-wider text-ink-3 mb-2">
-          Calories
+          {t.calories}
         </p>
         <div className="flex items-end gap-1.5">
           <span className="text-3xl font-bold text-ink">
             <CountUpValue target={1693} />
           </span>
-          <span className="text-sm text-ink-3 mb-1">/ 2,100 kcal</span>
+          <span className="text-sm text-ink-3 mb-1">{fill(t.caloriesOf, { n: "2,100" })}</span>
         </div>
         <div className="mt-3 h-2 rounded-full bg-emerald-100 dark:bg-emerald-400/15 overflow-hidden">
           <motion.div
@@ -219,42 +218,42 @@ function NutritionCards() {
           />
         </div>
         <p className="mt-2 text-xs text-emerald-600 dark:text-emerald-400 font-medium">
-          407 kcal remaining
+          {fill(t.kcalRemaining, { n: 407 })}
         </p>
       </motion.div>
 
       {/* Macros rings card */}
       <motion.div
         animate={float2}
-        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:bottom-16 sm:right-0 w-60 rounded-2xl bg-surface/90 backdrop-blur border border-purple-100/60 dark:border-purple-400/20 shadow-lg shadow-purple-900/5 p-5"
+        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:bottom-16 sm:end-0 w-60 rounded-2xl bg-surface/90 backdrop-blur border border-purple-100/60 dark:border-purple-400/20 shadow-lg shadow-purple-900/5 p-5"
       >
         <p className="text-xs font-semibold uppercase tracking-wider text-ink-3 mb-4">
-          Macros
+          {t.macros}
         </p>
         <div className="flex justify-around">
           <MacroRing
-            label="Protein"
+            label={t.protein}
             value={120}
             total={150}
-            unit="g"
+            unit={t.gramUnit}
             color="#8B5CF6"
             percent={80}
             delay={0.3}
           />
           <MacroRing
-            label="Carbs"
+            label={t.carbs}
             value={159}
             total={230}
-            unit="g"
+            unit={t.gramUnit}
             color="#F59E0B"
             percent={69}
             delay={0.5}
           />
           <MacroRing
-            label="Fat"
+            label={t.fat}
             value={53}
             total={70}
-            unit="g"
+            unit={t.gramUnit}
             color="#FF7A6B"
             percent={76}
             delay={0.7}
@@ -270,20 +269,20 @@ function NutritionCards() {
 /*  Block 2 : Your Wellness Ecosystem                                 */
 /* ================================================================== */
 
-function WellnessCards() {
+function WellnessCards({ t }: { t: CardsT }) {
   return (
     <div className="relative mx-auto w-full max-w-md py-6">
       <BlockPhone
         src="/screenshots/today.png"
-        alt="MyNutriRise dashboard with calories, water, exercise and sleep tracking"
+        alt={t.wellnessAlt}
       />
       {/* Fasting timer circle */}
       <motion.div
         animate={float2}
-        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:top-10 sm:right-0 w-48 rounded-2xl bg-surface/90 backdrop-blur border border-emerald-100/60 dark:border-emerald-400/20 shadow-lg shadow-emerald-900/5 p-5 flex flex-col items-center"
+        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:top-10 sm:end-0 w-48 rounded-2xl bg-surface/90 backdrop-blur border border-emerald-100/60 dark:border-emerald-400/20 shadow-lg shadow-emerald-900/5 p-5 flex flex-col items-center"
       >
         <p className="text-xs font-semibold uppercase tracking-wider text-ink-3 mb-3">
-          Fasting
+          {t.fasting}
         </p>
         <div className="relative w-24 h-24">
           <svg viewBox="0 0 100 100" className="w-full h-full -rotate-90">
@@ -319,17 +318,17 @@ function WellnessCards() {
           <div className="absolute inset-0 flex flex-col items-center justify-center">
             <span className="text-lg font-bold text-ink">16:08</span>
             <span className="text-[10px] text-emerald-600 dark:text-emerald-400 font-medium">
-              remaining
+              {t.remaining}
             </span>
           </div>
         </div>
-        <p className="mt-2 text-xs text-ink-3">16:8 Protocol</p>
+        <p className="mt-2 text-xs text-ink-3">{t.protocol}</p>
       </motion.div>
 
       {/* Sleep badge */}
       <motion.div
         animate={float4}
-        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:bottom-16 sm:left-0 flex items-center gap-2.5 rounded-xl bg-surface/90 backdrop-blur border border-indigo-100/60 dark:border-indigo-400/20 shadow-md shadow-indigo-900/5 px-4 py-3"
+        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:bottom-16 sm:start-0 flex items-center gap-2.5 rounded-xl bg-surface/90 backdrop-blur border border-indigo-100/60 dark:border-indigo-400/20 shadow-md shadow-indigo-900/5 px-4 py-3"
       >
         <div className="w-8 h-8 rounded-lg bg-indigo-50 dark:bg-indigo-400/10 flex items-center justify-center">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-4 h-4 text-indigo-500 dark:text-indigo-400">
@@ -337,8 +336,8 @@ function WellnessCards() {
           </svg>
         </div>
         <div>
-          <p className="text-xs font-semibold text-ink-2">7h 42m Sleep</p>
-          <p className="text-[11px] text-indigo-500 dark:text-indigo-400">Good quality</p>
+          <p className="text-xs font-semibold text-ink-2">{fill(t.sleep, { h: 7, m: 42 })}</p>
+          <p className="text-[11px] text-indigo-500 dark:text-indigo-400">{t.goodQuality}</p>
         </div>
       </motion.div>
     </div>
@@ -349,17 +348,17 @@ function WellnessCards() {
 /*  Block 3 : Intelligent Coaching & Insights                         */
 /* ================================================================== */
 
-function CoachingCards() {
+function CoachingCards({ t }: { t: CardsT }) {
   return (
     <div className="relative mx-auto w-full max-w-md py-6">
       <BlockPhone
         src="/screenshots/ai-coach.png"
-        alt="MyNutriRise AI coach chat with meal, exercise and weight guidance"
+        alt={t.coachingAlt}
       />
       {/* Weekly report card */}
       <motion.div
         animate={float2}
-        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:bottom-16 sm:left-0 w-56 rounded-2xl bg-surface/90 backdrop-blur border border-violet-100/60 dark:border-violet-400/20 shadow-lg shadow-violet-900/5 p-4"
+        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:bottom-16 sm:start-0 w-56 rounded-2xl bg-surface/90 backdrop-blur border border-violet-100/60 dark:border-violet-400/20 shadow-lg shadow-violet-900/5 p-4"
       >
         <div className="flex items-center gap-2 mb-3">
           <div className="w-8 h-8 rounded-lg bg-violet-50 dark:bg-violet-400/10 flex items-center justify-center">
@@ -376,31 +375,31 @@ function CoachingCards() {
               <polyline points="17 6 23 6 23 12" />
             </svg>
           </div>
-          <p className="text-xs font-semibold text-ink-2">Weekly Report</p>
+          <p className="text-xs font-semibold text-ink-2">{t.weeklyReport}</p>
         </div>
         <div className="grid grid-cols-2 gap-2">
           <div className="bg-violet-50/60 dark:bg-violet-400/10 rounded-lg p-2 text-center">
             <p className="text-sm font-bold text-violet-600 dark:text-violet-400">
               <CountUpValue target={86} suffix="%" />
             </p>
-            <p className="text-[9px] text-ink-3">Consistency</p>
+            <p className="text-[9px] text-ink-3">{t.consistency}</p>
           </div>
           <div className="bg-emerald-50/60 dark:bg-emerald-400/10 rounded-lg p-2 text-center">
             <p className="text-sm font-bold text-emerald-600 dark:text-emerald-400">
               <CountUpValue target={2113} />
             </p>
-            <p className="text-[9px] text-ink-3">Avg kcal</p>
+            <p className="text-[9px] text-ink-3">{t.avgKcal}</p>
           </div>
         </div>
         <p className="mt-2 text-[10px] text-ink-3 text-center">
-          Shareable &middot; PDF Export
+          {t.shareable}
         </p>
       </motion.div>
 
       {/* AI coach reply bubble */}
       <motion.div
         animate={float4}
-        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:top-12 sm:right-0 w-52 rounded-2xl bg-surface/90 backdrop-blur border border-emerald-100/60 dark:border-emerald-400/20 shadow-lg shadow-emerald-900/5 p-4"
+        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:top-12 sm:end-0 w-52 rounded-2xl bg-surface/90 backdrop-blur border border-emerald-100/60 dark:border-emerald-400/20 shadow-lg shadow-emerald-900/5 p-4"
       >
         <div className="flex items-center gap-2 mb-2.5">
           <div className="w-7 h-7 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center">
@@ -417,14 +416,13 @@ function CoachingCards() {
             </svg>
           </div>
           <div>
-            <p className="text-xs font-semibold text-ink-2">Nutri &middot; AI Coach</p>
-            <p className="text-[10px] text-emerald-500 dark:text-emerald-400">Online</p>
+            <p className="text-xs font-semibold text-ink-2">{t.coachName}</p>
+            <p className="text-[10px] text-emerald-500 dark:text-emerald-400">{t.online}</p>
           </div>
         </div>
-        <div className="bg-emerald-50 dark:bg-emerald-400/10 rounded-2xl rounded-tl-sm px-3 py-2">
+        <div className="bg-emerald-50 dark:bg-emerald-400/10 rounded-2xl rounded-ss-sm px-3 py-2">
           <p className="text-[11px] text-ink-2 leading-relaxed">
-            Your mornings average 15g protein — try Greek yogurt with nuts.
-            Added to your plan ✓
+            {t.coachMessage}
           </p>
         </div>
       </motion.div>
@@ -436,43 +434,43 @@ function CoachingCards() {
 /*  Block : Recipes                                                   */
 /* ================================================================== */
 
-function RecipeCards() {
+function RecipeCards({ t }: { t: CardsT }) {
   return (
     <div className="relative mx-auto w-full max-w-md py-6">
       <BlockPhone
         src="/screenshots/recipes.png"
-        alt="MyNutriRise recipes screen with healthy recipes and categories"
+        alt={t.recipesAlt}
       />
       {/* Dish nutrition card */}
       <motion.div
         animate={float1}
-        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:top-10 sm:left-0 w-52 rounded-2xl bg-surface/90 backdrop-blur border border-amber-100/60 dark:border-amber-400/20 shadow-lg shadow-amber-900/5 p-4"
+        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:top-10 sm:start-0 w-52 rounded-2xl bg-surface/90 backdrop-blur border border-amber-100/60 dark:border-amber-400/20 shadow-lg shadow-amber-900/5 p-4"
       >
         <div className="flex items-start justify-between mb-1.5">
           <span className="text-2xl" aria-hidden="true">🍲</span>
           <span className="rounded-full bg-emerald-50 dark:bg-emerald-400/10 px-2 py-0.5 text-[10px] font-semibold text-emerald-700 dark:text-emerald-300">
-            <CountUpValue target={380} /> kcal
+            {rich(t.dishKcal, { count: () => <CountUpValue target={380} /> })}
           </span>
         </div>
-        <p className="text-sm font-semibold text-ink-2">Chicken Tagine</p>
-        <p className="text-[11px] text-ink-3">Moroccan</p>
+        <p className="text-sm font-semibold text-ink-2">{t.dishName}</p>
+        <p className="text-[11px] text-ink-3">{t.dishCuisine}</p>
         <div className="mt-2 flex gap-2.5 text-[10px] text-ink-3">
-          <span><strong className="text-rose-500 dark:text-rose-400">30g</strong> protein</span>
-          <span><strong className="text-blue-500 dark:text-blue-400">25g</strong> carbs</span>
-          <span><strong className="text-amber-500 dark:text-amber-400">18g</strong> fat</span>
+          <span>{rich(fill(t.dishProtein, { n: 30 }), { b: (c) => <strong className="text-rose-500 dark:text-rose-400">{c}</strong> })}</span>
+          <span>{rich(fill(t.dishCarbs, { n: 25 }), { b: (c) => <strong className="text-blue-500 dark:text-blue-400">{c}</strong> })}</span>
+          <span>{rich(fill(t.dishFat, { n: 18 }), { b: (c) => <strong className="text-amber-500 dark:text-amber-400">{c}</strong> })}</span>
         </div>
       </motion.div>
 
       {/* Cuisines badge */}
       <motion.div
         animate={float3}
-        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:bottom-16 sm:right-0 w-48 rounded-2xl bg-surface/90 backdrop-blur border border-teal-100/60 dark:border-teal-400/20 shadow-lg shadow-teal-900/5 p-4"
+        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:bottom-16 sm:end-0 w-48 rounded-2xl bg-surface/90 backdrop-blur border border-teal-100/60 dark:border-teal-400/20 shadow-lg shadow-teal-900/5 p-4"
       >
         <p className="text-xs font-semibold uppercase tracking-wider text-ink-3 mb-2">
-          <CountUpValue target={CUISINE_FLOOR} suffix="+" /> Cuisines
+          {rich(t.cuisinesCount, { count: () => <CountUpValue target={CUISINE_FLOOR} suffix="+" /> })}
         </p>
         <div className="flex flex-wrap gap-1">
-          {["Turkish", "Moroccan", "Pakistani", "Afghan", "Gulf", `+${CUISINE_COUNT - 5}`].map(
+          {[...t.cuisineChips, `+${CUISINE_COUNT - t.cuisineChips.length}`].map(
             (c) => (
               <span
                 key={c}
@@ -484,7 +482,7 @@ function RecipeCards() {
           )}
         </div>
         <p className="mt-2 text-[10px] text-emerald-600 dark:text-emerald-400 font-medium">
-          Your culture&apos;s food, included
+          {t.cultureIncluded}
         </p>
       </motion.div>
     </div>
@@ -495,22 +493,22 @@ function RecipeCards() {
 /*  Block : Workouts, Routines & Exercises                            */
 /* ================================================================== */
 
-function WorkoutCards() {
+function WorkoutCards({ t }: { t: CardsT }) {
   return (
     <div className="relative mx-auto w-full max-w-md py-6">
       <BlockPhone
         src="/screenshots/routines.png"
-        alt="MyNutriRise workout routines — Full Body, Push Day and Pull Day with start buttons"
+        alt={t.workoutsAlt}
       />
       {/* Cardio mini screen */}
       <motion.div
         animate={float2}
-        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:top-8 sm:right-0 w-32 rotate-3 overflow-hidden rounded-2xl border border-line/80 bg-surface shadow-lg shadow-slate-900/10"
+        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:top-8 sm:end-0 w-32 rotate-3 overflow-hidden rounded-2xl border border-line/80 bg-surface shadow-lg shadow-slate-900/10"
       >
         <div className="relative aspect-[9/14] w-full">
           <Image
             src="/screenshots/cardio.png"
-            alt="MyNutriRise cardio tracker with walking, running, cycling and swimming"
+            alt={t.cardioAlt}
             fill
             className="object-cover object-top"
             sizes="128px"
@@ -518,14 +516,14 @@ function WorkoutCards() {
           />
         </div>
         <p className="border-t border-line px-2.5 py-1.5 text-[10px] font-semibold text-ink-2">
-          Cardio Tracker
+          {t.cardioTracker}
         </p>
       </motion.div>
 
       {/* Exercise library badge */}
       <motion.div
         animate={float1}
-        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:top-10 sm:left-0 flex items-center gap-2.5 rounded-xl bg-surface/90 backdrop-blur border border-blue-100/60 dark:border-blue-400/20 shadow-md shadow-blue-900/5 px-4 py-3"
+        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:top-10 sm:start-0 flex items-center gap-2.5 rounded-xl bg-surface/90 backdrop-blur border border-blue-100/60 dark:border-blue-400/20 shadow-md shadow-blue-900/5 px-4 py-3"
       >
         <div className="w-9 h-9 rounded-lg bg-blue-50 dark:bg-blue-400/10 flex items-center justify-center">
           <svg
@@ -541,18 +539,18 @@ function WorkoutCards() {
           </svg>
         </div>
         <div>
-          <p className="text-xs font-semibold text-ink-2">{STRENGTH_EXERCISE_COUNT}{" "}Exercises</p>
-          <p className="text-[11px] text-blue-500 dark:text-blue-400">Muscle targets &amp; instructions</p>
+          <p className="text-xs font-semibold text-ink-2">{t.exercisesCount}</p>
+          <p className="text-[11px] text-blue-500 dark:text-blue-400">{t.muscleTargets}</p>
         </div>
       </motion.div>
 
       {/* Weekly activity card */}
       <motion.div
         animate={float3}
-        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:bottom-16 sm:right-0 w-56 rounded-2xl bg-surface/90 backdrop-blur border border-emerald-100/60 dark:border-emerald-400/20 shadow-lg shadow-emerald-900/5 p-4"
+        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:bottom-16 sm:end-0 w-56 rounded-2xl bg-surface/90 backdrop-blur border border-emerald-100/60 dark:border-emerald-400/20 shadow-lg shadow-emerald-900/5 p-4"
       >
         <p className="text-xs font-semibold uppercase tracking-wider text-ink-3 mb-3">
-          This Week&apos;s Activity
+          {t.weekActivity}
         </p>
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-400/10 flex items-center justify-center">
@@ -570,10 +568,10 @@ function WorkoutCards() {
           </div>
           <div>
             <p className="text-sm font-semibold text-ink-2">
-              <CountUpValue target={1429} /> kcal burned
+              {rich(t.kcalBurned, { count: () => <CountUpValue target={1429} /> })}
             </p>
             <p className="text-[11px] text-ink-3">
-              230 min &middot; 6 workouts
+              {fill(t.activitySummary, { min: 230, n: 6 })}
             </p>
           </div>
         </div>
@@ -599,17 +597,17 @@ function WorkoutCards() {
 /*  Block 4 : Stay Motivated Together                                 */
 /* ================================================================== */
 
-function MotivationCards() {
+function MotivationCards({ t }: { t: CardsT }) {
   return (
     <div className="relative mx-auto w-full max-w-md py-6">
       <BlockPhone
         src="/screenshots/IMG_5881.PNG"
-        alt="MyNutriRise friends and leaderboard screen with XP rankings"
+        alt={t.motivationAlt}
       />
       {/* Achievement badge */}
       <motion.div
         animate={float1}
-        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:top-10 sm:right-0 w-52 rounded-2xl bg-surface/90 backdrop-blur border border-amber-100/60 dark:border-amber-400/20 shadow-lg shadow-amber-900/5 p-5"
+        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:top-10 sm:end-0 w-52 rounded-2xl bg-surface/90 backdrop-blur border border-amber-100/60 dark:border-amber-400/20 shadow-lg shadow-amber-900/5 p-5"
       >
         <div className="flex items-center gap-3 mb-3">
           <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-100 dark:from-amber-400/[0.07] to-orange-100 dark:to-orange-400/[0.07] flex items-center justify-center">
@@ -618,9 +616,9 @@ function MotivationCards() {
             </svg>
           </div>
           <div>
-            <p className="text-sm font-bold text-ink">Level 3</p>
+            <p className="text-sm font-bold text-ink">{fill(t.level, { n: 3 })}</p>
             <p className="text-[11px] text-amber-600 dark:text-amber-400 font-medium">
-              <CountUpValue target={240} suffix=" XP" />
+              <CountUpValue target={240} suffix={t.xpSuffix} />
             </p>
           </div>
         </div>
@@ -633,13 +631,13 @@ function MotivationCards() {
             transition={{ duration: 1, delay: 0.3 }}
           />
         </div>
-        <p className="mt-1.5 text-[10px] text-ink-3 text-right">240 / 400 XP</p>
+        <p className="mt-1.5 text-[10px] text-ink-3 text-end">{fill(t.xpProgress, { a: 240, b: 400 })}</p>
       </motion.div>
 
       {/* Streak fire */}
       <motion.div
         animate={float3}
-        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:bottom-16 sm:left-0 w-40 rounded-2xl bg-surface/90 backdrop-blur border border-orange-100/60 dark:border-orange-400/20 shadow-lg shadow-orange-900/5 p-4 flex flex-col items-center"
+        className="relative mx-auto mt-4 sm:mx-0 sm:mt-0 sm:absolute sm:bottom-16 sm:start-0 w-40 rounded-2xl bg-surface/90 backdrop-blur border border-orange-100/60 dark:border-orange-400/20 shadow-lg shadow-orange-900/5 p-4 flex flex-col items-center"
       >
         <div className="w-14 h-14 rounded-full bg-gradient-to-br from-amber-100 dark:from-amber-400/[0.07] to-orange-100 dark:to-orange-400/[0.07] flex items-center justify-center mb-2">
           <span className="text-2xl">🔥</span>
@@ -647,9 +645,9 @@ function MotivationCards() {
         <p className="text-2xl font-bold text-ink">
           <CountUpValue target={7} duration={900} />
         </p>
-        <p className="text-xs text-ink-3">Day Streak</p>
+        <p className="text-xs text-ink-3">{t.dayStreak}</p>
         <div className="mt-2 flex gap-0.5">
-          {["M", "T", "W", "T", "F", "S", "S"].map((d, i) => (
+          {t.weekdayInitials.map((d, i) => (
             <div
               key={`${d}-${i}`}
               className="w-4 h-4 rounded-full text-[8px] flex items-center justify-center font-medium bg-emerald-100 dark:bg-emerald-400/15 text-emerald-600 dark:text-emerald-400"
@@ -670,8 +668,6 @@ function MotivationCards() {
 
 const featureGridItems: {
   icon: React.ReactNode;
-  name: string;
-  desc: string;
   color: string;
   bg: string;
   screenshot: string;
@@ -684,8 +680,6 @@ const featureGridItems: {
         <path d="M21 15l-5-5L5 21" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    name: "Meal Photos",
-    desc: "Visual food diary with every meal",
     color: "text-emerald-600 dark:text-emerald-400",
     bg: "bg-emerald-50 dark:bg-emerald-400/10",
     screenshot: "/screenshots/IMG_5870.PNG",
@@ -699,8 +693,6 @@ const featureGridItems: {
         <line x1="3" y1="10" x2="21" y2="10" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    name: "Nutrition Calendar",
-    desc: "Monthly consistency tracking view",
     color: "text-blue-600 dark:text-blue-400",
     bg: "bg-blue-50 dark:bg-blue-400/10",
     screenshot: "/screenshots/IMG_5868.PNG",
@@ -712,8 +704,6 @@ const featureGridItems: {
         <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    name: "Color Guide",
-    desc: `${FOOD_COLOR_GROUP_COUNT} food color groups with health benefits`,
     color: "text-orange-600 dark:text-orange-400",
     bg: "bg-orange-50 dark:bg-orange-400/10",
     screenshot: "/screenshots/IMG_5865.PNG",
@@ -726,8 +716,6 @@ const featureGridItems: {
         <line x1="6" y1="20" x2="6" y2="14" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    name: "Compare Foods",
-    desc: "Head-to-head nutrition comparison",
     color: "text-purple-600 dark:text-purple-400",
     bg: "bg-purple-50 dark:bg-purple-400/10",
     screenshot: "/screenshots/IMG_5863.PNG",
@@ -740,8 +728,6 @@ const featureGridItems: {
         <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    name: "Cultural Diets",
-    desc: "Afghan, Arabic, Bangladeshi & more",
     color: "text-teal-600 dark:text-teal-400",
     bg: "bg-teal-50 dark:bg-teal-400/10",
     screenshot: "/screenshots/cultural-diets.png",
@@ -753,8 +739,6 @@ const featureGridItems: {
         <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    name: "Import Recipes",
-    desc: "From AllRecipes, BBC Good Food & more",
     color: "text-rose-600 dark:text-rose-400",
     bg: "bg-rose-50 dark:bg-rose-400/10",
     screenshot: "/screenshots/IMG_5862.PNG",
@@ -767,8 +751,6 @@ const featureGridItems: {
         <path d="M16 10a4 4 0 0 1-8 0" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    name: "Grocery List",
-    desc: "Categorized by Produce, Dairy, Meat, Grains",
     color: "text-lime-600 dark:text-lime-400",
     bg: "bg-lime-50 dark:bg-lime-400/10",
     screenshot: "/screenshots/IMG_5866.PNG",
@@ -779,8 +761,6 @@ const featureGridItems: {
         <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    name: "Meal Templates",
-    desc: "Quick-log your frequent meals",
     color: "text-amber-600 dark:text-amber-400",
     bg: "bg-amber-50 dark:bg-amber-400/10",
     screenshot: "/screenshots/IMG_5859.PNG",
@@ -793,8 +773,6 @@ const featureGridItems: {
         <line x1="12" y1="17" x2="12" y2="21" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    name: "Meal Prep",
-    desc: "Weekly planner with auto grocery list",
     color: "text-cyan-600 dark:text-cyan-400",
     bg: "bg-cyan-50 dark:bg-cyan-400/10",
     screenshot: "/screenshots/IMG_5860.PNG",
@@ -808,8 +786,6 @@ const featureGridItems: {
         <line x1="16" y1="17" x2="8" y2="17" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    name: "Export Data",
-    desc: `PDF reports covering ${PDF_REPORT_RANGE}`,
     color: "text-ink-2",
     bg: "bg-surface-2",
     screenshot: "/screenshots/IMG_5885.PNG",
@@ -821,8 +797,6 @@ const featureGridItems: {
         <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    name: "Daily Lessons",
-    desc: "Nutrition education with streaks",
     color: "text-indigo-600 dark:text-indigo-400",
     bg: "bg-indigo-50 dark:bg-indigo-400/10",
     screenshot: "/screenshots/IMG_5878.PNG",
@@ -833,15 +807,19 @@ const featureGridItems: {
         <path d="M22 12h-4l-3 9L9 3l-3 9H2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    name: "Glucose Tracker",
-    desc: "7-day average & estimated A1C",
     color: "text-rose-600 dark:text-rose-400",
     bg: "bg-rose-50 dark:bg-rose-400/10",
     screenshot: "/screenshots/IMG_5874.PNG",
   },
 ];
 
-function FlipCard({ item }: { item: (typeof featureGridItems)[number] }) {
+function FlipCard({
+  item,
+  t,
+}: {
+  item: (typeof featureGridItems)[number] & T["grid"]["items"][number];
+  t: T["grid"];
+}) {
   const [showBack, setShowBack] = useState(false);
 
   const handleFlip = () => setShowBack((prev) => !prev);
@@ -850,7 +828,7 @@ function FlipCard({ item }: { item: (typeof featureGridItems)[number] }) {
     <div
       role="button"
       tabIndex={0}
-      aria-label={`${item.name} — ${showBack ? "hide" : "show"} screen preview`}
+      aria-label={fill(showBack ? t.hidePreview : t.showPreview, { name: item.name })}
       className="relative cursor-pointer [perspective:1000px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 rounded-xl"
       style={{ minHeight: showBack ? 320 : "auto" }}
       onClick={handleFlip}
@@ -916,7 +894,7 @@ function FlipCard({ item }: { item: (typeof featureGridItems)[number] }) {
           <div className="relative aspect-[9/16] w-full bg-surface-2">
             <Image
               src={item.screenshot}
-              alt={`${item.name} screen`}
+              alt={fill(t.screenAlt, { name: item.name })}
               fill
               className="object-contain object-top"
               sizes="(max-width: 768px) 50vw, 33vw"
@@ -928,7 +906,7 @@ function FlipCard({ item }: { item: (typeof featureGridItems)[number] }) {
               <svg viewBox="0 0 20 20" fill="currentColor" className="w-3 h-3">
                 <path fillRule="evenodd" d="M15.312 11.424a5.5 5.5 0 01-9.201 2.466l-.312-.311h2.433a.75.75 0 000-1.5H4.598a.75.75 0 00-.75.75v3.634a.75.75 0 001.5 0v-2.033l.312.311a7 7 0 0011.712-3.138.75.75 0 00-1.06-.18zm-1.624-7.848a7 7 0 00-11.712 3.138.75.75 0 001.06.18 5.5 5.5 0 019.201-2.466l.312.311H10.116a.75.75 0 000 1.5h3.634a.75.75 0 00.75-.75V1.855a.75.75 0 00-1.5 0v2.033l-.312-.312z" clipRule="evenodd" />
               </svg>
-              Tap to flip back
+              {t.flipBack}
             </span>
           </div>
         </motion.div>
@@ -937,7 +915,7 @@ function FlipCard({ item }: { item: (typeof featureGridItems)[number] }) {
   );
 }
 
-function FeatureGrid() {
+function FeatureGrid({ t }: { t: T["grid"] }) {
   return (
     <div>
       <div className="flex items-center justify-center gap-2 mb-6">
@@ -947,11 +925,11 @@ function FeatureGrid() {
             <path fillRule="evenodd" d="M.664 10.59a1.651 1.651 0 010-1.186A10.004 10.004 0 0110 3c4.257 0 7.893 2.66 9.336 6.41.147.381.146.804 0 1.186A10.004 10.004 0 0110 17c-4.257 0-7.893-2.66-9.336-6.41zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd" />
           </svg>
         </span>
-        <span className="text-sm text-ink-3 font-medium">Tap any card to preview the screen</span>
+        <span className="text-sm text-ink-3 font-medium">{t.hint}</span>
       </div>
       <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
-        {featureGridItems.map((f) => (
-          <FlipCard key={f.name} item={f} />
+        {featureGridItems.map((f, i) => (
+          <FlipCard key={f.screenshot} item={{ ...f, ...t.items[i] }} t={t} />
         ))}
       </div>
     </div>
@@ -962,7 +940,15 @@ function FeatureGrid() {
 /*  Main Features Component                                           */
 /* ================================================================== */
 
-export function Features({ showGrid = false }: { showGrid?: boolean }) {
+export function Features({
+  lang,
+  t,
+  showGrid = false,
+}: {
+  lang: Locale;
+  t: T;
+  showGrid?: boolean;
+}) {
   return (
     <section id="wellness" className="relative overflow-hidden">
       {/* ---------------------------------------------------------- */}
@@ -971,16 +957,15 @@ export function Features({ showGrid = false }: { showGrid?: boolean }) {
       <div className="section-y px-6 lg:px-8">
         <AnimatedSection className="mx-auto max-w-3xl text-center">
           <p className="eyebrow mb-5">
-            All-in-one nutrition, fasting &amp; coaching
+            {t.eyebrow}
           </p>
           <h2 className="text-h2 text-ink">
-            One app for your entire{" "}
+            {t.titleLine1}{" "}
             <br className="hidden sm:block" />
-            wellness journey
+            {t.titleLine2}
           </h2>
           <p className="mt-6 text-lg sm:text-xl leading-relaxed text-ink-3 max-w-2xl mx-auto">
-            From AI-powered meal scanning to personalized coaching, MyNutriRise
-            brings every aspect of healthy living into one beautiful experience.
+            {t.intro}
           </p>
         </AnimatedSection>
       </div>
@@ -993,35 +978,21 @@ export function Features({ showGrid = false }: { showGrid?: boolean }) {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Visual side */}
             <AnimatedSection className="order-2 lg:order-1">
-              <NutritionCards />
+              <NutritionCards t={t.cards} />
             </AnimatedSection>
 
             {/* Text side */}
             <AnimatedSection delay={0.15} className="order-1 lg:order-2">
               <p className="eyebrow mb-3">
-                Nutrition
+                {t.nutrition.eyebrow}
               </p>
               <h3 className="text-h3 text-ink">
-                Smart Nutrition{" "}
-                <span className="text-emerald-600 dark:text-emerald-400">Intelligence</span>
+                {rich(t.nutrition.title, { hl })}
               </h3>
               <p className="mt-4 text-lead text-ink-3">
-                Every bite, fully understood. Our AI analyzes your meals in
-                real-time, tracking not just calories and macros, but {MICRONUTRIENT_COUNT}{" "}
-                essential micronutrients to give you the complete picture of
-                your nutrition.
+                {t.nutrition.body}
               </p>
-              <BulletList
-                items={[
-                  "AI Meal Scan — snap a photo for instant nutrition breakdown",
-                  "Smart calorie & macro tracking with food database",
-                  `${MICRONUTRIENT_COUNT} key micronutrients — iron, calcium, vitamins A, C, D, B12 & more (Premium)`,
-                  "Compare foods head-to-head with health scores",
-                  "Meal timing analytics — eating patterns by time of day",
-                  "Barcode scanner & voice logging for hands-free tracking",
-                  "Metric or imperial units, in every app language",
-                ]}
-              />
+              <BulletList items={t.nutrition.bullets} />
             </AnimatedSection>
           </div>
         </div>
@@ -1036,34 +1007,20 @@ export function Features({ showGrid = false }: { showGrid?: boolean }) {
             {/* Text side */}
             <AnimatedSection>
               <p className="eyebrow mb-3">
-                Ecosystem
+                {t.ecosystem.eyebrow}
               </p>
               <h3 className="text-h3 text-ink">
-                Your Wellness{" "}
-                <span className="text-emerald-600 dark:text-emerald-400">Ecosystem</span>
+                {rich(t.ecosystem.title, { hl })}
               </h3>
               <p className="mt-4 text-lead text-ink-3">
-                Fasting, fitness, hydration, sleep, recipes, and meal
-                plans — all working together. MyNutriRise connects every
-                wellness habit into a single, intelligent system that adapts to
-                your lifestyle.
+                {t.ecosystem.body}
               </p>
-              <BulletList
-                items={[
-                  `Intermittent fasting with ${FASTING_PLAN_COUNT} plans (16:8, 5:2, OMAD, Ramadan) + Masterclass`,
-                  `${RECIPES} recipes with cultural diets (Afghan, Arabic, Bangladeshi & more)`,
-                  "AI meal plans — daily/weekly for Keto, Mediterranean, Vegan & more",
-                  "Meal prep planner with auto-generated grocery lists",
-                  `${EXERCISES_AND_ACTIVITIES} exercises & activities — Walking, Running, Cycling, Gym, Yoga, Sports`,
-                  "Water tracking with a daily goal, plus sleep from Apple Health & Health Connect",
-                  "Live Activities for fasts and workouts on your iPhone Lock Screen",
-                ]}
-              />
+              <BulletList items={t.ecosystem.bullets} />
             </AnimatedSection>
 
             {/* Visual side */}
             <AnimatedSection delay={0.15}>
-              <WellnessCards />
+              <WellnessCards t={t.cards} />
             </AnimatedSection>
           </div>
         </div>
@@ -1077,34 +1034,21 @@ export function Features({ showGrid = false }: { showGrid?: boolean }) {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Visual side */}
             <AnimatedSection className="order-2 lg:order-1">
-              <CoachingCards />
+              <CoachingCards t={t.cards} />
             </AnimatedSection>
 
             {/* Text side */}
             <AnimatedSection delay={0.15} className="order-1 lg:order-2">
               <p className="eyebrow mb-3">
-                AI Coaching
+                {t.coaching.eyebrow}
               </p>
               <h3 className="text-h3 text-ink">
-                Intelligent Coaching{" "}
-                <span className="text-emerald-600 dark:text-emerald-400">& Insights</span>
+                {rich(t.coaching.title, { hl })}
               </h3>
               <p className="mt-4 text-lead text-ink-3">
-                Your personal AI wellness coach understands your goals, habits,
-                and preferences. It connects every data point — from nutrition
-                to sleep — to deliver actionable guidance that actually helps
-                you improve.
+                {t.coaching.body}
               </p>
-              <BulletList
-                items={[
-                  "AI nutritional coach with personalized meal ideas & guidance",
-                  "Wellness score (0-100) with 6-habit breakdown",
-                  "Weekly reports with consistency %, daily averages & sharing",
-                  "Daily nutrition lessons with streaks & action items",
-                  "Glucose tracking with 7-day average & estimated A1C",
-                  "Health sync — reads steps, workouts & sleep from Apple Health and Health Connect",
-                ]}
-              />
+              <BulletList items={t.coaching.bullets} />
             </AnimatedSection>
           </div>
         </div>
@@ -1119,38 +1063,26 @@ export function Features({ showGrid = false }: { showGrid?: boolean }) {
             {/* Text side */}
             <AnimatedSection>
               <p className="eyebrow mb-3">
-                Recipes
+                {t.recipes.eyebrow}
               </p>
               <h3 className="text-h3 text-ink">
-                {RECIPES}{" "}Recipes{" "}
-                <span className="text-emerald-600 dark:text-emerald-400">from {CUISINES}{" "}Cuisines</span>
+                {rich(t.recipes.title, { hl })}
               </h3>
               <p className="mt-4 text-lead text-ink-3">
-                From Turkish kebabs to Afghan pulao — every recipe comes with
-                full nutrition details, and your culture&apos;s food is a
-                first-class citizen, not a missing database entry.
+                {t.recipes.body}
               </p>
-              <BulletList
-                items={[
-                  `${RECIPES} recipes with real ingredient amounts & cooking steps`,
-                  `${CUISINES} world cuisines — halal-checked throughout`,
-                  "Smart filters: vegetarian, keto, high-protein & gluten-free",
-                  "Import recipes from AllRecipes, BBC Good Food & other recipe sites",
-                  "Browse by category — Breakfast, Soups, Desserts & dozens more",
-                  "Log any recipe to your day in one tap",
-                ]}
-              />
+              <BulletList items={t.recipes.bullets} />
               <a
-                href="/halal-nutrition-app"
+                href={localePath(lang, "/halal-nutrition-app")}
                 className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-600 dark:text-emerald-400 transition-colors hover:text-emerald-700 dark:hover:text-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 rounded-sm"
               >
-                Built for halal &amp; cultural eating — see how →
+                {t.recipes.halalLink}
               </a>
             </AnimatedSection>
 
             {/* Visual side */}
             <AnimatedSection delay={0.15}>
-              <RecipeCards />
+              <RecipeCards t={t.cards} />
             </AnimatedSection>
           </div>
         </div>
@@ -1165,33 +1097,20 @@ export function Features({ showGrid = false }: { showGrid?: boolean }) {
             {/* Text side */}
             <AnimatedSection className="order-1 lg:order-2">
               <p className="eyebrow mb-3">
-                Fitness
+                {t.fitness.eyebrow}
               </p>
               <h3 className="text-h3 text-ink">
-                Workouts, Routines{" "}
-                <span className="text-emerald-600 dark:text-emerald-400">& Exercises</span>
+                {rich(t.fitness.title, { hl })}
               </h3>
               <p className="mt-4 text-lead text-ink-3">
-                Nutrition is half the story. Train with a full exercise
-                library, follow ready-made routines or build your own, and
-                watch every burned calorie flow straight into your daily
-                balance.
+                {t.fitness.body}
               </p>
-              <BulletList
-                items={[
-                  `${STRENGTH_EXERCISE_COUNT} strength exercises with step-by-step instructions & muscle targets`,
-                  "Prebuilt routines — Full Body, Push Day, Pull Day & more",
-                  "Build custom routines with sets, reps & exercise history",
-                  "Cardio tracking — walking, running, cycling, swimming, yoga & more",
-                  "Calories burned feed your daily energy balance automatically",
-                  "Syncs with Apple Health & Google Health Connect",
-                ]}
-              />
+              <BulletList items={t.fitness.bullets} />
             </AnimatedSection>
 
             {/* Visual side */}
             <AnimatedSection delay={0.15} className="order-2 lg:order-1">
-              <WorkoutCards />
+              <WorkoutCards t={t.cards} />
             </AnimatedSection>
           </div>
         </div>
@@ -1206,32 +1125,20 @@ export function Features({ showGrid = false }: { showGrid?: boolean }) {
             {/* Text side */}
             <AnimatedSection>
               <p className="eyebrow mb-3">
-                Community
+                {t.community.eyebrow}
               </p>
               <h3 className="text-h3 text-ink">
-                Stay Motivated{" "}
-                <span className="text-emerald-600 dark:text-emerald-400">Together</span>
+                {rich(t.community.title, { hl })}
               </h3>
               <p className="mt-4 text-lead text-ink-3">
-                Wellness is better with friends. Earn achievements, compete on
-                leaderboards, tackle weekly challenges, and share your progress.
-                MyNutriRise turns healthy habits into a rewarding journey.
+                {t.community.body}
               </p>
-              <BulletList
-                items={[
-                  "37 achievement badges & XP-based leveling system",
-                  "Daily & weekly challenges — Hydrate Habit, Fast Five, Streak Builder",
-                  "Friends & leaderboards for Streak, XP, Meals & Accuracy",
-                  "Streak tracking with daily & weekly motivation",
-                  "Progress photos & body measurements (waist, chest, arms)",
-                  "Shareable weekly reports & Premium/Pro features",
-                ]}
-              />
+              <BulletList items={t.community.bullets} />
             </AnimatedSection>
 
             {/* Visual side */}
             <AnimatedSection delay={0.15}>
-              <MotivationCards />
+              <MotivationCards t={t.cards} />
             </AnimatedSection>
           </div>
         </div>
@@ -1245,18 +1152,17 @@ export function Features({ showGrid = false }: { showGrid?: boolean }) {
           <div className="container-page section-y">
             <AnimatedSection className="text-center mb-12">
               <p className="eyebrow mb-3">
-                And So Much More
+                {t.grid.eyebrow}
               </p>
               <h3 className="text-h3 text-ink">
-                Everything you need
+                {t.grid.title}
               </h3>
               <p className="mt-4 text-lead text-ink-3 max-w-2xl mx-auto">
-                Every tool, every insight, every feature — designed to support your
-                complete wellness journey.
+                {t.grid.body}
               </p>
             </AnimatedSection>
             <AnimatedSection delay={0.1}>
-              <FeatureGrid />
+              <FeatureGrid t={t.grid} />
             </AnimatedSection>
           </div>
         </div>

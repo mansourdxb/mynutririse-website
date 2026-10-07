@@ -4,10 +4,14 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { StoreButtons } from "@/components/ui/Button";
 import { LIMITS, NumberField, inRange } from "@/components/tools/shared";
-import { CUISINES } from "@/data/facts";
+import { formatNumber } from "@/data/facts";
+import { BASE_URL, localePath, type Locale } from "@/i18n/config";
+import type { Messages } from "@/i18n/messages";
+import { fill } from "@/i18n/rich";
 
 // Mirrors the app's onboarding questions and plan calculation
 // (lib/app/modules/Onboarding + lib/app/data/diet_plans.dart).
+// All visible text comes from messages (quiz.flow).
 
 type Goal = "lose" | "maintain" | "gain";
 type Sex = "male" | "female";
@@ -19,60 +23,31 @@ type EatingStyle =
   | "keto"
   | "protein";
 
-const goals: { value: Goal; label: string; sub: string; emoji: string }[] = [
-  { value: "lose", label: "Lose weight", sub: "Eat in a calorie deficit", emoji: "⚖️" },
-  { value: "maintain", label: "Maintain weight", sub: "Balance intake with activity", emoji: "🎯" },
-  { value: "gain", label: "Gain muscle", sub: "Protein-led surplus", emoji: "💪" },
+const goals: { value: Goal; emoji: string }[] = [
+  { value: "lose", emoji: "⚖️" },
+  { value: "maintain", emoji: "🎯" },
+  { value: "gain", emoji: "💪" },
 ];
 
-const workoutLevels = [
-  { value: 1.2, label: "None", sub: "Little or no exercise" },
-  { value: 1.375, label: "1–2 times/week", sub: "Light activity" },
-  { value: 1.55, label: "3–4 times/week", sub: "Moderate activity" },
-  { value: 1.725, label: "5+ times/week", sub: "Very active" },
+// Activity multipliers; labels in quiz.flow.workoutLevels, same order.
+const workoutValues = [1.2, 1.375, 1.55, 1.725];
+
+const eatingStyles: EatingStyle[] = [
+  "everything",
+  "halal",
+  "mediterranean",
+  "plant",
+  "keto",
+  "protein",
 ];
 
-const eatingStyles: { value: EatingStyle; label: string; sub: string }[] = [
-  { value: "everything", label: "No restrictions", sub: "I eat everything" },
-  { value: "halal", label: "Halal & cultural", sub: `${CUISINES} cuisines — Turkish, Pakistani, Afghan & more` },
-  { value: "mediterranean", label: "Mediterranean", sub: "Olive oil, fish, vegetables" },
-  { value: "plant", label: "Vegetarian / Vegan", sub: "Plant-based nutrition" },
-  { value: "keto", label: "Keto / low-carb", sub: "Under 30g net carbs per day" },
-  { value: "protein", label: "High-protein", sub: "40% protein ratio" },
-];
-
-// Real plan names from the app's DietPlanDatabase
-const planByStyle: Record<EatingStyle, { name: string; emoji: string; blurb: string }> = {
-  everything: {
-    name: "Clean Eating",
-    emoji: "🥗",
-    blurb: "Whole foods, minimal processing — fruits, vegetables, lean proteins and whole grains.",
-  },
-  halal: {
-    name: "Middle Eastern Healthy",
-    emoji: "🧆",
-    blurb: "Halal-friendly meals with traditional flavours — grilled meats, legumes, fresh salads and wholesome grains.",
-  },
-  mediterranean: {
-    name: "Mediterranean",
-    emoji: "🫒",
-    blurb: "Heart-healthy olive oil, fresh fish, vegetables, whole grains and legumes.",
-  },
-  plant: {
-    name: "Vegetarian Balance",
-    emoji: "🌱",
-    blurb: "Balanced plant-based nutrition — legumes, whole grains, dairy, eggs and healthy fats.",
-  },
-  keto: {
-    name: "Keto Friendly",
-    emoji: "🥑",
-    blurb: "Very low carb, high fat — under 30g net carbs per day with quality fats.",
-  },
-  protein: {
-    name: "High Protein",
-    emoji: "💪",
-    blurb: "40% protein ratio for muscle building and satiety — lean meats, eggs, legumes and dairy.",
-  },
+const planEmoji: Record<EatingStyle, string> = {
+  everything: "🥗",
+  halal: "🧆",
+  mediterranean: "🫒",
+  plant: "🌱",
+  keto: "🥑",
+  protein: "💪",
 };
 
 // Macro splits (protein/carbs/fat %) per eating style
@@ -86,7 +61,7 @@ const macroSplit: Record<EatingStyle, [number, number, number]> = {
 };
 
 const optionClass = (selected: boolean) =>
-  `w-full rounded-2xl border-2 p-4 text-left transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 ${
+  `w-full rounded-2xl border-2 p-4 text-start transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 ${
     selected
       ? "border-emerald-500 bg-emerald-50 dark:bg-emerald-400/10"
       : "border-line bg-surface hover:border-emerald-300 dark:hover:border-emerald-400/30"
@@ -94,7 +69,15 @@ const optionClass = (selected: boolean) =>
 
 const TOTAL_STEPS = 5;
 
-export function QuizFlow() {
+export function QuizFlow({
+  lang,
+  t,
+  store,
+}: {
+  lang: Locale;
+  t: Messages["quiz"]["flow"];
+  store: Messages["common"]["store"];
+}) {
   const [step, setStep] = useState(0);
   const [goal, setGoal] = useState<Goal | null>(null);
   const [sex, setSex] = useState<Sex | null>(null);
@@ -139,12 +122,20 @@ export function QuizFlow() {
   }
 
   const isResult = step === TOTAL_STEPS - 1;
-  const plan = style ? planByStyle[style] : null;
+  const plan = style ? { ...t.plans[style], emoji: planEmoji[style] } : null;
 
   const emailBody =
     plan && calories
       ? encodeURIComponent(
-          `My MyNutriRise plan:\n\nPlan: ${plan.name}\nDaily calories: ${calories} kcal\nProtein: ${protein}g · Carbs: ${carbs}g · Fat: ${fat}g\nWater: ${(waterMl / 1000).toFixed(1)}L\n\nGet the app: https://www.mynutririse.com/download`
+          fill(t.emailBody, {
+            plan: plan.name,
+            calories,
+            protein,
+            carbs,
+            fat,
+            water: (waterMl / 1000).toFixed(1),
+            url: `${BASE_URL}${localePath(lang, "/download")}`,
+          })
         )
       : "";
 
@@ -153,8 +144,8 @@ export function QuizFlow() {
       {/* Progress bar */}
       <div className="mb-8">
         <div className="flex items-center justify-between text-xs font-medium text-ink-3">
-          <span>{isResult ? "Your plan" : `Step ${step + 1} of ${TOTAL_STEPS - 1}`}</span>
-          <span>{Math.round((step / (TOTAL_STEPS - 1)) * 100)}%</span>
+          <span>{isResult ? t.yourPlan : fill(t.stepOf, { step: step + 1, total: TOTAL_STEPS - 1 })}</span>
+          <span>{fill(t.percent, { n: Math.round((step / (TOTAL_STEPS - 1)) * 100) })}</span>
         </div>
         <div className="mt-2 h-2 overflow-hidden rounded-full bg-surface-2">
           <motion.div
@@ -175,9 +166,7 @@ export function QuizFlow() {
         >
           {step === 0 && (
             <div>
-              <h2 className="text-h3 text-ink">
-                What&apos;s your main goal?
-              </h2>
+              <h2 className="text-h3 text-ink">{t.goalTitle}</h2>
               <div className="mt-6 space-y-3">
                 {goals.map((g) => (
                   <button
@@ -186,9 +175,9 @@ export function QuizFlow() {
                     aria-pressed={goal === g.value}
                     className={optionClass(goal === g.value)}
                   >
-                    <span className="mr-3">{g.emoji}</span>
-                    <span className="font-semibold text-ink">{g.label}</span>
-                    <span className="block pl-8 text-sm text-ink-3">{g.sub}</span>
+                    <span className="me-3">{g.emoji}</span>
+                    <span className="font-semibold text-ink">{t.goals[g.value].label}</span>
+                    <span className="block ps-8 text-sm text-ink-3">{t.goals[g.value].sub}</span>
                   </button>
                 ))}
               </div>
@@ -197,14 +186,9 @@ export function QuizFlow() {
 
           {step === 1 && (
             <div>
-              <h2 className="text-h3 text-ink">
-                Tell us about yourself
-              </h2>
-              <p className="mt-2 text-sm text-ink-3">
-                Age tunes calorie targets to your metabolism. We keep this
-                private.
-              </p>
-              <div className="mt-6 flex gap-2" role="group" aria-label="Gender">
+              <h2 className="text-h3 text-ink">{t.aboutTitle}</h2>
+              <p className="mt-2 text-sm text-ink-3">{t.aboutBody}</p>
+              <div className="mt-6 flex gap-2" role="group" aria-label={t.genderLabel}>
                 {(["male", "female"] as const).map((s) => (
                   <button
                     key={s}
@@ -216,33 +200,31 @@ export function QuizFlow() {
                         : "bg-surface-2 text-ink-2 hover:bg-emerald-50 dark:hover:bg-emerald-400/10"
                     }`}
                   >
-                    {s}
+                    {t.sexes[s]}
                   </button>
                 ))}
               </div>
               <div className="mt-4 grid gap-4 sm:grid-cols-3">
-                <NumberField label="Age" value={age} onChange={setAge} placeholder="30" limits={LIMITS.age} unit="years" />
-                <NumberField label="Height (cm)" value={height} onChange={setHeight} placeholder="170" limits={LIMITS.heightCm} unit="cm" />
-                <NumberField label="Weight (kg)" value={weight} onChange={setWeight} placeholder="70" limits={LIMITS.weightKg} unit="kg" />
+                <NumberField label={t.age} value={age} onChange={setAge} placeholder="30" limits={LIMITS.age} unit={t.unitYears} rangeError={t.rangeError} />
+                <NumberField label={t.height} value={height} onChange={setHeight} placeholder="170" limits={LIMITS.heightCm} unit={t.unitCm} rangeError={t.rangeError} />
+                <NumberField label={t.weight} value={weight} onChange={setWeight} placeholder="70" limits={LIMITS.weightKg} unit={t.unitKg} rangeError={t.rangeError} />
               </div>
             </div>
           )}
 
           {step === 2 && (
             <div>
-              <h2 className="text-h3 text-ink">
-                How often do you work out?
-              </h2>
+              <h2 className="text-h3 text-ink">{t.workoutTitle}</h2>
               <div className="mt-6 space-y-3">
-                {workoutLevels.map((level) => (
+                {workoutValues.map((value, i) => (
                   <button
-                    key={level.value}
-                    onClick={() => setActivity(level.value)}
-                    aria-pressed={activity === level.value}
-                    className={optionClass(activity === level.value)}
+                    key={value}
+                    onClick={() => setActivity(value)}
+                    aria-pressed={activity === value}
+                    className={optionClass(activity === value)}
                   >
-                    <span className="block font-semibold text-ink">{level.label}</span>
-                    <span className="text-sm text-ink-3">{level.sub}</span>
+                    <span className="block font-semibold text-ink">{t.workoutLevels[i].label}</span>
+                    <span className="text-sm text-ink-3">{t.workoutLevels[i].sub}</span>
                   </button>
                 ))}
               </div>
@@ -251,19 +233,17 @@ export function QuizFlow() {
 
           {step === 3 && (
             <div>
-              <h2 className="text-h3 text-ink">
-                Pick your eating style
-              </h2>
+              <h2 className="text-h3 text-ink">{t.styleTitle}</h2>
               <div className="mt-6 space-y-3">
                 {eatingStyles.map((s) => (
                   <button
-                    key={s.value}
-                    onClick={() => setStyle(s.value)}
-                    aria-pressed={style === s.value}
-                    className={optionClass(style === s.value)}
+                    key={s}
+                    onClick={() => setStyle(s)}
+                    aria-pressed={style === s}
+                    className={optionClass(style === s)}
                   >
-                    <span className="block font-semibold text-ink">{s.label}</span>
-                    <span className="text-sm text-ink-3">{s.sub}</span>
+                    <span className="block font-semibold text-ink">{t.styles[s].label}</span>
+                    <span className="text-sm text-ink-3">{t.styles[s].sub}</span>
                   </button>
                 ))}
               </div>
@@ -273,7 +253,7 @@ export function QuizFlow() {
           {isResult && plan && calories && (
             <div className="text-center">
               <p className="text-sm font-semibold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">
-                Your custom plan
+                {t.resultEyebrow}
               </p>
               <h2 className="mt-3 text-3xl font-bold text-ink sm:text-4xl">
                 {plan.emoji} {plan.name}
@@ -283,39 +263,35 @@ export function QuizFlow() {
               </p>
 
               <div className="mx-auto mt-8 max-w-sm rounded-3xl bg-gradient-to-br from-emerald-500 to-teal-400 p-8 text-white">
-                <p className="text-sm font-medium text-white/80">Daily calorie target</p>
-                <p className="mt-1 text-5xl font-bold">{calories.toLocaleString()}</p>
-                <p className="mt-1 text-sm text-white/80">kcal/day</p>
+                <p className="text-sm font-medium text-white/80">{t.dailyTarget}</p>
+                <p className="mt-1 text-5xl font-bold">{formatNumber(calories, lang)}</p>
+                <p className="mt-1 text-sm text-white/80">{t.kcalPerDay}</p>
                 <div className="mt-6 grid grid-cols-3 gap-3 border-t border-white/20 pt-5">
                   <div>
-                    <p className="text-xl font-bold">{protein}g</p>
-                    <p className="text-xs text-white/80">Protein</p>
+                    <p className="text-xl font-bold">{fill(t.grams, { n: protein })}</p>
+                    <p className="text-xs text-white/80">{t.protein}</p>
                   </div>
                   <div>
-                    <p className="text-xl font-bold">{carbs}g</p>
-                    <p className="text-xs text-white/80">Carbs</p>
+                    <p className="text-xl font-bold">{fill(t.grams, { n: carbs })}</p>
+                    <p className="text-xs text-white/80">{t.carbs}</p>
                   </div>
                   <div>
-                    <p className="text-xl font-bold">{fat}g</p>
-                    <p className="text-xs text-white/80">Fat</p>
+                    <p className="text-xl font-bold">{fill(t.grams, { n: fat })}</p>
+                    <p className="text-xs text-white/80">{t.fat}</p>
                   </div>
                 </div>
                 <p className="mt-4 text-xs text-white/80">
-                  💧 {(waterMl / 1000).toFixed(1)}L water/day recommended
+                  💧 {fill(t.water, { liters: (waterMl / 1000).toFixed(1) })}
                 </p>
               </div>
 
-              <p className="mx-auto mt-6 max-w-md leading-relaxed text-ink-3">
-                This is the same math the app uses. Download MyNutriRise and
-                your plan is ready — a guided meal plan (week 1 free, all 4 weeks with Premium), AI photo logging, and
-                coaching included.
-              </p>
-              <StoreButtons reassurance className="mt-8" />
+              <p className="mx-auto mt-6 max-w-md leading-relaxed text-ink-3">{t.resultBody}</p>
+              <StoreButtons t={store} reassurance className="mt-8" />
               <a
-                href={`mailto:?subject=${encodeURIComponent("My MyNutriRise plan")}&body=${emailBody}`}
+                href={`mailto:?subject=${encodeURIComponent(t.emailSubject)}&body=${emailBody}`}
                 className="mt-3 inline-block text-sm font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300"
               >
-                Email me my plan →
+                {t.emailCta}
               </a>
             </div>
           )}
@@ -330,14 +306,14 @@ export function QuizFlow() {
             disabled={step === 0}
             className="rounded-full px-6 py-2.5 text-sm font-medium text-ink-2 transition-colors hover:text-emerald-600 dark:hover:text-emerald-400 disabled:invisible focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2"
           >
-            ← Back
+            {t.back}
           </button>
           <button
             onClick={() => setStep((s) => s + 1)}
             disabled={!canContinue[step]}
             className="rounded-full bg-emerald-500 px-8 py-3 text-sm font-semibold text-white shadow-sm shadow-emerald-500/20 transition-all duration-200 hover:bg-emerald-600 disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2"
           >
-            {step === TOTAL_STEPS - 2 ? "See my plan" : "Continue"}
+            {step === TOTAL_STEPS - 2 ? t.seePlan : t.continue}
           </button>
         </div>
       )}

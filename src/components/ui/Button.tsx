@@ -1,4 +1,8 @@
-export function AppStoreButton({ store }: { store: "apple" | "google" }) {
+import type { Messages } from "@/i18n/messages";
+
+type StoreText = Messages["common"]["store"];
+
+export function AppStoreButton({ store, t }: { store: "apple" | "google"; t: StoreText }) {
   const isApple = store === "apple";
   return (
     <a
@@ -24,10 +28,10 @@ export function AppStoreButton({ store }: { store: "apple" | "google" }) {
       )}
       <div className="flex flex-col">
         <span className="text-[10px] leading-tight opacity-70">
-          {isApple ? "Download on the" : "GET IT ON"}
+          {isApple ? t.appleSmall : t.googleSmall}
         </span>
         <span className="text-base font-semibold leading-tight">
-          {isApple ? "App Store" : "Google Play"}
+          {isApple ? t.appleBig : t.googleBig}
         </span>
       </div>
     </a>
@@ -35,21 +39,23 @@ export function AppStoreButton({ store }: { store: "apple" | "google" }) {
 }
 
 export function StoreButtons({
+  t,
   reassurance = false,
   className = "",
 }: {
+  t: StoreText;
   reassurance?: boolean;
   className?: string;
 }) {
   return (
     <div className={className}>
       <div className="flex flex-wrap items-center justify-center gap-4">
-        <AppStoreButton store="apple" />
-        <AppStoreButton store="google" />
+        <AppStoreButton store="apple" t={t} />
+        <AppStoreButton store="google" t={t} />
       </div>
       {reassurance && (
         <p className="mt-4 text-center text-sm text-ink-3">
-          Free to download &middot; Premium optional &middot; Cancel anytime
+          {t.reassurance}
         </p>
       )}
     </div>

@@ -325,6 +325,23 @@ body {
   overflow-x: clip;
 }
 
+/* Arabic: IBM Plex Sans Arabic for everything; Arabic script must not be tracked tight. */
+html[lang="ar"] {
+  --font-body: var(--font-arabic);
+  --font-heading: var(--font-arabic);
+}
+html[lang="ar"] :is(.text-display, .text-h1, .text-h2, .text-h3, .text-h4) {
+  letter-spacing: 0;
+  line-height: 1.3;
+}
+html[lang="ar"] :is(.eyebrow, .uppercase, .tracking-wider, .tracking-widest) {
+  letter-spacing: 0;
+}
+/* Directional glyph icons (→ arrows drawn as SVG) mirror in RTL. */
+html[dir="rtl"] .rtl-flip {
+  transform: scaleX(-1);
+}
+
 body {
   background-color: var(--canvas);
   color: var(--ink-2);

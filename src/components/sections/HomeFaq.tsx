@@ -4,7 +4,9 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
-import { homeFaqs } from "./homeFaqData";
+import { localePath, type Locale } from "@/i18n/config";
+import type { Messages } from "@/i18n/messages";
+import { rich } from "@/i18n/rich";
 
 function HomeFaqItem({
   question,
@@ -24,7 +26,7 @@ function HomeFaqItem({
         onClick={onToggle}
         aria-expanded={isOpen}
         aria-controls={panelId}
-        className="flex w-full items-center justify-between gap-4 px-5 py-5 text-left transition-colors hover:bg-emerald-50/40 dark:hover:bg-emerald-400/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-emerald-500 sm:px-6"
+        className="flex w-full items-center justify-between gap-4 px-5 py-5 text-start transition-colors hover:bg-emerald-50/40 dark:hover:bg-emerald-400/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-emerald-500 sm:px-6"
       >
         <span
           className={`text-sm font-medium transition-colors sm:text-[15px] ${
@@ -69,7 +71,7 @@ function HomeFaqItem({
   );
 }
 
-export function HomeFaq() {
+export function HomeFaq({ lang, t }: { lang: Locale; t: Messages["home"]["faq"] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
@@ -77,16 +79,16 @@ export function HomeFaq() {
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <AnimatedSection className="text-center mb-12">
           <p className="eyebrow mb-4">
-            FAQ
+            {t.eyebrow}
           </p>
           <h2 className="text-h2 text-ink">
-            Questions, answered
+            {t.title}
           </h2>
         </AnimatedSection>
 
         <AnimatedSection delay={0.1}>
           <div className="overflow-hidden rounded-2xl border border-line/80 bg-surface shadow-sm">
-            {homeFaqs.map((faq, i) => (
+            {t.items.map((faq, i) => (
               <HomeFaqItem
                 key={faq.question}
                 question={faq.question}
@@ -97,13 +99,16 @@ export function HomeFaq() {
             ))}
           </div>
           <p className="mt-6 text-center text-sm text-ink-3">
-            More questions?{" "}
-            <Link
-              href="/support"
-              className="font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300"
-            >
-              Visit the Help Center
-            </Link>
+            {rich(t.more, {
+              link: (c) => (
+                <Link
+                  href={localePath(lang, "/support")}
+                  className="font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300"
+                >
+                  {c}
+                </Link>
+              ),
+            })}
           </p>
         </AnimatedSection>
       </div>

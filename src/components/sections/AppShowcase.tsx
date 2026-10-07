@@ -1,32 +1,34 @@
 import Image from "next/image";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
+import type { Messages } from "@/i18n/messages";
+import { rich } from "@/i18n/rich";
 
 // Screens shown in the feature deep-dive phones (Today, AI Coach, Recipes,
 // Routines, Cardio, Scan, Leaderboard) are intentionally excluded here.
-const row1 = [
-  { src: "/screenshots/analytics.png", label: "Analytics & Trends" },
-  { src: "/screenshots/IMG_5847.PNG", label: "Fasting Timer" },
-  { src: "/screenshots/IMG_5849.PNG", label: "AI Meal Plans" },
-  { src: "/screenshots/food-log.png", label: "Food Search" },
-  { src: "/screenshots/exercises.png", label: "Exercise Library" },
-  { src: "/screenshots/IMG_5873.PNG", label: "Wellness Score" },
-  { src: "/screenshots/IMG_5852.PNG", label: "Micronutrients" },
-  { src: "/screenshots/IMG_5869.PNG", label: "Meal Log" },
-  { src: "/screenshots/IMG_5844.PNG", label: "Recipe Categories" },
-  { src: "/screenshots/IMG_5858.PNG", label: "Meal Templates" },
+const row1Screens = [
+  { src: "/screenshots/analytics.png" },
+  { src: "/screenshots/IMG_5847.PNG" },
+  { src: "/screenshots/IMG_5849.PNG" },
+  { src: "/screenshots/food-log.png" },
+  { src: "/screenshots/exercises.png" },
+  { src: "/screenshots/IMG_5873.PNG" },
+  { src: "/screenshots/IMG_5852.PNG" },
+  { src: "/screenshots/IMG_5869.PNG" },
+  { src: "/screenshots/IMG_5844.PNG" },
+  { src: "/screenshots/IMG_5858.PNG" },
 ];
 
-const row2 = [
-  { src: "/screenshots/diet-plans.png", label: "Diet Plans" },
-  { src: "/screenshots/IMG_5879.PNG", label: "Wearables" },
-  { src: "/screenshots/IMG_5880.PNG", label: "Achievements" },
-  { src: "/screenshots/IMG_5882.PNG", label: "Challenges" },
-  { src: "/screenshots/weekly-report.png", label: "Weekly Report" },
-  { src: "/screenshots/IMG_5867.PNG", label: "Weight Progress" },
-  { src: "/screenshots/IMG_5857.PNG", label: "Meal Timing" },
-  { src: "/screenshots/IMG_5887.PNG", label: "Quick Actions" },
-  { src: "/screenshots/cultural-diets.png", label: "Cultural Diets" },
-  { src: "/screenshots/IMG_5864.PNG", label: "Compare Foods" },
+const row2Screens = [
+  { src: "/screenshots/diet-plans.png" },
+  { src: "/screenshots/IMG_5879.PNG" },
+  { src: "/screenshots/IMG_5880.PNG" },
+  { src: "/screenshots/IMG_5882.PNG" },
+  { src: "/screenshots/weekly-report.png" },
+  { src: "/screenshots/IMG_5867.PNG" },
+  { src: "/screenshots/IMG_5857.PNG" },
+  { src: "/screenshots/IMG_5887.PNG" },
+  { src: "/screenshots/cultural-diets.png" },
+  { src: "/screenshots/IMG_5864.PNG" },
 ];
 
 function ScreenCard({ src, label }: { src: string; label: string }) {
@@ -44,7 +46,7 @@ function ScreenCard({ src, label }: { src: string; label: string }) {
           />
         </div>
         <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-100 transition-opacity duration-300 md:opacity-0 md:group-hover:opacity-100" />
-        <div className="absolute bottom-0 left-0 right-0 p-3 opacity-100 transition-all duration-300 md:translate-y-2 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100">
+        <div className="absolute bottom-0 start-0 end-0 p-3 opacity-100 transition-all duration-300 md:translate-y-2 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100">
           <span className="text-xs font-semibold text-white drop-shadow-sm">{label}</span>
         </div>
       </div>
@@ -56,7 +58,7 @@ function MarqueeRow({
   items,
   direction = "left",
 }: {
-  items: typeof row1;
+  items: { src: string; label: string }[];
   direction?: "left" | "right";
 }) {
   return (
@@ -70,7 +72,7 @@ function MarqueeRow({
           <div
             key={half}
             aria-hidden={half === 1}
-            className="flex shrink-0 gap-4 pr-4 sm:gap-5 sm:pr-5"
+            className="flex shrink-0 gap-4 pe-4 sm:gap-5 sm:pe-5"
           >
             {items.map((s) => (
               <ScreenCard key={`${s.src}-${half}`} src={s.src} label={s.label} />
@@ -82,22 +84,24 @@ function MarqueeRow({
   );
 }
 
-export function AppShowcase() {
+export function AppShowcase({ t }: { t: Messages["home"]["showcase"] }) {
+  const row1 = row1Screens.map((s, i) => ({ ...s, label: t.row1[i] }));
+  const row2 = row2Screens.map((s, i) => ({ ...s, label: t.row2[i] }));
+
   return (
     <section className="relative overflow-hidden wash-mint section-y">
       <div className="container-page">
         <AnimatedSection className="mx-auto max-w-2xl text-center mb-14">
           <p className="eyebrow mb-4">
-            See It In Action
+            {t.eyebrow}
           </p>
           <h2 className="text-h2 text-ink">
-            Beautiful screens,{" "}
-            <span className="text-emerald-600 dark:text-emerald-400">
-              endless possibilities
-            </span>
+            {rich(t.title, {
+              hl: (c) => <span className="text-emerald-600 dark:text-emerald-400">{c}</span>,
+            })}
           </h2>
           <p className="mt-4 text-lead text-ink-3">
-            Every screen designed with care. Explore the complete MyNutriRise experience.
+            {t.lead}
           </p>
         </AnimatedSection>
       </div>
@@ -108,8 +112,8 @@ export function AppShowcase() {
       </div>
 
       {/* Fade edges */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-20 sm:w-32 bg-gradient-to-r from-canvas to-transparent z-10" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-20 sm:w-32 bg-gradient-to-l from-canvas to-transparent z-10" />
+      <div className="pointer-events-none absolute inset-y-0 start-0 w-20 sm:w-32 bg-gradient-to-r from-canvas to-transparent z-10" />
+      <div className="pointer-events-none absolute inset-y-0 end-0 w-20 sm:w-32 bg-gradient-to-l from-canvas to-transparent z-10" />
     </section>
   );
 }

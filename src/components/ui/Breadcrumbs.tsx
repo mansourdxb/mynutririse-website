@@ -1,14 +1,22 @@
 import Link from "next/link";
 import { JsonLd } from "./JsonLd";
+import { BASE_URL, localePath, type Locale } from "@/i18n/config";
+import type { Messages } from "@/i18n/messages";
 
-const BASE_URL = "https://www.mynutririse.com";
-
+/** `items` hrefs are language-neutral paths ("/blog"); they are localized here. */
 export function Breadcrumbs({
+  lang,
+  t,
   items,
 }: {
+  lang: Locale;
+  t: Messages["common"]["breadcrumbs"];
   items: { name: string; href: string }[];
 }) {
-  const trail = [{ name: "Home", href: "/" }, ...items];
+  const trail = [{ name: t.home, href: "/" }, ...items].map((item) => ({
+    ...item,
+    href: localePath(lang, item.href),
+  }));
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -22,7 +30,7 @@ export function Breadcrumbs({
   };
 
   return (
-    <nav aria-label="Breadcrumb" className="text-sm text-ink-3">
+    <nav aria-label={t.label} className="text-sm text-ink-3">
       <JsonLd data={jsonLd} />
       <ol className="flex flex-wrap items-center gap-1.5">
         {trail.map((item, i) => (

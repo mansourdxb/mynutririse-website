@@ -1,4 +1,5 @@
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
+import type { Messages } from "@/i18n/messages";
 
 /**
  * Add real press mentions, App Store features, or awards here and the bar
@@ -9,7 +10,7 @@ import { AnimatedSection } from "@/components/ui/AnimatedSection";
  */
 const pressMentions: { name: string; href?: string }[] = [];
 
-export function PressBar() {
+export function PressBar({ t }: { t: Messages["home"]["pressBar"] }) {
   if (pressMentions.length === 0) return null;
 
   return (
@@ -17,7 +18,7 @@ export function PressBar() {
       <div className="mx-auto max-w-5xl px-6 lg:px-8">
         <AnimatedSection className="text-center">
           <p className="text-xs font-semibold uppercase tracking-widest text-ink-3">
-            As featured in
+            {t.heading}
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
             {pressMentions.map((mention) =>

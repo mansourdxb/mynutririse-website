@@ -1,9 +1,17 @@
 "use client";
 
 import { useState } from "react";
+import type { Messages } from "@/i18n/messages";
+import { fill } from "@/i18n/rich";
 import { LIMITS, NumberField, TogglePills, inRange } from "./shared";
 
-export function IdealWeightCalculator() {
+export function IdealWeightCalculator({
+  t,
+  s,
+}: {
+  t: Messages["tools"]["idealWeight"]["calc"];
+  s: Messages["tools"]["shared"];
+}) {
   const [sex, setSex] = useState<"male" | "female">("male");
   const [height, setHeight] = useState("");
 
@@ -30,22 +38,23 @@ export function IdealWeightCalculator() {
     <div className="card p-6 sm:p-8">
       <TogglePills
         options={[
-          { value: "male", label: "Male" },
-          { value: "female", label: "Female" },
+          { value: "male", label: s.male },
+          { value: "female", label: s.female },
         ]}
         value={sex}
         onChange={setSex}
-        ariaLabel="Sex"
+        ariaLabel={s.sexAria}
       />
 
       <div className="mt-6">
         <NumberField
-          label="Height (cm)"
+          label={s.heightCm}
           value={height}
           onChange={setHeight}
           placeholder="170"
           limits={LIMITS.heightCm}
-          unit="cm"
+          unit={s.units.cm}
+          rangeError={s.rangeError}
         />
       </div>
 
@@ -53,34 +62,34 @@ export function IdealWeightCalculator() {
         <div className="mt-6 space-y-3">
           <div className="rounded-2xl bg-emerald-50 dark:bg-emerald-400/10 p-6 text-center">
             <p className="text-sm font-medium text-ink-2">
-              Healthy weight range (BMI 18.5–24.9)
+              {t.healthyRange}
             </p>
             <p className="mt-1 text-3xl font-bold text-emerald-600 dark:text-emerald-400">
-              {healthyMin.toFixed(0)}–{healthyMax.toFixed(0)} kg
+              {fill(t.rangeValue, { min: healthyMin.toFixed(0), max: healthyMax.toFixed(0) })}
             </p>
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
             <div className="rounded-2xl bg-surface-2 p-5 text-center">
               <p className="text-xs font-medium uppercase tracking-wide text-ink-2">
-                Devine formula
+                {t.devine}
               </p>
               <p className="mt-1 text-2xl font-bold text-ink">
-                {devine.toFixed(1)} kg
+                {fill(t.formulaValue, { value: devine.toFixed(1) })}
               </p>
             </div>
             <div className="rounded-2xl bg-surface-2 p-5 text-center">
               <p className="text-xs font-medium uppercase tracking-wide text-ink-2">
-                Robinson formula
+                {t.robinson}
               </p>
               <p className="mt-1 text-2xl font-bold text-ink">
-                {robinson.toFixed(1)} kg
+                {fill(t.formulaValue, { value: robinson.toFixed(1) })}
               </p>
             </div>
           </div>
         </div>
       ) : (
         <p className="mt-6 text-center text-sm text-ink-3">
-          Enter your height to see your estimated ideal weight range.
+          {t.empty}
         </p>
       )}
     </div>
