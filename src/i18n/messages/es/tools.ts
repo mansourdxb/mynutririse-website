@@ -30,10 +30,6 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
       kcal: "kcal",
     },
     kcalPerDay: "kcal/día",
-    mifflin: {
-      men: "Hombres: TMB = 10 × peso(kg) + 6,25 × altura(cm) − 5 × edad + 5",
-      women: "Mujeres: TMB = 10 × peso(kg) + 6,25 × altura(cm) − 5 × edad − 161",
-    },
   },
 
   index: {
@@ -135,40 +131,6 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
     breadcrumb: "Calculadora de TMB",
     title: "Calculadora de TMB",
     subtitle: "Descubre cuántas calorías quema tu cuerpo en reposo absoluto.",
-    whatIsHeading: "¿Qué es la TMB?",
-    whatIs:
-      "Tu tasa metabólica basal es la energía que tu cuerpo necesita solo para mantenerse con vida —respirar, hacer circular la sangre, reparar las células— antes de cualquier movimiento. Suele representar entre el 60 y el 70 % de las calorías que quemas en un día, y por eso es la base de cualquier objetivo de calorías.",
-    equationIntro: "Esta calculadora usa la <b>ecuación de Mifflin–St Jeor</b>:",
-    example:
-      "<b>Ejemplo práctico:</b> una mujer de 28 años, de 162 cm y 60 kg: 10×60 + 6,25×162 − 5×28 − 161 = <b>1.312 kcal/día</b> en reposo absoluto.",
-    targetHeading: "De la TMB a un objetivo diario",
-    target:
-      "La TMB es solo la mitad de la ecuación: la que corresponde al reposo. Multiplícala por un factor de actividad (1,2–1,9) para obtener tu gasto energético diario total; eso es exactamente lo que hace nuestra <calorie>calculadora de calorías</calorie>, y luego la <macro>calculadora de macros</macro> reparte el resultado en proteína, carbohidratos y grasa.",
-    fastingHeading: "La TMB durante el ayuno",
-    fasting:
-      "El ayuno de corta duración —16:8 o los ayunos diarios del Ramadán— no reduce de forma significativa tu TMB. La ralentización metabólica solo es un problema con una ingesta muy baja y prolongada. Durante el Ramadán, tus necesidades en reposo siguen siendo las mismas; planifica el suhoor y el iftar para cubrirlas.",
-    faqs: [
-      {
-        question: "¿Cuál es una TMB normal?",
-        answer:
-          "La mayoría de los adultos se sitúan aproximadamente entre 1.200 y 2.000 kcal/día, según su tamaño, edad y sexo. Los cuerpos más grandes y más jóvenes queman más en reposo; la TMB disminuye ligeramente con la edad.",
-      },
-      {
-        question: "¿La TMB equivale a las calorías que debo comer?",
-        answer:
-          "No. La TMB es lo que quemas en reposo absoluto. Tu objetivo diario es la TMB multiplicada por un factor de actividad; usa la calculadora de calorías para obtener la cifra completa.",
-      },
-      {
-        question: "¿El ayuno reduce mi TMB?",
-        answer:
-          "El ayuno intermitente diario, incluidos los ayunos del Ramadán, apenas afecta a la TMB. Solo una restricción severa y prolongada provoca una adaptación metabólica significativa.",
-      },
-      {
-        question: "¿Cómo puedo aumentar mi TMB?",
-        answer:
-          "Ganar músculo es la forma más fiable: el tejido muscular quema más energía en reposo que la grasa. El entrenamiento de fuerza junto con suficiente proteína aumenta tu gasto en reposo con el tiempo.",
-      },
-    ],
     ctaTitle: "Pon tu número a trabajar",
     ctaBody:
       "MyNutriRise crea tu plan diario con estos mismos cálculos y luego registra cada comida con un escaneo por foto con IA.",

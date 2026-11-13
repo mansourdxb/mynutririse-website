@@ -30,10 +30,6 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
       kcal: "kcal",
     },
     kcalPerDay: "kcal/Tag",
-    mifflin: {
-      men: "Männer: GU = 10 × Gewicht (kg) + 6,25 × Größe (cm) − 5 × Alter + 5",
-      women: "Frauen: GU = 10 × Gewicht (kg) + 6,25 × Größe (cm) − 5 × Alter − 161",
-    },
   },
 
   index: {
@@ -135,40 +131,6 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
     breadcrumb: "Grundumsatz-Rechner",
     title: "Grundumsatz-Rechner",
     subtitle: "Finde heraus, wie viele Kalorien dein Körper in völliger Ruhe verbrennt.",
-    whatIsHeading: "Was ist der Grundumsatz?",
-    whatIs:
-      "Dein Grundumsatz (BMR) ist die Energie, die dein Körper allein zum Leben braucht – für Atmung, Kreislauf und Zellreparatur –, noch bevor du dich überhaupt bewegst. Er macht meist 60–70 % der Kalorien aus, die du am Tag verbrennst, und ist deshalb die Grundlage jedes Kalorienziels.",
-    equationIntro: "Dieser Rechner nutzt die <b>Mifflin–St-Jeor-Formel</b>:",
-    example:
-      "<b>Rechenbeispiel:</b> eine 28-jährige Frau, 162 cm und 60 kg: 10×60 + 6,25×162 − 5×28 − 161 = <b>1.312 kcal/Tag</b> in völliger Ruhe.",
-    targetHeading: "Vom Grundumsatz zum Tagesziel",
-    target:
-      "Der Grundumsatz ist nur die Ruhehälfte des Bildes. Multipliziere ihn mit einem Aktivitätsfaktor (1,2–1,9), um deinen gesamten täglichen Energieverbrauch zu erhalten – genau das macht unser <calorie>Kalorienrechner</calorie>, und der <macro>Makrorechner</macro> teilt das Ergebnis dann in Protein, Kohlenhydrate und Fett auf.",
-    fastingHeading: "Grundumsatz beim Fasten",
-    fasting:
-      "Kurzzeitiges Fasten – 16:8 oder das tägliche Fasten im Ramadan – senkt deinen Grundumsatz nicht nennenswert. Eine Verlangsamung des Stoffwechsels wird erst bei langer, sehr geringer Nahrungsaufnahme zum Thema. Im Ramadan bleibt dein Ruhebedarf gleich; plane Suhur und Iftar so, dass sie ihn decken.",
-    faqs: [
-      {
-        question: "Was ist ein normaler Grundumsatz?",
-        answer:
-          "Bei den meisten Erwachsenen liegt er je nach Größe, Alter und Geschlecht ungefähr zwischen 1.200 und 2.000 kcal/Tag. Größere und jüngere Körper verbrennen in Ruhe mehr; mit dem Alter sinkt der Grundumsatz leicht.",
-      },
-      {
-        question: "Entspricht der Grundumsatz den Kalorien, die ich essen sollte?",
-        answer:
-          "Nein. Der Grundumsatz ist das, was du in völliger Ruhe verbrennst. Dein Tagesziel ist der Grundumsatz multipliziert mit einem Aktivitätsfaktor – nutze den Kalorienrechner für die vollständige Zahl.",
-      },
-      {
-        question: "Senkt Fasten meinen Grundumsatz?",
-        answer:
-          "Tägliches Intervallfasten, auch das Fasten im Ramadan, wirkt sich kaum auf den Grundumsatz aus. Nur lange, starke Einschränkung führt zu einer nennenswerten Anpassung des Stoffwechsels.",
-      },
-      {
-        question: "Wie kann ich meinen Grundumsatz erhöhen?",
-        answer:
-          "Muskelaufbau ist der zuverlässigste Weg – Muskelgewebe verbrennt in Ruhe mehr Energie als Fett. Krafttraining plus ausreichend Protein steigert deinen Ruheverbrauch mit der Zeit.",
-      },
-    ],
     ctaTitle: "Mach etwas aus deiner Zahl",
     ctaBody:
       "MyNutriRise erstellt deinen Tagesplan mit genau dieser Mathematik – und trackt dann jede Mahlzeit per KI-Foto-Scan.",

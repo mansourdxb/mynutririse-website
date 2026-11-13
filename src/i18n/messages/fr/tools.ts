@@ -30,10 +30,6 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
       kcal: "kcal",
     },
     kcalPerDay: "kcal/jour",
-    mifflin: {
-      men: "Hommes : MB = 10 × poids (kg) + 6,25 × taille (cm) − 5 × âge + 5",
-      women: "Femmes : MB = 10 × poids (kg) + 6,25 × taille (cm) − 5 × âge − 161",
-    },
   },
 
   index: {
@@ -135,40 +131,6 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
     breadcrumb: "Calculateur de MB",
     title: "Calculateur de métabolisme de base",
     subtitle: "Découvrez combien de calories votre corps brûle au repos complet.",
-    whatIsHeading: "Qu’est-ce que le métabolisme de base ?",
-    whatIs:
-      "Votre métabolisme de base correspond à l’énergie dont votre corps a besoin simplement pour rester en vie — respiration, circulation, réparation des cellules — sans le moindre mouvement. Il représente généralement 60 à 70 % des calories que vous brûlez dans une journée, c’est pourquoi il sert de base à tout objectif calorique.",
-    equationIntro: "Ce calculateur utilise l’<b>équation de Mifflin–St Jeor</b> :",
-    example:
-      "<b>Exemple détaillé :</b> une femme de 28 ans, 162 cm et 60 kg : 10×60 + 6,25×162 − 5×28 − 161 = <b>1 312 kcal/jour</b> au repos complet.",
-    targetHeading: "Du métabolisme de base à l’objectif quotidien",
-    target:
-      "Le métabolisme de base n’est que la moitié « repos » de l’équation. Multipliez-le par un facteur d’activité (1,2 à 1,9) pour obtenir votre dépense énergétique journalière totale : c’est exactement ce que fait notre <calorie>calculateur de calories</calorie>, et le <macro>calculateur de macros</macro> répartit ensuite le résultat en protéines, glucides et lipides.",
-    fastingHeading: "Le métabolisme de base pendant le jeûne",
-    fasting:
-      "Le jeûne de courte durée — 16:8 ou jeûne quotidien pendant le Ramadan — ne fait pas baisser votre métabolisme de base de manière significative. Le ralentissement métabolique ne devient préoccupant qu’en cas d’apports très faibles et prolongés. Pendant le Ramadan, vos besoins au repos restent les mêmes : prévoyez le suhoor et l’iftar pour les couvrir.",
-    faqs: [
-      {
-        question: "Qu’est-ce qu’un métabolisme de base normal ?",
-        answer:
-          "La plupart des adultes se situent approximativement entre 1 200 et 2 000 kcal/jour selon leur gabarit, leur âge et leur sexe. Les corps plus grands et plus jeunes brûlent davantage au repos ; le métabolisme de base diminue doucement avec l’âge.",
-      },
-      {
-        question: "Le métabolisme de base correspond-il aux calories que je dois manger ?",
-        answer:
-          "Non. Le métabolisme de base correspond à ce que vous brûlez au repos complet. Votre objectif quotidien est ce chiffre multiplié par un facteur d’activité : utilisez le calculateur de calories pour obtenir le total.",
-      },
-      {
-        question: "Le jeûne fait-il baisser mon métabolisme de base ?",
-        answer:
-          "Le jeûne intermittent quotidien, y compris celui du Ramadan, a peu d’effet sur le métabolisme de base. Seule une restriction sévère et prolongée entraîne une adaptation métabolique significative.",
-      },
-      {
-        question: "Comment augmenter mon métabolisme de base ?",
-        answer:
-          "Prendre du muscle est le moyen le plus fiable : le tissu musculaire brûle plus d’énergie au repos que la graisse. La musculation associée à un apport suffisant en protéines augmente votre dépense au repos avec le temps.",
-      },
-    ],
     ctaTitle: "Faites travailler ce chiffre pour vous",
     ctaBody:
       "MyNutriRise construit votre programme quotidien à partir de ces mêmes calculs, puis suit chaque repas grâce à l’analyse photo par IA.",

@@ -29,10 +29,6 @@ const tools = (f: Facts) => ({
       kcal: "kcal",
     },
     kcalPerDay: "kcal/day",
-    mifflin: {
-      men: "Men: BMR = 10 × weight(kg) + 6.25 × height(cm) − 5 × age + 5",
-      women: "Women: BMR = 10 × weight(kg) + 6.25 × height(cm) − 5 × age − 161",
-    },
   },
 
   index: {
@@ -134,40 +130,6 @@ const tools = (f: Facts) => ({
     breadcrumb: "BMR Calculator",
     title: "BMR Calculator",
     subtitle: "Find out how many calories your body burns at complete rest.",
-    whatIsHeading: "What is BMR?",
-    whatIs:
-      "Your basal metabolic rate is the energy your body needs just to stay alive — breathing, circulation, cell repair — before any movement at all. It typically accounts for 60–70% of the calories you burn in a day, which is why it is the foundation of every calorie target.",
-    equationIntro: "This calculator uses the <b>Mifflin–St Jeor equation</b>:",
-    example:
-      "<b>Worked example:</b> a 28-year-old woman, 162 cm and 60 kg: 10×60 + 6.25×162 − 5×28 − 161 = <b>1,312 kcal/day</b> at complete rest.",
-    targetHeading: "From BMR to a daily target",
-    target:
-      "BMR is only the resting half of the picture. Multiply it by an activity factor (1.2–1.9) to get your total daily energy expenditure — that is exactly what our <calorie>calorie calculator</calorie> does, and the <macro>macro calculator</macro> then splits the result into protein, carbs, and fat.",
-    fastingHeading: "BMR while fasting",
-    fasting:
-      "Short-term fasting — 16:8, or daily fasts during Ramadan — does not meaningfully lower your BMR. Metabolic slowdown only becomes a concern with prolonged, very low intake. During Ramadan, your resting needs stay the same; plan suhoor and iftar to cover them.",
-    faqs: [
-      {
-        question: "What is a normal BMR?",
-        answer:
-          "Most adults fall between roughly 1,200 and 2,000 kcal/day depending on size, age, and sex. Larger and younger bodies burn more at rest; BMR declines gently with age.",
-      },
-      {
-        question: "Is BMR the same as the calories I should eat?",
-        answer:
-          "No. BMR is what you burn at complete rest. Your daily target is BMR multiplied by an activity factor — use the calorie calculator for the full number.",
-      },
-      {
-        question: "Does fasting lower my BMR?",
-        answer:
-          "Daily intermittent fasting, including Ramadan fasts, has little effect on BMR. Only prolonged severe restriction causes meaningful metabolic adaptation.",
-      },
-      {
-        question: "How can I increase my BMR?",
-        answer:
-          "Building muscle is the most reliable way — muscle tissue burns more energy at rest than fat. Strength training plus adequate protein raises your resting burn over time.",
-      },
-    ],
     ctaTitle: "Put your number to work",
     ctaBody:
       "MyNutriRise builds your daily plan from this same math — then tracks every meal with an AI photo scan.",
