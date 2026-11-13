@@ -141,11 +141,11 @@ export function ContentBlocks({
                   {block.sources?.map((s) => (
                     <li key={s.url || s.label}>
                       {s.url ? (
-                        <a href={s.url} className={linkClass} rel="noopener" target="_blank">
+                        <a href={s.url} dir="auto" className={linkClass} rel="noopener" target="_blank">
                           {s.label}
                         </a>
                       ) : (
-                        s.label
+                        <span dir="auto">{s.label}</span>
                       )}
                     </li>
                   ))}
