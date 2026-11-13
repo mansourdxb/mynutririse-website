@@ -7,11 +7,11 @@ import { getMessages } from "@/i18n/messages";
 export async function generateMetadata({ params }: PageProps<"/[lang]/download">): Promise<Metadata> {
   const lang = (await params).lang as Locale;
   const t = getMessages(lang).common.download;
-  return pageMetadata(lang, "/download", { title: t.metaTitle, description: t.metaDescription });
+  return pageMetadata(lang, "/download", { title: { absolute: t.metaTitle }, description: t.metaDescription });
 }
 
 export default async function DownloadPage({ params }: PageProps<"/[lang]/download">) {
   const lang = (await params).lang as Locale;
   const { common } = getMessages(lang);
-  return <DownloadRedirect t={common.download} store={common.store} />;
+  return <DownloadRedirect t={common.download} store={common.store} logoAlt={common.nav.logoAlt} />;
 }

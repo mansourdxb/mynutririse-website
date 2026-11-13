@@ -10,7 +10,7 @@ export default (f: Facts): ReturnType<typeof en> => ({
   index: {
     metaTitle: "Ratgeber zu Ernährung & Fasten",
     metaDescription:
-      "Praktische Ratgeber zu Ernährung, Fasten, Makro-Tracking und gesunden Gewohnheiten vom MyNutriRise-Team.",
+      "Praktische Ratgeber zu Kalorienzählen, Intervallfasten, Makro-Tracking, Halal-Ernährung und gesunden Gewohnheiten – geschrieben vom MyNutriRise-Team.",
     title: "Der MyNutriRise-Blog",
     subtitle: "Praktische Ratgeber zu Ernährung, Fasten und Gewohnheiten, die bleiben.",
     breadcrumb: "Blog",
@@ -33,7 +33,7 @@ export default (f: Facts): ReturnType<typeof en> => ({
     title: "Intervallfasten 16:8 – ein Leitfaden für Einsteiger",
     metaTitle: "Intervallfasten 16:8 für Einsteiger",
     description:
-      "Was die 16:8-Methode ist, wie sie funktioniert, für wen sie sich eignet und wie du ohne die typischen Fehler startest.",
+      "Was die 16:8-Methode ist, wie Intervallfasten funktioniert, wie du dein Essensfenster wählst, was es vom Ramadan unterscheidet und wer aufpassen sollte.",
     breadcrumb: "Intervallfasten 16:8",
     dateLabel: "9. Juni 2026",
     readTime: "5 Min. Lesezeit",

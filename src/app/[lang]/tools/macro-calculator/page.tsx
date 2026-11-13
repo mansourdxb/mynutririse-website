@@ -13,7 +13,7 @@ import { rich } from "@/i18n/rich";
 export async function generateMetadata({ params }: PageProps<"/[lang]/tools/macro-calculator">): Promise<Metadata> {
   const lang = (await params).lang as Locale;
   const t = getMessages(lang).tools.macro;
-  return pageMetadata(lang, "/tools/macro-calculator", { title: t.metaTitle, description: t.metaDescription });
+  return pageMetadata(lang, "/tools/macro-calculator", { title: { absolute: t.metaTitle }, description: t.metaDescription });
 }
 
 const linkClass =

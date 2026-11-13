@@ -9,7 +9,7 @@ export default (f: Facts) => ({
   index: {
     metaTitle: "Nutrition & Fasting Guides",
     metaDescription:
-      "Practical guides on nutrition, fasting, macro tracking, and healthy habits from the MyNutriRise team.",
+      "Practical guides on calorie counting, intermittent fasting, macro tracking, halal eating and healthy habits, written by the MyNutriRise team.",
     title: "The MyNutriRise Blog",
     subtitle: "Practical guides on nutrition, fasting, and building habits that stick.",
     breadcrumb: "Blog",
@@ -32,7 +32,7 @@ export default (f: Facts) => ({
     title: "Intermittent Fasting 16:8 — A Beginner's Guide",
     metaTitle: "Intermittent Fasting 16:8 — A Beginner's Guide",
     description:
-      "What the 16:8 fasting method is, how it works, who it suits, and how to start without making the common mistakes.",
+      "What the 16:8 intermittent fasting method is, how it works, how to pick your eating window, how it differs from Ramadan and who should be careful.",
     breadcrumb: "Intermittent Fasting 16:8",
     dateLabel: "June 9, 2026",
     readTime: "5 min read",
@@ -118,7 +118,7 @@ export default (f: Facts) => ({
     title: "Tracking Macros with Halal & Cultural Meals",
     metaTitle: "Tracking Macros with Halal & Cultural Meals",
     description:
-      "Kabuli pulao, mandi, biryani — traditional dishes deserve proper tracking. How to log cultural cuisine accurately.",
+      "Kabuli pulao, mandi, biryani: traditional dishes deserve proper tracking. A practical way to log cultural and halal meals accurately, with macro examples.",
     breadcrumb: "Tracking Macros",
     dateLabel: "June 9, 2026",
     readTime: "5 min read",

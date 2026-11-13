@@ -5,10 +5,10 @@ import type en from "../en/common";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default (f: Facts): ReturnType<typeof en> => ({
   site: {
-    title: "MyNutriRise: KI-Kalorienzähler & Halal-Ernährungs-App",
+    title: "Kalorienzähler & Diät-App zum Abnehmen | MyNutriRise",
     titleTemplate: "%s — MyNutriRise",
     description:
-      "Kalorien zählen, Mahlzeiten per KI scannen, persönlichen Plänen folgen und gesündere Gewohnheiten aufbauen – mit MyNutriRise, deinem smarten Begleiter.",
+      "MyNutriRise ist die kostenlose Diät-App und dein Kalorienzähler zum Abnehmen: Mahlzeit fotografieren, Makros tracken, Halal-Pläne nutzen. Jetzt gratis laden.",
     ogDescription:
       "Zähle Kalorien, scanne Mahlzeiten mit KI, folge persönlichen Mahlzeitenplänen und entwickle jeden Tag gesündere Gewohnheiten.",
     twitterDescription:
@@ -16,6 +16,7 @@ export default (f: Facts): ReturnType<typeof en> => ({
     ogImageAlt: "MyNutriRise – Ernährungs- und Fitnesstracking für den echten Alltag",
   },
   nav: {
+    logoAlt: "MyNutriRise-Logo",
     features: "Funktionen",
     tools: "Tools",
     customPlan: "Persönlicher Plan",
@@ -72,9 +73,9 @@ export default (f: Facts): ReturnType<typeof en> => ({
     back: "Zurück zur Startseite",
   },
   download: {
-    metaTitle: "MyNutriRise herunterladen",
+    metaTitle: "Kostenlose Diät-App für iPhone & Android herunterladen",
     metaDescription:
-      "Lade MyNutriRise für iPhone oder Android herunter – KI-Mahlzeiten-Scan, halale und kulturelle Mahlzeitenpläne, Fasten und Coaching.",
+      "Lade MyNutriRise herunter, die kostenlose Diät-App für iPhone und Android: KI-Mahlzeitscan, Kalorien- und Makro-Tracking, Halal-Essenspläne. Jetzt starten.",
     title: "Hol dir MyNutriRise",
     body: "Auf dem Smartphone wirst du direkt zu deinem App Store weitergeleitet. Am Computer wählst du einfach deine Plattform:",
   },

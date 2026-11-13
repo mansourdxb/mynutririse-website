@@ -2,7 +2,7 @@ import Image from "next/image";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { screenshot, type Locale } from "@/i18n/config";
 import type { Messages } from "@/i18n/messages";
-import { rich } from "@/i18n/rich";
+import { fill, rich } from "@/i18n/rich";
 
 // Screenshot names under public/screenshots/<lang>/, one per label in t.row1 / t.row2.
 const row1Screens = [
@@ -31,17 +31,20 @@ const row2Screens = [
   "compare-foods",
 ];
 
-function ScreenCard({ src, label }: { src: string; label: string }) {
+function ScreenCard({ src, label, alt }: { src: string; label: string; alt: string }) {
   return (
     <div className="group relative flex-shrink-0 w-[160px] sm:w-[190px] lg:w-[210px] transition-transform duration-300 hover:scale-105 hover:-translate-y-2">
       <div className="relative overflow-hidden rounded-2xl bg-surface shadow-lg shadow-slate-200/60 ring-1 ring-line transition-shadow duration-300 group-hover:shadow-xl group-hover:shadow-emerald-200/30 group-hover:ring-emerald-200 dark:group-hover:ring-emerald-400/20">
         <div className="relative aspect-[9/19.5] w-full">
+          {/* Fixed intrinsic size (largest card width) instead of fill+sizes:
+              Next then emits a 1x/2x srcset rather than ~16 widths per image,
+              which matters with 40 images in the page HTML and RSC payload. */}
           <Image
             src={src}
-            alt={label}
-            fill
-            className="object-cover object-top"
-            sizes="(max-width: 640px) 160px, 210px"
+            alt={alt}
+            width={210}
+            height={455}
+            className="absolute inset-0 h-full w-full object-cover object-top"
             loading="lazy"
           />
         </div>
@@ -58,7 +61,7 @@ function MarqueeRow({
   items,
   direction = "left",
 }: {
-  items: { src: string; label: string }[];
+  items: { name: string; src: string; label: string; alt: string }[];
   direction?: "left" | "right";
 }) {
   return (
@@ -75,7 +78,10 @@ function MarqueeRow({
             className="flex shrink-0 gap-4 pe-4 sm:gap-5 sm:pe-5"
           >
             {items.map((s) => (
-              <ScreenCard key={`${s.src}-${half}`} src={s.src} label={s.label} />
+              // Key by slug, never by image path: keys are serialized into the
+              // RSC payload and path-like keys get crawled as broken URLs.
+              // The duplicate half is aria-hidden, so its images are decorative.
+              <ScreenCard key={s.name} src={s.src} label={s.label} alt={half === 1 ? "" : s.alt} />
             ))}
           </div>
         ))}
@@ -91,8 +97,14 @@ export function AppShowcase({
   lang: Locale;
   t: Messages["home"]["showcase"];
 }) {
-  const row1 = row1Screens.map((name, i) => ({ src: screenshot(lang, name), label: t.row1[i] }));
-  const row2 = row2Screens.map((name, i) => ({ src: screenshot(lang, name), label: t.row2[i] }));
+  const item = (name: string, label: string) => ({
+    name,
+    src: screenshot(lang, name),
+    label,
+    alt: fill(t.screenAlt, { name: label }),
+  });
+  const row1 = row1Screens.map((name, i) => item(name, t.row1[i]));
+  const row2 = row2Screens.map((name, i) => item(name, t.row2[i]));
 
   return (
     <section className="relative overflow-hidden wash-mint section-y">

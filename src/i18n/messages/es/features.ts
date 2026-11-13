@@ -3,9 +3,9 @@ import type en from "../en/features";
 
 export default (f: Facts): ReturnType<typeof en> => ({
   // /features page
-  metaTitle: "Funciones: escaneo con IA, recetas y ayuno",
+  metaTitle: "Escáner de comida con IA, planes y macros | MyNutriRise",
   metaDescription:
-    "Descubre las funciones de MyNutriRise para controlar tu nutrición, crear hábitos saludables y alcanzar tus objetivos de bienestar.",
+    "Descubre MyNutriRise: escáner de comida con IA, planes de comidas, contador de macros, ayuno intermitente y recetas halal. Mira cada función y pruébala gratis.",
   pageTitle: "Funciones potentes para una vida más saludable",
   pageIntro:
     "Todo lo que necesitas para entender tu nutrición, mejorar tus hábitos y sentirte de maravilla, en una sola app con un diseño cuidado.",
@@ -166,7 +166,7 @@ export default (f: Facts): ReturnType<typeof en> => ({
     flipBack: "Toca para volver",
     showPreview: "{name}: mostrar vista previa de la pantalla",
     hidePreview: "{name}: ocultar vista previa de la pantalla",
-    screenAlt: "Pantalla de {name}",
+    screenAlt: "Pantalla de {name} en la app MyNutriRise",
     items: [
       { name: "Fotos de comidas", desc: "Diario visual con todas tus comidas" },
       { name: "Calendario nutricional", desc: "Vista mensual de tu constancia" },

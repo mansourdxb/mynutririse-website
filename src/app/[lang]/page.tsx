@@ -8,15 +8,32 @@ import { PressBar } from "@/components/sections/PressBar";
 import { Science } from "@/components/sections/Science";
 import { Community } from "@/components/sections/Community";
 import { HomeFaq } from "@/components/sections/HomeFaq";
+import { HomeIntro } from "@/components/sections/HomeIntro";
+import { HomeResources } from "@/components/sections/HomeResources";
 import { Premium } from "@/components/sections/Premium";
 import { CTA } from "@/components/sections/CTA";
-import { BASE_URL, localePath, type Locale } from "@/i18n/config";
+import { MotionProvider } from "@/components/ui/MotionProvider";
+import {
+  APP_STORE_URL,
+  BASE_URL,
+  BRAND,
+  ORGANIZATION_ID,
+  PLAY_STORE_URL,
+  absoluteUrl,
+  screenshot,
+  type Locale,
+} from "@/i18n/config";
 import { pageMetadata } from "@/i18n/metadata";
 import { getMessages } from "@/i18n/messages";
 
+// Screens listed in the MobileApplication JSON-LD (public/screenshots/<lang>/).
+const jsonLdScreens = ["today", "meal-photos", "food-detail", "analytics", "fasting", "recipes"];
+
 export async function generateMetadata({ params }: PageProps<"/[lang]">): Promise<Metadata> {
   const lang = (await params).lang as Locale;
-  return pageMetadata(lang, "/", {});
+  const { site } = getMessages(lang).common;
+  // The home title already carries the brand, so it skips the title template.
+  return pageMetadata(lang, "/", { title: { absolute: site.title }, description: site.description });
 }
 
 export default async function Home({ params }: PageProps<"/[lang]">) {
@@ -27,17 +44,23 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
   const appJsonLd = {
     "@context": "https://schema.org",
     "@type": "MobileApplication",
-    name: "MyNutriRise",
+    "@id": `${BASE_URL}/#app`,
+    name: BRAND,
     operatingSystem: "iOS, Android",
     applicationCategory: "HealthApplication",
     description: t.jsonLd.appDescription,
+    inLanguage: lang,
     offers: {
       "@type": "Offer",
       price: "0",
       priceCurrency: "USD",
     },
-    url: `${BASE_URL}${localePath(lang, "/")}`,
-    installUrl: "https://apps.apple.com/app/mynutririse/id6764006876",
+    url: absoluteUrl(lang, "/"),
+    installUrl: [APP_STORE_URL, PLAY_STORE_URL],
+    screenshot: jsonLdScreens.map((name) => `${BASE_URL}${screenshot(lang, name)}`),
+    publisher: { "@id": ORGANIZATION_ID },
+    // TODO(owner): add aggregateRating only from real store rating data
+    // (ratingValue + ratingCount). No rating figures exist in the codebase.
   };
 
   const faqJsonLd = {
@@ -64,10 +87,14 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
       <PressBar t={t.pressBar} />
       <HowItWorks t={t.howItWorks} />
       <Goals lang={lang} t={t.goals} />
-      <Features lang={lang} t={m.features} />
+      <MotionProvider>
+        <Features lang={lang} t={m.features} />
+      </MotionProvider>
       <AppShowcase lang={lang} t={t.showcase} />
       <Premium lang={lang} t={t.premium} store={m.common.store} />
       <Science t={t.science} />
+      <HomeIntro t={t.intro} />
+      <HomeResources lang={lang} t={t.resources} tools={m.tools.index.cards} blog={m.blog} />
       <Community t={t.community} />
       <HomeFaq lang={lang} t={t.faq} />
       <CTA lang={lang} t={t.cta} store={m.common.store} />

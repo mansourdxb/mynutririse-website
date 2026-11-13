@@ -10,7 +10,7 @@ export default (f: Facts): ReturnType<typeof en> => ({
   index: {
     metaTitle: "Guides nutrition et jeûne",
     metaDescription:
-      "Des guides pratiques sur la nutrition, le jeûne, le suivi des macros et les bonnes habitudes, par l’équipe MyNutriRise.",
+      "Guides pratiques sur le comptage des calories, le jeûne intermittent, le suivi des macros, l’alimentation halal et les bonnes habitudes, par MyNutriRise.",
     title: "Le blog MyNutriRise",
     subtitle: "Des guides pratiques sur la nutrition, le jeûne et les habitudes qui durent.",
     breadcrumb: "Blog",
@@ -117,7 +117,7 @@ export default (f: Facts): ReturnType<typeof en> => ({
   },
   halalMacros: {
     title: "Suivre ses macros avec une alimentation halal et les plats de sa culture",
-    metaTitle: "Macros, alimentation halal et cuisines du monde",
+    metaTitle: "Macros, cuisine halal et cuisines du monde",
     description:
       "Kabuli pulao, mandi, biryani : les plats traditionnels méritent un vrai suivi. Comment enregistrer précisément les cuisines du monde.",
     breadcrumb: "Suivre ses macros",

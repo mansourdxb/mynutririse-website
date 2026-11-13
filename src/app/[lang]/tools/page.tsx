@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { toolPages } from "@/data/tools";
 import { localePath, type Locale } from "@/i18n/config";
 import { pageMetadata } from "@/i18n/metadata";
 import { getMessages } from "@/i18n/messages";
@@ -10,22 +12,21 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/tools">): 
   return pageMetadata(lang, "/tools", { title: t.metaTitle, description: t.metaDescription });
 }
 
-const tools = [
-  { href: "/tools/calorie-calculator", emoji: "🔥", key: "calorie" },
-  { href: "/tools/macro-calculator", emoji: "🥩", key: "macro" },
-  { href: "/tools/bmi-calculator", emoji: "📏", key: "bmi" },
-  { href: "/tools/bmr-calculator", emoji: "💤", key: "bmr" },
-  { href: "/tools/ideal-weight-calculator", emoji: "🎯", key: "idealWeight" },
-] as const;
 
 export default async function ToolsPage({ params }: PageProps<"/[lang]/tools">) {
   const lang = (await params).lang as Locale;
-  const t = getMessages(lang).tools.index;
+  const { tools: messages, common } = getMessages(lang);
+  const t = messages.index;
 
   return (
     <div className="wash-mint pt-24 pb-8">
       <div className="mx-auto max-w-4xl px-6 py-16">
-        <h1 className="text-center text-h1 text-ink">
+        <Breadcrumbs
+          lang={lang}
+          t={common.breadcrumbs}
+          items={[{ name: messages.shared.breadcrumb, href: "/tools" }]}
+        />
+        <h1 className="mt-6 text-center text-h1 text-ink">
           {t.title}
         </h1>
         <p className="mx-auto mt-4 max-w-xl text-center text-lead text-ink-3">
@@ -33,7 +34,7 @@ export default async function ToolsPage({ params }: PageProps<"/[lang]/tools">) 
         </p>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {tools.map((tool) => (
+          {toolPages.map((tool) => (
             <Link
               key={tool.href}
               href={localePath(lang, tool.href)}

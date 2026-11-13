@@ -34,7 +34,7 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
   index: {
     metaTitle: "Herramientas de nutrición gratuitas",
     metaDescription:
-      "Calculadoras gratuitas de IMC, calorías diarias, macros, TMB y peso ideal, sin necesidad de registrarte.",
+      "Calculadoras gratuitas de IMC, calorías diarias, macros, TMB y peso ideal. Resultados al instante y sin registro; luego conviértelos en un plan en MyNutriRise.",
     title: "Herramientas de nutrición gratuitas",
     subtitle: "Cinco calculadoras, sin registro. Los mismos cálculos que usa MyNutriRise para crear tu plan.",
     cards: {
@@ -66,9 +66,9 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
   },
 
   bmi: {
-    metaTitle: "Calculadora de IMC (índice de masa corporal)",
+    metaTitle: "Calculadora de IMC para adultos (gratis y precisa)",
     metaDescription:
-      "Calculadora de IMC gratuita (métrica e imperial). Compara tu índice de masa corporal con los rangos saludables y entiende qué significa.",
+      "Calculadora de IMC gratis para adultos: introduce altura y peso en unidades métricas o imperiales y obtén tu índice de masa corporal y la categoría de la OMS.",
     breadcrumb: "Calculadora de IMC",
     title: "Calculadora de IMC",
     subtitle: "Descubre tu índice de masa corporal en segundos: gratis y sin registro.",
@@ -124,9 +124,9 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
   },
 
   bmr: {
-    metaTitle: "Calculadora de TMB (tasa metabólica basal)",
+    metaTitle: "Calculadora de TMB: calorías que quemas en reposo",
     metaDescription:
-      "Calculadora de TMB gratuita (Mifflin–St Jeor). Descubre cuántas calorías quema tu cuerpo en reposo y cómo convertirlas en un objetivo diario.",
+      "Calculadora de TMB gratis con la ecuación Mifflin-St Jeor: descubre cuántas calorías quema tu cuerpo en reposo y planifica bajar de peso o ganar músculo.",
     breadcrumb: "Calculadora de TMB",
     title: "Calculadora de TMB",
     subtitle: "Descubre cuántas calorías quema tu cuerpo en reposo absoluto.",
@@ -175,9 +175,9 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
   },
 
   calorie: {
-    metaTitle: "Calculadora de calorías diarias",
+    metaTitle: "Calculadora de calorías y déficit para bajar de peso",
     metaDescription:
-      "Calcula tus calorías diarias con la ecuación de Mifflin–St Jeor. Objetivos gratis para bajar de peso, mantenerte o ganar músculo, y guía de Ramadán.",
+      "Calculadora de calorías gratis: descubre tus calorías de mantenimiento y un déficit seguro para bajar de peso con la fórmula Mifflin-St Jeor. Calcula ahora.",
     breadcrumb: "Calculadora de calorías",
     title: "Calculadora de calorías",
     subtitle:
@@ -212,7 +212,7 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
       {
         question: "¿Cuántas calorías debo comer para bajar de peso?",
         answer:
-          "Un déficit de unas 500 kcal por debajo de tu nivel de mantenimiento supone perder aproximadamente 0,5 kg (1 lb) por semana. Usa la calculadora de arriba para conocer tus calorías de mantenimiento y réstale 500, pero evita bajar de 1.200 kcal/día sin supervisión médica.",
+          "Un déficit de unas 500 kcal por debajo de tu nivel de mantenimiento supone perder aproximadamente 0,5 kg (1 lb) por semana. Usa la calculadora de arriba para conocer tus calorías de mantenimiento y réstale 500, pero evita bajar de 1.200 kcal/día en mujeres o de 1.500 kcal/día en hombres sin supervisión médica.",
       },
       {
         question: "¿Qué fórmula usa esta calculadora de calorías?",
@@ -251,9 +251,9 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
   },
 
   idealWeight: {
-    metaTitle: "Calculadora de peso ideal según tu altura",
+    metaTitle: "Calculadora de peso ideal según altura y sexo",
     metaDescription:
-      "Calculadora de peso ideal gratuita con las fórmulas de Devine y Robinson y el rango de IMC saludable: encuentra un objetivo realista para tu altura.",
+      "Calculadora de peso ideal gratis según tu altura y sexo, con las fórmulas de Devine y Robinson y tu rango de peso saludable por IMC. Descubre tu peso objetivo.",
     breadcrumb: "Peso ideal",
     title: "Calculadora de peso ideal",
     subtitle: "Estima un rango de peso saludable para tu altura: gratis y sin registro.",
@@ -306,9 +306,9 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
   },
 
   macro: {
-    metaTitle: "Calculadora de macros: proteína, HC y grasa",
+    metaTitle: "Calculadora de macros para perder grasa y ganar músculo",
     metaDescription:
-      "Calculadora de macros gratuita: tus calorías en objetivos de proteína, carbohidratos y grasa, con reparto equilibrado, alto en proteína, keto o resistencia.",
+      "Calculadora de macros gratis para perder grasa o ganar músculo: convierte tus calorías diarias en gramos de proteína, carbohidratos y grasa. Calcula los tuyos.",
     breadcrumb: "Calculadora de macros",
     title: "Calculadora de macros",
     subtitle: "Convierte tu meta de calorías en objetivos diarios de proteína, carbohidratos y grasa: gratis y sin registro.",

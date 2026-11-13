@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Features } from "@/components/sections/Features";
 import { CTA } from "@/components/sections/CTA";
+import { MotionProvider } from "@/components/ui/MotionProvider";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import type { Locale } from "@/i18n/config";
 import { pageMetadata } from "@/i18n/metadata";
 import { getMessages } from "@/i18n/messages";
@@ -8,7 +10,7 @@ import { getMessages } from "@/i18n/messages";
 export async function generateMetadata({ params }: PageProps<"/[lang]/features">): Promise<Metadata> {
   const lang = (await params).lang as Locale;
   const t = getMessages(lang).features;
-  return pageMetadata(lang, "/features", { title: t.metaTitle, description: t.metaDescription });
+  return pageMetadata(lang, "/features", { title: { absolute: t.metaTitle }, description: t.metaDescription });
 }
 
 export default async function FeaturesPage({ params }: PageProps<"/[lang]/features">) {
@@ -20,7 +22,12 @@ export default async function FeaturesPage({ params }: PageProps<"/[lang]/featur
     <>
       <div className="wash-mint pt-24 pb-8">
         <section className="mx-auto max-w-4xl px-6 py-12 text-center">
-          <h1 className="text-h1 text-ink">
+          <Breadcrumbs
+            lang={lang}
+            t={m.common.breadcrumbs}
+            items={[{ name: m.common.nav.features, href: "/features" }]}
+          />
+          <h1 className="mt-6 text-h1 text-ink">
             {t.pageTitle}
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-ink-3">
@@ -28,7 +35,9 @@ export default async function FeaturesPage({ params }: PageProps<"/[lang]/featur
           </p>
         </section>
       </div>
-      <Features lang={lang} t={t} showGrid />
+      <MotionProvider>
+        <Features lang={lang} t={t} showGrid />
+      </MotionProvider>
       <CTA lang={lang} t={m.home.cta} store={m.common.store} />
     </>
   );

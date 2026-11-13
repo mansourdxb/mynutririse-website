@@ -8,9 +8,12 @@ const pct = (v: number, of: number) => `${(v / of) * 100}%`;
 
 export function PhoneMockup({
   className = "",
+  priority = false,
   children,
 }: {
   className?: string;
+  /** Set when the mockup is above the fold: the frame is then the LCP image. */
+  priority?: boolean;
   children: React.ReactNode;
 }) {
   return (
@@ -26,6 +29,8 @@ export function PhoneMockup({
           aria-hidden="true"
           fill
           sizes="290px"
+          loading={priority ? "eager" : "lazy"}
+          fetchPriority={priority ? "high" : "auto"}
           className="pointer-events-none select-none"
         />
         {/* Screen content sits on top of the frame's screen area */}

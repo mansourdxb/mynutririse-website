@@ -2,9 +2,9 @@ import type { Facts } from "@/data/facts";
 
 export default (f: Facts) => ({
   // /features page
-  metaTitle: "Features: AI Meal Scan, Recipes & Fasting",
+  metaTitle: "AI Food Scanner, Meal Plans & Macro Tracker | MyNutriRise",
   metaDescription:
-    "Explore the powerful features that make MyNutriRise the smartest way to track nutrition, build healthy habits, and reach your wellness goals.",
+    "Explore MyNutriRise: AI food scanner, personalized meal plans, macro tracker, fasting timer and halal recipes. See every feature, then try the app for free.",
   pageTitle: "Powerful Features for Healthier Living",
   pageIntro:
     "Everything you need to understand your nutrition, optimize your habits, and feel your best — all in one beautifully designed app.",
@@ -165,7 +165,7 @@ export default (f: Facts) => ({
     flipBack: "Tap to flip back",
     showPreview: "{name} — show screen preview",
     hidePreview: "{name} — hide screen preview",
-    screenAlt: "{name} screen",
+    screenAlt: "{name} screen in the MyNutriRise app",
     items: [
       { name: "Meal Photos", desc: "Visual food diary with every meal" },
       { name: "Nutrition Calendar", desc: "Monthly consistency tracking view" },

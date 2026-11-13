@@ -3,9 +3,9 @@ import type en from "../en/features";
 
 export default (f: Facts): ReturnType<typeof en> => ({
   // /features page
-  metaTitle: "Fonctionnalités : scan IA, recettes et jeûne",
+  metaTitle: "Scanner repas IA, menus et suivi des macros | MyNutriRise",
   metaDescription:
-    "Découvrez les fonctionnalités de MyNutriRise pour suivre votre nutrition, adopter de bonnes habitudes et atteindre vos objectifs bien-être.",
+    "Découvrez MyNutriRise : scanner de repas IA, menus personnalisés, suivi des macros, minuteur de jeûne et recettes halal. Voyez tout, puis essayez gratuitement.",
   pageTitle: "Des fonctionnalités puissantes pour vivre plus sainement",
   pageIntro:
     "Tout ce qu’il vous faut pour comprendre votre alimentation, améliorer vos habitudes et vous sentir au mieux — réuni dans une seule app au design soigné.",
@@ -166,7 +166,7 @@ export default (f: Facts): ReturnType<typeof en> => ({
     flipBack: "Touchez pour retourner la carte",
     showPreview: "{name} — afficher l’aperçu de l’écran",
     hidePreview: "{name} — masquer l’aperçu de l’écran",
-    screenAlt: "Écran {name}",
+    screenAlt: "Écran {name} de l'app MyNutriRise",
     items: [
       { name: "Photos de repas", desc: "Un journal alimentaire visuel de tous vos repas" },
       { name: "Calendrier nutritionnel", desc: "Une vue mensuelle de votre régularité" },

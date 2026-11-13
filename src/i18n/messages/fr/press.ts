@@ -4,7 +4,7 @@ import type en from "../en/press";
 export default (f: Facts): ReturnType<typeof en> => ({
   metaTitle: "Kit presse",
   metaDescription:
-    "Ressources presse de MyNutriRise : présentation, fiche d’information, éléments de marque et contact médias.",
+    "Kit presse MyNutriRise : présentation de l’entreprise, fiche d’information, logos et éléments de marque, et un contact pour journalistes et créateurs.",
   title: "Kit presse",
   intro: "Tout ce qu’il vous faut pour parler de MyNutriRise.",
   boilerplateTitle: "Présentation",

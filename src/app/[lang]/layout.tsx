@@ -4,32 +4,53 @@ import { IBM_Plex_Sans_Arabic, Inter, Manrope } from "next/font/google";
 import "../globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { MotionProvider } from "@/components/ui/MotionProvider";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { dir, isLocale, locales, localePath, ogLocale, type Locale } from "@/i18n/config";
+import {
+  APP_STORE_URL,
+  BASE_URL,
+  BRAND,
+  LOGO_URL,
+  ORGANIZATION_ID,
+  PLAY_STORE_URL,
+  dir,
+  isLocale,
+  locales,
+  localePath,
+  ogLocale,
+  type Locale,
+} from "@/i18n/config";
 import { languageAlternates } from "@/i18n/metadata";
 import { getMessages } from "@/i18n/messages";
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "@id": "https://www.mynutririse.com/#organization",
-  name: "MyNutriRise",
-  url: "https://www.mynutririse.com",
-  logo: "https://www.mynutririse.com/logo.png",
-  sameAs: ["https://apps.apple.com/app/mynutririse/id6764006876"],
+  "@id": ORGANIZATION_ID,
+  name: BRAND,
+  alternateName: "Nutri Rise",
+  url: BASE_URL,
+  logo: { "@type": "ImageObject", url: LOGO_URL },
+  // TODO(owner): add the official Instagram/TikTok/X/YouTube/LinkedIn profile
+  // URLs here once confirmed. None exist in the codebase, so none are guessed.
+  sameAs: [APP_STORE_URL, PLAY_STORE_URL],
 };
 
+// Not preloaded: preload would fetch the Latin and Cyrillic files on every
+// page (Arabic pages use neither), competing with the LCP image. Browsers
+// still fetch only the subsets a page renders, and the size-adjusted
+// fallback keeps layout shift near zero while they load.
 const inter = Inter({
   subsets: ["latin", "cyrillic"],
   variable: "--font-body",
   display: "swap",
+  preload: false,
 });
 
 const manrope = Manrope({
   subsets: ["latin", "cyrillic"],
   variable: "--font-heading",
   display: "swap",
+  preload: false,
 });
 
 const plexArabic = IBM_Plex_Sans_Arabic({
@@ -103,11 +124,9 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
           }}
         />
         <JsonLd data={organizationJsonLd} />
-        <MotionProvider>
-          <Navbar lang={locale} t={t.nav} />
-          <main className="flex-1">{children}</main>
-          <Footer lang={locale} t={t} />
-        </MotionProvider>
+        <Navbar lang={locale} t={t.nav} />
+        <main className="flex-1">{children}</main>
+        <Footer lang={locale} t={t} />
       </body>
     </html>
   );

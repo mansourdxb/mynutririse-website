@@ -3,7 +3,7 @@ import type { Facts } from "@/data/facts";
 export default (f: Facts) => ({
   metaTitle: "MyFitnessPal Alternative: MyNutriRise vs MyFitnessPal (2026)",
   metaDescription:
-    "How MyNutriRise compares to MyFitnessPal for halal & cultural food tracking, AI photo logging, fasting, and workouts.",
+    "MyNutriRise vs MyFitnessPal: how the two compare on halal and cultural food tracking, AI photo logging, fasting, workouts and pricing. An honest summary.",
   breadcrumb: "Compare",
   title: "MyNutriRise vs MyFitnessPal",
   intro: "Both track calories well. The difference is what you eat — and how much effort logging takes.",

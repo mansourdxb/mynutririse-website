@@ -5,10 +5,10 @@ import type en from "../en/common";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default (f: Facts): ReturnType<typeof en> => ({
   site: {
-    title: "MyNutriRise: contador de calorías con IA y nutrición halal",
+    title: "App para adelgazar y contar calorías | MyNutriRise",
     titleTemplate: "%s — MyNutriRise",
     description:
-      "Controla calorías, escanea comidas con IA, sigue planes personalizados y crea hábitos saludables con MyNutriRise, tu compañero de bienestar.",
+      "MyNutriRise es la app de dieta y contador de calorías gratis para adelgazar: fotografía tus comidas, controla tus macros y sigue planes halal. Descárgala ya.",
     ogDescription:
       "Controla tus calorías, escanea tus comidas con IA, sigue planes de alimentación personalizados y crea hábitos más saludables cada día.",
     twitterDescription:
@@ -16,6 +16,7 @@ export default (f: Facts): ReturnType<typeof en> => ({
     ogImageAlt: "MyNutriRise: seguimiento de nutrición y fitness para la vida real",
   },
   nav: {
+    logoAlt: "Logotipo de MyNutriRise",
     features: "Funciones",
     tools: "Herramientas",
     customPlan: "Plan personalizado",
@@ -72,9 +73,9 @@ export default (f: Facts): ReturnType<typeof en> => ({
     back: "Volver al inicio",
   },
   download: {
-    metaTitle: "Descarga MyNutriRise",
+    metaTitle: "Descarga gratis la app de dieta para iPhone y Android",
     metaDescription:
-      "Descarga MyNutriRise para iPhone o Android: escaneo de comidas con IA, planes de alimentación halal y culturales, ayuno y coaching.",
+      "Descarga MyNutriRise, la app de dieta gratis para iPhone y Android: escaneo de comidas con IA, control de calorías y macros y planes halal. Empieza hoy gratis.",
     title: "Consigue MyNutriRise",
     body: "En tu teléfono irás directamente a tu tienda de aplicaciones. Desde un equipo de escritorio, elige tu plataforma:",
   },

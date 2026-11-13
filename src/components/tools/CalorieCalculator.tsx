@@ -107,7 +107,7 @@ export function CalorieCalculator({
               {t.lose}
             </p>
             <p className="mt-1 text-2xl font-bold text-blue-600 dark:text-blue-400">
-              {Math.max(1200, maintenance - 500).toLocaleString()}
+              {Math.max(sex === "male" ? 1500 : 1200, maintenance - 500).toLocaleString()}
             </p>
             <p className="text-xs text-ink-3">{s.kcalPerDay}</p>
           </div>

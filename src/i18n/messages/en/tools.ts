@@ -33,7 +33,7 @@ const tools = (f: Facts) => ({
   index: {
     metaTitle: "Free Nutrition Tools",
     metaDescription:
-      "Free calculators for BMI, daily calories, macros, BMR, and ideal weight — no sign-up needed.",
+      "Free calculators for BMI, daily calories, macros, BMR and ideal weight. Instant results with no sign-up, then turn your numbers into a plan in MyNutriRise.",
     title: "Free Nutrition Tools",
     subtitle: "Five calculators, zero sign-up. The same math MyNutriRise uses to build your plan.",
     cards: {
@@ -65,9 +65,9 @@ const tools = (f: Facts) => ({
   },
 
   bmi: {
-    metaTitle: "BMI Calculator — Check Your Body Mass Index",
+    metaTitle: "BMI Calculator for Adults (Free, Accurate)",
     metaDescription:
-      "Free BMI calculator with metric and imperial units. Check your Body Mass Index against healthy ranges and learn what the number really means.",
+      "Free BMI calculator for adults: enter height and weight in metric or imperial units to get your body mass index and WHO weight category. Check your BMI now.",
     breadcrumb: "BMI Calculator",
     title: "BMI Calculator",
     subtitle: "Find out your Body Mass Index in seconds — free, no sign-up needed.",
@@ -123,9 +123,9 @@ const tools = (f: Facts) => ({
   },
 
   bmr: {
-    metaTitle: "BMR Calculator: Basal Metabolic Rate",
+    metaTitle: "BMR Calculator: Calories Your Body Burns at Rest",
     metaDescription:
-      "Free BMR calculator using the Mifflin–St Jeor equation. Find the calories your body burns at rest and learn how to turn it into a daily target.",
+      "Free BMR calculator using the Mifflin-St Jeor equation: see how many calories your body burns at rest and use it to plan weight loss or muscle gain. Try it.",
     breadcrumb: "BMR Calculator",
     title: "BMR Calculator",
     subtitle: "Find out how many calories your body burns at complete rest.",
@@ -174,9 +174,9 @@ const tools = (f: Facts) => ({
   },
 
   calorie: {
-    metaTitle: "Calorie Calculator: Daily Calorie Needs",
+    metaTitle: "Calorie Deficit Calculator for Weight Loss (Free)",
     metaDescription:
-      "Calculate your daily calorie needs with the Mifflin–St Jeor equation. Free targets to lose weight, maintain or build muscle, plus a Ramadan guide.",
+      "Free calorie deficit calculator: find your maintenance calories and a safe daily target to lose weight with the Mifflin-St Jeor equation. Get your number now.",
     breadcrumb: "Calorie Calculator",
     title: "Calorie Calculator",
     subtitle:
@@ -211,7 +211,7 @@ const tools = (f: Facts) => ({
       {
         question: "How many calories should I eat to lose weight?",
         answer:
-          "A deficit of about 500 kcal below your maintenance level leads to roughly 0.5 kg (1 lb) of weight loss per week. Use the calculator above to find your maintenance calories, then subtract 500 — but avoid going below 1,200 kcal/day without medical guidance.",
+          "A deficit of about 500 kcal below your maintenance level leads to roughly 0.5 kg (1 lb) of weight loss per week. Use the calculator above to find your maintenance calories, then subtract 500 — but avoid going below 1,200 kcal/day for women or 1,500 kcal/day for men without medical guidance.",
       },
       {
         question: "What formula does this calorie calculator use?",
@@ -250,9 +250,9 @@ const tools = (f: Facts) => ({
   },
 
   idealWeight: {
-    metaTitle: "Ideal Weight Calculator for Your Height",
+    metaTitle: "Ideal Weight Calculator by Height & Gender (Free)",
     metaDescription:
-      "Free ideal weight calculator using the Devine and Robinson formulas plus the healthy BMI range — find a realistic target for your height.",
+      "Free ideal weight calculator by height and sex, using the Devine and Robinson formulas plus your healthy BMI weight range. Find your target weight in seconds.",
     breadcrumb: "Ideal Weight",
     title: "Ideal Weight Calculator",
     subtitle: "Estimate a healthy weight range for your height — free, no sign-up needed.",
@@ -305,9 +305,9 @@ const tools = (f: Facts) => ({
   },
 
   macro: {
-    metaTitle: "Macro Calculator: Protein, Carbs & Fat",
+    metaTitle: "Macro Calculator for Fat Loss & Muscle Gain (Free)",
     metaDescription:
-      "Free macro calculator: turn your daily calories into protein, carb, and fat targets with balanced, high-protein, keto, or endurance splits.",
+      "Free macro calculator for fat loss and muscle gain: turn your daily calories into grams of protein, carbs and fat with a split that fits you. Calculate now.",
     breadcrumb: "Macro Calculator",
     title: "Macro Calculator",
     subtitle: "Turn your calorie goal into daily protein, carb, and fat targets — free, no sign-up needed.",

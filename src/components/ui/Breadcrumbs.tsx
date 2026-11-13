@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { JsonLd } from "./JsonLd";
-import { BASE_URL, localePath, type Locale } from "@/i18n/config";
+import { localePath, siteUrl, type Locale } from "@/i18n/config";
 import type { Messages } from "@/i18n/messages";
 
 /** `items` hrefs are language-neutral paths ("/blog"); they are localized here. */
@@ -25,7 +25,7 @@ export function Breadcrumbs({
       "@type": "ListItem",
       position: i + 1,
       name: item.name,
-      item: `${BASE_URL}${item.href}`,
+      item: siteUrl(item.href),
     })),
   };
 

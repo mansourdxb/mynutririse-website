@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { AppStoreButton } from "@/components/ui/Button";
 import { JsonLd } from "@/components/ui/JsonLd";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { formatNumber } from "@/data/facts";
 import { localePath, type Locale } from "@/i18n/config";
 import { pageMetadata } from "@/i18n/metadata";
@@ -63,7 +64,12 @@ export default async function RecipesPage({ params }: PageProps<"/[lang]/recipes
     <div className="wash-mint pt-24 pb-8">
       <JsonLd data={itemListJsonLd} />
       <div className="mx-auto max-w-6xl px-6 py-16">
-        <h1 className="text-center text-h1 text-ink">
+        <Breadcrumbs
+          lang={lang}
+          t={common.breadcrumbs}
+          items={[{ name: common.nav.recipes, href: "/recipes" }]}
+        />
+        <h1 className="mt-6 text-center text-h1 text-ink">
           {rich(t.title, {
             accent: (c) => <span className="text-emerald-600 dark:text-emerald-400">{c}</span>,
           })}

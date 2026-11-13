@@ -4,7 +4,7 @@ import type en from "../en/press";
 export default (f: Facts): ReturnType<typeof en> => ({
   metaTitle: "الملف الصحفي",
   metaDescription:
-    "موارد صحفية عن MyNutriRise — النبذة التعريفية، وورقة الحقائق، وأصول العلامة التجارية، وجهة التواصل الإعلامي.",
+    "موارد صحفية عن MyNutriRise: النبذة التعريفية، وورقة الحقائق، والشعارات وأصول العلامة التجارية، وجهة التواصل الإعلامي للصحفيين وصنّاع المحتوى.",
   title: "الملف الصحفي",
   intro: "كل ما تحتاجه للكتابة عن MyNutriRise.",
   boilerplateTitle: "النبذة التعريفية",

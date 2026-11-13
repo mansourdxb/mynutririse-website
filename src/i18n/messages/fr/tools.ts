@@ -66,9 +66,9 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
   },
 
   bmi: {
-    metaTitle: "Calcul de l’IMC (indice de masse corporelle)",
+    metaTitle: "Calcul IMC adulte : calculez votre indice gratuitement",
     metaDescription:
-      "Calculateur d’IMC gratuit (métrique et impérial). Comparez votre indice de masse corporelle aux valeurs de référence et comprenez ce chiffre.",
+      "Calculateur d’IMC gratuit pour adultes : saisissez taille et poids en unités métriques ou impériales et obtenez votre IMC et sa catégorie OMS. Calculez-le.",
     breadcrumb: "Calculateur d’IMC",
     title: "Calculateur d’IMC",
     subtitle: "Calculez votre indice de masse corporelle en quelques secondes, gratuitement et sans inscription.",
@@ -124,9 +124,9 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
   },
 
   bmr: {
-    metaTitle: "Calculateur de métabolisme de base (MB)",
+    metaTitle: "Calcul du métabolisme de base : calories au repos",
     metaDescription:
-      "Calculateur de métabolisme de base gratuit (Mifflin–St Jeor). Découvrez les calories brûlées au repos et comment en faire un objectif quotidien.",
+      "Calculateur de métabolisme de base gratuit (Mifflin-St Jeor) : découvrez combien de calories votre corps brûle au repos pour planifier perte de poids ou muscle.",
     breadcrumb: "Calculateur de MB",
     title: "Calculateur de métabolisme de base",
     subtitle: "Découvrez combien de calories votre corps brûle au repos complet.",
@@ -175,9 +175,9 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
   },
 
   calorie: {
-    metaTitle: "Calculateur de besoins caloriques",
+    metaTitle: "Calculateur de calories : déficit pour perdre du poids",
     metaDescription:
-      "Calculez vos besoins caloriques (Mifflin–St Jeor) : objectifs gratuits pour maigrir, maintenir ou prendre du muscle, et guide du Ramadan.",
+      "Calculateur de calories gratuit : trouvez vos besoins d’entretien et un déficit sûr pour perdre du poids avec l’équation de Mifflin-St Jeor. Calculez-le.",
     breadcrumb: "Calculateur de calories",
     title: "Calculateur de calories",
     subtitle:
@@ -212,7 +212,7 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
       {
         question: "Combien de calories manger pour perdre du poids ?",
         answer:
-          "Un déficit d’environ 500 kcal par rapport à vos besoins d’entretien entraîne une perte d’environ 0,5 kg (1 lb) par semaine. Utilisez le calculateur ci-dessus pour connaître vos besoins d’entretien, puis retirez 500 kcal, sans descendre sous 1 200 kcal/jour sans avis médical.",
+          "Un déficit d’environ 500 kcal par rapport à vos besoins d’entretien entraîne une perte d’environ 0,5 kg (1 lb) par semaine. Utilisez le calculateur ci-dessus pour connaître vos besoins d’entretien, puis retirez 500 kcal, sans descendre sous 1 200 kcal/jour pour une femme ou 1 500 kcal/jour pour un homme sans avis médical.",
       },
       {
         question: "Quelle formule ce calculateur de calories utilise-t-il ?",
@@ -251,9 +251,9 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
   },
 
   idealWeight: {
-    metaTitle: "Calculateur de poids idéal selon votre taille",
+    metaTitle: "Calcul du poids idéal selon la taille et le sexe",
     metaDescription:
-      "Calculateur de poids idéal gratuit basé sur les formules de Devine et de Robinson et sur la zone d’IMC normale : trouvez un objectif réaliste pour votre taille.",
+      "Calculateur de poids idéal gratuit selon la taille et le sexe, avec les formules de Devine et Robinson et la fourchette de poids santé selon l’IMC. Essayez-le.",
     breadcrumb: "Poids idéal",
     title: "Calculateur de poids idéal",
     subtitle: "Estimez une fourchette de poids santé pour votre taille, gratuitement et sans inscription.",
@@ -306,9 +306,9 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
   },
 
   macro: {
-    metaTitle: "Calculateur de macros nutritionnels",
+    metaTitle: "Calculateur de macros : perte de gras et prise de muscle",
     metaDescription:
-      "Calculateur de macros gratuit : vos calories en objectifs de protéines, glucides et lipides, en répartition équilibrée, protéinée, céto ou endurance.",
+      "Calculateur de macros gratuit pour perdre du gras ou prendre du muscle : convertissez vos calories en grammes de protéines, glucides et lipides. Essayez-le.",
     breadcrumb: "Calculateur de macros",
     title: "Calculateur de macros",
     subtitle: "Transformez votre objectif calorique en objectifs quotidiens de protéines, de glucides et de lipides, gratuitement et sans inscription.",

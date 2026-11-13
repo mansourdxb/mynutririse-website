@@ -5,10 +5,10 @@ import type en from "../en/common";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default (f: Facts): ReturnType<typeof en> => ({
   site: {
-    title: "MyNutriRise: عدّاد سعرات بالذكاء الاصطناعي وتغذية حلال",
+    title: "تطبيق رجيم وحساب السعرات لإنقاص الوزن | MyNutriRise",
     titleTemplate: "%s — MyNutriRise",
     description:
-      "تتبّع سعراتك، وحلّل وجباتك بالذكاء الاصطناعي، واتبع خطط وجبات مخصصة لك، وابنِ عادات أكثر صحة مع MyNutriRise — رفيقك الذكي نحو العافية.",
+      "MyNutriRise تطبيق رجيم وعدّاد سعرات مجاني لإنقاص الوزن: صوّر وجبتك لتسجيلها، وتابع المغذيات الكبرى، واتبع خطط وجبات حلال. حمّله مجاناً الآن.",
     ogDescription:
       "تتبّع سعراتك، وحلّل وجباتك بالذكاء الاصطناعي، واتبع خطط وجبات مخصصة لك، وابنِ عادات أكثر صحة كل يوم.",
     twitterDescription:
@@ -16,6 +16,7 @@ export default (f: Facts): ReturnType<typeof en> => ({
     ogImageAlt: "MyNutriRise — تتبّع التغذية واللياقة لحياتك الحقيقية",
   },
   nav: {
+    logoAlt: "شعار MyNutriRise",
     features: "المزايا",
     tools: "الأدوات",
     customPlan: "خطة مخصصة",
@@ -72,9 +73,9 @@ export default (f: Facts): ReturnType<typeof en> => ({
     back: "العودة إلى الرئيسية",
   },
   download: {
-    metaTitle: "حمّل تطبيق MyNutriRise",
+    metaTitle: "حمّل تطبيق الرجيم المجاني لأجهزة iPhone وAndroid",
     metaDescription:
-      "حمّل MyNutriRise على iPhone أو Android — تحليل الوجبات بالذكاء الاصطناعي، وخطط وجبات حلال من ثقافات متنوعة، والصيام، والتدريب.",
+      "حمّل MyNutriRise، تطبيق الرجيم المجاني لأجهزة iPhone وAndroid: مسح الوجبات بالذكاء الاصطناعي، وحساب السعرات والمغذيات الكبرى، وخطط وجبات حلال. ابدأ اليوم.",
     title: "احصل على MyNutriRise",
     body: "على هاتفك، ستنتقل مباشرة إلى متجر التطبيقات. وعلى الكمبيوتر، اختر منصتك:",
   },

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { localePath, type Locale } from "@/i18n/config";
@@ -18,7 +17,6 @@ export function Navbar({ lang, t }: { lang: Locale; t: Messages["common"]["nav"]
     { href: "/blog", label: t.blog },
     { href: "/support", label: t.support },
   ].map((l) => ({ ...l, href: localePath(lang, l.href) }));
-  const slideFrom = lang === "ar" ? "-100%" : "100%";
 
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -51,7 +49,7 @@ export function Navbar({ lang, t }: { lang: Locale; t: Messages["common"]["nav"]
         <nav className="container-page flex items-center justify-between py-3.5">
           {/* Logo */}
           <Link href={localePath(lang, "/")} className="flex items-center gap-2">
-            <Image src="/logo.png" alt="" width={28} height={28} className="h-7 w-7" priority />
+            <Image src="/logo.png" alt={t.logoAlt} width={28} height={28} className="h-7 w-7" loading="eager" />
             <span className="font-display text-lg font-bold tracking-tight text-ink">
               MyNutriRise
             </span>
@@ -86,28 +84,20 @@ export function Navbar({ lang, t }: { lang: Locale; t: Messages["common"]["nav"]
             aria-expanded={mobileOpen}
           >
             <div className="flex w-5 flex-col gap-1.5">
-              <motion.span
-                animate={
-                  mobileOpen
-                    ? { rotate: 45, y: 5.5 }
-                    : { rotate: 0, y: 0 }
-                }
-                transition={{ duration: 0.2 }}
-                className="block h-0.5 w-full rounded-full bg-ink-2"
+              <span
+                className={`block h-0.5 w-full rounded-full bg-ink-2 transition-transform duration-200 ${
+                  mobileOpen ? "translate-y-[5.5px] rotate-45" : ""
+                }`}
               />
-              <motion.span
-                animate={mobileOpen ? { opacity: 0 } : { opacity: 1 }}
-                transition={{ duration: 0.15 }}
-                className="block h-0.5 w-full rounded-full bg-ink-2"
+              <span
+                className={`block h-0.5 w-full rounded-full bg-ink-2 transition-opacity duration-150 ${
+                  mobileOpen ? "opacity-0" : ""
+                }`}
               />
-              <motion.span
-                animate={
-                  mobileOpen
-                    ? { rotate: -45, y: -5.5 }
-                    : { rotate: 0, y: 0 }
-                }
-                transition={{ duration: 0.2 }}
-                className="block h-0.5 w-full rounded-full bg-ink-2"
+              <span
+                className={`block h-0.5 w-full rounded-full bg-ink-2 transition-transform duration-200 ${
+                  mobileOpen ? "-translate-y-[5.5px] -rotate-45" : ""
+                }`}
               />
             </div>
           </button>
@@ -115,62 +105,46 @@ export function Navbar({ lang, t }: { lang: Locale; t: Messages["common"]["nav"]
       </header>
 
       {/* Mobile menu overlay */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-40 md:hidden"
-          >
-            {/* Backdrop */}
-            <div className="absolute inset-0 bg-black/10 backdrop-blur-sm" />
+      {mobileOpen && (
+        <div className="anim-menu-fade fixed inset-0 z-40 md:hidden">
+          {/* Backdrop */}
+          <div className="absolute inset-0 bg-black/10 backdrop-blur-sm" />
 
-            {/* Panel */}
-            <motion.div
-              initial={{ x: slideFrom }}
-              animate={{ x: 0 }}
-              exit={{ x: slideFrom }}
-              transition={{ type: "spring", damping: 28, stiffness: 220 }}
-              className="absolute end-0 top-0 bottom-0 w-full max-w-sm bg-surface shadow-xl"
-            >
-              <div className="flex h-full flex-col items-center justify-center gap-6 px-8">
-                {navLinks.map((link, i) => (
-                  <motion.div
-                    key={link.href}
-                    initial={{ opacity: 0, y: 12 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.1 + i * 0.05 }}
-                  >
-                    <Link
-                      href={link.href}
-                      onClick={() => setMobileOpen(false)}
-                      className="text-2xl font-medium text-ink-2 transition-colors hover:text-emerald-600 dark:hover:text-emerald-400"
-                    >
-                      {link.label}
-                    </Link>
-                  </motion.div>
-                ))}
-                <motion.div
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 + navLinks.length * 0.05 }}
+          {/* Panel */}
+          <div className="anim-menu-slide absolute end-0 top-0 bottom-0 w-full max-w-sm bg-surface shadow-xl">
+            <div className="flex h-full flex-col items-center justify-center gap-6 px-8">
+              {navLinks.map((link, i) => (
+                <div
+                  key={link.href}
+                  className="anim-menu-item"
+                  style={{ animationDelay: `${0.1 + i * 0.05}s` }}
                 >
                   <Link
-                    href={localePath(lang, "/#download")}
+                    href={link.href}
                     onClick={() => setMobileOpen(false)}
-                    className="mt-4 inline-block rounded-full bg-emerald-500 px-8 py-3 text-base font-medium text-white shadow-sm shadow-emerald-500/20 transition-all duration-200 hover:bg-emerald-600 hover:shadow-md"
+                    className="text-2xl font-medium text-ink-2 transition-colors hover:text-emerald-600 dark:hover:text-emerald-400"
                   >
-                    {t.download}
+                    {link.label}
                   </Link>
-                </motion.div>
-                <LanguageSwitcher lang={lang} label={t.language} variant="list" />
+                </div>
+              ))}
+              <div
+                className="anim-menu-item"
+                style={{ animationDelay: `${0.1 + navLinks.length * 0.05}s` }}
+              >
+                <Link
+                  href={localePath(lang, "/#download")}
+                  onClick={() => setMobileOpen(false)}
+                  className="mt-4 inline-block rounded-full bg-emerald-500 px-8 py-3 text-base font-medium text-white shadow-sm shadow-emerald-500/20 transition-all duration-200 hover:bg-emerald-600 hover:shadow-md"
+                >
+                  {t.download}
+                </Link>
               </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+              <LanguageSwitcher lang={lang} label={t.language} variant="list" />
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

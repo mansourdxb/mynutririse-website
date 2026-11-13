@@ -34,6 +34,9 @@ export function Hero({
         <div className="grid items-center gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10">
           {/* Text content */}
           <div className="text-center lg:text-start">
+            <p className="anim-fade-up eyebrow mb-4" style={{ animationDelay: "0.05s" }}>
+              {t.tagline}
+            </p>
             <h1
               className="anim-fade-up text-display text-ink"
               style={{ animationDelay: "0.1s" }}
@@ -88,7 +91,7 @@ export function Hero({
               aria-hidden="true"
             />
             <div className="anim-float relative">
-              <PhoneMockup>
+              <PhoneMockup priority>
                 <div className="relative aspect-[9/19.5] w-full">
                   <Image
                     src={screenshot(lang, "today")}
@@ -96,7 +99,8 @@ export function Hero({
                     fill
                     className="object-cover object-top"
                     sizes="290px"
-                    priority
+                    loading="eager"
+                    fetchPriority="high"
                   />
                 </div>
               </PhoneMockup>

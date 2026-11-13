@@ -10,6 +10,11 @@ const eslintConfig = defineConfig([
     files: ["src/i18n/messages/**/*.ts"],
     rules: { "import/no-anonymous-default-export": "off" },
   },
+  // CommonJS helper scripts load modules with require().
+  {
+    files: ["scripts/**/*.cjs"],
+    rules: { "@typescript-eslint/no-require-imports": "off" },
+  },
   // Override default ignores of eslint-config-next.
   globalIgnores([
     // Default ignores of eslint-config-next:

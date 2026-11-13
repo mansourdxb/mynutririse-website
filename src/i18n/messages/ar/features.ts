@@ -3,9 +3,9 @@ import type en from "../en/features";
 
 export default (f: Facts): ReturnType<typeof en> => ({
   // /features page
-  metaTitle: "المزايا: تحليل الوجبات بالذكاء الاصطناعي والصيام",
+  metaTitle: "ماسح الطعام بالذكاء الاصطناعي وخطط الوجبات | MyNutriRise",
   metaDescription:
-    "استكشف المزايا القوية التي تجعل MyNutriRise الطريقة الأذكى لتتبّع التغذية وبناء عادات صحية وبلوغ أهداف عافيتك.",
+    "اكتشف مزايا MyNutriRise: ماسح الطعام بالذكاء الاصطناعي، وخطط وجبات مخصصة، وتتبّع المغذيات الكبرى، ومؤقت الصيام، ووصفات حلال. جرّب التطبيق مجاناً.",
   pageTitle: "مزايا قوية لحياة أكثر صحة",
   pageIntro:
     "كل ما تحتاجه لفهم تغذيتك وتحسين عاداتك والشعور بأفضل حال — في تطبيق واحد بتصميم أنيق.",
@@ -166,7 +166,7 @@ export default (f: Facts): ReturnType<typeof en> => ({
     flipBack: "المس للعودة",
     showPreview: "{name} — عرض معاينة الشاشة",
     hidePreview: "{name} — إخفاء معاينة الشاشة",
-    screenAlt: "شاشة {name}",
+    screenAlt: "شاشة {name} في تطبيق MyNutriRise",
     items: [
       { name: "صور الوجبات", desc: "يوميات طعام مصوّرة لكل وجبة" },
       { name: "تقويم التغذية", desc: "عرض شهري لتتبّع انتظامك" },

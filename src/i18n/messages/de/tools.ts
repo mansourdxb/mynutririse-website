@@ -34,7 +34,7 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
   index: {
     metaTitle: "Kostenlose Ernährungsrechner",
     metaDescription:
-      "Kostenlose Rechner für BMI, Kalorienbedarf, Makros, Grundumsatz und Idealgewicht – ohne Anmeldung.",
+      "Kostenlose Rechner für BMI, Kalorienbedarf, Makros, Grundumsatz und Idealgewicht. Sofort Ergebnisse ohne Anmeldung – dann deinen Plan in MyNutriRise umsetzen.",
     title: "Kostenlose Ernährungs-Tools",
     subtitle: "Fünf Rechner, keine Anmeldung. Dieselbe Mathematik, mit der MyNutriRise deinen Plan erstellt.",
     cards: {
@@ -66,9 +66,9 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
   },
 
   bmi: {
-    metaTitle: "BMI-Rechner – Body-Mass-Index berechnen",
+    metaTitle: "BMI-Rechner für Erwachsene: BMI kostenlos berechnen",
     metaDescription:
-      "Kostenloser BMI-Rechner (metrisch & imperial). Vergleiche deinen Body-Mass-Index mit gesunden Bereichen und erfahre, was die Zahl bedeutet.",
+      "Kostenloser BMI-Rechner für Erwachsene: Größe und Gewicht metrisch oder imperial eingeben, Body-Mass-Index samt WHO-Kategorie erhalten. Jetzt berechnen.",
     breadcrumb: "BMI-Rechner",
     title: "BMI-Rechner",
     subtitle: "Ermittle deinen Body-Mass-Index in Sekunden – kostenlos und ohne Anmeldung.",
@@ -124,9 +124,9 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
   },
 
   bmr: {
-    metaTitle: "Grundumsatz-Rechner (BMR)",
+    metaTitle: "Grundumsatz-Rechner: Kalorienverbrauch in Ruhe",
     metaDescription:
-      "Kostenloser Grundumsatz-Rechner nach der Mifflin–St-Jeor-Formel. Finde heraus, wie viele Kalorien dein Körper in Ruhe verbrennt, und mach daraus dein Tagesziel.",
+      "Kostenloser Grundumsatz-Rechner nach Mifflin-St Jeor: Sieh, wie viele Kalorien dein Körper in Ruhe verbrennt, und plane Abnehmen oder Muskelaufbau.",
     breadcrumb: "Grundumsatz-Rechner",
     title: "Grundumsatz-Rechner",
     subtitle: "Finde heraus, wie viele Kalorien dein Körper in völliger Ruhe verbrennt.",
@@ -175,9 +175,9 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
   },
 
   calorie: {
-    metaTitle: "Kalorienrechner: täglicher Kalorienbedarf",
+    metaTitle: "Kalorienrechner: Kaloriendefizit zum Abnehmen berechnen",
     metaDescription:
-      "Berechne deinen täglichen Kalorienbedarf mit der Mifflin–St-Jeor-Formel. Kostenlose Ziele zum Abnehmen, Halten oder Muskelaufbau – plus Ramadan-Ratgeber.",
+      "Kostenloser Kalorienrechner: Ermittle deinen Erhaltungsbedarf und ein sicheres Kaloriendefizit zum Abnehmen nach Mifflin-St Jeor. Jetzt Wert berechnen.",
     breadcrumb: "Kalorienrechner",
     title: "Kalorienrechner",
     subtitle:
@@ -212,7 +212,7 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
       {
         question: "Wie viele Kalorien sollte ich zum Abnehmen essen?",
         answer:
-          "Ein Defizit von etwa 500 kcal unter deinem Erhaltungsbedarf führt zu rund 0,5 kg (1 lb) Gewichtsverlust pro Woche. Ermittle mit dem Rechner oben deinen Erhaltungsbedarf und zieh 500 ab – geh aber ohne ärztliche Begleitung nicht unter 1.200 kcal/Tag.",
+          "Ein Defizit von etwa 500 kcal unter deinem Erhaltungsbedarf führt zu rund 0,5 kg (1 lb) Gewichtsverlust pro Woche. Ermittle mit dem Rechner oben deinen Erhaltungsbedarf und zieh 500 ab – geh aber ohne ärztliche Begleitung nicht unter 1.200 kcal/Tag (Frauen) bzw. 1.500 kcal/Tag (Männer).",
       },
       {
         question: "Welche Formel nutzt dieser Kalorienrechner?",
@@ -251,9 +251,9 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
   },
 
   idealWeight: {
-    metaTitle: "Idealgewicht-Rechner für deine Größe",
+    metaTitle: "Idealgewicht-Rechner nach Größe und Geschlecht",
     metaDescription:
-      "Kostenloser Idealgewicht-Rechner nach den Formeln von Devine und Robinson plus gesundem BMI-Bereich – finde ein realistisches Ziel für deine Größe.",
+      "Kostenloser Idealgewicht-Rechner nach Größe und Geschlecht mit den Formeln von Devine und Robinson plus gesundem BMI-Bereich. Zielgewicht in Sekunden finden.",
     breadcrumb: "Idealgewicht",
     title: "Idealgewicht-Rechner",
     subtitle: "Schätze einen gesunden Gewichtsbereich für deine Größe – kostenlos und ohne Anmeldung.",
@@ -306,9 +306,9 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
   },
 
   macro: {
-    metaTitle: "Makrorechner: Protein, Kohlenhydrate & Fett",
+    metaTitle: "Makrorechner zum Abnehmen & für Muskelaufbau",
     metaDescription:
-      "Kostenloser Makrorechner: Mach aus deinem Kalorienbedarf Ziele für Protein, Kohlenhydrate und Fett – ausgewogen, proteinreich, Keto oder Ausdauer.",
+      "Kostenloser Makrorechner für Fettabbau und Muskelaufbau: Rechne deine Kalorien in Gramm Protein, Kohlenhydrate und Fett um. Verteilung wählen und loslegen.",
     breadcrumb: "Makrorechner",
     title: "Makrorechner",
     subtitle: "Mach aus deinem Kalorienziel tägliche Ziele für Protein, Kohlenhydrate und Fett – kostenlos und ohne Anmeldung.",

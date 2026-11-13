@@ -3,7 +3,7 @@ import type { Facts } from "@/data/facts";
 export default (f: Facts) => ({
   metaTitle: "Press Kit",
   metaDescription:
-    "Press resources for MyNutriRise — boilerplate, fact sheet, brand assets, and media contact.",
+    "MyNutriRise press kit: company boilerplate, fact sheet, logos and brand assets, plus a media contact for journalists, bloggers and content creators.",
   title: "Press Kit",
   intro: "Everything you need to write about MyNutriRise.",
   boilerplateTitle: "Boilerplate",
