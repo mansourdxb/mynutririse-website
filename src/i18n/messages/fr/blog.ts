@@ -67,6 +67,10 @@ export default (f: Facts): ReturnType<typeof en> => ({
         type: "p",
         text: "Un programme 16:8 classique consiste à terminer le dîner avant 20 h et à prendre son premier repas à midi le lendemain. Pendant la fenêtre de jeûne, vous buvez de l’eau, du café noir ou du thé non sucré. Plutôt que de changer <em>ce que</em> vous mangez, le 16:8 change <em>le moment</em> où vous mangez, ce qui, pour beaucoup, réduit naturellement le grignotage du soir et l’apport calorique total.",
       },
+      {
+        type: "p",
+        text: "La recherche va dans ce sens : dans deux essais randomisés, l’alimentation à horaires restreints n’a pas entraîné plus de perte de poids qu’une restriction calorique classique ou que des repas répartis sur la journée. Le 16:8 aide s’il vous permet de manger moins plus facilement : voyez-le comme un outil, pas comme une obligation.",
+      },
       { type: "h2", text: "Choisir sa fenêtre alimentaire" },
       {
         type: "p",
@@ -91,6 +95,23 @@ export default (f: Facts): ReturnType<typeof en> => ({
       {
         type: "p",
         text: "Le jeûne intermittent ne convient pas à tout le monde. Si vous êtes enceinte, si vous allaitez, si vous avez moins de 18 ans, si vous avez des antécédents de troubles du comportement alimentaire ou si vous suivez un traitement pour une maladie comme le diabète, parlez-en à votre médecin avant de modifier vos horaires de repas.",
+      },
+      {
+        type: "sources",
+        sources: [
+          {
+            label: "Liu D et al. Calorie Restriction with or without Time-Restricted Eating in Weight Loss. N Engl J Med, 2022.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/35443107/",
+          },
+          {
+            label: "Lowe DA et al. Effects of Time-Restricted Eating on Weight Loss and Other Metabolic Parameters in Women and Men With Overweight and Obesity: The TREAT Randomized Clinical Trial. JAMA Intern Med, 2020.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/32986097/",
+          },
+          {
+            label: "de Cabo R, Mattson MP. Effects of Intermittent Fasting on Health, Aging, and Disease. N Engl J Med, 2019.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/31881139/",
+          },
+        ],
       },
     ],
   },

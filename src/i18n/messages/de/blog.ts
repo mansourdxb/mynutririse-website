@@ -67,6 +67,10 @@ export default (f: Facts): ReturnType<typeof en> => ({
         type: "p",
         text: "Ein typischer 16:8-Rhythmus bedeutet: Abendessen bis 20 Uhr beenden und die erste Mahlzeit am nächsten Tag um 12 Uhr essen. Während des Fastenfensters trinkst du Wasser, schwarzen Kaffee oder ungesüßten Tee. 16:8 verändert nicht, <em>was</em> du isst, sondern <em>wann</em> – und das reduziert bei vielen Menschen ganz natürlich späte Snacks und die gesamte Kalorienaufnahme.",
       },
+      {
+        type: "p",
+        text: "Die Forschung bestätigt das: In zwei randomisierten Studien führte zeitlich begrenztes Essen nicht zu mehr Gewichtsverlust als eine normale Kalorienreduktion oder Essen über den ganzen Tag verteilt. 16:8 hilft, wenn es dir leichter fällt, insgesamt weniger zu essen – sieh es als Werkzeug, nicht als Pflicht.",
+      },
       { type: "h2", text: "Dein Essensfenster wählen" },
       {
         type: "p",
@@ -91,6 +95,23 @@ export default (f: Facts): ReturnType<typeof en> => ({
       {
         type: "p",
         text: "Intervallfasten ist nicht für jeden geeignet. Wenn du schwanger bist, stillst, unter 18 bist, eine Essstörung in der Vorgeschichte hast oder eine Erkrankung wie Diabetes hast, sprich mit deiner Ärztin oder deinem Arzt, bevor du deine Essenszeiten änderst.",
+      },
+      {
+        type: "sources",
+        sources: [
+          {
+            label: "Liu D et al. Calorie Restriction with or without Time-Restricted Eating in Weight Loss. N Engl J Med, 2022.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/35443107/",
+          },
+          {
+            label: "Lowe DA et al. Effects of Time-Restricted Eating on Weight Loss and Other Metabolic Parameters in Women and Men With Overweight and Obesity: The TREAT Randomized Clinical Trial. JAMA Intern Med, 2020.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/32986097/",
+          },
+          {
+            label: "de Cabo R, Mattson MP. Effects of Intermittent Fasting on Health, Aging, and Disease. N Engl J Med, 2019.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/31881139/",
+          },
+        ],
       },
     ],
   },

@@ -67,6 +67,10 @@ export default (f: Facts): ReturnType<typeof en> => ({
         type: "p",
         text: "يعني جدول 16:8 النموذجي أن تنهي العشاء قبل الساعة 8 مساءً وتتناول أول وجبة عند الظهر في اليوم التالي. وخلال نافذة الصيام تشرب الماء أو القهوة السوداء أو الشاي غير المحلّى. وبدلاً من تغيير <em>ما</em> تأكله، يغيّر نظام 16:8 <em>متى</em> تأكل — وهذا يقلّل لدى كثيرين بشكل طبيعي من الأكل في وقت متأخر من الليل ومن إجمالي السعرات.",
       },
+      {
+        type: "p",
+        text: "وتدعم الأبحاث هذا الرأي: ففي تجربتين عشوائيتين لم يؤدِّ الأكل المقيّد بوقت إلى خسارة وزن أكبر من تقليل السعرات المعتاد أو من الأكل على مدار اليوم. يفيد نظام 16:8 حين يسهّل عليك تناول كمية أقل، فتعامل معه كأداة لا كشرط.",
+      },
       { type: "h2", text: "اختيار نافذة الأكل" },
       {
         type: "p",
@@ -91,6 +95,23 @@ export default (f: Facts): ReturnType<typeof en> => ({
       {
         type: "p",
         text: "الصيام المتقطع لا يناسب الجميع. إذا كنتِ حاملاً أو مرضعة، أو كنت دون 18 عاماً، أو لديك تاريخ من اضطرابات الأكل، أو تتعايش مع حالة مثل السكري، فتحدّث إلى طبيبك قبل تغيير مواعيد وجباتك.",
+      },
+      {
+        type: "sources",
+        sources: [
+          {
+            label: "Liu D et al. Calorie Restriction with or without Time-Restricted Eating in Weight Loss. N Engl J Med, 2022.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/35443107/",
+          },
+          {
+            label: "Lowe DA et al. Effects of Time-Restricted Eating on Weight Loss and Other Metabolic Parameters in Women and Men With Overweight and Obesity: The TREAT Randomized Clinical Trial. JAMA Intern Med, 2020.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/32986097/",
+          },
+          {
+            label: "de Cabo R, Mattson MP. Effects of Intermittent Fasting on Health, Aging, and Disease. N Engl J Med, 2019.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/31881139/",
+          },
+        ],
       },
     ],
   },

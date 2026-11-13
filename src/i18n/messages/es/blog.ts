@@ -67,6 +67,10 @@ export default (f: Facts): ReturnType<typeof en> => ({
         type: "p",
         text: "Un horario 16:8 típico consiste en terminar de cenar antes de las 20:00 y hacer tu primera comida a las 12:00 del día siguiente. Durante la ventana de ayuno puedes tomar agua, café solo o té sin azúcar. En lugar de cambiar <em>qué</em> comes, el 16:8 cambia <em>cuándo</em> lo haces, lo que en muchas personas reduce de forma natural el picoteo nocturno y la ingesta total de calorías.",
       },
+      {
+        type: "p",
+        text: "La investigación respalda esta idea: en dos ensayos aleatorizados, la alimentación con restricción horaria no produjo más pérdida de peso que una restricción calórica normal o que comer a lo largo del día. El 16:8 ayuda cuando te facilita comer menos, así que tómalo como una herramienta, no como una obligación.",
+      },
       { type: "h2", text: "Cómo elegir tu ventana de alimentación" },
       {
         type: "p",
@@ -91,6 +95,23 @@ export default (f: Facts): ReturnType<typeof en> => ({
       {
         type: "p",
         text: "El ayuno intermitente no es para todo el mundo. Si estás embarazada o en periodo de lactancia, eres menor de 18 años, tienes antecedentes de trastornos alimentarios o padeces una enfermedad como la diabetes, habla con tu médico antes de cambiar tus horarios de comida.",
+      },
+      {
+        type: "sources",
+        sources: [
+          {
+            label: "Liu D et al. Calorie Restriction with or without Time-Restricted Eating in Weight Loss. N Engl J Med, 2022.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/35443107/",
+          },
+          {
+            label: "Lowe DA et al. Effects of Time-Restricted Eating on Weight Loss and Other Metabolic Parameters in Women and Men With Overweight and Obesity: The TREAT Randomized Clinical Trial. JAMA Intern Med, 2020.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/32986097/",
+          },
+          {
+            label: "de Cabo R, Mattson MP. Effects of Intermittent Fasting on Health, Aging, and Disease. N Engl J Med, 2019.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/31881139/",
+          },
+        ],
       },
     ],
   },

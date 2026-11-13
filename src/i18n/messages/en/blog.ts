@@ -66,6 +66,10 @@ export default (f: Facts) => ({
         type: "p",
         text: "A typical 16:8 schedule means finishing dinner by 8 PM and eating your first meal at noon the next day. During the fasting window you drink water, black coffee, or unsweetened tea. Rather than changing <em>what</em> you eat, 16:8 changes <em>when</em> — which for many people naturally reduces late-night snacking and total calorie intake.",
       },
+      {
+        type: "p",
+        text: "Research supports this view: in two randomised trials, time-restricted eating did not lead to more weight loss than ordinary calorie restriction or eating throughout the day. 16:8 helps when it makes eating less easier for you, so treat it as a tool, not a requirement.",
+      },
       { type: "h2", text: "Picking your eating window" },
       {
         type: "p",
@@ -90,6 +94,23 @@ export default (f: Facts) => ({
       {
         type: "p",
         text: "Intermittent fasting isn't for everyone. If you are pregnant, breastfeeding, under 18, have a history of disordered eating, or manage a condition like diabetes, talk to your doctor before changing your meal timing.",
+      },
+      {
+        type: "sources",
+        sources: [
+          {
+            label: "Liu D et al. Calorie Restriction with or without Time-Restricted Eating in Weight Loss. N Engl J Med, 2022.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/35443107/",
+          },
+          {
+            label: "Lowe DA et al. Effects of Time-Restricted Eating on Weight Loss and Other Metabolic Parameters in Women and Men With Overweight and Obesity: The TREAT Randomized Clinical Trial. JAMA Intern Med, 2020.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/32986097/",
+          },
+          {
+            label: "de Cabo R, Mattson MP. Effects of Intermittent Fasting on Health, Aging, and Disease. N Engl J Med, 2019.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/31881139/",
+          },
+        ],
       },
     ],
   },

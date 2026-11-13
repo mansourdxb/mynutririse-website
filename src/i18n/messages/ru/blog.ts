@@ -67,6 +67,10 @@ export default (f: Facts): ReturnType<typeof en> => ({
         type: "p",
         text: "Типичный режим 16:8 — закончить ужин к 20:00 и поесть в первый раз в полдень следующего дня. Во время голодания можно пить воду, чёрный кофе или несладкий чай. Схема 16:8 меняет не то, <em>что</em> ты ешь, а то, <em>когда</em>, — и у многих это само собой сокращает поздние перекусы и общее количество калорий.",
       },
+      {
+        type: "p",
+        text: "Исследования это подтверждают: в двух рандомизированных испытаниях питание в ограниченное время не привело к большей потере веса, чем обычное снижение калорийности или еда в течение всего дня. Схема 16:8 помогает, если с ней тебе проще есть меньше, — считай её инструментом, а не обязательным правилом.",
+      },
       { type: "h2", text: "Как выбрать окно питания" },
       {
         type: "p",
@@ -91,6 +95,23 @@ export default (f: Facts): ReturnType<typeof en> => ({
       {
         type: "p",
         text: "Интервальное голодание подходит не всем. Если ты беременна или кормишь грудью, тебе меньше 18 лет, у тебя были расстройства пищевого поведения или ты живёшь с таким заболеванием, как диабет, посоветуйся с врачом, прежде чем менять режим питания.",
+      },
+      {
+        type: "sources",
+        sources: [
+          {
+            label: "Liu D et al. Calorie Restriction with or without Time-Restricted Eating in Weight Loss. N Engl J Med, 2022.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/35443107/",
+          },
+          {
+            label: "Lowe DA et al. Effects of Time-Restricted Eating on Weight Loss and Other Metabolic Parameters in Women and Men With Overweight and Obesity: The TREAT Randomized Clinical Trial. JAMA Intern Med, 2020.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/32986097/",
+          },
+          {
+            label: "de Cabo R, Mattson MP. Effects of Intermittent Fasting on Health, Aging, and Disease. N Engl J Med, 2019.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/31881139/",
+          },
+        ],
       },
     ],
   },
