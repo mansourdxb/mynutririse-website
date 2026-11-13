@@ -6,6 +6,8 @@ import { getMessages } from "../messages";
 import type { PostContent } from "./types";
 import caloriesToLoseEn from "./how-many-calories-to-lose-weight/en";
 import caloriesToLoseAr from "./how-many-calories-to-lose-weight/ar";
+import proteinForMuscleEn from "./how-much-protein-to-build-muscle/en";
+import proteinForMuscleAr from "./how-much-protein-to-build-muscle/ar";
 
 export type { PostContent };
 type Builder = (f: ReturnType<typeof factsFor>) => PostContent;
@@ -13,6 +15,7 @@ type Builder = (f: ReturnType<typeof factsFor>) => PostContent;
 /** Posts whose copy lives in this folder, by slug and language. */
 const registry: Record<string, Partial<Record<Locale, Builder>>> = {
   "how-many-calories-to-lose-weight": { en: caloriesToLoseEn, ar: caloriesToLoseAr },
+  "how-much-protein-to-build-muscle": { en: proteinForMuscleEn, ar: proteinForMuscleAr },
 };
 
 /** An article's copy in a language, or null if it is not published there. */
