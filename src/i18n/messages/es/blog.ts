@@ -26,7 +26,7 @@ export default (f: Facts): ReturnType<typeof en> => ({
     "mansour-shaaban": {
       name: "Mansour Shaaban",
       role: "Fundador y desarrollador de MyNutriRise",
-      bio: "Mansour Shaaban es el fundador y desarrollador de MyNutriRise y vive en Dubái. Crea herramientas de nutrición y fitness para personas cuyas comidas casi nunca aparecen en las apps occidentales de calorías, desde platos del Golfo y del Levante hasta la cocina casera halal y el ayuno de Ramadán. Cada artículo de este sitio cita investigación revisada por pares y está escrito para ayudarte a tomar decisiones informadas, no para sustituir el consejo de un médico o dietista-nutricionista.",
+      bio: "Mansour Shaaban es el fundador y desarrollador de MyNutriRise y vive en Dubái. Crea herramientas de nutrición y fitness para personas cuyas comidas casi nunca aparecen en las apps occidentales de calorías, desde platos del Golfo y del Levante hasta la cocina casera halal y el ayuno de Ramadán. Los artículos de este sitio citan investigación revisada por pares y están escritos para ayudarte a tomar decisiones informadas, no para sustituir el consejo de un médico o dietista-nutricionista.",
       location: "Dubái, EAU",
       imageAlt: "Mansour Shaaban, fundador de MyNutriRise",
       metaTitle: "Mansour Shaaban, fundador de MyNutriRise",
