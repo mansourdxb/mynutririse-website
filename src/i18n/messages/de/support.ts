@@ -5,7 +5,7 @@ import type en from "../en/support";
 export default (f: Facts): ReturnType<typeof en> => ({
   metaTitle: "Hilfe & Support",
   metaDescription:
-    "Hilfe zu MyNutriRise: Kontaktiere unser Support-Team, stöbere in den FAQ oder schick uns einen Funktionswunsch.",
+    "Hilfe zu MyNutriRise: Schreib unserem Support-Team, stöbere in den Antworten auf häufige Fragen zu Tracking und Premium oder schick uns einen Funktionswunsch.",
   title: "Wie können wir helfen?",
   subtitle:
     "Ob du eine Frage hast, Hilfe bei einem Problem brauchst oder eine Idee teilen möchtest – wir sind für dich da.",

@@ -10,7 +10,7 @@ export default (f: Facts): ReturnType<typeof en> => ({
   index: {
     metaTitle: "Guías de nutrición y ayuno",
     metaDescription:
-      "Guías prácticas sobre nutrición, ayuno, seguimiento de macros y hábitos saludables del equipo de MyNutriRise.",
+      "Guías prácticas sobre contar calorías, ayuno intermitente, seguimiento de macros, alimentación halal y hábitos saludables, del equipo de MyNutriRise.",
     title: "El blog de MyNutriRise",
     subtitle: "Guías prácticas sobre nutrición, ayuno y cómo crear hábitos que perduran.",
     breadcrumb: "Blog",

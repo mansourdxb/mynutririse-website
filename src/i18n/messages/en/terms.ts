@@ -5,7 +5,7 @@ import type { Facts } from "@/data/facts";
 export default (f: Facts) => ({
   metaTitle: "Terms of Service",
   metaDescription:
-    "Read the terms and conditions governing your use of the MyNutriRise app and services.",
+    "Read the terms of service for the MyNutriRise app: accounts, subscriptions and payments, acceptable use, the not-medical-advice notice and termination.",
   title: "Terms of Service",
   lastUpdated: "Last updated: May 15, 2026",
   // Translations: note that the English version is the legally binding one. Empty in English.

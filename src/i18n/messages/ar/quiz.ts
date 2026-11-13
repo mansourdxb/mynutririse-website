@@ -4,7 +4,7 @@ import type en from "../en/quiz";
 export default (f: Facts): ReturnType<typeof en> => ({
   metaTitle: "احصل على خطتك المخصصة",
   metaDescription:
-    "أجب عن أربعة أسئلة سريعة واحصل على خطة تغذية مخصصة لك مع هدفك اليومي من السعرات — مجاناً وفي أقل من دقيقة.",
+    "أجب عن أربعة أسئلة سريعة واحصل على خطة تغذية مخصصة لك مع هدفك اليومي من السعرات الحرارية — مجاناً وفي أقل من دقيقة، ثم ابدأ تطبيقها مع MyNutriRise.",
   title: "احصل على خطتك المخصصة <accent>في دقيقة واحدة</accent>",
   intro: "أربعة أسئلة سريعة — دون تسجيل.",
   // Passed to the client QuizFlow component.

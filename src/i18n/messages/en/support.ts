@@ -4,7 +4,7 @@ import type { Facts } from "@/data/facts";
 export default (f: Facts) => ({
   metaTitle: "Support",
   metaDescription:
-    "Get help with MyNutriRise. Contact our support team, browse FAQs, or submit a feature request.",
+    "Get help with MyNutriRise: email our support team, browse answers to common questions about tracking and Premium, or send us a feature request.",
   title: "How can we help?",
   subtitle:
     "Whether you have a question, need troubleshooting help, or want to share an idea — we're here for you.",

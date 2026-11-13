@@ -6,7 +6,7 @@ import type { Facts } from "@/data/facts";
 export default (f: Facts) => ({
   metaTitle: "Privacy Policy",
   metaDescription:
-    "Learn how MyNutriRise collects, uses, and protects your personal information.",
+    "Learn how MyNutriRise collects, uses, stores and protects your personal and health information, who we share it with, and the rights you have over your data.",
   title: "Privacy Policy",
   lastUpdated: "Last updated: May 29, 2026",
   // Translations: note that the English version is the legally binding one. Empty in English.

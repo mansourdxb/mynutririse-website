@@ -7,7 +7,7 @@ import type en from "../en/privacy";
 export default (f: Facts): ReturnType<typeof en> => ({
   metaTitle: "Politique de confidentialité",
   metaDescription:
-    "Découvrez comment MyNutriRise collecte, utilise et protège vos informations personnelles.",
+    "Découvrez comment MyNutriRise collecte, utilise, stocke et protège vos informations personnelles et de santé, avec qui nous les partageons et vos droits.",
   title: "Politique de confidentialité",
   lastUpdated: "Dernière mise à jour : 29 mai 2026",
   // Translations: note that the English version is the legally binding one. Empty in English.

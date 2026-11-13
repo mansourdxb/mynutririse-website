@@ -3,7 +3,7 @@ import type { Facts } from "@/data/facts";
 export default (f: Facts) => ({
   metaTitle: "About Us",
   metaDescription:
-    "Why we built MyNutriRise — nutrition tracking that respects your culture, with AI that removes the friction.",
+    "Why we built MyNutriRise: nutrition tracking that respects your culture and halal food, with AI meal scanning that takes the friction out of logging.",
   title: "Nutrition tracking that speaks your language",
   paragraphs: [
     "Most nutrition apps were built around Western menus. Search for kabuli pulao, mandi, or nihari and you get a shrug — or a generic “rice with meat” entry that misses by hundreds of calories. For millions of people, that means choosing between the food they love and the goals they care about.",

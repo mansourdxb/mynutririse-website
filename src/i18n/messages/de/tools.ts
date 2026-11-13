@@ -34,7 +34,7 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
   index: {
     metaTitle: "Kostenlose Ernährungsrechner",
     metaDescription:
-      "Kostenlose Rechner für BMI, Kalorienbedarf, Makros, Grundumsatz und Idealgewicht – ohne Anmeldung.",
+      "Kostenlose Rechner für BMI, Kalorienbedarf, Makros, Grundumsatz und Idealgewicht. Sofort Ergebnisse ohne Anmeldung – dann deinen Plan in MyNutriRise umsetzen.",
     title: "Kostenlose Ernährungs-Tools",
     subtitle: "Fünf Rechner, keine Anmeldung. Dieselbe Mathematik, mit der MyNutriRise deinen Plan erstellt.",
     cards: {

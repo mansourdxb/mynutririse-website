@@ -33,7 +33,7 @@ const tools = (f: Facts) => ({
   index: {
     metaTitle: "Free Nutrition Tools",
     metaDescription:
-      "Free calculators for BMI, daily calories, macros, BMR, and ideal weight — no sign-up needed.",
+      "Free calculators for BMI, daily calories, macros, BMR and ideal weight. Instant results with no sign-up, then turn your numbers into a plan in MyNutriRise.",
     title: "Free Nutrition Tools",
     subtitle: "Five calculators, zero sign-up. The same math MyNutriRise uses to build your plan.",
     cards: {

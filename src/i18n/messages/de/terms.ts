@@ -6,7 +6,7 @@ import type en from "../en/terms";
 export default (f: Facts): ReturnType<typeof en> => ({
   metaTitle: "Nutzungsbedingungen",
   metaDescription:
-    "Lies die Bedingungen, die für deine Nutzung der MyNutriRise-App und ihrer Dienste gelten.",
+    "Lies die Nutzungsbedingungen der MyNutriRise-App: Konten, Abos und Zahlungen, zulässige Nutzung, Hinweis zur fehlenden ärztlichen Beratung und Kündigung.",
   title: "Nutzungsbedingungen",
   lastUpdated: "Zuletzt aktualisiert: 15. Mai 2026",
   // Translations: note that the English version is the legally binding one. Empty in English.

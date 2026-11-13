@@ -34,7 +34,7 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
   index: {
     metaTitle: "Herramientas de nutrición gratuitas",
     metaDescription:
-      "Calculadoras gratuitas de IMC, calorías diarias, macros, TMB y peso ideal, sin necesidad de registrarte.",
+      "Calculadoras gratuitas de IMC, calorías diarias, macros, TMB y peso ideal. Resultados al instante y sin registro; luego conviértelos en un plan en MyNutriRise.",
     title: "Herramientas de nutrición gratuitas",
     subtitle: "Cinco calculadoras, sin registro. Los mismos cálculos que usa MyNutriRise para crear tu plan.",
     cards: {
