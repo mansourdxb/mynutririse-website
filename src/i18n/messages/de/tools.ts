@@ -147,42 +147,6 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
     breadcrumb: "Idealgewicht",
     title: "Idealgewicht-Rechner",
     subtitle: "Schätze einen gesunden Gewichtsbereich für deine Größe – kostenlos und ohne Anmeldung.",
-    meansHeading: "Was „Idealgewicht“ wirklich bedeutet",
-    means:
-      "Die eine perfekte Zahl gibt es nicht. Die Formeln von <b>Devine</b> und <b>Robinson</b> wurden für die klinische Dosierung entwickelt und liefern einen nützlichen Mittelwert, während der BMI-basierte Bereich (18,5–24,9) die Spanne zeigt, die allgemein mit guter Gesundheit verbunden wird:",
-    formulas: [
-      "Devine (Männer): 50 kg + 2,3 kg pro Zoll über 5 Fuß",
-      "Devine (Frauen): 45,5 kg + 2,3 kg pro Zoll über 5 Fuß",
-      "Robinson (Männer): 52 kg + 1,9 kg pro Zoll über 5 Fuß",
-      "Robinson (Frauen): 49 kg + 1,7 kg pro Zoll über 5 Fuß",
-    ],
-    meansNote:
-      "Muskelmasse, Körperbau und ethnische Herkunft beeinflussen, was für dich passt – sieh den Bereich als Richtung, nicht als Deadline.",
-    sustainHeading: "Nachhaltig ans Ziel",
-    sustain:
-      "Wähle ein Ziel innerhalb deines gesunden Bereichs und rechne dann rückwärts: Der <calorie>Kalorienrechner</calorie> liefert dir die tägliche Aufnahme für 0,25–0,5 kg Veränderung pro Woche, und mit dem <bmi>BMI-Rechner</bmi> kannst du deinen Fortschritt unterwegs überprüfen.",
-    faqs: [
-      {
-        question: "Wie wird das Idealgewicht berechnet?",
-        answer:
-          "Dieses Tool zeigt drei Sichtweisen: die klinischen Formeln von Devine und Robinson (basierend auf Größe und Geschlecht) und die Gewichtsspanne, in der dein BMI zwischen 18,5 und 24,9 liegt.",
-      },
-      {
-        question: "Warum liefern die Formeln unterschiedliche Werte?",
-        answer:
-          "Jede wurde an andere Bevölkerungsdaten angepasst. Die Spanne zwischen ihnen ist gewollt – dein gesundes Gewicht ist ein Bereich, kein Punkt.",
-      },
-      {
-        question: "Unterscheidet sich das Idealgewicht bei Männern und Frauen?",
-        answer:
-          "Ja – bei gleicher Größe setzen die Formeln für Männer einen höheren Ausgangswert an, weil sich Muskelmasse und Körperbau im Durchschnitt unterscheiden.",
-      },
-      {
-        question: "Was, wenn ich weit von meinem Idealbereich entfernt bin?",
-        answer:
-          "Setz auf ein nachhaltiges Tempo: 0,25–0,5 kg pro Woche durch ein moderates Kaloriendefizit oder einen moderaten Überschuss, gestützt auf Protein und regelmäßige Bewegung.",
-      },
-    ],
     ctaTitle: "Nachhaltig ans Ziel kommen",
     ctaBody: "MyNutriRise legt ein realistisches Tempo fest, verfolgt deinen Gewichtstrend und trägt Mahlzeiten per Foto ein.",
     calc: {

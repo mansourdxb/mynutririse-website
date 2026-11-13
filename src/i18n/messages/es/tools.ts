@@ -147,42 +147,6 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
     breadcrumb: "Peso ideal",
     title: "Calculadora de peso ideal",
     subtitle: "Estima un rango de peso saludable para tu altura: gratis y sin registro.",
-    meansHeading: "Qué significa realmente «peso ideal»",
-    means:
-      "No existe un único número perfecto. Las fórmulas de <b>Devine</b> y <b>Robinson</b> se desarrollaron para calcular dosis clínicas y ofrecen un punto medio útil, mientras que el rango basado en el IMC (18,5–24,9) muestra el intervalo que suele asociarse con una buena salud:",
-    formulas: [
-      "Devine (hombres): 50 kg + 2,3 kg por cada pulgada por encima de 5 pies",
-      "Devine (mujeres): 45,5 kg + 2,3 kg por cada pulgada por encima de 5 pies",
-      "Robinson (hombres): 52 kg + 1,9 kg por cada pulgada por encima de 5 pies",
-      "Robinson (mujeres): 49 kg + 1,7 kg por cada pulgada por encima de 5 pies",
-    ],
-    meansNote:
-      "La masa muscular, la complexión y el origen étnico influyen en lo que es adecuado para ti: usa el rango como una orientación, no como una fecha límite.",
-    sustainHeading: "Llegar de forma sostenible",
-    sustain:
-      "Elige un objetivo dentro de tu rango saludable y trabaja hacia atrás: la <calorie>calculadora de calorías</calorie> te da la ingesta diaria para un cambio de 0,25–0,5 kg por semana, y la <bmi>calculadora de IMC</bmi> te permite comprobar tu progreso por el camino.",
-    faqs: [
-      {
-        question: "¿Cómo se calcula el peso ideal?",
-        answer:
-          "Esta herramienta muestra tres enfoques: las fórmulas clínicas de Devine y Robinson (basadas en la altura y el sexo) y el intervalo de peso que mantiene tu IMC entre 18,5 y 24,9.",
-      },
-      {
-        question: "¿Por qué las fórmulas dan cifras distintas?",
-        answer:
-          "Cada una se ajustó con datos de poblaciones diferentes. La diferencia entre ellas es una ventaja: tu peso saludable es un rango, no un punto.",
-      },
-      {
-        question: "¿El peso ideal es distinto para hombres y mujeres?",
-        answer:
-          "Sí: a la misma altura, las fórmulas asignan a los hombres una base más alta por las diferencias medias en masa muscular y complexión.",
-      },
-      {
-        question: "¿Y si estoy lejos de mi rango ideal?",
-        answer:
-          "Apunta a un ritmo sostenible: 0,25–0,5 kg por semana mediante un déficit o superávit moderado de calorías, con la proteína y la actividad regular como base.",
-      },
-    ],
     ctaTitle: "Llega de forma sostenible",
     ctaBody: "MyNutriRise fija un ritmo realista, sigue la tendencia de tu peso y registra tus comidas a partir de una sola foto.",
     calc: {

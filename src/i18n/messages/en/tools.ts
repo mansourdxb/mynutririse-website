@@ -146,42 +146,6 @@ const tools = (f: Facts) => ({
     breadcrumb: "Ideal Weight",
     title: "Ideal Weight Calculator",
     subtitle: "Estimate a healthy weight range for your height — free, no sign-up needed.",
-    meansHeading: "What “ideal weight” really means",
-    means:
-      "There is no single perfect number. The <b>Devine</b> and <b>Robinson</b> formulas were developed for clinical dosing and give a useful midpoint, while the BMI-based range (18.5–24.9) shows the span generally associated with good health:",
-    formulas: [
-      "Devine (men): 50 kg + 2.3 kg per inch over 5 ft",
-      "Devine (women): 45.5 kg + 2.3 kg per inch over 5 ft",
-      "Robinson (men): 52 kg + 1.9 kg per inch over 5 ft",
-      "Robinson (women): 49 kg + 1.7 kg per inch over 5 ft",
-    ],
-    meansNote:
-      "Muscle mass, frame size, and ethnicity all shift what is right for you — use the range as a direction, not a deadline.",
-    sustainHeading: "Getting there sustainably",
-    sustain:
-      "Pick a target inside your healthy range, then work backwards: the <calorie>calorie calculator</calorie> gives you the daily intake for 0.25–0.5 kg of change per week, and the <bmi>BMI calculator</bmi> lets you sanity-check progress along the way.",
-    faqs: [
-      {
-        question: "How is ideal weight calculated?",
-        answer:
-          "This tool shows three views: the Devine and Robinson clinical formulas (based on height and sex) and the weight span that keeps your BMI between 18.5 and 24.9.",
-      },
-      {
-        question: "Why do the formulas give different numbers?",
-        answer:
-          "Each was fitted to different population data. The spread between them is a feature — your healthy weight is a range, not a point.",
-      },
-      {
-        question: "Is ideal weight different for men and women?",
-        answer:
-          "Yes — at the same height, the formulas assign men a higher baseline due to average differences in muscle mass and frame.",
-      },
-      {
-        question: "What if I am far from my ideal range?",
-        answer:
-          "Aim for sustainable pacing: 0.25–0.5 kg per week through a moderate calorie deficit or surplus, anchored by protein and regular activity.",
-      },
-    ],
     ctaTitle: "Get there sustainably",
     ctaBody: "MyNutriRise sets a realistic pace, tracks your weight trend, and logs meals from a single photo.",
     calc: {

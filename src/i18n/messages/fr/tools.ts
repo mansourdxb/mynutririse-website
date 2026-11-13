@@ -147,42 +147,6 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
     breadcrumb: "Poids idéal",
     title: "Calculateur de poids idéal",
     subtitle: "Estimez une fourchette de poids santé pour votre taille, gratuitement et sans inscription.",
-    meansHeading: "Ce que « poids idéal » veut vraiment dire",
-    means:
-      "Il n’existe pas de chiffre parfait unique. Les formules de <b>Devine</b> et de <b>Robinson</b> ont été conçues pour le dosage des médicaments en clinique et donnent un point médian utile, tandis que la fourchette basée sur l’IMC (18,5–24,9) indique la zone généralement associée à une bonne santé :",
-    formulas: [
-      "Devine (hommes) : 50 kg + 2,3 kg par pouce au-delà de 5 pieds",
-      "Devine (femmes) : 45,5 kg + 2,3 kg par pouce au-delà de 5 pieds",
-      "Robinson (hommes) : 52 kg + 1,9 kg par pouce au-delà de 5 pieds",
-      "Robinson (femmes) : 49 kg + 1,7 kg par pouce au-delà de 5 pieds",
-    ],
-    meansNote:
-      "La masse musculaire, la morphologie et l’origine ethnique modifient ce qui vous convient : utilisez cette fourchette comme une direction, pas comme une échéance.",
-    sustainHeading: "Y parvenir durablement",
-    sustain:
-      "Choisissez un objectif dans votre fourchette de poids santé, puis remontez le fil : le <calorie>calculateur de calories</calorie> vous donne l’apport quotidien pour une évolution de 0,25 à 0,5 kg par semaine, et le <bmi>calculateur d’IMC</bmi> vous permet de vérifier vos progrès en chemin.",
-    faqs: [
-      {
-        question: "Comment le poids idéal est-il calculé ?",
-        answer:
-          "Cet outil propose trois approches : les formules cliniques de Devine et de Robinson (basées sur la taille et le sexe) et la fourchette de poids qui maintient votre IMC entre 18,5 et 24,9.",
-      },
-      {
-        question: "Pourquoi les formules donnent-elles des résultats différents ?",
-        answer:
-          "Chacune a été établie à partir de données de populations différentes. L’écart entre elles est voulu : votre poids santé est une fourchette, pas un point.",
-      },
-      {
-        question: "Le poids idéal est-il différent pour les hommes et les femmes ?",
-        answer:
-          "Oui : à taille égale, les formules attribuent aux hommes une valeur de base plus élevée en raison des différences moyennes de masse musculaire et de morphologie.",
-      },
-      {
-        question: "Et si je suis loin de ma fourchette idéale ?",
-        answer:
-          "Visez un rythme durable : 0,25 à 0,5 kg par semaine grâce à un déficit ou un surplus calorique modéré, avec suffisamment de protéines et une activité régulière.",
-      },
-    ],
     ctaTitle: "Y parvenir durablement",
     ctaBody: "MyNutriRise fixe un rythme réaliste, suit l’évolution de votre poids et enregistre vos repas à partir d’une simple photo.",
     calc: {
