@@ -30,7 +30,7 @@ export function DownloadRedirect({
 
   return (
     <div className="flex min-h-[70vh] flex-col items-center justify-center bg-surface px-6 pt-24 pb-16 text-center">
-      <Image src="/logo.png" alt={logoAlt} width={56} height={56} className="h-14 w-14" priority />
+      <Image src="/logo.png" alt={logoAlt} width={56} height={56} className="h-14 w-14" loading="eager" />
       <h1 className="mt-6 text-h2 text-ink">{t.title}</h1>
       <p className="mt-3 max-w-md text-ink-3">{t.body}</p>
       <StoreButtons t={store} reassurance className="mt-8" />

@@ -36,12 +36,15 @@ function ScreenCard({ src, label, alt }: { src: string; label: string; alt: stri
     <div className="group relative flex-shrink-0 w-[160px] sm:w-[190px] lg:w-[210px] transition-transform duration-300 hover:scale-105 hover:-translate-y-2">
       <div className="relative overflow-hidden rounded-2xl bg-surface shadow-lg shadow-slate-200/60 ring-1 ring-line transition-shadow duration-300 group-hover:shadow-xl group-hover:shadow-emerald-200/30 group-hover:ring-emerald-200 dark:group-hover:ring-emerald-400/20">
         <div className="relative aspect-[9/19.5] w-full">
+          {/* Fixed intrinsic size (largest card width) instead of fill+sizes:
+              Next then emits a 1x/2x srcset rather than ~16 widths per image,
+              which matters with 40 images in the page HTML and RSC payload. */}
           <Image
             src={src}
             alt={alt}
-            fill
-            className="object-cover object-top"
-            sizes="(max-width: 640px) 160px, 210px"
+            width={210}
+            height={455}
+            className="absolute inset-0 h-full w-full object-cover object-top"
             loading="lazy"
           />
         </div>

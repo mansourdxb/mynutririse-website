@@ -99,7 +99,8 @@ export function Hero({
                     fill
                     className="object-cover object-top"
                     sizes="290px"
-                    priority
+                    loading="eager"
+                    fetchPriority="high"
                   />
                 </div>
               </PhoneMockup>

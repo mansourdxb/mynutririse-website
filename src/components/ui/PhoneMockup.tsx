@@ -29,7 +29,8 @@ export function PhoneMockup({
           aria-hidden="true"
           fill
           sizes="290px"
-          priority={priority}
+          loading={priority ? "eager" : "lazy"}
+          fetchPriority={priority ? "high" : "auto"}
           className="pointer-events-none select-none"
         />
         {/* Screen content sits on top of the frame's screen area */}
