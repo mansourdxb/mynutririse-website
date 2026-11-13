@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { localePath, type Locale } from "@/i18n/config";
 import { pageMetadata } from "@/i18n/metadata";
 import { getMessages } from "@/i18n/messages";
@@ -20,12 +21,18 @@ const tools = [
 
 export default async function ToolsPage({ params }: PageProps<"/[lang]/tools">) {
   const lang = (await params).lang as Locale;
-  const t = getMessages(lang).tools.index;
+  const { tools: messages, common } = getMessages(lang);
+  const t = messages.index;
 
   return (
     <div className="wash-mint pt-24 pb-8">
       <div className="mx-auto max-w-4xl px-6 py-16">
-        <h1 className="text-center text-h1 text-ink">
+        <Breadcrumbs
+          lang={lang}
+          t={common.breadcrumbs}
+          items={[{ name: messages.shared.breadcrumb, href: "/tools" }]}
+        />
+        <h1 className="mt-6 text-center text-h1 text-ink">
           {t.title}
         </h1>
         <p className="mx-auto mt-4 max-w-xl text-center text-lead text-ink-3">

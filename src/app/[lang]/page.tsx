@@ -10,9 +10,21 @@ import { Community } from "@/components/sections/Community";
 import { HomeFaq } from "@/components/sections/HomeFaq";
 import { Premium } from "@/components/sections/Premium";
 import { CTA } from "@/components/sections/CTA";
-import { absoluteUrl, type Locale } from "@/i18n/config";
+import {
+  APP_STORE_URL,
+  BASE_URL,
+  BRAND,
+  ORGANIZATION_ID,
+  PLAY_STORE_URL,
+  absoluteUrl,
+  screenshot,
+  type Locale,
+} from "@/i18n/config";
 import { pageMetadata } from "@/i18n/metadata";
 import { getMessages } from "@/i18n/messages";
+
+// Screens listed in the MobileApplication JSON-LD (public/screenshots/<lang>/).
+const jsonLdScreens = ["today", "meal-photos", "food-detail", "analytics", "fasting", "recipes"];
 
 export async function generateMetadata({ params }: PageProps<"/[lang]">): Promise<Metadata> {
   const lang = (await params).lang as Locale;
@@ -27,17 +39,23 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
   const appJsonLd = {
     "@context": "https://schema.org",
     "@type": "MobileApplication",
-    name: "MyNutriRise",
+    "@id": `${BASE_URL}/#app`,
+    name: BRAND,
     operatingSystem: "iOS, Android",
     applicationCategory: "HealthApplication",
     description: t.jsonLd.appDescription,
+    inLanguage: lang,
     offers: {
       "@type": "Offer",
       price: "0",
       priceCurrency: "USD",
     },
     url: absoluteUrl(lang, "/"),
-    installUrl: "https://apps.apple.com/app/mynutririse/id6764006876",
+    installUrl: [APP_STORE_URL, PLAY_STORE_URL],
+    screenshot: jsonLdScreens.map((name) => `${BASE_URL}${screenshot(lang, name)}`),
+    publisher: { "@id": ORGANIZATION_ID },
+    // TODO(owner): add aggregateRating only from real store rating data
+    // (ratingValue + ratingCount). No rating figures exist in the codebase.
   };
 
   const faqJsonLd = {

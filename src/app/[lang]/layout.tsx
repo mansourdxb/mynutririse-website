@@ -6,18 +6,34 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { MotionProvider } from "@/components/ui/MotionProvider";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { dir, isLocale, locales, localePath, ogLocale, type Locale } from "@/i18n/config";
+import {
+  APP_STORE_URL,
+  BASE_URL,
+  BRAND,
+  LOGO_URL,
+  ORGANIZATION_ID,
+  PLAY_STORE_URL,
+  dir,
+  isLocale,
+  locales,
+  localePath,
+  ogLocale,
+  type Locale,
+} from "@/i18n/config";
 import { languageAlternates } from "@/i18n/metadata";
 import { getMessages } from "@/i18n/messages";
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "@id": "https://www.mynutririse.com/#organization",
-  name: "MyNutriRise",
-  url: "https://www.mynutririse.com",
-  logo: "https://www.mynutririse.com/logo.png",
-  sameAs: ["https://apps.apple.com/app/mynutririse/id6764006876"],
+  "@id": ORGANIZATION_ID,
+  name: BRAND,
+  alternateName: "Nutri Rise",
+  url: BASE_URL,
+  logo: { "@type": "ImageObject", url: LOGO_URL },
+  // TODO(owner): add the official Instagram/TikTok/X/YouTube/LinkedIn profile
+  // URLs here once confirmed. None exist in the codebase, so none are guessed.
+  sameAs: [APP_STORE_URL, PLAY_STORE_URL],
 };
 
 const inter = Inter({

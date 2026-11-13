@@ -4,7 +4,15 @@ import { ArticleCta } from "./ArticleCta";
 import { articles, type ArticleKey } from "./articles";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
-import { BASE_URL, absoluteUrl, localePath, type Locale } from "@/i18n/config";
+import {
+  BASE_URL,
+  BRAND,
+  LOGO_URL,
+  ORGANIZATION_ID,
+  absoluteUrl,
+  localePath,
+  type Locale,
+} from "@/i18n/config";
 import { pageMetadata } from "@/i18n/metadata";
 import { getMessages } from "@/i18n/messages";
 import { rich } from "@/i18n/rich";
@@ -70,8 +78,16 @@ export function ArticlePage({
     inLanguage: lang,
     datePublished: date,
     dateModified,
-    author: { "@id": `${BASE_URL}/#organization` },
-    publisher: { "@id": `${BASE_URL}/#organization` },
+    // TODO(owner): switch author to a Person (name, url to /blog/author/<slug>)
+    // once the real author's name and credentials are provided.
+    author: { "@type": "Organization", "@id": ORGANIZATION_ID, name: BRAND, url: BASE_URL },
+    publisher: {
+      "@type": "Organization",
+      "@id": ORGANIZATION_ID,
+      name: BRAND,
+      logo: { "@type": "ImageObject", url: LOGO_URL },
+    },
+    image: `${BASE_URL}/og/${lang}.png`,
     mainEntityOfPage: absoluteUrl(lang, path),
   };
 

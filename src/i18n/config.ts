@@ -3,6 +3,11 @@ export type Locale = (typeof locales)[number];
 export const defaultLocale: Locale = "en";
 
 export const BASE_URL = "https://www.mynutririse.com";
+export const BRAND = "MyNutriRise";
+export const APP_STORE_URL = "https://apps.apple.com/app/mynutririse/id6764006876";
+export const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.nutririse.app";
+export const ORGANIZATION_ID = `${BASE_URL}/#organization`;
+export const LOGO_URL = `${BASE_URL}/logo.png`;
 
 /** Native names, shown in the language switcher. */
 export const localeNames: Record<Locale, string> = {

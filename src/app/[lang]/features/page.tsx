@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Features } from "@/components/sections/Features";
 import { CTA } from "@/components/sections/CTA";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import type { Locale } from "@/i18n/config";
 import { pageMetadata } from "@/i18n/metadata";
 import { getMessages } from "@/i18n/messages";
@@ -20,7 +21,12 @@ export default async function FeaturesPage({ params }: PageProps<"/[lang]/featur
     <>
       <div className="wash-mint pt-24 pb-8">
         <section className="mx-auto max-w-4xl px-6 py-12 text-center">
-          <h1 className="text-h1 text-ink">
+          <Breadcrumbs
+            lang={lang}
+            t={m.common.breadcrumbs}
+            items={[{ name: m.common.nav.features, href: "/features" }]}
+          />
+          <h1 className="mt-6 text-h1 text-ink">
             {t.pageTitle}
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-ink-3">
