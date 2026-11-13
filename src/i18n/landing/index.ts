@@ -13,6 +13,8 @@ import ramadanRu from "./ramadan-diet-plan/ru";
 import mealPlannerEn from "./meal-planner/en";
 import mealPlannerAr from "./meal-planner/ar";
 import mealPlannerRu from "./meal-planner/ru";
+import arabicCounterEn from "./arabic-calorie-counter/en";
+import arabicCounterAr from "./arabic-calorie-counter/ar";
 
 /**
  * Landing-page copy lives outside the main message bundles because these
@@ -27,6 +29,7 @@ const registry = {
   "muscle-gain-app": { en: muscleEn, ar: muscleAr, ru: muscleRu },
   "ramadan-diet-plan": { en: ramadanEn, ar: ramadanAr, ru: ramadanRu },
   "meal-planner": { en: mealPlannerEn, ar: mealPlannerAr, ru: mealPlannerRu },
+  "arabic-calorie-counter": { en: arabicCounterEn, ar: arabicCounterAr },
 } satisfies Record<string, Partial<Record<Locale, Builder>>>;
 
 export type LandingSlug = keyof typeof registry;
