@@ -166,7 +166,7 @@ export default (f: Facts): ReturnType<typeof en> => ({
     flipBack: "Zum Zurückdrehen tippen",
     showPreview: "{name} – Screen-Vorschau anzeigen",
     hidePreview: "{name} – Screen-Vorschau ausblenden",
-    screenAlt: "Screen: {name}",
+    screenAlt: "Screen „{name}“ in der MyNutriRise-App",
     items: [
       { name: "Essensfotos", desc: "Visuelles Ernährungstagebuch mit jeder Mahlzeit" },
       { name: "Ernährungskalender", desc: "Monatsansicht für deine Beständigkeit" },

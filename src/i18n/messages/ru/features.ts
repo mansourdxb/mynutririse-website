@@ -166,7 +166,7 @@ export default (f: Facts): ReturnType<typeof en> => ({
     flipBack: "Нажми, чтобы перевернуть",
     showPreview: "{name} — показать экран",
     hidePreview: "{name} — скрыть экран",
-    screenAlt: "Экран «{name}»",
+    screenAlt: "Экран «{name}» в приложении MyNutriRise",
     items: [
       { name: "Фото блюд", desc: "Визуальный дневник питания со всеми приёмами пищи" },
       { name: "Календарь питания", desc: "Регулярность по месяцам с первого взгляда" },

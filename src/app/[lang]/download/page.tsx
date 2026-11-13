@@ -13,5 +13,5 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/download">
 export default async function DownloadPage({ params }: PageProps<"/[lang]/download">) {
   const lang = (await params).lang as Locale;
   const { common } = getMessages(lang);
-  return <DownloadRedirect t={common.download} store={common.store} />;
+  return <DownloadRedirect t={common.download} store={common.store} logoAlt={common.nav.logoAlt} />;
 }

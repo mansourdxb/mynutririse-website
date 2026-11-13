@@ -16,6 +16,7 @@ export default (f: Facts): ReturnType<typeof en> => ({
     ogImageAlt: "MyNutriRise — учёт питания и фитнеса для реальной жизни",
   },
   nav: {
+    logoAlt: "Логотип MyNutriRise",
     features: "Возможности",
     tools: "Инструменты",
     customPlan: "Свой план",

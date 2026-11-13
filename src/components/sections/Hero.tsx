@@ -88,7 +88,7 @@ export function Hero({
               aria-hidden="true"
             />
             <div className="anim-float relative">
-              <PhoneMockup>
+              <PhoneMockup priority>
                 <div className="relative aspect-[9/19.5] w-full">
                   <Image
                     src={screenshot(lang, "today")}

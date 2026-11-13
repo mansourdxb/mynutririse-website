@@ -10,7 +10,7 @@ export default (f: Facts): ReturnType<typeof en> => ({
     title: "Seguimiento de nutrición y fitness <hl>para la vida real</hl>",
     lead: "Toma una foto y la IA registra tu comida. Sigue planes de alimentación halal y culturales, haz seguimiento de tu ayuno y tus entrenamientos, y recibe coaching inteligente: todo lo que necesitas para una vida más sana y feliz.",
     quizLink: "¿No sabes por dónde empezar? Obtén tu plan personalizado en 1 minuto →",
-    screenshotAlt: "Panel de MyNutriRise",
+    screenshotAlt: "Pantalla Hoy de MyNutriRise con calorías restantes, macronutrientes y pasos",
     pills: ["Escaneo de comidas con IA", "Dietas halal y culturales", `${f.RECIPES} recetas`],
   },
   pressBar: {
@@ -55,6 +55,7 @@ export default (f: Facts): ReturnType<typeof en> => ({
     ],
   },
   showcase: {
+    screenAlt: "Pantalla de {name} en la app MyNutriRise",
     eyebrow: "Mírala en acción",
     title: "Pantallas preciosas, <hl>posibilidades infinitas</hl>",
     lead: "Cada pantalla, diseñada con cuidado. Descubre la experiencia completa de MyNutriRise.",

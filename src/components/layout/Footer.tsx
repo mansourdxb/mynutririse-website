@@ -48,7 +48,7 @@ export function Footer({ lang, t }: { lang: Locale; t: Messages["common"] }) {
           {/* Brand column */}
           <div className="md:col-span-2">
             <Link href={localePath(lang, "/")} className="flex items-center gap-2">
-              <Image src="/logo.png" alt="" width={28} height={28} className="h-7 w-7" />
+              <Image src="/logo.png" alt={t.nav.logoAlt} width={28} height={28} className="h-7 w-7" />
               <span className="font-display text-lg font-bold tracking-tight text-ink">
                 MyNutriRise
               </span>

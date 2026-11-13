@@ -10,7 +10,7 @@ export default (f: Facts): ReturnType<typeof en> => ({
     title: "Le suivi nutrition et forme <hl>pour la vraie vie</hl>",
     lead: "Prenez une photo et l’IA enregistre votre repas. Suivez des programmes alimentaires halal et des cuisines du monde, suivez votre jeûne et vos entraînements, et profitez d’un coaching intelligent — tout ce qu’il vous faut pour une vie plus saine et plus épanouie.",
     quizLink: "Vous ne savez pas par où commencer ? Obtenez votre programme personnalisé en 1 minute →",
-    screenshotAlt: "Tableau de bord MyNutriRise",
+    screenshotAlt: "Écran Aujourd'hui de MyNutriRise avec calories restantes, macronutriments et pas",
     pills: ["Scan repas par IA", "Halal et cuisines du monde", `${f.RECIPES} recettes`],
   },
   pressBar: {
@@ -55,6 +55,7 @@ export default (f: Facts): ReturnType<typeof en> => ({
     ],
   },
   showcase: {
+    screenAlt: "Écran {name} de l'app MyNutriRise",
     eyebrow: "Découvrez-la en action",
     title: "De beaux écrans, <hl>des possibilités infinies</hl>",
     lead: "Chaque écran est conçu avec soin. Explorez l’expérience MyNutriRise dans son ensemble.",

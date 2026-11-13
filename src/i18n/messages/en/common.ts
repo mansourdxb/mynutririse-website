@@ -15,6 +15,7 @@ export default (f: Facts) => ({
     ogImageAlt: "MyNutriRise — Nutrition & Fitness tracking for real life",
   },
   nav: {
+    logoAlt: "MyNutriRise logo",
     features: "Features",
     tools: "Tools",
     customPlan: "Custom Plan",

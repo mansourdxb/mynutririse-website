@@ -166,7 +166,7 @@ export default (f: Facts): ReturnType<typeof en> => ({
     flipBack: "المس للعودة",
     showPreview: "{name} — عرض معاينة الشاشة",
     hidePreview: "{name} — إخفاء معاينة الشاشة",
-    screenAlt: "شاشة {name}",
+    screenAlt: "شاشة {name} في تطبيق MyNutriRise",
     items: [
       { name: "صور الوجبات", desc: "يوميات طعام مصوّرة لكل وجبة" },
       { name: "تقويم التغذية", desc: "عرض شهري لتتبّع انتظامك" },

@@ -10,7 +10,7 @@ export default (f: Facts): ReturnType<typeof en> => ({
     title: "Ernährungs- und Fitnesstracking <hl>für den echten Alltag</hl>",
     lead: "Foto machen – und die KI trägt deine Mahlzeit ein. Folge halalen und kulturellen Mahlzeitenplänen, tracke Fasten und Trainings und erhalte intelligentes Coaching – alles, was du für ein gesünderes, glücklicheres Leben brauchst.",
     quizLink: "Du weißt nicht, wo du anfangen sollst? Hol dir in 1 Minute deinen persönlichen Plan →",
-    screenshotAlt: "MyNutriRise-Dashboard",
+    screenshotAlt: "MyNutriRise-Tagesansicht mit verbleibenden Kalorien, Makronährstoffen und Schritten",
     pills: ["KI-Mahlzeit-Scan", "Halal & Esskulturen", `${f.RECIPES} Rezepte`],
   },
   pressBar: {
@@ -55,6 +55,7 @@ export default (f: Facts): ReturnType<typeof en> => ({
     ],
   },
   showcase: {
+    screenAlt: "Screen „{name}“ in der MyNutriRise-App",
     eyebrow: "Die App in Aktion",
     title: "Schöne Screens, <hl>unendliche Möglichkeiten</hl>",
     lead: "Jeder Screen mit Liebe zum Detail gestaltet. Entdecke das komplette MyNutriRise-Erlebnis.",

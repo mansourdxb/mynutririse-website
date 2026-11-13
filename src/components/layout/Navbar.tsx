@@ -51,7 +51,7 @@ export function Navbar({ lang, t }: { lang: Locale; t: Messages["common"]["nav"]
         <nav className="container-page flex items-center justify-between py-3.5">
           {/* Logo */}
           <Link href={localePath(lang, "/")} className="flex items-center gap-2">
-            <Image src="/logo.png" alt="" width={28} height={28} className="h-7 w-7" priority />
+            <Image src="/logo.png" alt={t.logoAlt} width={28} height={28} className="h-7 w-7" priority />
             <span className="font-display text-lg font-bold tracking-tight text-ink">
               MyNutriRise
             </span>

@@ -9,7 +9,7 @@ export default (f: Facts) => ({
     title: "Nutrition & Fitness tracking <hl>for real life</hl>",
     lead: "Snap a photo and AI logs your meal. Follow halal and cultural meal plans, track fasting and workouts, and get intelligent coaching — everything you need for a healthier, happier life.",
     quizLink: "Not sure where to start? Get your custom plan in 1 minute →",
-    screenshotAlt: "MyNutriRise Dashboard",
+    screenshotAlt: "MyNutriRise Today screen showing calories left, macronutrients and steps",
     pills: ["AI Meal Scan", "Halal & Cultural Diets", `${f.RECIPES} Recipes`],
   },
   pressBar: {
@@ -54,6 +54,7 @@ export default (f: Facts) => ({
     ],
   },
   showcase: {
+    screenAlt: "{name} screen in the MyNutriRise app",
     eyebrow: "See It In Action",
     title: "Beautiful screens, <hl>endless possibilities</hl>",
     lead: "Every screen designed with care. Explore the complete MyNutriRise experience.",

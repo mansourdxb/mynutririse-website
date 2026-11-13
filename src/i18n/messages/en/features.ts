@@ -165,7 +165,7 @@ export default (f: Facts) => ({
     flipBack: "Tap to flip back",
     showPreview: "{name} — show screen preview",
     hidePreview: "{name} — hide screen preview",
-    screenAlt: "{name} screen",
+    screenAlt: "{name} screen in the MyNutriRise app",
     items: [
       { name: "Meal Photos", desc: "Visual food diary with every meal" },
       { name: "Nutrition Calendar", desc: "Monthly consistency tracking view" },
