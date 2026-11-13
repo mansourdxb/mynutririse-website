@@ -72,6 +72,10 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
         title: "Calculateur de déficit calorique",
         description: "Les calories quotidiennes pour atteindre un poids cible à une date donnée.",
       },
+      bodyFat: {
+        title: "Calculateur de masse grasse",
+        description: "Votre taux de masse grasse au mètre ruban, selon la méthode de l’US Navy.",
+      },
     },
     quiz: {
       title: "Quiz programme personnalisé",
@@ -278,6 +282,37 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
     },
   },
 
+  bodyFat: {
+    metaTitle: "Calcul du taux de masse grasse : méthode US Navy",
+    metaDescription:
+      "Calcul du taux de masse grasse gratuit, méthode US Navy : estimez votre pourcentage de graisse, masse grasse et masse maigre au mètre ruban. Essayez-le.",
+    breadcrumb: "Calculateur de masse grasse",
+    title: "Calculateur de masse grasse",
+    subtitle: "Estimez votre taux de masse grasse avec un mètre ruban et la méthode de l’US Navy, gratuitement et sans inscription.",
+    ctaTitle: "Suivez l’évolution de votre corps",
+    ctaBody: "MyNutriRise enregistre vos repas, vos entraînements et l’évolution de votre poids pour que vous voyiez vos progrès au fil du temps.",
+    calc: {
+      weightOptional: "Poids (kg, facultatif)",
+      neck: "Tour de cou (cm)",
+      waist: "Tour de taille (cm)",
+      hip: "Tour de hanches (cm)",
+      howToMeasureMen: "Cou : juste sous la pomme d’Adam. Taille : au niveau du nombril, après une expiration normale.",
+      howToMeasureWomen: "Cou : juste sous le larynx. Taille : à l’endroit le plus étroit. Hanches : à l’endroit le plus large.",
+      result: "Masse grasse estimée",
+      fatMass: "Masse grasse",
+      leanMass: "Masse maigre",
+      kgValue: "{n} kg",
+      categories: {
+        essential: "Graisse essentielle",
+        athletes: "Athlètes",
+        fitness: "Forme",
+        average: "Moyenne",
+        obese: "Obésité",
+      },
+      empty: "Saisissez votre taille, votre tour de cou et votre tour de taille (et de hanches pour les femmes) pour estimer votre masse grasse.",
+      invalid: "Vérifiez vos mesures : votre tour de taille (plus le tour de hanches pour les femmes) doit être supérieur à votre tour de cou.",
+    },
+  },
 });
 
 export default tools;

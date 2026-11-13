@@ -72,6 +72,10 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
         title: "Calculadora de déficit calórico",
         description: "Calorías diarias para llegar a un peso objetivo en una fecha.",
       },
+      bodyFat: {
+        title: "Calculadora de grasa corporal",
+        description: "Porcentaje de grasa corporal con una cinta métrica, método de la Marina de EE. UU.",
+      },
     },
     quiz: {
       title: "Test de plan personalizado",
@@ -279,6 +283,37 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
     },
   },
 
+  bodyFat: {
+    metaTitle: "Calculadora de grasa corporal: método US Navy (gratis)",
+    metaDescription:
+      "Calculadora de grasa corporal gratis con el método de la Marina de EE. UU.: estima tu porcentaje de grasa, masa grasa y masa magra en segundos. Pruébala.",
+    breadcrumb: "Calculadora de grasa corporal",
+    title: "Calculadora de grasa corporal",
+    subtitle: "Estima tu porcentaje de grasa corporal con una cinta métrica y el método de la Marina de EE. UU.: gratis y sin registro.",
+    ctaTitle: "Sigue cómo cambia tu cuerpo",
+    ctaBody: "MyNutriRise registra tus comidas, tus entrenamientos y la tendencia de tu peso para que veas tu progreso con el tiempo.",
+    calc: {
+      weightOptional: "Peso (kg, opcional)",
+      neck: "Cuello (cm)",
+      waist: "Cintura (cm)",
+      hip: "Caderas (cm)",
+      howToMeasureMen: "Cuello: justo debajo de la nuez. Cintura: a la altura del ombligo, después de soltar el aire con normalidad.",
+      howToMeasureWomen: "Cuello: justo debajo de la laringe. Cintura: en el punto más estrecho. Caderas: en el punto más ancho.",
+      result: "Grasa corporal estimada",
+      fatMass: "Masa grasa",
+      leanMass: "Masa magra",
+      kgValue: "{n} kg",
+      categories: {
+        essential: "Grasa esencial",
+        athletes: "Deportistas",
+        fitness: "En forma",
+        average: "Promedio",
+        obese: "Obesidad",
+      },
+      empty: "Introduce tu altura, tu cuello y tu cintura (y tus caderas si eres mujer) para estimar tu grasa corporal.",
+      invalid: "Revisa tus medidas: tu cintura (más tus caderas si eres mujer) debe ser mayor que tu cuello.",
+    },
+  },
 });
 
 export default tools;

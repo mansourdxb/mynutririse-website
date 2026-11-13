@@ -26,6 +26,7 @@ export const LINK_TAGS: Record<string, string> = {
   tdee: "/tools/tdee-calculator",
   protein: "/tools/protein-calculator",
   deficit: "/tools/calorie-deficit-calculator",
+  bodyfat: "/tools/body-fat-calculator",
   tools: "/tools",
   ifguide: "/blog/intermittent-fasting-16-8-guide",
   aiguide: "/blog/ai-photo-calorie-tracking",

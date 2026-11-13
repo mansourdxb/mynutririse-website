@@ -71,6 +71,10 @@ const tools = (f: Facts) => ({
         title: "Calorie Deficit Calculator",
         description: "Daily calories to reach a goal weight by a date.",
       },
+      bodyFat: {
+        title: "Body Fat Calculator",
+        description: "Body fat percentage from a tape measure, U.S. Navy method.",
+      },
     },
     quiz: {
       title: "Custom Plan Quiz",
@@ -277,6 +281,37 @@ const tools = (f: Facts) => ({
     },
   },
 
+  bodyFat: {
+    metaTitle: "Body Fat Calculator: U.S. Navy Method (Free)",
+    metaDescription:
+      "Free body fat calculator using the U.S. Navy tape-measure method: estimate your body fat percentage, fat mass and lean mass in seconds. Measure yours now.",
+    breadcrumb: "Body Fat Calculator",
+    title: "Body Fat Calculator",
+    subtitle: "Estimate your body fat percentage with a tape measure and the U.S. Navy method — free, no sign-up needed.",
+    ctaTitle: "Track how your body changes",
+    ctaBody: "MyNutriRise logs your meals, workouts and weight trend so you can see your progress over time.",
+    calc: {
+      weightOptional: "Weight (kg, optional)",
+      neck: "Neck (cm)",
+      waist: "Waist (cm)",
+      hip: "Hips (cm)",
+      howToMeasureMen: "Neck: just below the Adam's apple. Waist: at navel level, after breathing out normally.",
+      howToMeasureWomen: "Neck: just below the larynx. Waist: at the narrowest point. Hips: at the widest point.",
+      result: "Estimated body fat",
+      fatMass: "Fat mass",
+      leanMass: "Lean mass",
+      kgValue: "{n} kg",
+      categories: {
+        essential: "Essential fat",
+        athletes: "Athletes",
+        fitness: "Fitness",
+        average: "Average",
+        obese: "Obese",
+      },
+      empty: "Enter your height, neck and waist (and hips for women) to estimate your body fat.",
+      invalid: "Check your measurements: your waist (plus hips for women) must be larger than your neck.",
+    },
+  },
 });
 
 export default tools;

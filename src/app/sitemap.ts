@@ -21,6 +21,7 @@ const pages: Entry[] = [
   { path: "/tools/tdee-calculator", changeFrequency: "monthly", priority: 0.7 },
   { path: "/tools/protein-calculator", changeFrequency: "monthly", priority: 0.7 },
   { path: "/tools/calorie-deficit-calculator", changeFrequency: "monthly", priority: 0.7 },
+  { path: "/tools/body-fat-calculator", changeFrequency: "monthly", priority: 0.7 },
   { path: "/recipes", changeFrequency: "monthly", priority: 0.8 },
   { path: "/about", changeFrequency: "yearly", priority: 0.5 },
   { path: "/press", changeFrequency: "yearly", priority: 0.4 },

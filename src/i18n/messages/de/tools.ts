@@ -72,6 +72,10 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
         title: "Kaloriendefizit-Rechner",
         description: "Tägliche Kalorien, um bis zu einem Datum dein Zielgewicht zu erreichen.",
       },
+      bodyFat: {
+        title: "Körperfettrechner",
+        description: "Körperfettanteil per Maßband, nach der U.S.-Navy-Methode.",
+      },
     },
     quiz: {
       title: "Quiz für deinen Plan",
@@ -278,6 +282,37 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
     },
   },
 
+  bodyFat: {
+    metaTitle: "Körperfettanteil berechnen: Rechner nach U.S. Navy",
+    metaDescription:
+      "Kostenloser Körperfettrechner nach der U.S.-Navy-Methode: Berechne per Maßband deinen Körperfettanteil, deine Fettmasse und fettfreie Masse. Jetzt messen.",
+    breadcrumb: "Körperfettrechner",
+    title: "Körperfettrechner",
+    subtitle: "Schätze deinen Körperfettanteil mit einem Maßband und der U.S.-Navy-Methode – kostenlos und ohne Anmeldung.",
+    ctaTitle: "Verfolge, wie sich dein Körper verändert",
+    ctaBody: "MyNutriRise trägt deine Mahlzeiten, Trainings und deinen Gewichtstrend ein, damit du deinen Fortschritt über die Zeit siehst.",
+    calc: {
+      weightOptional: "Gewicht (kg, optional)",
+      neck: "Hals (cm)",
+      waist: "Taille (cm)",
+      hip: "Hüfte (cm)",
+      howToMeasureMen: "Hals: direkt unterhalb des Adamsapfels. Taille: auf Höhe des Bauchnabels, nach normalem Ausatmen.",
+      howToMeasureWomen: "Hals: direkt unterhalb des Kehlkopfs. Taille: an der schmalsten Stelle. Hüfte: an der breitesten Stelle.",
+      result: "Geschätztes Körperfett",
+      fatMass: "Fettmasse",
+      leanMass: "Fettfreie Masse",
+      kgValue: "{n} kg",
+      categories: {
+        essential: "Essenzielles Fett",
+        athletes: "Athleten",
+        fitness: "Fitness",
+        average: "Durchschnitt",
+        obese: "Adipositas",
+      },
+      empty: "Gib deine Größe, deinen Hals- und Taillenumfang (und als Frau deinen Hüftumfang) ein, um dein Körperfett zu schätzen.",
+      invalid: "Prüfe deine Maße: Deine Taille (bei Frauen plus Hüfte) muss größer sein als dein Hals.",
+    },
+  },
 });
 
 export default tools;

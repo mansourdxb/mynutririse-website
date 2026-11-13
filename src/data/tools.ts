@@ -58,6 +58,13 @@ export const toolPages = [
     related: ["tdee", "protein", "calorie"],
     guides: ["intermittent-fasting-16-8-guide", "ai-photo-calorie-tracking"],
   },
+  {
+    key: "bodyFat",
+    href: "/tools/body-fat-calculator",
+    emoji: "📐",
+    related: ["bmi", "protein", "idealWeight"],
+    guides: ["track-macros-halal-cultural-meals", "ai-photo-calorie-tracking"],
+  },
 ] as const;
 
 export type ToolKey = (typeof toolPages)[number]["key"];
