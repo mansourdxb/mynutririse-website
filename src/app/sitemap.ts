@@ -29,6 +29,7 @@ const pages: Entry[] = [
   { path: "/compare", changeFrequency: "monthly", priority: 0.6 },
   { path: "/compare/mynutririse-vs-myfitnesspal", changeFrequency: "monthly", priority: 0.7 },
   { path: "/compare/mynutririse-vs-lose-it", changeFrequency: "monthly", priority: 0.7 },
+  { path: "/compare/mynutririse-vs-noom", changeFrequency: "monthly", priority: 0.7 },
   { path: "/compare/mynutririse-vs-cal-ai", changeFrequency: "monthly", priority: 0.7 },
   { path: "/quiz", changeFrequency: "monthly", priority: 0.8 },
   { path: "/halal-nutrition-app", changeFrequency: "monthly", priority: 0.9 },

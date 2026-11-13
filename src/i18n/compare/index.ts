@@ -2,6 +2,7 @@ import { factsFor } from "@/data/facts";
 import type { Locale } from "../config";
 import type { CompareContent } from "./types";
 import loseItEn from "./mynutririse-vs-lose-it/en";
+import noomEn from "./mynutririse-vs-noom/en";
 import calAiEn from "./mynutririse-vs-cal-ai/en";
 
 /**
@@ -14,6 +15,7 @@ type Builder = (f: ReturnType<typeof factsFor>) => CompareContent;
 
 const registry = {
   "mynutririse-vs-lose-it": { en: loseItEn },
+  "mynutririse-vs-noom": { en: noomEn },
   "mynutririse-vs-cal-ai": { en: calAiEn },
 } satisfies Record<string, Partial<Record<Locale, Builder>>>;
 

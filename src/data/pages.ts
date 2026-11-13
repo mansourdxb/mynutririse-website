@@ -13,6 +13,7 @@ const PARTIAL_PAGES: Record<string, readonly Locale[]> = {
   "/meal-planner": ["en", "ar", "ru"],
   "/arabic-calorie-counter": ["en", "ar"],
   "/compare/mynutririse-vs-lose-it": ["en"],
+  "/compare/mynutririse-vs-noom": ["en"],
   "/compare/mynutririse-vs-cal-ai": ["en"],
 };
 
