@@ -73,6 +73,15 @@ export const articles = [
     author: "mansour-shaaban",
     reviewedBy: null,
   },
+  {
+    source: "posts",
+    slug: "calories-in-gulf-arabic-dishes",
+    date: "2026-11-13",
+    dateModified: "2026-11-13",
+    emoji: "🍚",
+    author: "mansour-shaaban",
+    reviewedBy: null,
+  },
 ] as const satisfies readonly (ArticleBase & ({ source: "messages"; key: string } | { source: "posts" }))[];
 
 export type Article = (typeof articles)[number];

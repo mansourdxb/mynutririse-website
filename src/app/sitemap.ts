@@ -47,6 +47,7 @@ const pages: Entry[] = [
   { path: "/blog/how-many-calories-to-lose-weight", changeFrequency: "monthly", priority: 0.7 },
   { path: "/blog/how-much-protein-to-build-muscle", changeFrequency: "monthly", priority: 0.7 },
   { path: "/blog/ramadan-weight-loss-without-losing-muscle", changeFrequency: "monthly", priority: 0.7 },
+  { path: "/blog/calories-in-gulf-arabic-dishes", changeFrequency: "monthly", priority: 0.7 },
   { path: "/privacy", changeFrequency: "yearly", priority: 0.3 },
   { path: "/terms", changeFrequency: "yearly", priority: 0.3 },
 ];

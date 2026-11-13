@@ -10,6 +10,8 @@ import proteinForMuscleEn from "./how-much-protein-to-build-muscle/en";
 import proteinForMuscleAr from "./how-much-protein-to-build-muscle/ar";
 import ramadanMuscleEn from "./ramadan-weight-loss-without-losing-muscle/en";
 import ramadanMuscleAr from "./ramadan-weight-loss-without-losing-muscle/ar";
+import gulfDishesEn from "./calories-in-gulf-arabic-dishes/en";
+import gulfDishesAr from "./calories-in-gulf-arabic-dishes/ar";
 
 export type { PostContent };
 type Builder = (f: ReturnType<typeof factsFor>) => PostContent;
@@ -19,6 +21,7 @@ const registry: Record<string, Partial<Record<Locale, Builder>>> = {
   "how-many-calories-to-lose-weight": { en: caloriesToLoseEn, ar: caloriesToLoseAr },
   "how-much-protein-to-build-muscle": { en: proteinForMuscleEn, ar: proteinForMuscleAr },
   "ramadan-weight-loss-without-losing-muscle": { en: ramadanMuscleEn, ar: ramadanMuscleAr },
+  "calories-in-gulf-arabic-dishes": { en: gulfDishesEn, ar: gulfDishesAr },
 };
 
 /** An article's copy in a language, or null if it is not published there. */
