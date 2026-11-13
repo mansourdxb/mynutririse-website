@@ -2,6 +2,7 @@ import { factsFor } from "@/data/facts";
 import type { Locale } from "../config";
 import type { CompareContent } from "./types";
 import loseItEn from "./mynutririse-vs-lose-it/en";
+import calAiEn from "./mynutririse-vs-cal-ai/en";
 
 /**
  * Competitor comparison pages that exist only in some languages (see
@@ -13,6 +14,7 @@ type Builder = (f: ReturnType<typeof factsFor>) => CompareContent;
 
 const registry = {
   "mynutririse-vs-lose-it": { en: loseItEn },
+  "mynutririse-vs-cal-ai": { en: calAiEn },
 } satisfies Record<string, Partial<Record<Locale, Builder>>>;
 
 export type CompareSlug = keyof typeof registry;

@@ -13,6 +13,7 @@ const PARTIAL_PAGES: Record<string, readonly Locale[]> = {
   "/meal-planner": ["en", "ar", "ru"],
   "/arabic-calorie-counter": ["en", "ar"],
   "/compare/mynutririse-vs-lose-it": ["en"],
+  "/compare/mynutririse-vs-cal-ai": ["en"],
 };
 
 export function pageLocales(path: string): readonly Locale[] {
