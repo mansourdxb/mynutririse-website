@@ -10,7 +10,19 @@ const PREFIXED = ["ar", "de", "es", "fr", "ru"];
  */
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
-  const first = pathname.split("/")[1] ?? "";
+  const parts = pathname.split("/");
+  const first = parts[1] ?? "";
+
+  // Embeds: /embed/tools/<name>?lang=<lang> -> /embed/<lang>/tools/<name>.
+  if (first === "embed") {
+    if (parts[2] !== "tools") return NextResponse.next();
+    const requested = request.nextUrl.searchParams.get("lang") ?? "";
+    const lang = PREFIXED.includes(requested) ? requested : "en";
+    const url = request.nextUrl.clone();
+    url.pathname = `/embed/${lang}${pathname.slice("/embed".length)}`;
+    url.search = "";
+    return NextResponse.rewrite(url);
+  }
 
   if (PREFIXED.includes(first)) return NextResponse.next();
 
