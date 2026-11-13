@@ -300,6 +300,7 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
       rangeValue: "{min}–{max} кг",
       devine: "Формула Девайна",
       robinson: "Формула Робинсона",
+      miller: "Формула Миллера",
       formulaValue: "{value} кг",
       empty: "Введи рост, чтобы увидеть примерный диапазон идеального веса.",
     },

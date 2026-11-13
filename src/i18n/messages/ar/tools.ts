@@ -300,6 +300,7 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
       rangeValue: "{min}–{max} كغ",
       devine: "معادلة Devine",
       robinson: "معادلة Robinson",
+      miller: "معادلة ميلر",
       formulaValue: "{value} كغ",
       empty: "أدخل طولك لترى نطاق وزنك المثالي التقديري.",
     },

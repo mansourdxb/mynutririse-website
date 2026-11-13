@@ -300,6 +300,7 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
       rangeValue: "{min}–{max} kg",
       devine: "Fórmula de Devine",
       robinson: "Fórmula de Robinson",
+      miller: "Fórmula de Miller",
       formulaValue: "{value} kg",
       empty: "Introduce tu altura para ver tu rango de peso ideal estimado.",
     },

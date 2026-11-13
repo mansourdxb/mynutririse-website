@@ -299,6 +299,7 @@ const tools = (f: Facts) => ({
       rangeValue: "{min}–{max} kg",
       devine: "Devine formula",
       robinson: "Robinson formula",
+      miller: "Miller formula",
       formulaValue: "{value} kg",
       empty: "Enter your height to see your estimated ideal weight range.",
     },

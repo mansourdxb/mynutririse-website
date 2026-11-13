@@ -3,6 +3,7 @@
 import { useState } from "react";
 import type { Messages } from "@/i18n/messages";
 import { LIMITS, NumberField, TogglePills, inRange } from "./shared";
+import { mifflinBmr } from "@/lib/calc";
 
 export function BmrCalculator({
   t,
@@ -26,7 +27,7 @@ export function BmrCalculator({
     inRange(h, LIMITS.heightCm) &&
     inRange(w, LIMITS.weightKg)
   ) {
-    bmr = Math.round(10 * w + 6.25 * h - 5 * a + (sex === "male" ? 5 : -161));
+    bmr = Math.round(mifflinBmr(sex, a, h, w));
   }
 
   return (
