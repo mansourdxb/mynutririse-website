@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import type { ReactNode } from "react";
 import Link from "next/link";
+import { Calculator } from "./Calculator";
+import { EmbedButton } from "./EmbedButton";
+import { embedSnippet } from "@/lib/embed";
+import { fill } from "@/i18n/rich";
 import { articles, type ArticleInfo } from "@/app/[lang]/blog/articles";
 import { articleText } from "@/i18n/posts";
 import { ContentBlocks, type Block } from "@/components/content/ContentBlocks";
@@ -30,16 +33,7 @@ const cardClass =
  * Shared layout for every calculator page: tool, explainer, FAQ (+ FAQPage),
  * disclaimer, related tools and guides, and a download CTA.
  */
-export function ToolPage({
-  lang,
-  toolKey,
-  children,
-}: {
-  lang: Locale;
-  toolKey: GuideKey;
-  /** The interactive calculator. */
-  children: ReactNode;
-}) {
+export function ToolPage({ lang, toolKey }: { lang: Locale; toolKey: GuideKey }) {
   const { tools, toolGuides, common } = getMessages(lang);
   const t = tools[toolKey];
   const g = toolGuides[toolKey];
@@ -82,7 +76,13 @@ export function ToolPage({
         <h1 className="mt-6 text-center text-h1 text-ink">{t.title}</h1>
         <p className="mx-auto mt-4 max-w-xl text-center text-lead text-ink-3">{t.subtitle}</p>
 
-        <div className="mt-10">{children}</div>
+        <div className="mt-10">
+          <Calculator toolKey={toolKey} lang={lang} />
+          <EmbedButton
+            snippet={embedSnippet(lang, page.href, fill(s.embed.iframeTitle, { tool: t.title }))}
+            t={s.embed}
+          />
+        </div>
 
         <div className="mt-12 space-y-4 leading-7 text-ink-2">
           <ContentBlocks lang={lang} blocks={g.blocks as readonly Block[]} sourcesHeading={s.sourcesHeading} />

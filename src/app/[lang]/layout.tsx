@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
-import { IBM_Plex_Sans_Arabic, Inter, Manrope } from "next/font/google";
+import { inter, manrope, plexArabic } from "../fonts";
 import "../globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -34,32 +34,6 @@ const organizationJsonLd = {
   // URLs here once confirmed. None exist in the codebase, so none are guessed.
   sameAs: [APP_STORE_URL, PLAY_STORE_URL],
 };
-
-// Not preloaded: preload would fetch the Latin and Cyrillic files on every
-// page (Arabic pages use neither), competing with the LCP image. Browsers
-// still fetch only the subsets a page renders, and the size-adjusted
-// fallback keeps layout shift near zero while they load.
-const inter = Inter({
-  subsets: ["latin", "cyrillic"],
-  variable: "--font-body",
-  display: "swap",
-  preload: false,
-});
-
-const manrope = Manrope({
-  subsets: ["latin", "cyrillic"],
-  variable: "--font-heading",
-  display: "swap",
-  preload: false,
-});
-
-const plexArabic = IBM_Plex_Sans_Arabic({
-  subsets: ["arabic", "latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-arabic",
-  display: "swap",
-  preload: false,
-});
 
 // Pre-render every language; any other first segment is a 404.
 export const dynamicParams = false;
