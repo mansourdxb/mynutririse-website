@@ -154,6 +154,19 @@ export default (f: Facts): ReturnType<typeof en> => ({
         type: "p",
         text: "Fotos sind ideal für angerichtete Mahlzeiten. Bei verpackten Lebensmitteln ist ein Barcode-Scan schneller und exakt. Für einen schnellen Kaffee oder eine Handvoll Datteln gewinnt die Spracheingabe („zwei Datteln und ein Latte“). Am besten kombinierst du alle drei.",
       },
+      {
+        type: "sources",
+        sources: [
+          {
+            label: "Boushey CJ et al. New mobile methods for dietary assessment: review of image-assisted and image-based dietary assessment methods. Proc Nutr Soc, 2017.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/27938425/",
+          },
+          {
+            label: "Burke LE et al. Self-monitoring in weight loss: a systematic review of the literature. J Am Diet Assoc, 2011.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/21185970/",
+          },
+        ],
+      },
     ],
   },
   halalMacros: {

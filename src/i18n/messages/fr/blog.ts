@@ -154,6 +154,19 @@ export default (f: Facts): ReturnType<typeof en> => ({
         type: "p",
         text: "Les photos sont idéales pour les repas servis à l’assiette. Pour les produits emballés, le scan du code-barres est plus rapide et exact. Pour un café vite pris ou une poignée de dattes, la saisie vocale (« deux dattes et un latte ») l’emporte. La meilleure méthode combine les trois.",
       },
+      {
+        type: "sources",
+        sources: [
+          {
+            label: "Boushey CJ et al. New mobile methods for dietary assessment: review of image-assisted and image-based dietary assessment methods. Proc Nutr Soc, 2017.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/27938425/",
+          },
+          {
+            label: "Burke LE et al. Self-monitoring in weight loss: a systematic review of the literature. J Am Diet Assoc, 2011.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/21185970/",
+          },
+        ],
+      },
     ],
   },
   halalMacros: {

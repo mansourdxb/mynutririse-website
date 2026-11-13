@@ -153,6 +153,19 @@ export default (f: Facts) => ({
         type: "p",
         text: 'Photos are perfect for plated meals. For packaged foods, a barcode scan is faster and exact. For a quick coffee or a handful of dates, voice logging ("two dates and a latte") wins. The best workflow mixes all three.',
       },
+      {
+        type: "sources",
+        sources: [
+          {
+            label: "Boushey CJ et al. New mobile methods for dietary assessment: review of image-assisted and image-based dietary assessment methods. Proc Nutr Soc, 2017.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/27938425/",
+          },
+          {
+            label: "Burke LE et al. Self-monitoring in weight loss: a systematic review of the literature. J Am Diet Assoc, 2011.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/21185970/",
+          },
+        ],
+      },
     ],
   },
   halalMacros: {
