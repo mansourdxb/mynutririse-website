@@ -46,7 +46,8 @@ export default async function ComparePage({
           lang={lang}
           t={common.breadcrumbs}
           items={[
-            { name: t.breadcrumb, href: "/compare/mynutririse-vs-myfitnesspal" },
+            { name: t.index.breadcrumb, href: "/compare" },
+            { name: t.title, href: "/compare/mynutririse-vs-myfitnesspal" },
           ]}
         />
         <h1 className="mt-6 text-center text-h1 text-ink">{t.title}</h1>

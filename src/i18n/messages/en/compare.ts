@@ -94,4 +94,13 @@ export default (f: Facts) => ({
     quiz: "Try the <link>1-minute plan quiz</link> to see what your plan would look like.",
   },
   ctaTitle: "Track the food you actually eat",
+  index: {
+    breadcrumb: "Compare",
+    metaTitle: "Compare Calorie Counter Apps: MyNutriRise vs Others",
+    metaDescription: "Honest comparisons of MyNutriRise with MyFitnessPal and other calorie counter apps: features, pricing, languages and where each app is stronger. Read now.",
+    title: "Compare MyNutriRise with other apps",
+    intro: "Honest, sourced comparisons with other calorie counter and diet apps, including where they are stronger.",
+    lastChecked: "Last checked:",
+    sourcesNote: "Details about other apps come from their official store listings above, last checked on",
+  },
 });
