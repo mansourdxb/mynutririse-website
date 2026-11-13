@@ -36,6 +36,20 @@ export function screenshot(lang: Locale, name: string): string {
   return `/screenshots/${lang}/${name}.webp`;
 }
 
+/**
+ * Absolute URL for an already-localized path. The site root is written without
+ * a trailing slash ("https://www.mynutririse.com"), the form Next.js emits for
+ * canonical/og:url, so sitemap, hreflang, canonical and JSON-LD all match.
+ */
+export function siteUrl(localizedPath: string): string {
+  return localizedPath === "/" ? BASE_URL : `${BASE_URL}${localizedPath}`;
+}
+
+/** Absolute URL for a page in a language: absoluteUrl("ar", "/about"). */
+export function absoluteUrl(lang: Locale, path: string): string {
+  return siteUrl(localePath(lang, path));
+}
+
 export function isLocale(value: string): value is Locale {
   return (locales as readonly string[]).includes(value);
 }

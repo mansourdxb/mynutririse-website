@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { BASE_URL, locales, localePath } from "@/i18n/config";
+import { absoluteUrl, locales } from "@/i18n/config";
 import { languageAlternates } from "@/i18n/metadata";
 
 type Entry = {
@@ -37,7 +37,7 @@ const pages: Entry[] = [
 export default function sitemap(): MetadataRoute.Sitemap {
   return pages.flatMap(({ path, changeFrequency, priority }) =>
     locales.map((lang) => ({
-      url: `${BASE_URL}${localePath(lang, path)}`,
+      url: absoluteUrl(lang, path),
       changeFrequency,
       priority,
       alternates: { languages: languageAlternates(path) },

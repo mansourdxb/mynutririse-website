@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import {
-  BASE_URL,
+  absoluteUrl,
   defaultLocale,
   locales,
   localePath,
@@ -12,8 +12,8 @@ import {
 /** hreflang alternates for a page: all six languages plus x-default (English). */
 export function languageAlternates(path: string): Record<string, string> {
   const languages: Record<string, string> = {};
-  for (const l of locales) languages[l] = `${BASE_URL}${localePath(l, path)}`;
-  languages["x-default"] = `${BASE_URL}${localePath(defaultLocale, path)}`;
+  for (const l of locales) languages[l] = absoluteUrl(l, path);
+  languages["x-default"] = absoluteUrl(defaultLocale, path);
   return languages;
 }
 
@@ -73,7 +73,7 @@ export function webApplicationJsonLd(
     "@type": "WebApplication",
     name,
     description,
-    url: `${BASE_URL}${localePath(lang, path)}`,
+    url: absoluteUrl(lang, path),
     inLanguage: lang,
     applicationCategory: "HealthApplication",
     operatingSystem: "Any",

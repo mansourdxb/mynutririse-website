@@ -10,7 +10,7 @@ import { Community } from "@/components/sections/Community";
 import { HomeFaq } from "@/components/sections/HomeFaq";
 import { Premium } from "@/components/sections/Premium";
 import { CTA } from "@/components/sections/CTA";
-import { BASE_URL, localePath, type Locale } from "@/i18n/config";
+import { absoluteUrl, type Locale } from "@/i18n/config";
 import { pageMetadata } from "@/i18n/metadata";
 import { getMessages } from "@/i18n/messages";
 
@@ -36,7 +36,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
       price: "0",
       priceCurrency: "USD",
     },
-    url: `${BASE_URL}${localePath(lang, "/")}`,
+    url: absoluteUrl(lang, "/"),
     installUrl: "https://apps.apple.com/app/mynutririse/id6764006876",
   };
 

@@ -4,7 +4,7 @@ import { ArticleCta } from "./ArticleCta";
 import { articles, type ArticleKey } from "./articles";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
-import { BASE_URL, localePath, type Locale } from "@/i18n/config";
+import { BASE_URL, absoluteUrl, localePath, type Locale } from "@/i18n/config";
 import { pageMetadata } from "@/i18n/metadata";
 import { getMessages } from "@/i18n/messages";
 import { rich } from "@/i18n/rich";
@@ -72,7 +72,7 @@ export function ArticlePage({
     dateModified,
     author: { "@id": `${BASE_URL}/#organization` },
     publisher: { "@id": `${BASE_URL}/#organization` },
-    mainEntityOfPage: `${BASE_URL}${localePath(lang, path)}`,
+    mainEntityOfPage: absoluteUrl(lang, path),
   };
 
   const blocks: readonly Block[] = t.blocks;
