@@ -7,6 +7,9 @@ import weightLossRu from "./weight-loss-app/ru";
 import muscleEn from "./muscle-gain-app/en";
 import muscleAr from "./muscle-gain-app/ar";
 import muscleRu from "./muscle-gain-app/ru";
+import ramadanEn from "./ramadan-diet-plan/en";
+import ramadanAr from "./ramadan-diet-plan/ar";
+import ramadanRu from "./ramadan-diet-plan/ru";
 
 /**
  * Landing-page copy lives outside the main message bundles because these
@@ -19,6 +22,7 @@ type Builder = (f: ReturnType<typeof factsFor>) => LandingContent;
 const registry = {
   "weight-loss-app": { en: weightLossEn, ar: weightLossAr, ru: weightLossRu },
   "muscle-gain-app": { en: muscleEn, ar: muscleAr, ru: muscleRu },
+  "ramadan-diet-plan": { en: ramadanEn, ar: ramadanAr, ru: ramadanRu },
 } satisfies Record<string, Partial<Record<Locale, Builder>>>;
 
 export type LandingSlug = keyof typeof registry;

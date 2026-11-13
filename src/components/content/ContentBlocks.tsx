@@ -35,6 +35,7 @@ export const LINK_TAGS: Record<string, string> = {
   halal: "/halal-nutrition-app",
   weightloss: "/weight-loss-app",
   muscle: "/muscle-gain-app",
+  ramadan: "/ramadan-diet-plan",
   recipes: "/recipes",
   quiz: "/quiz",
   download: "/download",

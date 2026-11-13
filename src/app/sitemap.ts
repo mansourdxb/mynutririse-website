@@ -31,6 +31,7 @@ const pages: Entry[] = [
   { path: "/halal-nutrition-app", changeFrequency: "monthly", priority: 0.9 },
   { path: "/weight-loss-app", changeFrequency: "monthly", priority: 0.9 },
   { path: "/muscle-gain-app", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/ramadan-diet-plan", changeFrequency: "monthly", priority: 0.9 },
   { path: "/download", changeFrequency: "yearly", priority: 0.5 },
   { path: "/blog", changeFrequency: "weekly", priority: 0.7 },
   { path: "/blog/intermittent-fasting-16-8-guide", changeFrequency: "monthly", priority: 0.6 },
