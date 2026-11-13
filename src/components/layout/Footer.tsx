@@ -2,10 +2,20 @@ import Image from "next/image";
 import Link from "next/link";
 import { AppStoreButton } from "@/components/ui/Button";
 import { localePath, type Locale } from "@/i18n/config";
+import { toolPages } from "@/data/tools";
 import type { Messages } from "@/i18n/messages";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 
-export function Footer({ lang, t }: { lang: Locale; t: Messages["common"] }) {
+export function Footer({
+  lang,
+  t,
+  tools,
+}: {
+  lang: Locale;
+  t: Messages["common"];
+  /** Heading and calculator names for the "Free tools" column. */
+  tools: { heading: string; cards: Messages["tools"]["index"]["cards"] };
+}) {
   const f = t.footer;
   const footerColumns = [
     {
@@ -29,6 +39,10 @@ export function Footer({ lang, t }: { lang: Locale; t: Messages["common"] }) {
       ],
     },
     {
+      title: tools.heading,
+      links: toolPages.map((p) => ({ label: tools.cards[p.key].title, href: p.href })),
+    },
+    {
       title: f.company,
       links: [
         { label: f.about, href: "/about" },
@@ -44,7 +58,7 @@ export function Footer({ lang, t }: { lang: Locale; t: Messages["common"] }) {
   return (
     <footer className="border-t border-line bg-surface text-ink-3">
       <div className="container-page py-16 sm:py-20">
-        <div className="grid gap-12 md:grid-cols-5">
+        <div className="grid gap-12 md:grid-cols-6">
           {/* Brand column */}
           <div className="md:col-span-2">
             <Link href={localePath(lang, "/")} className="flex items-center gap-2">

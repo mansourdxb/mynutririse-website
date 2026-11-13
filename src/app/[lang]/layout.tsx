@@ -109,7 +109,8 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
   const { lang } = await params;
   if (!isLocale(lang)) notFound();
   const locale: Locale = lang;
-  const t = getMessages(locale).common;
+  const messages = getMessages(locale);
+  const t = messages.common;
 
   return (
     <html
@@ -126,7 +127,11 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
         <JsonLd data={organizationJsonLd} />
         <Navbar lang={locale} t={t.nav} />
         <main className="flex-1">{children}</main>
-        <Footer lang={locale} t={t} />
+        <Footer
+          lang={locale}
+          t={t}
+          tools={{ heading: messages.home.resources.toolsEyebrow, cards: messages.tools.index.cards }}
+        />
       </body>
     </html>
   );
