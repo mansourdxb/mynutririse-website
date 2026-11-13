@@ -29,7 +29,7 @@ export function HomeResources({
         <div>
           <p className="eyebrow mb-3">{t.toolsEyebrow}</p>
           <h2 className="text-h2 text-ink">{t.toolsTitle}</h2>
-          <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+          <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {toolPages.map((tool) => (
               <li key={tool.href}>
                 <Link href={localePath(lang, tool.href)} className={cardClass}>

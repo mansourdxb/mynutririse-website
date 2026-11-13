@@ -10,6 +10,9 @@ export const LIMITS = {
   weightKg: [30, 300],
   weightLb: [66, 660],
   calories: [800, 10000],
+  neckCm: [20, 70],
+  waistCm: [40, 200],
+  hipCm: [50, 200],
 } as const;
 
 export type Range = readonly [number, number];

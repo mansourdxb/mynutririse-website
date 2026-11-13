@@ -5,6 +5,7 @@ import about from "./about";
 import home from "./home";
 import features from "./features";
 import tools from "./tools";
+import toolGuides from "./guides";
 import blog from "./blog";
 import halal from "./halal";
 import compare from "./compare";
@@ -21,6 +22,7 @@ const de = (f: Facts): Messages => ({
   home: home(f),
   features: features(f),
   tools: tools(f),
+  toolGuides: toolGuides(f),
   blog: blog(f),
   halal: halal(f),
   compare: compare(f),

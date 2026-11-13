@@ -3,12 +3,13 @@
 import { useState } from "react";
 import type { Messages } from "@/i18n/messages";
 import { LIMITS, NumberField, TogglePills, inRange } from "./shared";
+import { bmiCategory, bmiImperial, bmiMetric } from "@/lib/calc";
 
 const categories = [
-  { max: 18.5, key: "underweight", color: "text-blue-600 dark:text-blue-400", bg: "bg-blue-50 dark:bg-blue-400/10" },
-  { max: 25, key: "healthy", color: "text-emerald-600 dark:text-emerald-400", bg: "bg-emerald-50 dark:bg-emerald-400/10" },
-  { max: 30, key: "overweight", color: "text-amber-600 dark:text-amber-400", bg: "bg-amber-50 dark:bg-amber-400/10" },
-  { max: Infinity, key: "obese", color: "text-rose-600 dark:text-rose-400", bg: "bg-rose-50 dark:bg-rose-400/10" },
+  { key: "underweight", color: "text-blue-600 dark:text-blue-400", bg: "bg-blue-50 dark:bg-blue-400/10" },
+  { key: "healthy", color: "text-emerald-600 dark:text-emerald-400", bg: "bg-emerald-50 dark:bg-emerald-400/10" },
+  { key: "overweight", color: "text-amber-600 dark:text-amber-400", bg: "bg-amber-50 dark:bg-amber-400/10" },
+  { key: "obese", color: "text-rose-600 dark:text-rose-400", bg: "bg-rose-50 dark:bg-rose-400/10" },
 ] as const;
 
 export function BmiCalculator({
@@ -30,13 +31,10 @@ export function BmiCalculator({
 
   let bmi: number | null = null;
   if (inRange(h, heightLimits) && inRange(w, weightLimits)) {
-    bmi =
-      unit === "metric"
-        ? w / Math.pow(h / 100, 2)
-        : (703 * w) / Math.pow(h, 2);
+    bmi = unit === "metric" ? bmiMetric(h, w) : bmiImperial(h, w);
   }
 
-  const category = bmi ? categories.find((c) => (bmi as number) < c.max) : null;
+  const category = bmi ? categories.find((c) => c.key === bmiCategory(bmi as number)) : null;
 
   return (
     <div className="card p-6 sm:p-8">

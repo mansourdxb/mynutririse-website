@@ -5,6 +5,7 @@ import { localePath, type Locale } from "@/i18n/config";
 import type { Messages } from "@/i18n/messages";
 import { fill, rich } from "@/i18n/rich";
 import { LIMITS, NumberField, inRange } from "./shared";
+import { macroGrams } from "@/lib/calc";
 
 const splits = [
   { id: "balanced", p: 30, c: 40, f: 30 },
@@ -31,9 +32,10 @@ export function MacroCalculator({
   const split = splits.find((s) => s.id === splitId)!;
   const valid = inRange(cal, LIMITS.calories);
 
-  const protein = valid ? Math.round((cal * split.p) / 100 / 4) : null;
-  const carbs = valid ? Math.round((cal * split.c) / 100 / 4) : null;
-  const fat = valid ? Math.round((cal * split.f) / 100 / 9) : null;
+  const grams = valid ? macroGrams(cal, split) : null;
+  const protein = grams?.protein ?? null;
+  const carbs = grams?.carbs ?? null;
+  const fat = grams?.fat ?? null;
 
   return (
     <div className="card p-6 sm:p-8">

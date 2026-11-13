@@ -9,9 +9,10 @@ import {
   inRange,
   inputClass,
 } from "./shared";
+import { ACTIVITY_FACTORS, calorieTargets, mifflinBmr, tdee } from "@/lib/calc";
 
 // Labels come from t.activityLevels, in the same order.
-const activityLevels = [1.2, 1.375, 1.55, 1.725, 1.9];
+const activityLevels = ACTIVITY_FACTORS;
 
 export function CalorieCalculator({
   t,
@@ -24,7 +25,7 @@ export function CalorieCalculator({
   const [age, setAge] = useState("");
   const [height, setHeight] = useState("");
   const [weight, setWeight] = useState("");
-  const [activity, setActivity] = useState(1.375);
+  const [activity, setActivity] = useState<number>(ACTIVITY_FACTORS[1]);
 
   const a = parseFloat(age);
   const h = parseFloat(height);
@@ -36,10 +37,10 @@ export function CalorieCalculator({
     inRange(h, LIMITS.heightCm) &&
     inRange(w, LIMITS.weightKg)
   ) {
-    // Mifflin–St Jeor equation (metric)
-    const bmr = 10 * w + 6.25 * h - 5 * a + (sex === "male" ? 5 : -161);
-    maintenance = Math.round(bmr * activity);
+    maintenance = Math.round(tdee(mifflinBmr(sex, a, h, w), activity));
   }
+
+  const targets = maintenance ? calorieTargets(maintenance, sex) : null;
 
   return (
     <div className="card p-6 sm:p-8">
@@ -100,14 +101,14 @@ export function CalorieCalculator({
         </select>
       </label>
 
-      {maintenance ? (
+      {targets ? (
         <div className="mt-6 grid gap-3 sm:grid-cols-3">
           <div className="rounded-2xl bg-blue-50 dark:bg-blue-400/10 p-5 text-center">
             <p className="text-xs font-medium uppercase tracking-wide text-ink-2">
               {t.lose}
             </p>
             <p className="mt-1 text-2xl font-bold text-blue-600 dark:text-blue-400">
-              {Math.max(sex === "male" ? 1500 : 1200, maintenance - 500).toLocaleString()}
+              {targets.lose.toLocaleString()}
             </p>
             <p className="text-xs text-ink-3">{s.kcalPerDay}</p>
           </div>
@@ -116,7 +117,7 @@ export function CalorieCalculator({
               {t.maintain}
             </p>
             <p className="mt-1 text-2xl font-bold text-emerald-600 dark:text-emerald-400">
-              {maintenance.toLocaleString()}
+              {targets.maintain.toLocaleString()}
             </p>
             <p className="text-xs text-ink-3">{s.kcalPerDay}</p>
           </div>
@@ -125,7 +126,7 @@ export function CalorieCalculator({
               {t.gain}
             </p>
             <p className="mt-1 text-2xl font-bold text-amber-600 dark:text-amber-400">
-              {(maintenance + 300).toLocaleString()}
+              {targets.gain.toLocaleString()}
             </p>
             <p className="text-xs text-ink-3">{s.kcalPerDay}</p>
           </div>
