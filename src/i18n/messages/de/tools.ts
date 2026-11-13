@@ -212,7 +212,7 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
       {
         question: "Wie viele Kalorien sollte ich zum Abnehmen essen?",
         answer:
-          "Ein Defizit von etwa 500 kcal unter deinem Erhaltungsbedarf führt zu rund 0,5 kg (1 lb) Gewichtsverlust pro Woche. Ermittle mit dem Rechner oben deinen Erhaltungsbedarf und zieh 500 ab – geh aber ohne ärztliche Begleitung nicht unter 1.200 kcal/Tag.",
+          "Ein Defizit von etwa 500 kcal unter deinem Erhaltungsbedarf führt zu rund 0,5 kg (1 lb) Gewichtsverlust pro Woche. Ermittle mit dem Rechner oben deinen Erhaltungsbedarf und zieh 500 ab – geh aber ohne ärztliche Begleitung nicht unter 1.200 kcal/Tag (Frauen) bzw. 1.500 kcal/Tag (Männer).",
       },
       {
         question: "Welche Formel nutzt dieser Kalorienrechner?",

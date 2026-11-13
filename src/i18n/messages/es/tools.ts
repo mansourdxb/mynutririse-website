@@ -212,7 +212,7 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
       {
         question: "¿Cuántas calorías debo comer para bajar de peso?",
         answer:
-          "Un déficit de unas 500 kcal por debajo de tu nivel de mantenimiento supone perder aproximadamente 0,5 kg (1 lb) por semana. Usa la calculadora de arriba para conocer tus calorías de mantenimiento y réstale 500, pero evita bajar de 1.200 kcal/día sin supervisión médica.",
+          "Un déficit de unas 500 kcal por debajo de tu nivel de mantenimiento supone perder aproximadamente 0,5 kg (1 lb) por semana. Usa la calculadora de arriba para conocer tus calorías de mantenimiento y réstale 500, pero evita bajar de 1.200 kcal/día en mujeres o de 1.500 kcal/día en hombres sin supervisión médica.",
       },
       {
         question: "¿Qué fórmula usa esta calculadora de calorías?",

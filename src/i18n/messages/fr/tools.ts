@@ -212,7 +212,7 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
       {
         question: "Combien de calories manger pour perdre du poids ?",
         answer:
-          "Un déficit d’environ 500 kcal par rapport à vos besoins d’entretien entraîne une perte d’environ 0,5 kg (1 lb) par semaine. Utilisez le calculateur ci-dessus pour connaître vos besoins d’entretien, puis retirez 500 kcal, sans descendre sous 1 200 kcal/jour sans avis médical.",
+          "Un déficit d’environ 500 kcal par rapport à vos besoins d’entretien entraîne une perte d’environ 0,5 kg (1 lb) par semaine. Utilisez le calculateur ci-dessus pour connaître vos besoins d’entretien, puis retirez 500 kcal, sans descendre sous 1 200 kcal/jour pour une femme ou 1 500 kcal/jour pour un homme sans avis médical.",
       },
       {
         question: "Quelle formule ce calculateur de calories utilise-t-il ?",

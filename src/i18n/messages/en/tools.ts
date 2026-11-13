@@ -211,7 +211,7 @@ const tools = (f: Facts) => ({
       {
         question: "How many calories should I eat to lose weight?",
         answer:
-          "A deficit of about 500 kcal below your maintenance level leads to roughly 0.5 kg (1 lb) of weight loss per week. Use the calculator above to find your maintenance calories, then subtract 500 — but avoid going below 1,200 kcal/day without medical guidance.",
+          "A deficit of about 500 kcal below your maintenance level leads to roughly 0.5 kg (1 lb) of weight loss per week. Use the calculator above to find your maintenance calories, then subtract 500 — but avoid going below 1,200 kcal/day for women or 1,500 kcal/day for men without medical guidance.",
       },
       {
         question: "What formula does this calorie calculator use?",
