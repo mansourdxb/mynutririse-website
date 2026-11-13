@@ -10,6 +10,7 @@ const PARTIAL_PAGES: Record<string, readonly Locale[]> = {
   "/weight-loss-app": ["en", "ar", "ru"],
   "/muscle-gain-app": ["en", "ar", "ru"],
   "/ramadan-diet-plan": ["en", "ar", "ru"],
+  "/meal-planner": ["en", "ar", "ru"],
 };
 
 export function pageLocales(path: string): readonly Locale[] {
