@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
+import { hasPage } from "@/data/pages";
 import { localePath, type Locale } from "@/i18n/config";
 import { rich } from "@/i18n/rich";
 
@@ -32,6 +33,9 @@ export const LINK_TAGS: Record<string, string> = {
   aiguide: "/blog/ai-photo-calorie-tracking",
   macroguide: "/blog/track-macros-halal-cultural-meals",
   halal: "/halal-nutrition-app",
+  weightloss: "/weight-loss-app",
+  muscle: "/muscle-gain-app",
+  ramadan: "/ramadan-diet-plan",
   recipes: "/recipes",
   quiz: "/quiz",
   download: "/download",
@@ -46,6 +50,8 @@ export function richText(lang: Locale, text: string): ReactNode {
     em: (c) => <em>{c}</em>,
   };
   for (const [tag, href] of Object.entries(LINK_TAGS)) {
+    // Pages missing in this language render as plain text, never a 404 link.
+    if (!hasPage(lang, href)) continue;
     tags[tag] = (c) => (
       <Link href={localePath(lang, href)} className={linkClass}>
         {c}
@@ -136,11 +142,11 @@ export function ContentBlocks({
                   {block.sources?.map((s) => (
                     <li key={s.url || s.label}>
                       {s.url ? (
-                        <a href={s.url} className={linkClass} rel="noopener" target="_blank">
+                        <a href={s.url} dir="auto" className={linkClass} rel="noopener" target="_blank">
                           {s.label}
                         </a>
                       ) : (
-                        s.label
+                        <span dir="auto">{s.label}</span>
                       )}
                     </li>
                   ))}

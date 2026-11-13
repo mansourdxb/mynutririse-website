@@ -63,7 +63,7 @@ export default (f: Facts) => ({
     { type: "h2", text: "Using your TDEE to build muscle" },
     {
       type: "p",
-      text: "Eat about 200–300 kcal above TDEE, train with progressive resistance and get enough protein (the <protein>protein calculator</protein> gives you a target). If your weight climbs faster than about 0.5% of body weight a month as a beginner, reduce the surplus.",
+      text: "Eat about 200–300 kcal above TDEE, train with progressive resistance and get enough protein (the <protein>protein calculator</protein> gives you a target). If your weight climbs faster than about 1% of body weight a month as a beginner, reduce the surplus.",
     },
     { type: "h2", text: "Check the estimate against reality" },
     {

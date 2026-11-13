@@ -69,7 +69,7 @@ export default (f: Facts): ReturnType<typeof en> => ({
     { type: "h2", text: "Utiliser votre chiffre pour prendre du muscle" },
     {
       type: "p",
-      text: "L’objectif de prise de muscle ajoute 300 kcal à vos besoins d’entretien. Un léger surplus, associé à un entraînement de musculation progressif et à suffisamment de protéines, favorise la croissance musculaire tout en limitant la prise de graisse. Si vous débutez, visez une prise d’environ 0,25 à 0,5 % de votre poids corporel par mois ; si la balance monte beaucoup plus vite, l’excédent est probablement surtout de la graisse, alors retirez 100 à 200 kcal.",
+      text: "L’objectif de prise de muscle ajoute 300 kcal à vos besoins d’entretien. Un léger surplus, associé à un entraînement de musculation progressif et à suffisamment de protéines, favorise la croissance musculaire tout en limitant la prise de graisse. Si vous débutez, visez une prise d’environ 0,5 à 1 % de votre poids corporel par mois ; si la balance monte beaucoup plus vite, l’excédent est probablement surtout de la graisse, alors retirez 100 à 200 kcal.",
     },
     { type: "h2", text: "Les calories pendant le Ramadan et le jeûne intermittent" },
     {

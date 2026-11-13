@@ -68,7 +68,7 @@ export default (f: Facts) => ({
     { type: "h2", text: "Using your number to build muscle" },
     {
       type: "p",
-      text: "The muscle-gain target adds 300 kcal to maintenance. A small surplus combined with progressive strength training and enough protein supports muscle growth while limiting fat gain. Aim to gain around 0.25–0.5% of your body weight per month as a beginner; if the scale rises much faster, most of the extra is likely fat, so trim 100–200 kcal.",
+      text: "The muscle-gain target adds 300 kcal to maintenance. A small surplus combined with progressive strength training and enough protein supports muscle growth while limiting fat gain. Aim to gain around 0.5–1% of your body weight per month as a beginner; if the scale rises much faster, most of the extra is likely fat, so trim 100–200 kcal.",
     },
     { type: "h2", text: "Calories during Ramadan and intermittent fasting" },
     {

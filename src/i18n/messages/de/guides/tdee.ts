@@ -64,7 +64,7 @@ export default (f: Facts): ReturnType<typeof en> => ({
     { type: "h2", text: "Mit deinem TDEE Muskeln aufbauen" },
     {
       type: "p",
-      text: "Iss etwa 200–300 kcal über deinem TDEE, trainiere mit progressiver Belastung und nimm genug Protein zu dir (der <protein>Proteinrechner</protein> gibt dir ein Ziel). Steigt dein Gewicht als Anfänger schneller als etwa 0,5 % deines Körpergewichts pro Monat, reduziere den Überschuss.",
+      text: "Iss etwa 200–300 kcal über deinem TDEE, trainiere mit progressiver Belastung und nimm genug Protein zu dir (der <protein>Proteinrechner</protein> gibt dir ein Ziel). Steigt dein Gewicht als Anfänger schneller als etwa 1 % deines Körpergewichts pro Monat, reduziere den Überschuss.",
     },
     { type: "h2", text: "Die Schätzung mit der Realität abgleichen" },
     {

@@ -64,7 +64,7 @@ export default (f: Facts): ReturnType<typeof en> => ({
     { type: "h2", text: "Cómo usar tu TDEE para ganar músculo" },
     {
       type: "p",
-      text: "Come unas 200–300 kcal por encima de tu TDEE, entrena con resistencia progresiva y consume suficiente proteína (la <protein>calculadora de proteínas</protein> te da un objetivo). Si estás empezando y tu peso sube más rápido que alrededor de un 0,5 % de tu peso corporal al mes, reduce el superávit.",
+      text: "Come unas 200–300 kcal por encima de tu TDEE, entrena con resistencia progresiva y consume suficiente proteína (la <protein>calculadora de proteínas</protein> te da un objetivo). Si estás empezando y tu peso sube más rápido que alrededor de un 1 % de tu peso corporal al mes, reduce el superávit.",
     },
     { type: "h2", text: "Contrasta la estimación con la realidad" },
     {

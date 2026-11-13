@@ -64,7 +64,7 @@ export default (f: Facts): ReturnType<typeof en> => ({
     { type: "h2", text: "Utiliser votre DEJ pour prendre du muscle" },
     {
       type: "p",
-      text: "Mangez environ 200 à 300 kcal au-dessus de votre DEJ, pratiquez une musculation progressive et consommez suffisamment de protéines (le <protein>calculateur de protéines</protein> vous donne un objectif). Si vous débutez et que votre poids augmente plus vite qu’environ 0,5 % de votre poids corporel par mois, réduisez le surplus.",
+      text: "Mangez environ 200 à 300 kcal au-dessus de votre DEJ, pratiquez une musculation progressive et consommez suffisamment de protéines (le <protein>calculateur de protéines</protein> vous donne un objectif). Si vous débutez et que votre poids augmente plus vite qu’environ 1 % de votre poids corporel par mois, réduisez le surplus.",
     },
     { type: "h2", text: "Comparer l’estimation à la réalité" },
     {

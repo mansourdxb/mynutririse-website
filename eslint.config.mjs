@@ -7,7 +7,7 @@ const eslintConfig = defineConfig([
   ...nextTs,
   // Message files are `export default (f: Facts) => ({...})` by design.
   {
-    files: ["src/i18n/messages/**/*.ts"],
+    files: ["src/i18n/messages/**/*.ts", "src/i18n/landing/**/*.ts"],
     rules: { "import/no-anonymous-default-export": "off" },
   },
   // CommonJS helper scripts load modules with require().

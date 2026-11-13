@@ -69,7 +69,7 @@ export default (f: Facts): ReturnType<typeof en> => ({
     { type: "h2", text: "Cómo usar tu cifra para ganar músculo" },
     {
       type: "p",
-      text: "El objetivo para ganar músculo suma 300 kcal al mantenimiento. Un pequeño superávit, combinado con entrenamiento de fuerza progresivo y suficiente proteína, favorece el crecimiento muscular y limita el aumento de grasa. Si estás empezando, intenta ganar alrededor de un 0,25–0,5 % de tu peso corporal al mes; si la báscula sube mucho más rápido, lo más probable es que casi todo el extra sea grasa, así que recorta 100–200 kcal.",
+      text: "El objetivo para ganar músculo suma 300 kcal al mantenimiento. Un pequeño superávit, combinado con entrenamiento de fuerza progresivo y suficiente proteína, favorece el crecimiento muscular y limita el aumento de grasa. Si estás empezando, intenta ganar alrededor de un 0,5–1 % de tu peso corporal al mes; si la báscula sube mucho más rápido, lo más probable es que casi todo el extra sea grasa, así que recorta 100–200 kcal.",
     },
     { type: "h2", text: "Calorías durante el Ramadán y el ayuno intermitente" },
     {

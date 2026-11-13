@@ -69,7 +69,7 @@ export default (f: Facts): ReturnType<typeof en> => ({
     { type: "h2", text: "Mit deinem Wert Muskeln aufbauen" },
     {
       type: "p",
-      text: "Das Ziel für den Muskelaufbau addiert 300 kcal zum Erhaltungsbedarf. Ein kleiner Überschuss in Kombination mit progressivem Krafttraining und genug Protein unterstützt das Muskelwachstum und hält den Fettzuwachs in Grenzen. Als Anfänger solltest du etwa 0,25–0,5 % deines Körpergewichts pro Monat zunehmen; steigt die Waage deutlich schneller, ist das Plus wahrscheinlich größtenteils Fett – dann reduziere um 100–200 kcal.",
+      text: "Das Ziel für den Muskelaufbau addiert 300 kcal zum Erhaltungsbedarf. Ein kleiner Überschuss in Kombination mit progressivem Krafttraining und genug Protein unterstützt das Muskelwachstum und hält den Fettzuwachs in Grenzen. Als Anfänger solltest du etwa 0,5–1 % deines Körpergewichts pro Monat zunehmen; steigt die Waage deutlich schneller, ist das Plus wahrscheinlich größtenteils Fett – dann reduziere um 100–200 kcal.",
     },
     { type: "h2", text: "Kalorien im Ramadan und beim Intervallfasten" },
     {

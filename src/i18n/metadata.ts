@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
+import { pageLocales } from "@/data/pages";
 import {
   absoluteUrl,
   defaultLocale,
-  locales,
   localePath,
   noindexLocales,
   ogLocale,
   type Locale,
 } from "./config";
 
-/** hreflang alternates for a page: all six languages plus x-default (English). */
+/** hreflang alternates for a page: every language it exists in, plus x-default (English). */
 export function languageAlternates(path: string): Record<string, string> {
   const languages: Record<string, string> = {};
-  for (const l of locales) languages[l] = absoluteUrl(l, path);
+  for (const l of pageLocales(path)) languages[l] = absoluteUrl(l, path);
   languages["x-default"] = absoluteUrl(defaultLocale, path);
   return languages;
 }
@@ -53,7 +53,7 @@ export function pageMetadata(
       type: "website",
       siteName: "MyNutriRise",
       locale: ogLocale[lang],
-      alternateLocale: locales.filter((l) => l !== lang).map((l) => ogLocale[l]),
+      alternateLocale: pageLocales(path).filter((l) => l !== lang).map((l) => ogLocale[l]),
       url,
       images: [image],
     },
