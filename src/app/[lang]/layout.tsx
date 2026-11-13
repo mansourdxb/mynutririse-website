@@ -12,6 +12,7 @@ import {
   LOGO_URL,
   ORGANIZATION_ID,
   PLAY_STORE_URL,
+  SOCIAL_LINKS,
   dir,
   isLocale,
   locales,
@@ -30,9 +31,7 @@ const organizationJsonLd = {
   alternateName: "Nutri Rise",
   url: BASE_URL,
   logo: { "@type": "ImageObject", url: LOGO_URL },
-  // TODO(owner): add the official Instagram/TikTok/X/YouTube/LinkedIn profile
-  // URLs here once confirmed. None exist in the codebase, so none are guessed.
-  sameAs: [APP_STORE_URL, PLAY_STORE_URL],
+  sameAs: [APP_STORE_URL, PLAY_STORE_URL, ...SOCIAL_LINKS.map((s) => s.url)],
 };
 
 // Pre-render every language; any other first segment is a 404.

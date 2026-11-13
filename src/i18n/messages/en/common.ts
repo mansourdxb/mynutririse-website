@@ -29,6 +29,11 @@ export default (f: Facts) => ({
     language: "Language",
   },
   footer: {
+    social: {
+      instagram: "MyNutriRise on Instagram",
+      facebook: "MyNutriRise on Facebook",
+      x: "MyNutriRise on X",
+    },
     tagline:
       "Your smart wellness companion — AI meal scanning, halal & cultural recipes, fasting, and coaching in one app.",
     product: "Product",

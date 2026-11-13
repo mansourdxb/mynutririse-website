@@ -30,6 +30,11 @@ export default (f: Facts): ReturnType<typeof en> => ({
     language: "اللغة",
   },
   footer: {
+    social: {
+      instagram: "MyNutriRise على إنستغرام",
+      facebook: "MyNutriRise على فيسبوك",
+      x: "MyNutriRise على إكس",
+    },
     tagline:
       "رفيقك الذكي نحو العافية — تحليل الوجبات بالذكاء الاصطناعي، ووصفات حلال من ثقافات متنوعة، والصيام، والتدريب في تطبيق واحد.",
     product: "المنتج",
