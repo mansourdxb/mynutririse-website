@@ -223,6 +223,23 @@ export default (f: Facts) => ({
         type: "p",
         text: "Eating halal while pursuing a fitness goal shouldn't mean forcing yourself onto chicken-and-broccoli meal plans. The sustainable path is keeping the food you love and adjusting portions and frequency — which is exactly what proper tracking makes possible. During Ramadan, pairing meal logging with a fasting tracker also helps you keep suhoor and iftar balanced instead of swinging between extremes. For the full picture of halal-friendly tracking, see our <halalApp>halal nutrition app</halalApp> page.",
       },
+      {
+        type: "sources",
+        sources: [
+          {
+            label: "Urban LE et al. The energy content of restaurant foods without stated calorie information. JAMA Intern Med, 2013.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/23700076/",
+          },
+          {
+            label: "Urban LE et al. Energy Contents of Frequently Ordered Restaurant Meals and Comparison with Human Energy Requirements and U.S. Department of Agriculture Database Information: A Multinational Cross-Sectional Study. J Acad Nutr Diet, 2016.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/26803805/",
+          },
+          {
+            label: "Burke LE et al. Self-monitoring in weight loss: a systematic review of the literature. J Am Diet Assoc, 2011.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/21185970/",
+          },
+        ],
+      },
     ],
   },
 });

@@ -224,6 +224,23 @@ export default (f: Facts): ReturnType<typeof en> => ({
         type: "p",
         text: "Comer halal mientras persigues un objetivo de fitness no debería obligarte a seguir planes de pollo con brócoli. El camino sostenible es mantener la comida que te gusta y ajustar las porciones y la frecuencia, que es exactamente lo que permite un buen seguimiento. Durante el Ramadán, combinar el registro de comidas con un seguimiento del ayuno también te ayuda a mantener equilibrados el suhoor y el iftar en lugar de ir de un extremo a otro. Para ver el panorama completo del seguimiento apto para halal, consulta nuestra página sobre la <halalApp>app de nutrición halal</halalApp>.",
       },
+      {
+        type: "sources",
+        sources: [
+          {
+            label: "Urban LE et al. The energy content of restaurant foods without stated calorie information. JAMA Intern Med, 2013.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/23700076/",
+          },
+          {
+            label: "Urban LE et al. Energy Contents of Frequently Ordered Restaurant Meals and Comparison with Human Energy Requirements and U.S. Department of Agriculture Database Information: A Multinational Cross-Sectional Study. J Acad Nutr Diet, 2016.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/26803805/",
+          },
+          {
+            label: "Burke LE et al. Self-monitoring in weight loss: a systematic review of the literature. J Am Diet Assoc, 2011.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/21185970/",
+          },
+        ],
+      },
     ],
   },
 });

@@ -224,6 +224,23 @@ export default (f: Facts): ReturnType<typeof en> => ({
         type: "p",
         text: "Manger halal tout en poursuivant un objectif de forme ne devrait pas vous obliger à vous contenter de programmes « poulet-brocoli ». La voie durable consiste à garder les plats que vous aimez en ajustant les portions et la fréquence, et c’est exactement ce que permet un vrai suivi. Pendant le Ramadan, associer l’enregistrement des repas à un suivi du jeûne aide aussi à garder un suhoor et un iftar équilibrés, au lieu de passer d’un extrême à l’autre. Pour tout savoir sur le suivi compatible halal, consultez notre page <halalApp>appli de nutrition halal</halalApp>.",
       },
+      {
+        type: "sources",
+        sources: [
+          {
+            label: "Urban LE et al. The energy content of restaurant foods without stated calorie information. JAMA Intern Med, 2013.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/23700076/",
+          },
+          {
+            label: "Urban LE et al. Energy Contents of Frequently Ordered Restaurant Meals and Comparison with Human Energy Requirements and U.S. Department of Agriculture Database Information: A Multinational Cross-Sectional Study. J Acad Nutr Diet, 2016.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/26803805/",
+          },
+          {
+            label: "Burke LE et al. Self-monitoring in weight loss: a systematic review of the literature. J Am Diet Assoc, 2011.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/21185970/",
+          },
+        ],
+      },
     ],
   },
 });

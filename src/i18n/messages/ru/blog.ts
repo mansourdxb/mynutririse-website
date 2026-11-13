@@ -224,6 +224,23 @@ export default (f: Facts): ReturnType<typeof en> => ({
         type: "p",
         text: "Есть халяльно и при этом идти к фитнес-цели не должно означать, что придётся сидеть на курице с брокколи. Устойчивый путь — оставить любимую еду и менять размер порций и частоту, а именно это и даёт правильный учёт. Во время Рамадана дневник питания вместе с трекером голодания также помогает держать сухур и ифтар сбалансированными, а не бросаться из крайности в крайность. Полную картину халяльного учёта ты найдёшь на странице нашего <halalApp>приложения для халяльного питания</halalApp>.",
       },
+      {
+        type: "sources",
+        sources: [
+          {
+            label: "Urban LE et al. The energy content of restaurant foods without stated calorie information. JAMA Intern Med, 2013.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/23700076/",
+          },
+          {
+            label: "Urban LE et al. Energy Contents of Frequently Ordered Restaurant Meals and Comparison with Human Energy Requirements and U.S. Department of Agriculture Database Information: A Multinational Cross-Sectional Study. J Acad Nutr Diet, 2016.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/26803805/",
+          },
+          {
+            label: "Burke LE et al. Self-monitoring in weight loss: a systematic review of the literature. J Am Diet Assoc, 2011.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/21185970/",
+          },
+        ],
+      },
     ],
   },
 });

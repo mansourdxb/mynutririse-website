@@ -224,6 +224,23 @@ export default (f: Facts): ReturnType<typeof en> => ({
         type: "p",
         text: "لا ينبغي أن يعني الأكل الحلال أثناء السعي لهدف رياضي أن تُجبر نفسك على خطط وجبات من الدجاج والبروكلي. فالطريق المستدام هو الاحتفاظ بالطعام الذي تحبه وتعديل الحصص وعدد المرات — وهذا بالضبط ما يتيحه التتبّع الصحيح. وفي رمضان، يساعدك الجمع بين تسجيل الوجبات ومتتبّع الصيام على إبقاء السحور والإفطار متوازنين بدلاً من التأرجح بين الطرفين. وللصورة الكاملة عن التتبّع المناسب للحلال، اطّلع على صفحة <halalApp>تطبيق التغذية الحلال</halalApp>.",
       },
+      {
+        type: "sources",
+        sources: [
+          {
+            label: "Urban LE et al. The energy content of restaurant foods without stated calorie information. JAMA Intern Med, 2013.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/23700076/",
+          },
+          {
+            label: "Urban LE et al. Energy Contents of Frequently Ordered Restaurant Meals and Comparison with Human Energy Requirements and U.S. Department of Agriculture Database Information: A Multinational Cross-Sectional Study. J Acad Nutr Diet, 2016.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/26803805/",
+          },
+          {
+            label: "Burke LE et al. Self-monitoring in weight loss: a systematic review of the literature. J Am Diet Assoc, 2011.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/21185970/",
+          },
+        ],
+      },
     ],
   },
 });
