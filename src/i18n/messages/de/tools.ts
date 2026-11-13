@@ -74,36 +74,6 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
     breadcrumb: "BMI-Rechner",
     title: "BMI-Rechner",
     subtitle: "Ermittle deinen Body-Mass-Index in Sekunden – kostenlos und ohne Anmeldung.",
-    whatIsHeading: "Was ist der BMI?",
-    whatIs:
-      "Der Body-Mass-Index setzt dein Gewicht ins Verhältnis zu deiner Größe: <b>BMI = Gewicht (kg) ÷ Größe (m)²</b>. Bei Erwachsenen gilt 18,5 bis 24,9 allgemein als gesunder Bereich, 25–29,9 als Übergewicht und ab 30 als Adipositas.",
-    whatIsCaveat:
-      "Der BMI misst den Körperfettanteil nicht direkt – Sportler mit viel Muskelmasse landen oft im Bereich „Übergewicht“, obwohl sie völlig gesund sind, und die gesunden Bereiche können je nach ethnischer Herkunft leicht abweichen. Sieh ihn als Hinweis, nicht als Urteil.",
-    resultHeading: "Was du mit deinem Ergebnis anfangen kannst",
-    result:
-      "Liegt dein BMI außerhalb des gesunden Bereichs, ist eine moderate Anpassung der Kalorien die nachhaltige Lösung – keine Crash-Diät. Ermittle dein Tagesziel mit dem <calorie>Kalorienrechner</calorie>, sieh dir im <ideal>Idealgewicht-Rechner</ideal> den Gewichtsbereich hinter der Rechnung an und peile 0,25–0,5 kg Veränderung pro Woche an.",
-    faqs: [
-      {
-        question: "Was ist ein gesunder BMI?",
-        answer:
-          "Für die meisten Erwachsenen 18,5–24,9. Unter 18,5 gilt als Untergewicht, 25–29,9 als Übergewicht, ab 30 als Adipositas. Muskelmasse, Körperbau und ethnische Herkunft beeinflussen, was für den Einzelnen passt.",
-      },
-      {
-        question: "Ist der BMI für muskulöse Menschen aussagekräftig?",
-        answer:
-          "Nein – der BMI kann Muskeln nicht von Fett unterscheiden, deshalb gelten muskulöse Sportler oft als übergewichtig. Taillenumfang und Schätzungen des Körperfettanteils liefern ein vollständigeres Bild.",
-      },
-      {
-        question: "Wie schnell kann ich meinen BMI sicher verändern?",
-        answer:
-          "Mit 0,25–0,5 kg Gewichtsveränderung pro Woche – das entspricht etwa einem täglichen Defizit oder Überschuss von 250–500 kcal. Schneller bedeutet meist Muskelverlust und Jo-Jo-Effekt.",
-      },
-      {
-        question: "Soll ich metrische oder imperiale Einheiten nutzen?",
-        answer:
-          "Beides geht – der Rechner unterstützt beide. Die Formel ist identisch; bei imperialen Einheiten wird zur Umrechnung einfach mit 703 multipliziert.",
-      },
-    ],
     ctaTitle: "Bereit, etwas aus deinem Ergebnis zu machen?",
     ctaBody: "MyNutriRise trackt deine Mahlzeiten, Trainings und Fortschritte – Foto machen, und die KI übernimmt das Eintragen.",
     calc: {

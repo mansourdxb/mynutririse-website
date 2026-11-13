@@ -73,36 +73,6 @@ const tools = (f: Facts) => ({
     breadcrumb: "BMI Calculator",
     title: "BMI Calculator",
     subtitle: "Find out your Body Mass Index in seconds — free, no sign-up needed.",
-    whatIsHeading: "What is BMI?",
-    whatIs:
-      "Body Mass Index compares your weight to your height: <b>BMI = weight(kg) ÷ height(m)²</b>. For adults, 18.5 to 24.9 is generally considered the healthy range, 25–29.9 overweight, and 30+ obese.",
-    whatIsCaveat:
-      "BMI does not measure body fat directly — athletes with high muscle mass often score “overweight” while being perfectly healthy, and healthy ranges can shift slightly by ethnicity. Treat it as a screening signal, not a verdict.",
-    resultHeading: "What to do with your result",
-    result:
-      "If your BMI sits outside the healthy band, the sustainable response is a modest calorie adjustment, not a crash diet. Find your daily target with the <calorie>calorie calculator</calorie>, see the weight range behind the math in the <ideal>ideal weight calculator</ideal>, and aim for 0.25–0.5 kg of change per week.",
-    faqs: [
-      {
-        question: "What is a healthy BMI?",
-        answer:
-          "For most adults, 18.5–24.9. Below 18.5 is underweight; 25–29.9 overweight; 30 and above obese. Muscle mass, frame, and ethnicity shift what is right for an individual.",
-      },
-      {
-        question: "Is BMI accurate for muscular people?",
-        answer:
-          "No — BMI cannot tell muscle from fat, so muscular athletes often read as overweight. Waist measurements and body-fat estimates give a fuller picture.",
-      },
-      {
-        question: "How quickly can I safely change my BMI?",
-        answer:
-          "Through 0.25–0.5 kg of weight change per week — roughly a 250–500 kcal daily deficit or surplus. Faster usually means losing muscle and rebounding.",
-      },
-      {
-        question: "Should I use metric or imperial?",
-        answer:
-          "Either — the calculator supports both. The formula is identical; imperial just multiplies by 703 to convert units.",
-      },
-    ],
     ctaTitle: "Ready to act on your number?",
     ctaBody: "MyNutriRise tracks your meals, workouts, and progress — snap a photo and AI does the logging.",
     calc: {

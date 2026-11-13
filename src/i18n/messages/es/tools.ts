@@ -74,36 +74,6 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
     breadcrumb: "Calculadora de IMC",
     title: "Calculadora de IMC",
     subtitle: "Descubre tu índice de masa corporal en segundos: gratis y sin registro.",
-    whatIsHeading: "¿Qué es el IMC?",
-    whatIs:
-      "El índice de masa corporal relaciona tu peso con tu altura: <b>IMC = peso(kg) ÷ altura(m)²</b>. En adultos, de 18,5 a 24,9 se considera en general el rango saludable; de 25 a 29,9, sobrepeso, y 30 o más, obesidad.",
-    whatIsCaveat:
-      "El IMC no mide directamente la grasa corporal: los deportistas con mucha masa muscular suelen dar «sobrepeso» aunque estén perfectamente sanos, y los rangos saludables pueden variar ligeramente según el origen étnico. Tómalo como una señal de cribado, no como un veredicto.",
-    resultHeading: "Qué hacer con tu resultado",
-    result:
-      "Si tu IMC está fuera del rango saludable, la respuesta sostenible es un ajuste moderado de calorías, no una dieta extrema. Calcula tu objetivo diario con la <calorie>calculadora de calorías</calorie>, consulta el rango de peso que hay detrás de los cálculos en la <ideal>calculadora de peso ideal</ideal> y apunta a un cambio de 0,25–0,5 kg por semana.",
-    faqs: [
-      {
-        question: "¿Cuál es un IMC saludable?",
-        answer:
-          "Para la mayoría de los adultos, entre 18,5 y 24,9. Por debajo de 18,5 es bajo peso; de 25 a 29,9, sobrepeso; 30 o más, obesidad. La masa muscular, la complexión y el origen étnico influyen en lo que es adecuado para cada persona.",
-      },
-      {
-        question: "¿Es preciso el IMC en personas musculosas?",
-        answer:
-          "No: el IMC no distingue el músculo de la grasa, así que los deportistas musculosos suelen aparecer con sobrepeso. La medida de la cintura y las estimaciones de grasa corporal dan una imagen más completa.",
-      },
-      {
-        question: "¿Qué tan rápido puedo cambiar mi IMC de forma segura?",
-        answer:
-          "Con un cambio de peso de 0,25–0,5 kg por semana, es decir, un déficit o superávit diario de unas 250–500 kcal. Ir más rápido suele implicar perder músculo y sufrir un efecto rebote.",
-      },
-      {
-        question: "¿Debo usar el sistema métrico o el imperial?",
-        answer:
-          "Cualquiera de los dos: la calculadora admite ambos. La fórmula es idéntica; en el sistema imperial simplemente se multiplica por 703 para convertir las unidades.",
-      },
-    ],
     ctaTitle: "¿Listo para pasar a la acción?",
     ctaBody: "MyNutriRise registra tus comidas, entrenamientos y progreso: toma una foto y la IA se encarga del registro.",
     calc: {

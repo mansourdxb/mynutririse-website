@@ -74,36 +74,6 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
     breadcrumb: "Calculateur d’IMC",
     title: "Calculateur d’IMC",
     subtitle: "Calculez votre indice de masse corporelle en quelques secondes, gratuitement et sans inscription.",
-    whatIsHeading: "Qu’est-ce que l’IMC ?",
-    whatIs:
-      "L’indice de masse corporelle compare votre poids à votre taille : <b>IMC = poids (kg) ÷ taille (m)²</b>. Chez l’adulte, on considère généralement qu’un IMC de 18,5 à 24,9 correspond à un poids normal, de 25 à 29,9 à un surpoids et de 30 ou plus à une obésité.",
-    whatIsCaveat:
-      "L’IMC ne mesure pas directement la masse grasse : les sportifs très musclés sont souvent classés « en surpoids » tout en étant en parfaite santé, et les valeurs de référence peuvent légèrement varier selon l’origine ethnique. Considérez-le comme un indicateur de dépistage, pas comme un verdict.",
-    resultHeading: "Que faire de votre résultat ?",
-    result:
-      "Si votre IMC se situe en dehors de la zone de poids normal, la réponse durable est un ajustement calorique modéré, pas un régime express. Trouvez votre objectif quotidien avec le <calorie>calculateur de calories</calorie>, découvrez la fourchette de poids derrière ces calculs avec le <ideal>calculateur de poids idéal</ideal>, et visez une évolution de 0,25 à 0,5 kg par semaine.",
-    faqs: [
-      {
-        question: "Qu’est-ce qu’un IMC normal ?",
-        answer:
-          "Pour la plupart des adultes, entre 18,5 et 24,9. En dessous de 18,5, on parle de maigreur ; de 25 à 29,9, de surpoids ; à partir de 30, d’obésité. La masse musculaire, la morphologie et l’origine ethnique modifient ce qui convient à chacun.",
-      },
-      {
-        question: "L’IMC est-il fiable pour les personnes musclées ?",
-        answer:
-          "Non : l’IMC ne distingue pas le muscle de la graisse, si bien que les sportifs musclés apparaissent souvent en surpoids. Le tour de taille et l’estimation de la masse grasse donnent une image plus complète.",
-      },
-      {
-        question: "À quel rythme puis-je faire évoluer mon IMC sans risque ?",
-        answer:
-          "Avec une variation de poids de 0,25 à 0,5 kg par semaine, soit un déficit ou un surplus d’environ 250 à 500 kcal par jour. Aller plus vite signifie généralement perdre du muscle et subir un effet rebond.",
-      },
-      {
-        question: "Faut-il utiliser les unités métriques ou impériales ?",
-        answer:
-          "Peu importe : le calculateur prend en charge les deux. La formule est identique ; en unités impériales, on multiplie simplement par 703 pour convertir les unités.",
-      },
-    ],
     ctaTitle: "Prêt à passer à l’action ?",
     ctaBody: "MyNutriRise suit vos repas, vos entraînements et vos progrès : prenez une photo et l’IA s’occupe de l’enregistrement.",
     calc: {
