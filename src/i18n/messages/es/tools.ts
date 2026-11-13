@@ -64,6 +64,10 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
         title: "Calculadora de TDEE",
         description: "Tus calorías de mantenimiento en cada nivel de actividad.",
       },
+      protein: {
+        title: "Calculadora de proteínas",
+        description: "Gramos de proteína al día según tu peso y tu objetivo.",
+      },
     },
     quiz: {
       title: "Test de plan personalizado",
@@ -207,6 +211,36 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
       bmrNote: "kcal/día en reposo absoluto",
       tableHeading: "Tu TDEE en cada nivel de actividad",
       empty: "Completa tus datos para ver tu TDEE en cada nivel de actividad.",
+    },
+  },
+
+  protein: {
+    metaTitle: "Calculadora de proteínas: cuánta proteína comer al día",
+    metaDescription:
+      "Calculadora de proteínas gratis: obtén tu objetivo diario de proteína en gramos según tu peso y tu meta, para ganar músculo o perder grasa. Pruébala ahora.",
+    breadcrumb: "Calculadora de proteínas",
+    title: "Calculadora de proteínas",
+    subtitle: "Descubre cuánta proteína necesitas cada día para tu objetivo: gratis y sin registro.",
+    ctaTitle: "Alcanza tu proteína cada día",
+    ctaBody: "MyNutriRise controla la proteína de cada comida: toma una foto y la IA la registra por ti.",
+    calc: {
+      unitsAria: "Unidades",
+      weightLb: "Peso (lb)",
+      mealsLabel: "Comidas al día",
+      mealsOption: "{n} comidas",
+      goalLabel: "Tu objetivo",
+      goals: {
+        general: { label: "Salud general", description: "Poco o ningún ejercicio regular" },
+        active: { label: "Estilo de vida activo", description: "Ejercicio o deporte con regularidad" },
+        muscle: { label: "Ganar músculo", description: "Entrenamiento de fuerza para ganar músculo" },
+        fatLoss: { label: "Perder grasa y conservar músculo", description: "Déficit calórico más entrenamiento de fuerza" },
+      },
+      daily: "Proteína diaria",
+      gramsRange: "{min}–{max} g",
+      perKg: "{lo}–{hi} g por kg de peso corporal",
+      perMeal: "Por comida",
+      perMealNote: "Repartida en {n} comidas",
+      empty: "Introduce tu peso para ver tu objetivo diario de proteína.",
     },
   },
 

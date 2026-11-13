@@ -5,6 +5,7 @@ import bmi from "./bmi";
 import bmr from "./bmr";
 import idealWeight from "./idealWeight";
 import tdee from "./tdee";
+import protein from "./protein";
 
 // Long-form explainer + FAQ for each calculator, keyed like data/tools.ts.
 const toolGuides = (f: Facts) => ({
@@ -14,6 +15,7 @@ const toolGuides = (f: Facts) => ({
   bmr: bmr(f),
   idealWeight: idealWeight(f),
   tdee: tdee(f),
+  protein: protein(f),
 });
 
 export default toolGuides;

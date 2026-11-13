@@ -64,6 +64,10 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
         title: "Calculateur de DEJ",
         description: "Vos besoins d’entretien à chaque niveau d’activité.",
       },
+      protein: {
+        title: "Calculateur de protéines",
+        description: "Vos protéines quotidiennes en grammes selon votre poids et votre objectif.",
+      },
     },
     quiz: {
       title: "Quiz programme personnalisé",
@@ -206,6 +210,36 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
       bmrNote: "kcal/jour au repos complet",
       tableHeading: "Votre DEJ à chaque niveau d’activité",
       empty: "Renseignez vos informations pour voir votre DEJ à chaque niveau d’activité.",
+    },
+  },
+
+  protein: {
+    metaTitle: "Calcul des besoins en protéines par jour",
+    metaDescription:
+      "Calcul des besoins en protéines gratuit : votre objectif quotidien en grammes selon votre poids et votre but, santé, muscle ou perte de gras. Essayez-le.",
+    breadcrumb: "Calculateur de protéines",
+    title: "Calculateur de protéines",
+    subtitle: "Découvrez de combien de protéines vous avez besoin chaque jour pour votre objectif, gratuitement et sans inscription.",
+    ctaTitle: "Atteignez vos protéines chaque jour",
+    ctaBody: "MyNutriRise suit les protéines à chaque repas : prenez une photo et l’IA l’enregistre pour vous.",
+    calc: {
+      unitsAria: "Unités",
+      weightLb: "Poids (lb)",
+      mealsLabel: "Repas par jour",
+      mealsOption: "{n} repas",
+      goalLabel: "Votre objectif",
+      goals: {
+        general: { label: "Santé générale", description: "Peu ou pas d’exercice régulier" },
+        active: { label: "Mode de vie actif", description: "Exercice ou sport réguliers" },
+        muscle: { label: "Prendre du muscle", description: "Musculation pour gagner du muscle" },
+        fatLoss: { label: "Perdre du gras, garder le muscle", description: "Déficit calorique et musculation" },
+      },
+      daily: "Protéines par jour",
+      gramsRange: "{min}–{max} g",
+      perKg: "{lo}–{hi} g par kg de poids corporel",
+      perMeal: "Par repas",
+      perMealNote: "Réparties sur {n} repas",
+      empty: "Saisissez votre poids pour voir votre objectif quotidien de protéines.",
     },
   },
 

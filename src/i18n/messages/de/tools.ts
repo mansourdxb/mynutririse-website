@@ -64,6 +64,10 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
         title: "TDEE-Rechner",
         description: "Dein Erhaltungsbedarf für jedes Aktivitätslevel.",
       },
+      protein: {
+        title: "Proteinrechner",
+        description: "Täglicher Proteinbedarf in Gramm für dein Gewicht und dein Ziel.",
+      },
     },
     quiz: {
       title: "Quiz für deinen Plan",
@@ -206,6 +210,36 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
       bmrNote: "kcal/Tag in völliger Ruhe",
       tableHeading: "Dein TDEE für jedes Aktivitätslevel",
       empty: "Gib deine Daten ein, um deinen TDEE für jedes Aktivitätslevel zu sehen.",
+    },
+  },
+
+  protein: {
+    metaTitle: "Proteinbedarf-Rechner: Wie viel Protein pro Tag?",
+    metaDescription:
+      "Kostenloser Proteinrechner: Ermittle deinen Proteinbedarf pro Tag in Gramm nach Gewicht und Ziel, ob Muskelaufbau, Fettabbau oder Gesundheit. Jetzt testen.",
+    breadcrumb: "Proteinrechner",
+    title: "Proteinrechner",
+    subtitle: "Finde heraus, wie viel Protein du täglich für dein Ziel brauchst – kostenlos und ohne Anmeldung.",
+    ctaTitle: "Erreiche jeden Tag dein Proteinziel",
+    ctaBody: "MyNutriRise trackt das Protein jeder Mahlzeit – mach ein Foto, und die KI trägt es für dich ein.",
+    calc: {
+      unitsAria: "Einheiten",
+      weightLb: "Gewicht (lb)",
+      mealsLabel: "Mahlzeiten pro Tag",
+      mealsOption: "{n} Mahlzeiten",
+      goalLabel: "Dein Ziel",
+      goals: {
+        general: { label: "Allgemeine Gesundheit", description: "Wenig oder kein regelmäßiger Sport" },
+        active: { label: "Aktiver Lebensstil", description: "Regelmäßiges Training oder Sport" },
+        muscle: { label: "Muskeln aufbauen", description: "Krafttraining für den Muskelaufbau" },
+        fatLoss: { label: "Fett abbauen, Muskeln erhalten", description: "Kaloriendefizit plus Krafttraining" },
+      },
+      daily: "Tägliches Protein",
+      gramsRange: "{min}–{max} g",
+      perKg: "{lo}–{hi} g pro kg Körpergewicht",
+      perMeal: "Pro Mahlzeit",
+      perMealNote: "Verteilt auf {n} Mahlzeiten",
+      empty: "Gib dein Gewicht ein, um dein tägliches Proteinziel zu sehen.",
     },
   },
 

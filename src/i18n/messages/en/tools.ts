@@ -63,6 +63,10 @@ const tools = (f: Facts) => ({
         title: "TDEE Calculator",
         description: "Your maintenance calories at every activity level.",
       },
+      protein: {
+        title: "Protein Calculator",
+        description: "Daily protein in grams for your weight and goal.",
+      },
     },
     quiz: {
       title: "Custom Plan Quiz",
@@ -205,6 +209,36 @@ const tools = (f: Facts) => ({
       bmrNote: "kcal/day at complete rest",
       tableHeading: "Your TDEE at each activity level",
       empty: "Fill in your details to see your TDEE at every activity level.",
+    },
+  },
+
+  protein: {
+    metaTitle: "Protein Calculator: How Much Protein Per Day",
+    metaDescription:
+      "Free protein calculator: get your daily protein target in grams from your weight and goal, from general health to muscle gain and fat loss. Try it now.",
+    breadcrumb: "Protein Calculator",
+    title: "Protein Calculator",
+    subtitle: "Find out how much protein you need each day for your goal — free, no sign-up needed.",
+    ctaTitle: "Hit your protein every day",
+    ctaBody: "MyNutriRise tracks protein at every meal — snap a photo and AI logs it for you.",
+    calc: {
+      unitsAria: "Units",
+      weightLb: "Weight (lb)",
+      mealsLabel: "Meals per day",
+      mealsOption: "{n} meals",
+      goalLabel: "Your goal",
+      goals: {
+        general: { label: "General health", description: "Little or no regular exercise" },
+        active: { label: "Active lifestyle", description: "Regular exercise or sport" },
+        muscle: { label: "Build muscle", description: "Strength training to gain muscle" },
+        fatLoss: { label: "Lose fat, keep muscle", description: "Calorie deficit plus strength training" },
+      },
+      daily: "Daily protein",
+      gramsRange: "{min}–{max} g",
+      perKg: "{lo}–{hi} g per kg of body weight",
+      perMeal: "Per meal",
+      perMealNote: "Spread across {n} meals",
+      empty: "Enter your weight to see your daily protein target.",
     },
   },
 

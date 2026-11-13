@@ -44,6 +44,13 @@ export const toolPages = [
     related: ["deficit", "calorie", "bmr"],
     guides: ["intermittent-fasting-16-8-guide", "ai-photo-calorie-tracking"],
   },
+  {
+    key: "protein",
+    href: "/tools/protein-calculator",
+    emoji: "🍳",
+    related: ["macro", "deficit", "bodyFat"],
+    guides: ["track-macros-halal-cultural-meals", "ai-photo-calorie-tracking"],
+  },
 ] as const;
 
 export type ToolKey = (typeof toolPages)[number]["key"];

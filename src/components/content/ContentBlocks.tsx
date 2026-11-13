@@ -24,6 +24,7 @@ export const LINK_TAGS: Record<string, string> = {
   bmr: "/tools/bmr-calculator",
   ideal: "/tools/ideal-weight-calculator",
   tdee: "/tools/tdee-calculator",
+  protein: "/tools/protein-calculator",
   tools: "/tools",
   ifguide: "/blog/intermittent-fasting-16-8-guide",
   aiguide: "/blog/ai-photo-calorie-tracking",
