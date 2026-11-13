@@ -65,6 +65,7 @@ const goalStyles: { href: string; landing?: string; color: string; bg: string; i
   },
   {
     href: "/recipes",
+    landing: "/meal-planner",
     color: "text-rose-600 dark:text-rose-400",
     bg: "bg-rose-50 dark:bg-rose-400/10",
     icon: (
