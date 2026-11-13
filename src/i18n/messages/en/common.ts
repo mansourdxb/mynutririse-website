@@ -4,10 +4,10 @@ import type { Facts } from "@/data/facts";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default (f: Facts) => ({
   site: {
-    title: "MyNutriRise: AI Calorie Counter & Halal Nutrition App",
+    title: "Diet & Calorie Counter App for Weight Loss | MyNutriRise",
     titleTemplate: "%s — MyNutriRise",
     description:
-      "Track calories, scan meals with AI, follow personalized meal plans, and build healthier habits with MyNutriRise — your smart wellness companion.",
+      "MyNutriRise is a free diet and calorie counter app for weight loss: snap a photo to log meals, track macros and follow halal meal plans. Download it free.",
     ogDescription:
       "Track calories, scan meals with AI, follow personalized meal plans, and build healthier habits daily.",
     twitterDescription:
@@ -72,9 +72,9 @@ export default (f: Facts) => ({
     back: "Back to home",
   },
   download: {
-    metaTitle: "Download MyNutriRise",
+    metaTitle: "Download the Free Diet App for iPhone & Android",
     metaDescription:
-      "Download MyNutriRise for iPhone or Android — AI meal scanning, halal & cultural meal plans, fasting, and coaching.",
+      "Download MyNutriRise, the free diet app for iPhone and Android: AI meal scanning, calorie and macro tracking and halal meal plans. Get started free today.",
     title: "Get MyNutriRise",
     body: "On your phone, you'll be taken straight to your app store. On desktop, pick your platform:",
   },

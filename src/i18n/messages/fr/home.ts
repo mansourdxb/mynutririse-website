@@ -7,11 +7,30 @@ export default (f: Facts): ReturnType<typeof en> => ({
       "Suivez vos calories, analysez vos repas grâce à l’IA, suivez des programmes alimentaires halal et des cuisines du monde, surveillez votre jeûne et profitez d’un coaching nutritionnel intelligent.",
   },
   hero: {
-    title: "Le suivi nutrition et forme <hl>pour la vraie vie</hl>",
+    title: "Compteur de calories IA pour <hl>maigrir et prendre du muscle</hl>",
+    tagline: "Le suivi nutrition et forme pour la vraie vie",
     lead: "Prenez une photo et l’IA enregistre votre repas. Suivez des programmes alimentaires halal et des cuisines du monde, suivez votre jeûne et vos entraînements, et profitez d’un coaching intelligent — tout ce qu’il vous faut pour une vie plus saine et plus épanouie.",
     quizLink: "Vous ne savez pas par où commencer ? Obtenez votre programme personnalisé en 1 minute →",
     screenshotAlt: "Écran Aujourd'hui de MyNutriRise avec calories restantes, macronutriments et pas",
     pills: ["Scan repas par IA", "Halal et cuisines du monde", `${f.RECIPES} recettes`],
+  },
+  intro: {
+    title: "Une appli régime pensée pour ce que vous mangez vraiment",
+    paragraphs: [
+      "MyNutriRise est une appli régime et un compteur de calories pour celles et ceux qui veulent maigrir, prendre du muscle ou simplement mieux manger sans renoncer aux plats qu’ils aiment. Prenez votre assiette en photo et l’IA estime ses calories et ses macros, ou enregistrez-la par recherche, code-barres ou à la voix si c’est plus rapide.",
+      "Pour perdre du poids, l’appli fixe un objectif calorique quotidien selon votre objectif, votre corps et votre niveau d’activité, et montre comment chaque repas s’y intègre. Pour prendre du muscle, le suivi des macros garde les protéines, les glucides et les lipides sous vos yeux, avec des programmes d’entraînement et un journal d’exercices.",
+      `Anticiper devient plus simple avec un planificateur de repas qui s’appuie sur ${f.RECIPES} recettes et ${f.DIET_PLAN_COUNT} programmes guidés de quatre semaines. Le jeûne intermittent est aussi couvert : ${f.FASTING_PLAN_COUNT} plans de jeûne, du 16:8 et du 5:2 jusqu’à un programme pour le Ramadan, chacun avec son minuteur.`,
+      `Manger halal est intégré dès le départ. Le filtrage halal est vérifié pour chaque plat, et la bibliothèque couvre ${f.CUISINES} cuisines, dont celles du Golfe et des Émirats, la cuisine turque, marocaine, persane et pakistanaise. Toute l’appli est disponible en arabe, ainsi qu’en français, anglais, allemand, espagnol et russe, pour enregistrer les plats arabes et du Golfe dans votre langue.`,
+      "Vous ne savez pas par où commencer ? Les calculateurs gratuits de calories, de macros et d’IMC ci-dessous vous donnent un point de départ raisonnable en quelques secondes, sans créer de compte.",
+    ],
+  },
+  resources: {
+    toolsEyebrow: "Outils gratuits",
+    toolsTitle: "Calculateurs nutrition gratuits",
+    allTools: "Voir tous les outils gratuits",
+    guidesEyebrow: "Guides",
+    guidesTitle: "Derniers guides",
+    allGuides: "Lire tous les guides",
   },
   pressBar: {
     heading: "Vu dans",
@@ -203,6 +222,11 @@ export default (f: Facts): ReturnType<typeof en> => ({
         question: "Sur quels appareils est-elle disponible ?",
         answer:
           "MyNutriRise est conçue pour les iPhone et les téléphones Android. Téléchargez-la via les liens vers les boutiques d’applications sur cette page : vos données se synchronisent avec votre compte.",
+      },
+      {
+        question: "MyNutriRise, est-ce la même chose que Nutri Rise ?",
+        answer:
+          "Oui. MyNutriRise est le nom complet de l’appli, et beaucoup la cherchent sous le nom Nutri Rise. C’est la même appli gratuite sur l’App Store et Google Play, avec les mêmes fonctionnalités et le même compte.",
       },
     ],
   },

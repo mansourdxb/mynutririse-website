@@ -8,6 +8,8 @@ import { PressBar } from "@/components/sections/PressBar";
 import { Science } from "@/components/sections/Science";
 import { Community } from "@/components/sections/Community";
 import { HomeFaq } from "@/components/sections/HomeFaq";
+import { HomeIntro } from "@/components/sections/HomeIntro";
+import { HomeResources } from "@/components/sections/HomeResources";
 import { Premium } from "@/components/sections/Premium";
 import { CTA } from "@/components/sections/CTA";
 import {
@@ -28,7 +30,9 @@ const jsonLdScreens = ["today", "meal-photos", "food-detail", "analytics", "fast
 
 export async function generateMetadata({ params }: PageProps<"/[lang]">): Promise<Metadata> {
   const lang = (await params).lang as Locale;
-  return pageMetadata(lang, "/", {});
+  const { site } = getMessages(lang).common;
+  // The home title already carries the brand, so it skips the title template.
+  return pageMetadata(lang, "/", { title: { absolute: site.title }, description: site.description });
 }
 
 export default async function Home({ params }: PageProps<"/[lang]">) {
@@ -86,6 +90,8 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
       <AppShowcase lang={lang} t={t.showcase} />
       <Premium lang={lang} t={t.premium} store={m.common.store} />
       <Science t={t.science} />
+      <HomeIntro t={t.intro} />
+      <HomeResources lang={lang} t={t.resources} tools={m.tools.index.cards} blog={m.blog} />
       <Community t={t.community} />
       <HomeFaq lang={lang} t={t.faq} />
       <CTA lang={lang} t={t.cta} store={m.common.store} />

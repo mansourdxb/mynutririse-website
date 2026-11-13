@@ -30,7 +30,12 @@ export function pageMetadata(
   const url = localePath(lang, path);
   // Metadata merges shallowly: this openGraph/twitter replaces the layout's
   // whole object, so the share text and image must be set here too.
-  const shareTitle = typeof meta.title === "string" ? meta.title : undefined;
+  const shareTitle =
+    typeof meta.title === "string"
+      ? meta.title
+      : meta.title && "absolute" in meta.title
+        ? meta.title.absolute
+        : undefined;
   const shareText = {
     ...(shareTitle !== undefined ? { title: shareTitle } : {}),
     ...(meta.description !== undefined ? { description: meta.description } : {}),

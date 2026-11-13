@@ -5,10 +5,10 @@ import type en from "../en/common";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default (f: Facts): ReturnType<typeof en> => ({
   site: {
-    title: "MyNutriRise : compteur de calories IA et nutrition halal",
+    title: "Compteur de calories et appli pour maigrir | MyNutriRise",
     titleTemplate: "%s — MyNutriRise",
     description:
-      "Suivez vos calories, analysez vos repas avec l’IA, suivez un programme personnalisé et adoptez de meilleures habitudes avec MyNutriRise.",
+      "MyNutriRise est l’appli régime et compteur de calories gratuite pour maigrir : photographiez vos repas, suivez vos macros et des menus halal. Téléchargez-la.",
     ogDescription:
       "Suivez vos calories, analysez vos repas grâce à l’IA, suivez des programmes alimentaires personnalisés et adoptez chaque jour de meilleures habitudes.",
     twitterDescription:
@@ -73,9 +73,9 @@ export default (f: Facts): ReturnType<typeof en> => ({
     back: "Retour à l’accueil",
   },
   download: {
-    metaTitle: "Télécharger MyNutriRise",
+    metaTitle: "Télécharger l’appli régime gratuite pour iPhone et Android",
     metaDescription:
-      "Téléchargez MyNutriRise sur iPhone ou Android : analyse des repas par IA, programmes halal et cuisines du monde, jeûne et coaching.",
+      "Téléchargez MyNutriRise, l’appli régime gratuite pour iPhone et Android : scan de repas IA, suivi des calories et des macros, menus halal. Lancez-vous.",
     title: "Obtenir MyNutriRise",
     body: "Sur votre téléphone, vous serez redirigé directement vers votre boutique d’applications. Sur ordinateur, choisissez votre plateforme :",
   },

@@ -5,10 +5,10 @@ import type en from "../en/common";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default (f: Facts): ReturnType<typeof en> => ({
   site: {
-    title: "MyNutriRise: ИИ-счётчик калорий и халяльное питание",
+    title: "Счётчик калорий и приложение для похудения | MyNutriRise",
     titleTemplate: "%s — MyNutriRise",
     description:
-      "Считай калории, сканируй блюда с ИИ, следуй персональным планам и формируй здоровые привычки с MyNutriRise — твоим умным помощником.",
+      "MyNutriRise — бесплатный счётчик калорий и приложение для похудения: фотографируй еду, считай БЖУ и следуй халяльным планам питания. Скачай бесплатно.",
     ogDescription:
       "Считай калории, сканируй блюда с помощью ИИ, следуй персональным планам питания и каждый день формируй здоровые привычки.",
     twitterDescription:
@@ -73,9 +73,9 @@ export default (f: Facts): ReturnType<typeof en> => ({
     back: "На главную",
   },
   download: {
-    metaTitle: "Скачать MyNutriRise",
+    metaTitle: "Скачать приложение для похудения на iPhone и Android",
     metaDescription:
-      "Скачай MyNutriRise для iPhone или Android — ИИ-сканирование блюд, халяльные и национальные планы питания, голодание и коучинг.",
+      "Скачай MyNutriRise — бесплатное приложение для похудения на iPhone и Android: ИИ-скан еды, подсчёт калорий и БЖУ, халяльные планы питания. Начни сегодня.",
     title: "Установи MyNutriRise",
     body: "На телефоне ты сразу попадёшь в магазин приложений. На компьютере выбери свою платформу:",
   },

@@ -9,7 +9,7 @@ import { getMessages } from "@/i18n/messages";
 export async function generateMetadata({ params }: PageProps<"/[lang]/features">): Promise<Metadata> {
   const lang = (await params).lang as Locale;
   const t = getMessages(lang).features;
-  return pageMetadata(lang, "/features", { title: t.metaTitle, description: t.metaDescription });
+  return pageMetadata(lang, "/features", { title: { absolute: t.metaTitle }, description: t.metaDescription });
 }
 
 export default async function FeaturesPage({ params }: PageProps<"/[lang]/features">) {

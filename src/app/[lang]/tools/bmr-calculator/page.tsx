@@ -13,7 +13,7 @@ import { rich } from "@/i18n/rich";
 export async function generateMetadata({ params }: PageProps<"/[lang]/tools/bmr-calculator">): Promise<Metadata> {
   const lang = (await params).lang as Locale;
   const t = getMessages(lang).tools.bmr;
-  return pageMetadata(lang, "/tools/bmr-calculator", { title: t.metaTitle, description: t.metaDescription });
+  return pageMetadata(lang, "/tools/bmr-calculator", { title: { absolute: t.metaTitle }, description: t.metaDescription });
 }
 
 const linkClass =

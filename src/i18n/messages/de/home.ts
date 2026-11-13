@@ -7,11 +7,30 @@ export default (f: Facts): ReturnType<typeof en> => ({
       "Zähle Kalorien, scanne Mahlzeiten mit KI, folge halalen und kulturellen Mahlzeitenplänen, behalte dein Fasten im Blick und erhalte intelligentes Ernährungscoaching.",
   },
   hero: {
-    title: "Ernährungs- und Fitnesstracking <hl>für den echten Alltag</hl>",
+    title: "KI-Kalorienzähler zum <hl>Abnehmen und für Muskelaufbau</hl>",
+    tagline: "Ernährungs- und Fitnesstracking für den echten Alltag",
     lead: "Foto machen – und die KI trägt deine Mahlzeit ein. Folge halalen und kulturellen Mahlzeitenplänen, tracke Fasten und Trainings und erhalte intelligentes Coaching – alles, was du für ein gesünderes, glücklicheres Leben brauchst.",
     quizLink: "Du weißt nicht, wo du anfangen sollst? Hol dir in 1 Minute deinen persönlichen Plan →",
     screenshotAlt: "MyNutriRise-Tagesansicht mit verbleibenden Kalorien, Makronährstoffen und Schritten",
     pills: ["KI-Mahlzeit-Scan", "Halal & Esskulturen", `${f.RECIPES} Rezepte`],
+  },
+  intro: {
+    title: "Eine Diät-App rund um das Essen, das du wirklich isst",
+    paragraphs: [
+      "MyNutriRise ist Diät-App und Kalorienzähler für alle, die abnehmen, Muskeln aufbauen oder einfach besser essen wollen, ohne auf ihr Lieblingsessen zu verzichten. Fotografiere deinen Teller und die KI schätzt Kalorien und Makros – oder erfasse per Suche, Barcode oder Sprache, wenn das schneller geht.",
+      "Willst du abnehmen, legt die App aus Ziel, Körperdaten und Aktivität ein tägliches Kalorienziel fest und zeigt, wie jede Mahlzeit hineinpasst. Willst du Muskeln aufbauen, behält der Makro-Tracker Protein, Kohlenhydrate und Fett im Blick, dazu kommen Trainingspläne und ein Trainingsprotokoll.",
+      `Vorausplanen fällt leichter mit einem Essensplaner, der auf ${f.RECIPES} Rezepte und ${f.DIET_PLAN_COUNT} geführte Vier-Wochen-Diätpläne zurückgreift. Auch Intervallfasten ist abgedeckt: ${f.FASTING_PLAN_COUNT} Fastenpläne von 16:8 und 5:2 bis zu einem Ramadan-Plan, jeweils mit Timer.`,
+      `Halal-Ernährung ist fest eingebaut statt nachträglich ergänzt. Die Halal-Filterung ist für jedes Gericht geprüft, und die Bibliothek umfasst ${f.CUISINES} Küchen, darunter golfarabische und emiratische, türkische, marokkanische, persische und pakistanische. Die gesamte App gibt es auf Arabisch sowie auf Deutsch, Englisch, Spanisch, Französisch und Russisch – so erfasst du arabische Gerichte in der Sprache, in der du denkst.`,
+      "Du weißt nicht, wo du anfangen sollst? Die kostenlosen Kalorien-, Makro- und BMI-Rechner weiter unten liefern dir in Sekunden einen sinnvollen Startpunkt – ganz ohne Konto.",
+    ],
+  },
+  resources: {
+    toolsEyebrow: "Kostenlose Tools",
+    toolsTitle: "Kostenlose Ernährungsrechner",
+    allTools: "Alle kostenlosen Tools",
+    guidesEyebrow: "Ratgeber",
+    guidesTitle: "Neueste Ratgeber",
+    allGuides: "Alle Ratgeber lesen",
   },
   pressBar: {
     heading: "Bekannt aus",
@@ -203,6 +222,11 @@ export default (f: Facts): ReturnType<typeof en> => ({
         question: "Auf welchen Geräten gibt es die App?",
         answer:
           "MyNutriRise ist für iPhone und Android-Smartphones gemacht. Lade die App über die App-Store-Links auf dieser Seite herunter – deine Daten werden mit deinem Konto synchronisiert.",
+      },
+      {
+        question: "Ist MyNutriRise dasselbe wie Nutri Rise?",
+        answer:
+          "Ja. MyNutriRise ist der vollständige Name der App, und viele suchen sie als Nutri Rise. Es ist dieselbe kostenlose App im App Store und bei Google Play, mit denselben Funktionen und demselben Konto.",
       },
     ],
   },

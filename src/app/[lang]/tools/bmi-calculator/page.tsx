@@ -12,7 +12,7 @@ import { rich } from "@/i18n/rich";
 export async function generateMetadata({ params }: PageProps<"/[lang]/tools/bmi-calculator">): Promise<Metadata> {
   const lang = (await params).lang as Locale;
   const t = getMessages(lang).tools.bmi;
-  return pageMetadata(lang, "/tools/bmi-calculator", { title: t.metaTitle, description: t.metaDescription });
+  return pageMetadata(lang, "/tools/bmi-calculator", { title: { absolute: t.metaTitle }, description: t.metaDescription });
 }
 
 const linkClass =

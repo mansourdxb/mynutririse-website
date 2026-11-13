@@ -34,6 +34,9 @@ export function Hero({
         <div className="grid items-center gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10">
           {/* Text content */}
           <div className="text-center lg:text-start">
+            <p className="anim-fade-up eyebrow mb-4" style={{ animationDelay: "0.05s" }}>
+              {t.tagline}
+            </p>
             <h1
               className="anim-fade-up text-display text-ink"
               style={{ animationDelay: "0.1s" }}

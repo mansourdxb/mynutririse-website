@@ -6,11 +6,30 @@ export default (f: Facts) => ({
       "Track calories, scan meals with AI, follow halal and cultural meal plans, monitor fasting, and get intelligent nutrition coaching.",
   },
   hero: {
-    title: "Nutrition & Fitness tracking <hl>for real life</hl>",
+    title: "AI calorie counter for <hl>weight loss and muscle gain</hl>",
+    tagline: "Nutrition & Fitness tracking for real life",
     lead: "Snap a photo and AI logs your meal. Follow halal and cultural meal plans, track fasting and workouts, and get intelligent coaching — everything you need for a healthier, happier life.",
     quizLink: "Not sure where to start? Get your custom plan in 1 minute →",
     screenshotAlt: "MyNutriRise Today screen showing calories left, macronutrients and steps",
     pills: ["AI Meal Scan", "Halal & Cultural Diets", `${f.RECIPES} Recipes`],
+  },
+  intro: {
+    title: "A diet app built around the food you actually eat",
+    paragraphs: [
+      "MyNutriRise is a diet app and calorie counter for people who want to lose weight, build muscle or simply eat better without giving up the food they love. Snap a photo of your plate and the AI estimates its calories and macros, or log by search, barcode or voice when that is quicker.",
+      "If your goal is to lose weight, the app sets a daily calorie target from your goal, body and activity level and shows how every meal fits it. If you want to build muscle, the macro tracker keeps protein, carbs and fat in view, with workout routines and an exercise log alongside.",
+      `Planning ahead is easier with a meal planner that draws on ${f.RECIPES} recipes and ${f.DIET_PLAN_COUNT} guided four-week diet plans. Intermittent fasting is covered too: ${f.FASTING_PLAN_COUNT} fasting plans, from 16:8 and 5:2 to a Ramadan schedule, each with a timer.`,
+      `Eating halal is built in rather than bolted on. Halal filtering is checked across every dish, and the library spans ${f.CUISINES} cuisines, including Gulf and Emirati, Turkish, Moroccan, Persian and Pakistani food. The whole app is available in Arabic as well as English, German, Spanish, French and Russian, so you can log Arabic and Gulf dishes in the language you think in.`,
+      "Not sure where to start? The free calorie, macro and BMI calculators below give you a sensible starting point in seconds, with no account needed.",
+    ],
+  },
+  resources: {
+    toolsEyebrow: "Free tools",
+    toolsTitle: "Free nutrition calculators",
+    allTools: "See all free tools",
+    guidesEyebrow: "Guides",
+    guidesTitle: "Latest guides",
+    allGuides: "Read all guides",
   },
   pressBar: {
     heading: "As featured in",
@@ -202,6 +221,11 @@ export default (f: Facts) => ({
         question: "Which devices is it available on?",
         answer:
           "MyNutriRise is built for iPhone and Android phones. Download it from the app store links on this page and your data syncs to your account.",
+      },
+      {
+        question: "Is MyNutriRise the same as Nutri Rise?",
+        answer:
+          "Yes. MyNutriRise is the app's full name, and many people search for it as Nutri Rise. It's the same free app on the App Store and Google Play, with the same features and the same account.",
       },
     ],
   },

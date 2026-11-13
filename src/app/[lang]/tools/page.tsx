@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { toolPages } from "@/data/tools";
 import { localePath, type Locale } from "@/i18n/config";
 import { pageMetadata } from "@/i18n/metadata";
 import { getMessages } from "@/i18n/messages";
@@ -11,13 +12,6 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/tools">): 
   return pageMetadata(lang, "/tools", { title: t.metaTitle, description: t.metaDescription });
 }
 
-const tools = [
-  { href: "/tools/calorie-calculator", emoji: "🔥", key: "calorie" },
-  { href: "/tools/macro-calculator", emoji: "🥩", key: "macro" },
-  { href: "/tools/bmi-calculator", emoji: "📏", key: "bmi" },
-  { href: "/tools/bmr-calculator", emoji: "💤", key: "bmr" },
-  { href: "/tools/ideal-weight-calculator", emoji: "🎯", key: "idealWeight" },
-] as const;
 
 export default async function ToolsPage({ params }: PageProps<"/[lang]/tools">) {
   const lang = (await params).lang as Locale;
@@ -40,7 +34,7 @@ export default async function ToolsPage({ params }: PageProps<"/[lang]/tools">) 
         </p>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {tools.map((tool) => (
+          {toolPages.map((tool) => (
             <Link
               key={tool.href}
               href={localePath(lang, tool.href)}

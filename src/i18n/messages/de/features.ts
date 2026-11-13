@@ -3,9 +3,9 @@ import type en from "../en/features";
 
 export default (f: Facts): ReturnType<typeof en> => ({
   // /features page
-  metaTitle: "Funktionen: KI-Mahlzeitscan, Rezepte & Fasten",
+  metaTitle: "KI-Essensscanner, Essenspläne & Makro-Tracker | MyNutriRise",
   metaDescription:
-    "Die Funktionen von MyNutriRise: Ernährung tracken, gesunde Gewohnheiten aufbauen und deine Wellness-Ziele erreichen – smart und einfach.",
+    "Entdecke MyNutriRise: KI-Essensscanner, persönliche Essenspläne, Makro-Tracker, Fasten-Timer und Halal-Rezepte. Alle Funktionen ansehen und gratis testen.",
   pageTitle: "Starke Funktionen für ein gesünderes Leben",
   pageIntro:
     "Alles, was du brauchst, um deine Ernährung zu verstehen, deine Gewohnheiten zu optimieren und dich rundum wohlzufühlen – in einer schön gestalteten App.",

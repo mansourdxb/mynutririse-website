@@ -7,11 +7,30 @@ export default (f: Facts): ReturnType<typeof en> => ({
       "Controla tus calorías, escanea tus comidas con IA, sigue planes de alimentación halal y culturales, haz seguimiento de tu ayuno y recibe coaching nutricional inteligente.",
   },
   hero: {
-    title: "Seguimiento de nutrición y fitness <hl>para la vida real</hl>",
+    title: "Contador de calorías con IA para <hl>adelgazar y ganar músculo</hl>",
+    tagline: "Seguimiento de nutrición y fitness para la vida real",
     lead: "Toma una foto y la IA registra tu comida. Sigue planes de alimentación halal y culturales, haz seguimiento de tu ayuno y tus entrenamientos, y recibe coaching inteligente: todo lo que necesitas para una vida más sana y feliz.",
     quizLink: "¿No sabes por dónde empezar? Obtén tu plan personalizado en 1 minuto →",
     screenshotAlt: "Pantalla Hoy de MyNutriRise con calorías restantes, macronutrientes y pasos",
     pills: ["Escaneo de comidas con IA", "Dietas halal y culturales", `${f.RECIPES} recetas`],
+  },
+  intro: {
+    title: "Una app de dieta pensada para la comida que de verdad comes",
+    paragraphs: [
+      "MyNutriRise es una app de dieta y contador de calorías para quien quiere adelgazar, ganar músculo o simplemente comer mejor sin renunciar a la comida que le gusta. Haz una foto a tu plato y la IA estima sus calorías y macros, o regístralo por búsqueda, código de barras o voz cuando sea más rápido.",
+      "Si tu objetivo es perder peso, la app fija un objetivo diario de calorías según tu meta, tu cuerpo y tu nivel de actividad, y te muestra cómo encaja cada comida. Si quieres ganar músculo, el contador de macros mantiene a la vista la proteína, los carbohidratos y la grasa, junto con rutinas de entrenamiento y un registro de ejercicios.",
+      `Planificar es más fácil con un planificador de comidas que se apoya en ${f.RECIPES} recetas y ${f.DIET_PLAN_COUNT} planes de dieta guiados de cuatro semanas. El ayuno intermitente también está incluido: ${f.FASTING_PLAN_COUNT} planes de ayuno, del 16:8 y el 5:2 a un horario para Ramadán, cada uno con su temporizador.`,
+      `Comer halal forma parte de la app desde el principio. El filtro halal está revisado en cada plato, y la biblioteca abarca ${f.CUISINES} cocinas, entre ellas la del Golfo y la emiratí, la turca, la marroquí, la persa y la pakistaní. Toda la app está disponible en árabe, además de en español, inglés, alemán, francés y ruso, para que registres platos árabes y del Golfo en tu idioma.`,
+      "¿No sabes por dónde empezar? Las calculadoras gratuitas de calorías, macros e IMC que verás más abajo te dan un punto de partida razonable en segundos, sin crear una cuenta.",
+    ],
+  },
+  resources: {
+    toolsEyebrow: "Herramientas gratis",
+    toolsTitle: "Calculadoras de nutrición gratuitas",
+    allTools: "Ver todas las herramientas",
+    guidesEyebrow: "Guías",
+    guidesTitle: "Últimas guías",
+    allGuides: "Leer todas las guías",
   },
   pressBar: {
     heading: "Han hablado de nosotros",
@@ -203,6 +222,11 @@ export default (f: Facts): ReturnType<typeof en> => ({
         question: "¿En qué dispositivos está disponible?",
         answer:
           "MyNutriRise está diseñada para teléfonos iPhone y Android. Descárgala desde los enlaces a las tiendas de aplicaciones de esta página y tus datos se sincronizarán con tu cuenta.",
+      },
+      {
+        question: "¿MyNutriRise es lo mismo que Nutri Rise?",
+        answer:
+          "Sí. MyNutriRise es el nombre completo de la app y mucha gente la busca como Nutri Rise. Es la misma app gratuita en App Store y Google Play, con las mismas funciones y la misma cuenta.",
       },
     ],
   },
