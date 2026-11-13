@@ -8,6 +8,7 @@ import { defaultLocale, locales, type Locale } from "@/i18n/config";
  */
 const PARTIAL_PAGES: Record<string, readonly Locale[]> = {
   "/weight-loss-app": ["en", "ar", "ru"],
+  "/muscle-gain-app": ["en", "ar", "ru"],
 };
 
 export function pageLocales(path: string): readonly Locale[] {

@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { articles } from "@/app/[lang]/blog/articles";
-import { ContentBlocks, richText, type Block } from "@/components/content/ContentBlocks";
+import { ContentBlocks, richText } from "@/components/content/ContentBlocks";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { StoreButtons } from "@/components/ui/Button";
 import { JsonLd } from "@/components/ui/JsonLd";
@@ -91,7 +91,7 @@ export function LandingPage({ lang, config }: { lang: Locale; config: LandingCon
 
       <div className="mx-auto max-w-3xl px-6 py-16">
         <div className="space-y-4 leading-7 text-ink-2">
-          <ContentBlocks lang={lang} blocks={t.blocks as readonly Block[]} sourcesHeading={tools.shared.sourcesHeading} />
+          <ContentBlocks lang={lang} blocks={t.blocks} sourcesHeading={tools.shared.sourcesHeading} />
 
           <h2 className="pt-6 text-2xl font-bold text-ink">{tools.shared.faqHeading}</h2>
           {t.faqs.map((faq) => (

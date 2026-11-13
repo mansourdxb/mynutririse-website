@@ -34,6 +34,7 @@ export const LINK_TAGS: Record<string, string> = {
   macroguide: "/blog/track-macros-halal-cultural-meals",
   halal: "/halal-nutrition-app",
   weightloss: "/weight-loss-app",
+  muscle: "/muscle-gain-app",
   recipes: "/recipes",
   quiz: "/quiz",
   download: "/download",

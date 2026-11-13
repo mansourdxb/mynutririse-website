@@ -23,6 +23,7 @@ const goalStyles: { href: string; landing?: string; color: string; bg: string; i
   },
   {
     href: "/tools/macro-calculator",
+    landing: "/muscle-gain-app",
     color: "text-orange-600 dark:text-orange-400",
     bg: "bg-orange-50 dark:bg-orange-400/10",
     icon: (

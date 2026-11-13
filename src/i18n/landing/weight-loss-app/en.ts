@@ -1,9 +1,10 @@
 import type { Facts } from "@/data/facts";
+import type { LandingContent } from "../types";
 
 // /weight-loss-app — target searches: "weight loss app", "diet app for weight loss".
 // Blocks render through src/components/content/ContentBlocks.tsx; link tags
 // such as <deficit>…</deficit> are listed in LINK_TAGS there.
-export default (f: Facts) => ({
+export default (f: Facts): LandingContent => ({
   metaTitle: "Weight Loss App & Calorie Counter | MyNutriRise",
   metaDescription:
     "MyNutriRise is a free weight loss app: AI photo meal logging, a safe calorie target, halal meal plans and weekly progress reports. Start losing weight now.",
