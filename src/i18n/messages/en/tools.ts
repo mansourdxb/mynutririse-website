@@ -67,6 +67,10 @@ const tools = (f: Facts) => ({
         title: "Protein Calculator",
         description: "Daily protein in grams for your weight and goal.",
       },
+      deficit: {
+        title: "Calorie Deficit Calculator",
+        description: "Daily calories to reach a goal weight by a date.",
+      },
     },
     quiz: {
       title: "Custom Plan Quiz",
@@ -239,6 +243,37 @@ const tools = (f: Facts) => ({
       perMeal: "Per meal",
       perMealNote: "Spread across {n} meals",
       empty: "Enter your weight to see your daily protein target.",
+    },
+  },
+
+  deficit: {
+    metaTitle: "Calorie Deficit Calculator: Goal Weight by a Date",
+    metaDescription:
+      "Free calorie deficit calculator: enter your goal weight and date to get daily calories, weekly loss and a safe minimum intake. Plan your weight loss now.",
+    breadcrumb: "Calorie Deficit Calculator",
+    title: "Calorie Deficit Calculator",
+    subtitle: "Set a goal weight and a date to see how many calories to eat each day, with a safe minimum built in.",
+    ctaTitle: "Stay on plan every day",
+    ctaBody: "MyNutriRise tracks your calories and weight trend, so you always know if you are on pace.",
+    calc: {
+      targetWeight: "Goal weight (kg)",
+      targetDate: "Target date",
+      eat: "Eat about",
+      maintenance: "Maintenance",
+      weekly: "Expected loss",
+      kgPerWeek: "{n} kg/week",
+      deficitNote: "{n} kcal/day deficit",
+      floorApplied:
+        "Reaching your goal by that date would mean eating below {floor} kcal a day, the safe minimum. At {floor} kcal a day you can expect to reach it around {date}.",
+      aggressive:
+        "This pace is more than 1% of your body weight per week. A slower plan is easier to stick to and protects muscle.",
+      onTrack: "At this pace you should reach your goal around {date}.",
+      noLoss:
+        "Your goal weight is at or above your current weight. Use the calorie calculator for maintenance or muscle-gain targets.",
+      belowFloor:
+        "Your estimated maintenance is already close to the safe minimum of {floor} kcal a day, so eating less is not advised. Try adding daily activity and speak to a doctor or dietitian.",
+      pastDate: "Choose a target date in the future.",
+      empty: "Fill in your details, goal weight and target date to see your daily calories.",
     },
   },
 

@@ -68,6 +68,10 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
         title: "Proteinrechner",
         description: "Täglicher Proteinbedarf in Gramm für dein Gewicht und dein Ziel.",
       },
+      deficit: {
+        title: "Kaloriendefizit-Rechner",
+        description: "Tägliche Kalorien, um bis zu einem Datum dein Zielgewicht zu erreichen.",
+      },
     },
     quiz: {
       title: "Quiz für deinen Plan",
@@ -240,6 +244,37 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
       perMeal: "Pro Mahlzeit",
       perMealNote: "Verteilt auf {n} Mahlzeiten",
       empty: "Gib dein Gewicht ein, um dein tägliches Proteinziel zu sehen.",
+    },
+  },
+
+  deficit: {
+    metaTitle: "Kaloriendefizit-Rechner: Zielgewicht bis zum Datum",
+    metaDescription:
+      "Kostenloser Kaloriendefizit-Rechner: Gib Zielgewicht und Datum ein und erhalte tägliche Kalorien, Abnahme pro Woche und ein sicheres Minimum. Jetzt planen.",
+    breadcrumb: "Kaloriendefizit-Rechner",
+    title: "Kaloriendefizit-Rechner",
+    subtitle: "Leg ein Zielgewicht und ein Datum fest und sieh, wie viele Kalorien du täglich essen solltest – mit eingebautem sicheren Minimum.",
+    ctaTitle: "Bleib jeden Tag auf Kurs",
+    ctaBody: "MyNutriRise trackt deine Kalorien und deinen Gewichtstrend, damit du immer weißt, ob du im Plan liegst.",
+    calc: {
+      targetWeight: "Zielgewicht (kg)",
+      targetDate: "Zieldatum",
+      eat: "Iss etwa",
+      maintenance: "Erhaltungsbedarf",
+      weekly: "Erwartete Abnahme",
+      kgPerWeek: "{n} kg/Woche",
+      deficitNote: "{n} kcal/Tag Defizit",
+      floorApplied:
+        "Um dein Ziel bis zu diesem Datum zu erreichen, müsstest du unter {floor} kcal pro Tag essen, dem sicheren Minimum. Mit {floor} kcal pro Tag erreichst du es voraussichtlich um den {date}.",
+      aggressive:
+        "Dieses Tempo liegt über 1 % deines Körpergewichts pro Woche. Ein langsamerer Plan lässt sich leichter durchhalten und schützt deine Muskeln.",
+      onTrack: "In diesem Tempo solltest du dein Ziel um den {date} erreichen.",
+      noLoss:
+        "Dein Zielgewicht liegt auf oder über deinem aktuellen Gewicht. Nutze den Kalorienrechner für Ziele zum Halten oder für den Muskelaufbau.",
+      belowFloor:
+        "Dein geschätzter Erhaltungsbedarf liegt bereits nahe am sicheren Minimum von {floor} kcal pro Tag, daher ist weniger zu essen nicht ratsam. Versuche, dich im Alltag mehr zu bewegen, und sprich mit einer Ärztin, einem Arzt oder einer Ernährungsfachkraft.",
+      pastDate: "Wähle ein Zieldatum in der Zukunft.",
+      empty: "Gib deine Daten, dein Zielgewicht und dein Zieldatum ein, um deine täglichen Kalorien zu sehen.",
     },
   },
 

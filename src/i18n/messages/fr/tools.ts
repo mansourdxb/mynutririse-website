@@ -68,6 +68,10 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
         title: "Calculateur de protéines",
         description: "Vos protéines quotidiennes en grammes selon votre poids et votre objectif.",
       },
+      deficit: {
+        title: "Calculateur de déficit calorique",
+        description: "Les calories quotidiennes pour atteindre un poids cible à une date donnée.",
+      },
     },
     quiz: {
       title: "Quiz programme personnalisé",
@@ -240,6 +244,37 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
       perMeal: "Par repas",
       perMealNote: "Réparties sur {n} repas",
       empty: "Saisissez votre poids pour voir votre objectif quotidien de protéines.",
+    },
+  },
+
+  deficit: {
+    metaTitle: "Calculateur de déficit calorique : poids cible et date",
+    metaDescription:
+      "Calculateur de déficit calorique gratuit : entrez poids cible et date pour obtenir vos calories par jour, la perte par semaine et un minimum sûr. Essayez.",
+    breadcrumb: "Calculateur de déficit calorique",
+    title: "Calculateur de déficit calorique",
+    subtitle: "Fixez un poids cible et une date pour savoir combien de calories manger chaque jour, avec un minimum de sécurité intégré.",
+    ctaTitle: "Restez sur la bonne voie chaque jour",
+    ctaBody: "MyNutriRise suit vos calories et l’évolution de votre poids, pour que vous sachiez toujours si vous tenez le rythme.",
+    calc: {
+      targetWeight: "Poids cible (kg)",
+      targetDate: "Date cible",
+      eat: "Mangez environ",
+      maintenance: "Entretien",
+      weekly: "Perte prévue",
+      kgPerWeek: "{n} kg/semaine",
+      deficitNote: "Déficit de {n} kcal/jour",
+      floorApplied:
+        "Atteindre votre objectif à cette date vous obligerait à manger moins de {floor} kcal par jour, le minimum sûr. À {floor} kcal par jour, vous pouvez espérer l’atteindre vers le {date}.",
+      aggressive:
+        "Ce rythme dépasse 1 % de votre poids corporel par semaine. Un programme plus lent est plus facile à tenir et protège vos muscles.",
+      onTrack: "À ce rythme, vous devriez atteindre votre objectif vers le {date}.",
+      noLoss:
+        "Votre poids cible est égal ou supérieur à votre poids actuel. Utilisez le calculateur de calories pour des objectifs d’entretien ou de prise de muscle.",
+      belowFloor:
+        "Vos besoins d’entretien estimés sont déjà proches du minimum sûr de {floor} kcal par jour : manger moins n’est donc pas conseillé. Essayez d’ajouter de l’activité au quotidien et parlez-en à un médecin ou à un diététicien.",
+      pastDate: "Choisissez une date cible dans le futur.",
+      empty: "Renseignez vos informations, votre poids cible et votre date cible pour voir vos calories quotidiennes.",
     },
   },
 

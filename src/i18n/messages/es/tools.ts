@@ -68,6 +68,10 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
         title: "Calculadora de proteínas",
         description: "Gramos de proteína al día según tu peso y tu objetivo.",
       },
+      deficit: {
+        title: "Calculadora de déficit calórico",
+        description: "Calorías diarias para llegar a un peso objetivo en una fecha.",
+      },
     },
     quiz: {
       title: "Test de plan personalizado",
@@ -241,6 +245,37 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
       perMeal: "Por comida",
       perMealNote: "Repartida en {n} comidas",
       empty: "Introduce tu peso para ver tu objetivo diario de proteína.",
+    },
+  },
+
+  deficit: {
+    metaTitle: "Calculadora de déficit calórico: tu peso objetivo a tiempo",
+    metaDescription:
+      "Calculadora de déficit calórico gratis: con tu peso objetivo y una fecha, obtén calorías diarias, pérdida semanal y un mínimo seguro. Calcula ya.",
+    breadcrumb: "Calculadora de déficit calórico",
+    title: "Calculadora de déficit calórico",
+    subtitle: "Fija un peso objetivo y una fecha para ver cuántas calorías comer cada día, con un mínimo seguro incluido.",
+    ctaTitle: "Sigue tu plan cada día",
+    ctaBody: "MyNutriRise controla tus calorías y la tendencia de tu peso, para que siempre sepas si vas a buen ritmo.",
+    calc: {
+      targetWeight: "Peso objetivo (kg)",
+      targetDate: "Fecha objetivo",
+      eat: "Come unas",
+      maintenance: "Mantenimiento",
+      weekly: "Pérdida esperada",
+      kgPerWeek: "{n} kg/semana",
+      deficitNote: "Déficit de {n} kcal/día",
+      floorApplied:
+        "Llegar a tu objetivo en esa fecha supondría comer menos de {floor} kcal al día, el mínimo seguro. Con {floor} kcal al día puedes esperar alcanzarlo hacia el {date}.",
+      aggressive:
+        "Este ritmo supera el 1 % de tu peso corporal por semana. Un plan más lento es más fácil de mantener y protege el músculo.",
+      onTrack: "A este ritmo deberías alcanzar tu objetivo hacia el {date}.",
+      noLoss:
+        "Tu peso objetivo es igual o superior a tu peso actual. Usa la calculadora de calorías para obtener objetivos de mantenimiento o de ganancia muscular.",
+      belowFloor:
+        "Tu mantenimiento estimado ya está cerca del mínimo seguro de {floor} kcal al día, así que no se recomienda comer menos. Prueba a sumar actividad diaria y habla con un médico o un dietista-nutricionista.",
+      pastDate: "Elige una fecha objetivo en el futuro.",
+      empty: "Completa tus datos, tu peso objetivo y tu fecha objetivo para ver tus calorías diarias.",
     },
   },
 

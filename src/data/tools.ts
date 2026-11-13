@@ -51,6 +51,13 @@ export const toolPages = [
     related: ["macro", "deficit", "bodyFat"],
     guides: ["track-macros-halal-cultural-meals", "ai-photo-calorie-tracking"],
   },
+  {
+    key: "deficit",
+    href: "/tools/calorie-deficit-calculator",
+    emoji: "📉",
+    related: ["tdee", "protein", "calorie"],
+    guides: ["intermittent-fasting-16-8-guide", "ai-photo-calorie-tracking"],
+  },
 ] as const;
 
 export type ToolKey = (typeof toolPages)[number]["key"];
