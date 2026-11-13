@@ -5,7 +5,7 @@ import type { Locale } from "@/i18n/config";
 const config: LandingConfig = {
   slug: "muscle-gain-app",
   tools: ["protein", "macro", "bodyFat"],
-  guides: ["track-macros-halal-cultural-meals", "ai-photo-calorie-tracking"],
+  guides: ["how-much-protein-to-build-muscle", "track-macros-halal-cultural-meals", "ai-photo-calorie-tracking"],
 };
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/muscle-gain-app">): Promise<Metadata> {
