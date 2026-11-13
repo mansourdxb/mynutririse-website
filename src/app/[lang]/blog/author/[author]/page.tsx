@@ -4,8 +4,10 @@ import { notFound } from "next/navigation";
 import { authorPath, formatDate } from "../../ArticlePage";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { authors, type AuthorSlug } from "@/data/authors";
-import { ORGANIZATION_ID, absoluteUrl, localePath, type Locale } from "@/i18n/config";
+import Image from "next/image";
+import { author as authorData, authors, type AuthorSlug } from "@/data/authors";
+import { personJsonLd } from "@/lib/person";
+import { absoluteUrl, localePath, type Locale } from "@/i18n/config";
 import { pageMetadata } from "@/i18n/metadata";
 import { getMessages } from "@/i18n/messages";
 import { articlesIn } from "@/i18n/posts";
@@ -35,19 +37,14 @@ export default async function AuthorPage({ params }: PageProps<"/[lang]/blog/aut
   const lang = l as Locale;
   const { blog, common } = getMessages(lang);
   const t = blog.authors[author];
+  const person = authorData(author);
   const posts = articlesIn(lang).filter(({ article }) => article.author === author);
 
   const profileJsonLd = {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
     url: absoluteUrl(lang, authorPath(author)),
-    mainEntity: {
-      "@type": "Person",
-      name: authors.find((a) => a.slug === author)!.name,
-      jobTitle: t.role,
-      description: t.bio,
-      worksFor: { "@id": ORGANIZATION_ID },
-    },
+    mainEntity: { ...personJsonLd(lang, author), description: t.bio, homeLocation: { "@type": "Place", name: t.location } },
   };
 
   return (
@@ -62,8 +59,16 @@ export default async function AuthorPage({ params }: PageProps<"/[lang]/blog/aut
             { name: t.name, href: authorPath(author) },
           ]}
         />
-        <h1 className="mt-6 text-h2 text-ink">{t.name}</h1>
-        <p className="mt-2 font-medium text-accent-strong">{t.role}</p>
+        <div className="mt-6 flex items-center gap-5">
+          {person.image && (
+            <Image src={person.image} alt={t.imageAlt} width={96} height={96} className="h-24 w-24 rounded-full" priority />
+          )}
+          <div>
+            <h1 className="text-h2 text-ink">{t.name}</h1>
+            <p className="mt-2 font-medium text-accent-strong">{t.role}</p>
+            <p className="mt-1 text-sm text-ink-3">{t.location}</p>
+          </div>
+        </div>
         <p className="mt-6 text-lead text-ink-2">{t.bio}</p>
 
         <h2 className="mt-12 text-xl font-bold text-ink">{t.postsHeading}</h2>

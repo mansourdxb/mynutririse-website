@@ -19,6 +19,8 @@ import {
 import { pageMetadata } from "@/i18n/metadata";
 import { getMessages } from "@/i18n/messages";
 import { articleText } from "@/i18n/posts";
+import { personJsonLd } from "@/lib/person";
+import Image from "next/image";
 
 function article(slug: ArticleSlug): ArticleInfo {
   return articles.find((a) => a.slug === slug)!;
@@ -68,7 +70,6 @@ export function ArticlePage({
   const path = `/blog/${slug}`;
   const person = authorData(a.author);
   const bio = blog.authors[a.author];
-  const authorUrl = absoluteUrl(lang, authorPath(a.author));
 
   const articleJsonLd = {
     "@context": "https://schema.org",
@@ -78,7 +79,7 @@ export function ArticlePage({
     inLanguage: lang,
     datePublished: a.date,
     dateModified: a.dateModified,
-    author: { "@type": "Person", name: person.name, url: authorUrl, jobTitle: bio.role },
+    author: personJsonLd(lang, a.author),
     publisher: {
       "@type": "Organization",
       "@id": ORGANIZATION_ID,
@@ -106,12 +107,17 @@ export function ArticlePage({
         />
         <h1 className="mt-6 text-h2 text-ink">{t.title}</h1>
         <div className="mt-4 space-y-1 text-sm text-ink-3">
-          <p>
+          <p className="flex items-center gap-2">
+            {person.image && (
+              <Image src={person.image} alt={bio.imageAlt} width={28} height={28} className="h-7 w-7 rounded-full" />
+            )}
+            <span>
             {blog.labels.writtenBy}{" "}
             <Link href={localePath(lang, authorPath(a.author))} className="font-medium text-ink-2 hover:text-accent-strong">
               {bio.name}
             </Link>
             , {bio.role}
+            </span>
           </p>
           <p>
             {blog.labels.published} <time dateTime={a.date}>{formatDate(a.date, lang)}</time>

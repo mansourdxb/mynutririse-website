@@ -21,12 +21,14 @@ export default (f: Facts): ReturnType<typeof en> => ({
     published: "نُشر",
     updated: "حُدّث",
   },
-  // TODO(owner): replace with the real bio, credentials and photo.
+  // Author profile. Never add degrees or credentials that are not real.
   authors: {
     "mansour-shaaban": {
       name: "منصور شعبان",
-      role: "مؤسس MyNutriRise",
-      bio: "منصور شعبان مؤسس تطبيق MyNutriRise. أنشأ التطبيق ليجعل تتبّع التغذية مناسباً للطعام الذي يأكله الناس فعلاً، ومنه الأطباق الحلال والتقليدية من الخليج والشرق الأوسط وغيرها.",
+      role: "مؤسس ومطوّر MyNutriRise",
+      bio: "منصور شعبان مؤسس تطبيق MyNutriRise ومطوّره، ويقيم في دبي. يبني أدوات للتغذية واللياقة لأشخاص نادراً ما تظهر وجباتهم في تطبيقات حساب السعرات الغربية، من الأطباق الخليجية والشامية إلى الطبخ المنزلي الحلال وصيام رمضان. وكل مقال في هذا الموقع يستند إلى أبحاث محكّمة، وكُتب ليساعدك على اتخاذ قرارات مستنيرة، لا ليحل محل نصيحة الطبيب أو أخصائي التغذية.",
+      location: "دبي، الإمارات العربية المتحدة",
+      imageAlt: "منصور شعبان، مؤسس MyNutriRise",
       metaTitle: "منصور شعبان، مؤسس MyNutriRise",
       metaDescription:
         "مقالات منصور شعبان، مؤسس MyNutriRise: أدلة عملية وموثّقة عن حساب السعرات والبروتين والصيام والأكل الحلال والعربي. اقرأ أحدث المقالات.",

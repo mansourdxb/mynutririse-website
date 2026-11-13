@@ -21,12 +21,14 @@ export default (f: Facts): ReturnType<typeof en> => ({
     published: "Publicado",
     updated: "Actualizado",
   },
-  // TODO(owner): replace with the real bio, credentials and photo.
+  // Author profile. Never add degrees or credentials that are not real.
   authors: {
     "mansour-shaaban": {
       name: "Mansour Shaaban",
-      role: "Fundador de MyNutriRise",
-      bio: "Mansour Shaaban es el fundador de MyNutriRise. Creó la app para que el seguimiento nutricional funcione con la comida que la gente come de verdad, incluidos los platos halal y tradicionales del Golfo, Oriente Medio y otras regiones.",
+      role: "Fundador y desarrollador de MyNutriRise",
+      bio: "Mansour Shaaban es el fundador y desarrollador de MyNutriRise y vive en Dubái. Crea herramientas de nutrición y fitness para personas cuyas comidas casi nunca aparecen en las apps occidentales de calorías, desde platos del Golfo y del Levante hasta la cocina casera halal y el ayuno de Ramadán. Cada artículo de este sitio cita investigación revisada por pares y está escrito para ayudarte a tomar decisiones informadas, no para sustituir el consejo de un médico o dietista-nutricionista.",
+      location: "Dubái, EAU",
+      imageAlt: "Mansour Shaaban, fundador de MyNutriRise",
       metaTitle: "Mansour Shaaban, fundador de MyNutriRise",
       metaDescription:
         "Artículos de Mansour Shaaban, fundador de MyNutriRise: guías prácticas con fuentes sobre calorías, proteína, ayuno y comida halal y árabe.",
