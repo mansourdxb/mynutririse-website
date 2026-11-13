@@ -4,6 +4,7 @@ import type { Locale } from "@/i18n/config";
 import { pageMetadata } from "@/i18n/metadata";
 import { getMessages } from "@/i18n/messages";
 import { rich } from "@/i18n/rich";
+import { MotionProvider } from "@/components/ui/MotionProvider";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/quiz">): Promise<Metadata> {
   const lang = (await params).lang as Locale;
@@ -25,7 +26,9 @@ export default async function QuizPage({ params }: PageProps<"/[lang]/quiz">) {
         </h1>
         <p className="mx-auto mt-4 max-w-xl text-center text-ink-3">{t.intro}</p>
         <div className="mt-12">
-          <QuizFlow lang={lang} t={t.flow} store={common.store} />
+          <MotionProvider>
+            <QuizFlow lang={lang} t={t.flow} store={common.store} />
+          </MotionProvider>
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Features } from "@/components/sections/Features";
 import { CTA } from "@/components/sections/CTA";
+import { MotionProvider } from "@/components/ui/MotionProvider";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import type { Locale } from "@/i18n/config";
 import { pageMetadata } from "@/i18n/metadata";
@@ -34,7 +35,9 @@ export default async function FeaturesPage({ params }: PageProps<"/[lang]/featur
           </p>
         </section>
       </div>
-      <Features lang={lang} t={t} showGrid />
+      <MotionProvider>
+        <Features lang={lang} t={t} showGrid />
+      </MotionProvider>
       <CTA lang={lang} t={m.home.cta} store={m.common.store} />
     </>
   );

@@ -464,7 +464,45 @@ html.js .reveal-group.revealed .reveal-item {
   animation: bounce-soft 2.5s ease-in-out infinite;
 }
 
+/* Mobile menu (Navbar): overlay fades, panel slides in from the end edge. */
+@keyframes menu-fade {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes menu-slide {
+  from {
+    transform: translateX(100%);
+  }
+}
+@keyframes menu-slide-rtl {
+  from {
+    transform: translateX(-100%);
+  }
+}
+@keyframes menu-item {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+.anim-menu-fade {
+  animation: menu-fade 0.25s ease-out both;
+}
+.anim-menu-slide {
+  animation: menu-slide 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+html[dir="rtl"] .anim-menu-slide {
+  animation-name: menu-slide-rtl;
+}
+.anim-menu-item {
+  animation: menu-item 0.3s ease-out both;
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .anim-menu-fade,
+  .anim-menu-slide,
+  .anim-menu-item,
   .anim-fade-up,
   .anim-float,
   .anim-bounce-soft {

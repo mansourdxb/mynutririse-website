@@ -12,6 +12,7 @@ import { HomeIntro } from "@/components/sections/HomeIntro";
 import { HomeResources } from "@/components/sections/HomeResources";
 import { Premium } from "@/components/sections/Premium";
 import { CTA } from "@/components/sections/CTA";
+import { MotionProvider } from "@/components/ui/MotionProvider";
 import {
   APP_STORE_URL,
   BASE_URL,
@@ -86,7 +87,9 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
       <PressBar t={t.pressBar} />
       <HowItWorks t={t.howItWorks} />
       <Goals lang={lang} t={t.goals} />
-      <Features lang={lang} t={m.features} />
+      <MotionProvider>
+        <Features lang={lang} t={m.features} />
+      </MotionProvider>
       <AppShowcase lang={lang} t={t.showcase} />
       <Premium lang={lang} t={t.premium} store={m.common.store} />
       <Science t={t.science} />
