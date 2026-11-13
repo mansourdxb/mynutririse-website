@@ -4,12 +4,16 @@ import { hasPage } from "@/data/pages";
 import type { Locale } from "../config";
 import { getMessages } from "../messages";
 import type { PostContent } from "./types";
+import caloriesToLoseEn from "./how-many-calories-to-lose-weight/en";
+import caloriesToLoseAr from "./how-many-calories-to-lose-weight/ar";
 
 export type { PostContent };
 type Builder = (f: ReturnType<typeof factsFor>) => PostContent;
 
 /** Posts whose copy lives in this folder, by slug and language. */
-const registry: Record<string, Partial<Record<Locale, Builder>>> = {};
+const registry: Record<string, Partial<Record<Locale, Builder>>> = {
+  "how-many-calories-to-lose-weight": { en: caloriesToLoseEn, ar: caloriesToLoseAr },
+};
 
 /** An article's copy in a language, or null if it is not published there. */
 export function articleText(lang: Locale, article: ArticleInfo): PostContent | null {

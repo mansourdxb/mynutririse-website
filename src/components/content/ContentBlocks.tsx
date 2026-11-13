@@ -32,6 +32,7 @@ export const LINK_TAGS: Record<string, string> = {
   ifguide: "/blog/intermittent-fasting-16-8-guide",
   aiguide: "/blog/ai-photo-calorie-tracking",
   macroguide: "/blog/track-macros-halal-cultural-meals",
+  caloriesguide: "/blog/how-many-calories-to-lose-weight",
   halal: "/halal-nutrition-app",
   weightloss: "/weight-loss-app",
   muscle: "/muscle-gain-app",

@@ -14,6 +14,7 @@ const PARTIAL_PAGES: Record<string, readonly Locale[]> = {
   "/arabic-calorie-counter": ["en", "ar"],
   "/compare/mynutririse-vs-lose-it": ["en"],
   "/compare/mynutririse-vs-noom": ["en"],
+  "/blog/how-many-calories-to-lose-weight": ["en", "ar"],
   "/compare/mynutririse-vs-cal-ai": ["en"],
 };
 
