@@ -30,6 +30,11 @@ export default (f: Facts): ReturnType<typeof en> => ({
     language: "Язык",
   },
   footer: {
+    social: {
+      instagram: "MyNutriRise в Instagram",
+      facebook: "MyNutriRise в Facebook",
+      x: "MyNutriRise в X",
+    },
     tagline:
       "Твой умный помощник для здоровья — ИИ-сканирование блюд, халяльные и национальные рецепты, голодание и коучинг в одном приложении.",
     product: "Продукт",

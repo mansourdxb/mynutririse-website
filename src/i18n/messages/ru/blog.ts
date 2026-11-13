@@ -21,12 +21,14 @@ export default (f: Facts): ReturnType<typeof en> => ({
     published: "Опубликовано",
     updated: "Обновлено",
   },
-  // TODO(owner): replace with the real bio, credentials and photo.
+  // Author profile. Never add degrees or credentials that are not real.
   authors: {
     "mansour-shaaban": {
       name: "Мансур Шаабан",
-      role: "Основатель MyNutriRise",
-      bio: "Мансур Шаабан — основатель MyNutriRise. Он создал приложение, чтобы учёт питания подходил к той еде, которую люди едят на самом деле, включая халяльные и традиционные блюда стран Персидского залива, Ближнего Востока и других регионов.",
+      role: "Основатель и разработчик MyNutriRise",
+      bio: "Мансур Шаабан — основатель и разработчик MyNutriRise, живёт в Дубае. Он создаёт инструменты для питания и фитнеса для людей, чьи блюда почти не встречаются в западных приложениях для подсчёта калорий: от кухни стран Персидского залива и Леванта до домашней халяльной еды и поста в Рамадан. Статьи на этом сайте ссылаются на рецензируемые исследования и написаны, чтобы помочь тебе принимать взвешенные решения, а не заменить совет врача или диетолога.",
+      location: "Дубай, ОАЭ",
+      imageAlt: "Мансур Шаабан, основатель MyNutriRise",
       metaTitle: "Мансур Шаабан, основатель MyNutriRise",
       metaDescription:
         "Мансур Шаабан, основатель MyNutriRise, пишет практичные гиды с источниками о калориях, белке, голодании, халяльной и арабской кухне. Читай статьи.",
@@ -65,6 +67,10 @@ export default (f: Facts): ReturnType<typeof en> => ({
         type: "p",
         text: "Типичный режим 16:8 — закончить ужин к 20:00 и поесть в первый раз в полдень следующего дня. Во время голодания можно пить воду, чёрный кофе или несладкий чай. Схема 16:8 меняет не то, <em>что</em> ты ешь, а то, <em>когда</em>, — и у многих это само собой сокращает поздние перекусы и общее количество калорий.",
       },
+      {
+        type: "p",
+        text: "Исследования это подтверждают: в двух рандомизированных испытаниях питание в ограниченное время не привело к большей потере веса, чем обычное снижение калорийности или еда в течение всего дня. Схема 16:8 помогает, если с ней тебе проще есть меньше, — считай её инструментом, а не обязательным правилом.",
+      },
       { type: "h2", text: "Как выбрать окно питания" },
       {
         type: "p",
@@ -89,6 +95,23 @@ export default (f: Facts): ReturnType<typeof en> => ({
       {
         type: "p",
         text: "Интервальное голодание подходит не всем. Если ты беременна или кормишь грудью, тебе меньше 18 лет, у тебя были расстройства пищевого поведения или ты живёшь с таким заболеванием, как диабет, посоветуйся с врачом, прежде чем менять режим питания.",
+      },
+      {
+        type: "sources",
+        sources: [
+          {
+            label: "Liu D et al. Calorie Restriction with or without Time-Restricted Eating in Weight Loss. N Engl J Med, 2022.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/35443107/",
+          },
+          {
+            label: "Lowe DA et al. Effects of Time-Restricted Eating on Weight Loss and Other Metabolic Parameters in Women and Men With Overweight and Obesity: The TREAT Randomized Clinical Trial. JAMA Intern Med, 2020.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/32986097/",
+          },
+          {
+            label: "de Cabo R, Mattson MP. Effects of Intermittent Fasting on Health, Aging, and Disease. N Engl J Med, 2019.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/31881139/",
+          },
+        ],
       },
     ],
   },
@@ -130,6 +153,19 @@ export default (f: Facts): ReturnType<typeof en> => ({
       {
         type: "p",
         text: "Фото идеально подходят для блюд на тарелке. Для упакованных продуктов скан штрихкода быстрее и точнее. Для быстрого кофе или горсти фиников выигрывает запись голосом («два финика и латте»). Лучше всего сочетать все три способа.",
+      },
+      {
+        type: "sources",
+        sources: [
+          {
+            label: "Boushey CJ et al. New mobile methods for dietary assessment: review of image-assisted and image-based dietary assessment methods. Proc Nutr Soc, 2017.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/27938425/",
+          },
+          {
+            label: "Burke LE et al. Self-monitoring in weight loss: a systematic review of the literature. J Am Diet Assoc, 2011.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/21185970/",
+          },
+        ],
       },
     ],
   },
@@ -187,6 +223,23 @@ export default (f: Facts): ReturnType<typeof en> => ({
       {
         type: "p",
         text: "Есть халяльно и при этом идти к фитнес-цели не должно означать, что придётся сидеть на курице с брокколи. Устойчивый путь — оставить любимую еду и менять размер порций и частоту, а именно это и даёт правильный учёт. Во время Рамадана дневник питания вместе с трекером голодания также помогает держать сухур и ифтар сбалансированными, а не бросаться из крайности в крайность. Полную картину халяльного учёта ты найдёшь на странице нашего <halalApp>приложения для халяльного питания</halalApp>.",
+      },
+      {
+        type: "sources",
+        sources: [
+          {
+            label: "Urban LE et al. The energy content of restaurant foods without stated calorie information. JAMA Intern Med, 2013.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/23700076/",
+          },
+          {
+            label: "Urban LE et al. Energy Contents of Frequently Ordered Restaurant Meals and Comparison with Human Energy Requirements and U.S. Department of Agriculture Database Information: A Multinational Cross-Sectional Study. J Acad Nutr Diet, 2016.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/26803805/",
+          },
+          {
+            label: "Burke LE et al. Self-monitoring in weight loss: a systematic review of the literature. J Am Diet Assoc, 2011.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/21185970/",
+          },
+        ],
       },
     ],
   },

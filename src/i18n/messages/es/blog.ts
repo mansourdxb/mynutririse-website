@@ -21,12 +21,14 @@ export default (f: Facts): ReturnType<typeof en> => ({
     published: "Publicado",
     updated: "Actualizado",
   },
-  // TODO(owner): replace with the real bio, credentials and photo.
+  // Author profile. Never add degrees or credentials that are not real.
   authors: {
     "mansour-shaaban": {
       name: "Mansour Shaaban",
-      role: "Fundador de MyNutriRise",
-      bio: "Mansour Shaaban es el fundador de MyNutriRise. Creó la app para que el seguimiento nutricional funcione con la comida que la gente come de verdad, incluidos los platos halal y tradicionales del Golfo, Oriente Medio y otras regiones.",
+      role: "Fundador y desarrollador de MyNutriRise",
+      bio: "Mansour Shaaban es el fundador y desarrollador de MyNutriRise y vive en Dubái. Crea herramientas de nutrición y fitness para personas cuyas comidas casi nunca aparecen en las apps occidentales de calorías, desde platos del Golfo y del Levante hasta la cocina casera halal y el ayuno de Ramadán. Los artículos de este sitio citan investigación revisada por pares y están escritos para ayudarte a tomar decisiones informadas, no para sustituir el consejo de un médico o dietista-nutricionista.",
+      location: "Dubái, EAU",
+      imageAlt: "Mansour Shaaban, fundador de MyNutriRise",
       metaTitle: "Mansour Shaaban, fundador de MyNutriRise",
       metaDescription:
         "Artículos de Mansour Shaaban, fundador de MyNutriRise: guías prácticas con fuentes sobre calorías, proteína, ayuno y comida halal y árabe.",
@@ -65,6 +67,10 @@ export default (f: Facts): ReturnType<typeof en> => ({
         type: "p",
         text: "Un horario 16:8 típico consiste en terminar de cenar antes de las 20:00 y hacer tu primera comida a las 12:00 del día siguiente. Durante la ventana de ayuno puedes tomar agua, café solo o té sin azúcar. En lugar de cambiar <em>qué</em> comes, el 16:8 cambia <em>cuándo</em> lo haces, lo que en muchas personas reduce de forma natural el picoteo nocturno y la ingesta total de calorías.",
       },
+      {
+        type: "p",
+        text: "La investigación respalda esta idea: en dos ensayos aleatorizados, la alimentación con restricción horaria no produjo más pérdida de peso que una restricción calórica normal o que comer a lo largo del día. El 16:8 ayuda cuando te facilita comer menos, así que tómalo como una herramienta, no como una obligación.",
+      },
       { type: "h2", text: "Cómo elegir tu ventana de alimentación" },
       {
         type: "p",
@@ -89,6 +95,23 @@ export default (f: Facts): ReturnType<typeof en> => ({
       {
         type: "p",
         text: "El ayuno intermitente no es para todo el mundo. Si estás embarazada o en periodo de lactancia, eres menor de 18 años, tienes antecedentes de trastornos alimentarios o padeces una enfermedad como la diabetes, habla con tu médico antes de cambiar tus horarios de comida.",
+      },
+      {
+        type: "sources",
+        sources: [
+          {
+            label: "Liu D et al. Calorie Restriction with or without Time-Restricted Eating in Weight Loss. N Engl J Med, 2022.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/35443107/",
+          },
+          {
+            label: "Lowe DA et al. Effects of Time-Restricted Eating on Weight Loss and Other Metabolic Parameters in Women and Men With Overweight and Obesity: The TREAT Randomized Clinical Trial. JAMA Intern Med, 2020.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/32986097/",
+          },
+          {
+            label: "de Cabo R, Mattson MP. Effects of Intermittent Fasting on Health, Aging, and Disease. N Engl J Med, 2019.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/31881139/",
+          },
+        ],
       },
     ],
   },
@@ -130,6 +153,19 @@ export default (f: Facts): ReturnType<typeof en> => ({
       {
         type: "p",
         text: "Las fotos son perfectas para comidas servidas en el plato. Para los alimentos envasados, escanear el código de barras es más rápido y exacto. Para un café rápido o un puñado de dátiles, gana el registro por voz («dos dátiles y un café con leche»). El mejor método combina los tres.",
+      },
+      {
+        type: "sources",
+        sources: [
+          {
+            label: "Boushey CJ et al. New mobile methods for dietary assessment: review of image-assisted and image-based dietary assessment methods. Proc Nutr Soc, 2017.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/27938425/",
+          },
+          {
+            label: "Burke LE et al. Self-monitoring in weight loss: a systematic review of the literature. J Am Diet Assoc, 2011.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/21185970/",
+          },
+        ],
       },
     ],
   },
@@ -187,6 +223,23 @@ export default (f: Facts): ReturnType<typeof en> => ({
       {
         type: "p",
         text: "Comer halal mientras persigues un objetivo de fitness no debería obligarte a seguir planes de pollo con brócoli. El camino sostenible es mantener la comida que te gusta y ajustar las porciones y la frecuencia, que es exactamente lo que permite un buen seguimiento. Durante el Ramadán, combinar el registro de comidas con un seguimiento del ayuno también te ayuda a mantener equilibrados el suhoor y el iftar en lugar de ir de un extremo a otro. Para ver el panorama completo del seguimiento apto para halal, consulta nuestra página sobre la <halalApp>app de nutrición halal</halalApp>.",
+      },
+      {
+        type: "sources",
+        sources: [
+          {
+            label: "Urban LE et al. The energy content of restaurant foods without stated calorie information. JAMA Intern Med, 2013.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/23700076/",
+          },
+          {
+            label: "Urban LE et al. Energy Contents of Frequently Ordered Restaurant Meals and Comparison with Human Energy Requirements and U.S. Department of Agriculture Database Information: A Multinational Cross-Sectional Study. J Acad Nutr Diet, 2016.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/26803805/",
+          },
+          {
+            label: "Burke LE et al. Self-monitoring in weight loss: a systematic review of the literature. J Am Diet Assoc, 2011.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/21185970/",
+          },
+        ],
       },
     ],
   },

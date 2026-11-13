@@ -7,6 +7,12 @@ export const BRAND = "MyNutriRise";
 export const APP_STORE_URL = "https://apps.apple.com/app/mynutririse/id6764006876";
 export const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.nutririse.app";
 export const ORGANIZATION_ID = `${BASE_URL}/#organization`;
+/** Official MyNutriRise social profiles (owner-confirmed 2026-11-13), in footer order. */
+export const SOCIAL_LINKS = [
+  { key: "instagram", url: "https://www.instagram.com/mynutririse" },
+  { key: "facebook", url: "https://www.facebook.com/mynutririse" },
+  { key: "x", url: "https://x.com/mynutririse" },
+] as const;
 export const LOGO_URL = `${BASE_URL}/logo.png`;
 
 /** Native names, shown in the language switcher. */

@@ -1,13 +1,30 @@
 /**
- * Blog authors and reviewers. Language-neutral data only; role and bio are
- * translated in the `blog.authors` messages under the same slug.
- * TODO(owner): add a photo, credentials and profile links (sameAs) for each.
+ * Blog authors and reviewers. Language-neutral data only; role, bio and
+ * location are translated in the `blog.authors` messages under the same slug.
+ * Never add degrees, certifications or credentials that are not real.
  */
-export const authors = [{ slug: "mansour-shaaban", name: "Mansour Shaaban" }] as const;
+export type Author = {
+  slug: string;
+  name: string;
+  /** Square photo in /public, or null until one is provided. */
+  image: string | null;
+  /** Personal profile URLs (e.g. LinkedIn), confirmed by the owner. */
+  sameAs: readonly string[];
+};
+
+export const authors = [
+  {
+    slug: "mansour-shaaban",
+    name: "Mansour Shaaban",
+    // TODO(owner): add public/authors/mansour-shaaban.webp (400×400) and set it here.
+    image: null,
+    sameAs: [],
+  },
+] as const satisfies readonly Author[];
 
 export type AuthorSlug = (typeof authors)[number]["slug"];
 
-export function author(slug: AuthorSlug) {
+export function author(slug: AuthorSlug): Author {
   return authors.find((a) => a.slug === slug)!;
 }
 

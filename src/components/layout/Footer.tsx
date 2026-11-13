@@ -1,10 +1,31 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AppStoreButton } from "@/components/ui/Button";
-import { localePath, type Locale } from "@/i18n/config";
+import { SOCIAL_LINKS, localePath, type Locale } from "@/i18n/config";
 import { toolPages } from "@/data/tools";
 import type { Messages } from "@/i18n/messages";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+
+/** Decorative icons; each link carries a localized aria-label. */
+const SOCIAL_ICONS: Record<(typeof SOCIAL_LINKS)[number]["key"], React.ReactNode> = {
+  instagram: (
+    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} aria-hidden="true">
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+    </svg>
+  ),
+  facebook: (
+    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinejoin="round" aria-hidden="true">
+      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+    </svg>
+  ),
+  x: (
+    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+  ),
+};
 
 export function Footer({
   lang,
@@ -74,6 +95,22 @@ export function Footer({
               <AppStoreButton store="apple" t={t.store} />
               <AppStoreButton store="google" t={t.store} />
             </div>
+            <ul className="mt-6 flex items-center gap-3">
+              {SOCIAL_LINKS.map(({ key, url }) => (
+                <li key={key}>
+                  <a
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={f.social[key]}
+                    title={f.social[key]}
+                    className="flex h-10 w-10 items-center justify-center rounded-full text-ink-3 ring-1 ring-line transition-colors hover:bg-surface-2 hover:text-accent-strong focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                  >
+                    {SOCIAL_ICONS[key]}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Link columns */}

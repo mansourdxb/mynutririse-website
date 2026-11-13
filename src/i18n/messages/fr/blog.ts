@@ -21,12 +21,14 @@ export default (f: Facts): ReturnType<typeof en> => ({
     published: "Publié le",
     updated: "Mis à jour le",
   },
-  // TODO(owner): replace with the real bio, credentials and photo.
+  // Author profile. Never add degrees or credentials that are not real.
   authors: {
     "mansour-shaaban": {
       name: "Mansour Shaaban",
-      role: "Fondateur de MyNutriRise",
-      bio: "Mansour Shaaban est le fondateur de MyNutriRise. Il a créé l’appli pour que le suivi nutritionnel s’adapte à ce que les gens mangent vraiment, y compris les plats halal et traditionnels du Golfe, du Moyen-Orient et d’ailleurs.",
+      role: "Fondateur et développeur de MyNutriRise",
+      bio: "Mansour Shaaban est le fondateur et développeur de MyNutriRise, installé à Dubaï. Il conçoit des outils de nutrition et de forme pour les personnes dont les repas apparaissent rarement dans les applis de calories occidentales, des plats du Golfe et du Levant à la cuisine maison halal et au jeûne du Ramadan. Les articles de ce site citent des recherches évaluées par des pairs et visent à vous aider à faire des choix éclairés, non à remplacer l’avis d’un médecin ou d’un diététicien.",
+      location: "Dubaï, Émirats arabes unis",
+      imageAlt: "Mansour Shaaban, fondateur de MyNutriRise",
       metaTitle: "Mansour Shaaban, fondateur de MyNutriRise",
       metaDescription:
         "Articles de Mansour Shaaban, fondateur de MyNutriRise : des guides pratiques et sourcés sur les calories, les protéines, le jeûne et la cuisine halal.",
@@ -65,6 +67,10 @@ export default (f: Facts): ReturnType<typeof en> => ({
         type: "p",
         text: "Un programme 16:8 classique consiste à terminer le dîner avant 20 h et à prendre son premier repas à midi le lendemain. Pendant la fenêtre de jeûne, vous buvez de l’eau, du café noir ou du thé non sucré. Plutôt que de changer <em>ce que</em> vous mangez, le 16:8 change <em>le moment</em> où vous mangez, ce qui, pour beaucoup, réduit naturellement le grignotage du soir et l’apport calorique total.",
       },
+      {
+        type: "p",
+        text: "La recherche va dans ce sens : dans deux essais randomisés, l’alimentation à horaires restreints n’a pas entraîné plus de perte de poids qu’une restriction calorique classique ou que des repas répartis sur la journée. Le 16:8 aide s’il vous permet de manger moins plus facilement : voyez-le comme un outil, pas comme une obligation.",
+      },
       { type: "h2", text: "Choisir sa fenêtre alimentaire" },
       {
         type: "p",
@@ -89,6 +95,23 @@ export default (f: Facts): ReturnType<typeof en> => ({
       {
         type: "p",
         text: "Le jeûne intermittent ne convient pas à tout le monde. Si vous êtes enceinte, si vous allaitez, si vous avez moins de 18 ans, si vous avez des antécédents de troubles du comportement alimentaire ou si vous suivez un traitement pour une maladie comme le diabète, parlez-en à votre médecin avant de modifier vos horaires de repas.",
+      },
+      {
+        type: "sources",
+        sources: [
+          {
+            label: "Liu D et al. Calorie Restriction with or without Time-Restricted Eating in Weight Loss. N Engl J Med, 2022.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/35443107/",
+          },
+          {
+            label: "Lowe DA et al. Effects of Time-Restricted Eating on Weight Loss and Other Metabolic Parameters in Women and Men With Overweight and Obesity: The TREAT Randomized Clinical Trial. JAMA Intern Med, 2020.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/32986097/",
+          },
+          {
+            label: "de Cabo R, Mattson MP. Effects of Intermittent Fasting on Health, Aging, and Disease. N Engl J Med, 2019.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/31881139/",
+          },
+        ],
       },
     ],
   },
@@ -130,6 +153,19 @@ export default (f: Facts): ReturnType<typeof en> => ({
       {
         type: "p",
         text: "Les photos sont idéales pour les repas servis à l’assiette. Pour les produits emballés, le scan du code-barres est plus rapide et exact. Pour un café vite pris ou une poignée de dattes, la saisie vocale (« deux dattes et un latte ») l’emporte. La meilleure méthode combine les trois.",
+      },
+      {
+        type: "sources",
+        sources: [
+          {
+            label: "Boushey CJ et al. New mobile methods for dietary assessment: review of image-assisted and image-based dietary assessment methods. Proc Nutr Soc, 2017.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/27938425/",
+          },
+          {
+            label: "Burke LE et al. Self-monitoring in weight loss: a systematic review of the literature. J Am Diet Assoc, 2011.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/21185970/",
+          },
+        ],
       },
     ],
   },
@@ -187,6 +223,23 @@ export default (f: Facts): ReturnType<typeof en> => ({
       {
         type: "p",
         text: "Manger halal tout en poursuivant un objectif de forme ne devrait pas vous obliger à vous contenter de programmes « poulet-brocoli ». La voie durable consiste à garder les plats que vous aimez en ajustant les portions et la fréquence, et c’est exactement ce que permet un vrai suivi. Pendant le Ramadan, associer l’enregistrement des repas à un suivi du jeûne aide aussi à garder un suhoor et un iftar équilibrés, au lieu de passer d’un extrême à l’autre. Pour tout savoir sur le suivi compatible halal, consultez notre page <halalApp>appli de nutrition halal</halalApp>.",
+      },
+      {
+        type: "sources",
+        sources: [
+          {
+            label: "Urban LE et al. The energy content of restaurant foods without stated calorie information. JAMA Intern Med, 2013.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/23700076/",
+          },
+          {
+            label: "Urban LE et al. Energy Contents of Frequently Ordered Restaurant Meals and Comparison with Human Energy Requirements and U.S. Department of Agriculture Database Information: A Multinational Cross-Sectional Study. J Acad Nutr Diet, 2016.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/26803805/",
+          },
+          {
+            label: "Burke LE et al. Self-monitoring in weight loss: a systematic review of the literature. J Am Diet Assoc, 2011.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/21185970/",
+          },
+        ],
       },
     ],
   },

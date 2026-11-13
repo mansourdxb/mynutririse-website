@@ -30,6 +30,11 @@ export default (f: Facts): ReturnType<typeof en> => ({
     language: "Sprache",
   },
   footer: {
+    social: {
+      instagram: "MyNutriRise auf Instagram",
+      facebook: "MyNutriRise auf Facebook",
+      x: "MyNutriRise auf X",
+    },
     tagline:
       "Dein smarter Begleiter für mehr Wohlbefinden – KI-Mahlzeiten-Scan, halale und kulturelle Rezepte, Fasten und Coaching in einer App.",
     product: "Produkt",

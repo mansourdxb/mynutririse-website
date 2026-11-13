@@ -20,12 +20,14 @@ export default (f: Facts) => ({
     published: "Published",
     updated: "Updated",
   },
-  // TODO(owner): replace with the real bio, credentials and photo.
+  // Author profile. Never add degrees or credentials that are not real.
   authors: {
     "mansour-shaaban": {
       name: "Mansour Shaaban",
-      role: "Founder of MyNutriRise",
-      bio: "Mansour Shaaban is the founder of MyNutriRise. He started the app to make nutrition tracking work for the food people actually eat, including halal and cultural dishes from the Gulf, the Middle East and beyond.",
+      role: "Founder & developer, MyNutriRise",
+      bio: "Mansour Shaaban is the founder and developer of MyNutriRise, based in Dubai. He builds nutrition and fitness tools for people whose meals rarely appear in Western calorie apps, from Gulf and Levantine dishes to halal home cooking and Ramadan fasting. Articles on this site cite peer-reviewed research and are written to help you make informed choices, not to replace advice from a doctor or dietitian.",
+      location: "Dubai, UAE",
+      imageAlt: "Mansour Shaaban, founder of MyNutriRise",
       metaTitle: "Mansour Shaaban, founder of MyNutriRise",
       metaDescription:
         "Articles by Mansour Shaaban, founder of MyNutriRise: practical, sourced guides on calories, protein, fasting and halal and Arabic food.",
@@ -64,6 +66,10 @@ export default (f: Facts) => ({
         type: "p",
         text: "A typical 16:8 schedule means finishing dinner by 8 PM and eating your first meal at noon the next day. During the fasting window you drink water, black coffee, or unsweetened tea. Rather than changing <em>what</em> you eat, 16:8 changes <em>when</em> — which for many people naturally reduces late-night snacking and total calorie intake.",
       },
+      {
+        type: "p",
+        text: "Research supports this view: in two randomised trials, time-restricted eating did not lead to more weight loss than ordinary calorie restriction or eating throughout the day. 16:8 helps when it makes eating less easier for you, so treat it as a tool, not a requirement.",
+      },
       { type: "h2", text: "Picking your eating window" },
       {
         type: "p",
@@ -88,6 +94,23 @@ export default (f: Facts) => ({
       {
         type: "p",
         text: "Intermittent fasting isn't for everyone. If you are pregnant, breastfeeding, under 18, have a history of disordered eating, or manage a condition like diabetes, talk to your doctor before changing your meal timing.",
+      },
+      {
+        type: "sources",
+        sources: [
+          {
+            label: "Liu D et al. Calorie Restriction with or without Time-Restricted Eating in Weight Loss. N Engl J Med, 2022.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/35443107/",
+          },
+          {
+            label: "Lowe DA et al. Effects of Time-Restricted Eating on Weight Loss and Other Metabolic Parameters in Women and Men With Overweight and Obesity: The TREAT Randomized Clinical Trial. JAMA Intern Med, 2020.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/32986097/",
+          },
+          {
+            label: "de Cabo R, Mattson MP. Effects of Intermittent Fasting on Health, Aging, and Disease. N Engl J Med, 2019.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/31881139/",
+          },
+        ],
       },
     ],
   },
@@ -129,6 +152,19 @@ export default (f: Facts) => ({
       {
         type: "p",
         text: 'Photos are perfect for plated meals. For packaged foods, a barcode scan is faster and exact. For a quick coffee or a handful of dates, voice logging ("two dates and a latte") wins. The best workflow mixes all three.',
+      },
+      {
+        type: "sources",
+        sources: [
+          {
+            label: "Boushey CJ et al. New mobile methods for dietary assessment: review of image-assisted and image-based dietary assessment methods. Proc Nutr Soc, 2017.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/27938425/",
+          },
+          {
+            label: "Burke LE et al. Self-monitoring in weight loss: a systematic review of the literature. J Am Diet Assoc, 2011.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/21185970/",
+          },
+        ],
       },
     ],
   },
@@ -186,6 +222,23 @@ export default (f: Facts) => ({
       {
         type: "p",
         text: "Eating halal while pursuing a fitness goal shouldn't mean forcing yourself onto chicken-and-broccoli meal plans. The sustainable path is keeping the food you love and adjusting portions and frequency — which is exactly what proper tracking makes possible. During Ramadan, pairing meal logging with a fasting tracker also helps you keep suhoor and iftar balanced instead of swinging between extremes. For the full picture of halal-friendly tracking, see our <halalApp>halal nutrition app</halalApp> page.",
+      },
+      {
+        type: "sources",
+        sources: [
+          {
+            label: "Urban LE et al. The energy content of restaurant foods without stated calorie information. JAMA Intern Med, 2013.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/23700076/",
+          },
+          {
+            label: "Urban LE et al. Energy Contents of Frequently Ordered Restaurant Meals and Comparison with Human Energy Requirements and U.S. Department of Agriculture Database Information: A Multinational Cross-Sectional Study. J Acad Nutr Diet, 2016.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/26803805/",
+          },
+          {
+            label: "Burke LE et al. Self-monitoring in weight loss: a systematic review of the literature. J Am Diet Assoc, 2011.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/21185970/",
+          },
+        ],
       },
     ],
   },

@@ -21,12 +21,14 @@ export default (f: Facts): ReturnType<typeof en> => ({
     published: "نُشر",
     updated: "حُدّث",
   },
-  // TODO(owner): replace with the real bio, credentials and photo.
+  // Author profile. Never add degrees or credentials that are not real.
   authors: {
     "mansour-shaaban": {
       name: "منصور شعبان",
-      role: "مؤسس MyNutriRise",
-      bio: "منصور شعبان مؤسس تطبيق MyNutriRise. أنشأ التطبيق ليجعل تتبّع التغذية مناسباً للطعام الذي يأكله الناس فعلاً، ومنه الأطباق الحلال والتقليدية من الخليج والشرق الأوسط وغيرها.",
+      role: "مؤسس ومطوّر MyNutriRise",
+      bio: "منصور شعبان مؤسس تطبيق MyNutriRise ومطوّره، ويقيم في دبي. يبني أدوات للتغذية واللياقة لأشخاص نادراً ما تظهر وجباتهم في تطبيقات حساب السعرات الغربية، من الأطباق الخليجية والشامية إلى الطبخ المنزلي الحلال وصيام رمضان. وتستند المقالات في هذا الموقع إلى أبحاث محكّمة، وقد كُتبت لتساعدك على اتخاذ قرارات مستنيرة، لا لتحل محل نصيحة الطبيب أو أخصائي التغذية.",
+      location: "دبي، الإمارات العربية المتحدة",
+      imageAlt: "منصور شعبان، مؤسس MyNutriRise",
       metaTitle: "منصور شعبان، مؤسس MyNutriRise",
       metaDescription:
         "مقالات منصور شعبان، مؤسس MyNutriRise: أدلة عملية وموثّقة عن حساب السعرات والبروتين والصيام والأكل الحلال والعربي. اقرأ أحدث المقالات.",
@@ -65,6 +67,10 @@ export default (f: Facts): ReturnType<typeof en> => ({
         type: "p",
         text: "يعني جدول 16:8 النموذجي أن تنهي العشاء قبل الساعة 8 مساءً وتتناول أول وجبة عند الظهر في اليوم التالي. وخلال نافذة الصيام تشرب الماء أو القهوة السوداء أو الشاي غير المحلّى. وبدلاً من تغيير <em>ما</em> تأكله، يغيّر نظام 16:8 <em>متى</em> تأكل — وهذا يقلّل لدى كثيرين بشكل طبيعي من الأكل في وقت متأخر من الليل ومن إجمالي السعرات.",
       },
+      {
+        type: "p",
+        text: "وتدعم الأبحاث هذا الرأي: ففي تجربتين عشوائيتين لم يؤدِّ الأكل المقيّد بوقت إلى خسارة وزن أكبر من تقليل السعرات المعتاد أو من الأكل على مدار اليوم. يفيد نظام 16:8 حين يسهّل عليك تناول كمية أقل، فتعامل معه كأداة لا كشرط.",
+      },
       { type: "h2", text: "اختيار نافذة الأكل" },
       {
         type: "p",
@@ -89,6 +95,23 @@ export default (f: Facts): ReturnType<typeof en> => ({
       {
         type: "p",
         text: "الصيام المتقطع لا يناسب الجميع. إذا كنتِ حاملاً أو مرضعة، أو كنت دون 18 عاماً، أو لديك تاريخ من اضطرابات الأكل، أو تتعايش مع حالة مثل السكري، فتحدّث إلى طبيبك قبل تغيير مواعيد وجباتك.",
+      },
+      {
+        type: "sources",
+        sources: [
+          {
+            label: "Liu D et al. Calorie Restriction with or without Time-Restricted Eating in Weight Loss. N Engl J Med, 2022.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/35443107/",
+          },
+          {
+            label: "Lowe DA et al. Effects of Time-Restricted Eating on Weight Loss and Other Metabolic Parameters in Women and Men With Overweight and Obesity: The TREAT Randomized Clinical Trial. JAMA Intern Med, 2020.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/32986097/",
+          },
+          {
+            label: "de Cabo R, Mattson MP. Effects of Intermittent Fasting on Health, Aging, and Disease. N Engl J Med, 2019.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/31881139/",
+          },
+        ],
       },
     ],
   },
@@ -130,6 +153,19 @@ export default (f: Facts): ReturnType<typeof en> => ({
       {
         type: "p",
         text: "الصور مثالية للوجبات المقدَّمة في الأطباق. أما الأطعمة المعبأة، فمسح الباركود أسرع وأدق. ولقهوة سريعة أو حفنة من التمر، يتفوّق التسجيل الصوتي («تمرتان ولاتيه»). وأفضل طريقة عمل تمزج بين الثلاثة.",
+      },
+      {
+        type: "sources",
+        sources: [
+          {
+            label: "Boushey CJ et al. New mobile methods for dietary assessment: review of image-assisted and image-based dietary assessment methods. Proc Nutr Soc, 2017.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/27938425/",
+          },
+          {
+            label: "Burke LE et al. Self-monitoring in weight loss: a systematic review of the literature. J Am Diet Assoc, 2011.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/21185970/",
+          },
+        ],
       },
     ],
   },
@@ -187,6 +223,23 @@ export default (f: Facts): ReturnType<typeof en> => ({
       {
         type: "p",
         text: "لا ينبغي أن يعني الأكل الحلال أثناء السعي لهدف رياضي أن تُجبر نفسك على خطط وجبات من الدجاج والبروكلي. فالطريق المستدام هو الاحتفاظ بالطعام الذي تحبه وتعديل الحصص وعدد المرات — وهذا بالضبط ما يتيحه التتبّع الصحيح. وفي رمضان، يساعدك الجمع بين تسجيل الوجبات ومتتبّع الصيام على إبقاء السحور والإفطار متوازنين بدلاً من التأرجح بين الطرفين. وللصورة الكاملة عن التتبّع المناسب للحلال، اطّلع على صفحة <halalApp>تطبيق التغذية الحلال</halalApp>.",
+      },
+      {
+        type: "sources",
+        sources: [
+          {
+            label: "Urban LE et al. The energy content of restaurant foods without stated calorie information. JAMA Intern Med, 2013.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/23700076/",
+          },
+          {
+            label: "Urban LE et al. Energy Contents of Frequently Ordered Restaurant Meals and Comparison with Human Energy Requirements and U.S. Department of Agriculture Database Information: A Multinational Cross-Sectional Study. J Acad Nutr Diet, 2016.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/26803805/",
+          },
+          {
+            label: "Burke LE et al. Self-monitoring in weight loss: a systematic review of the literature. J Am Diet Assoc, 2011.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/21185970/",
+          },
+        ],
       },
     ],
   },

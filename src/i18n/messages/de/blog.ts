@@ -21,12 +21,14 @@ export default (f: Facts): ReturnType<typeof en> => ({
     published: "Veröffentlicht",
     updated: "Aktualisiert",
   },
-  // TODO(owner): replace with the real bio, credentials and photo.
+  // Author profile. Never add degrees or credentials that are not real.
   authors: {
     "mansour-shaaban": {
       name: "Mansour Shaaban",
-      role: "Gründer von MyNutriRise",
-      bio: "Mansour Shaaban ist der Gründer von MyNutriRise. Er hat die App gestartet, damit Ernährungstracking zu dem Essen passt, das Menschen wirklich essen – auch zu Halal-Gerichten und traditionellen Speisen aus dem Golf, dem Nahen Osten und darüber hinaus.",
+      role: "Gründer & Entwickler, MyNutriRise",
+      bio: "Mansour Shaaban ist Gründer und Entwickler von MyNutriRise und lebt in Dubai. Er entwickelt Ernährungs- und Fitness-Tools für Menschen, deren Mahlzeiten in westlichen Kalorien-Apps kaum vorkommen – von Gerichten aus dem Golf und der Levante bis zu halaler Hausmannskost und dem Fasten im Ramadan. Die Artikel auf dieser Website stützen sich auf begutachtete Forschung und sollen dir helfen, informierte Entscheidungen zu treffen – nicht den Rat einer Ärztin, eines Arztes oder einer Ernährungsfachkraft ersetzen.",
+      location: "Dubai, VAE",
+      imageAlt: "Mansour Shaaban, Gründer von MyNutriRise",
       metaTitle: "Mansour Shaaban, Gründer von MyNutriRise",
       metaDescription:
         "Artikel von Mansour Shaaban, Gründer von MyNutriRise: praktische, belegte Ratgeber zu Kalorien, Protein, Fasten sowie Halal- und arabischer Küche.",
@@ -65,6 +67,10 @@ export default (f: Facts): ReturnType<typeof en> => ({
         type: "p",
         text: "Ein typischer 16:8-Rhythmus bedeutet: Abendessen bis 20 Uhr beenden und die erste Mahlzeit am nächsten Tag um 12 Uhr essen. Während des Fastenfensters trinkst du Wasser, schwarzen Kaffee oder ungesüßten Tee. 16:8 verändert nicht, <em>was</em> du isst, sondern <em>wann</em> – und das reduziert bei vielen Menschen ganz natürlich späte Snacks und die gesamte Kalorienaufnahme.",
       },
+      {
+        type: "p",
+        text: "Die Forschung bestätigt das: In zwei randomisierten Studien führte zeitlich begrenztes Essen nicht zu mehr Gewichtsverlust als eine normale Kalorienreduktion oder Essen über den ganzen Tag verteilt. 16:8 hilft, wenn es dir leichter fällt, insgesamt weniger zu essen – sieh es als Werkzeug, nicht als Pflicht.",
+      },
       { type: "h2", text: "Dein Essensfenster wählen" },
       {
         type: "p",
@@ -89,6 +95,23 @@ export default (f: Facts): ReturnType<typeof en> => ({
       {
         type: "p",
         text: "Intervallfasten ist nicht für jeden geeignet. Wenn du schwanger bist, stillst, unter 18 bist, eine Essstörung in der Vorgeschichte hast oder eine Erkrankung wie Diabetes hast, sprich mit deiner Ärztin oder deinem Arzt, bevor du deine Essenszeiten änderst.",
+      },
+      {
+        type: "sources",
+        sources: [
+          {
+            label: "Liu D et al. Calorie Restriction with or without Time-Restricted Eating in Weight Loss. N Engl J Med, 2022.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/35443107/",
+          },
+          {
+            label: "Lowe DA et al. Effects of Time-Restricted Eating on Weight Loss and Other Metabolic Parameters in Women and Men With Overweight and Obesity: The TREAT Randomized Clinical Trial. JAMA Intern Med, 2020.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/32986097/",
+          },
+          {
+            label: "de Cabo R, Mattson MP. Effects of Intermittent Fasting on Health, Aging, and Disease. N Engl J Med, 2019.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/31881139/",
+          },
+        ],
       },
     ],
   },
@@ -130,6 +153,19 @@ export default (f: Facts): ReturnType<typeof en> => ({
       {
         type: "p",
         text: "Fotos sind ideal für angerichtete Mahlzeiten. Bei verpackten Lebensmitteln ist ein Barcode-Scan schneller und exakt. Für einen schnellen Kaffee oder eine Handvoll Datteln gewinnt die Spracheingabe („zwei Datteln und ein Latte“). Am besten kombinierst du alle drei.",
+      },
+      {
+        type: "sources",
+        sources: [
+          {
+            label: "Boushey CJ et al. New mobile methods for dietary assessment: review of image-assisted and image-based dietary assessment methods. Proc Nutr Soc, 2017.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/27938425/",
+          },
+          {
+            label: "Burke LE et al. Self-monitoring in weight loss: a systematic review of the literature. J Am Diet Assoc, 2011.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/21185970/",
+          },
+        ],
       },
     ],
   },
@@ -187,6 +223,23 @@ export default (f: Facts): ReturnType<typeof en> => ({
       {
         type: "p",
         text: "Wer halal isst und ein Fitnessziel verfolgt, sollte sich nicht zu Hähnchen-mit-Brokkoli-Plänen zwingen müssen. Der nachhaltige Weg: das Essen behalten, das du liebst, und Portionen und Häufigkeit anpassen – genau das macht richtiges Tracking möglich. Im Ramadan hilft dir die Kombination aus Mahlzeiten-Tracking und Fasten-Tracker außerdem, Suhur und Iftar ausgewogen zu halten, statt zwischen Extremen zu schwanken. Das ganze Bild zum halal-freundlichen Tracking findest du auf unserer Seite zur <halalApp>Halal-Ernährungs-App</halalApp>.",
+      },
+      {
+        type: "sources",
+        sources: [
+          {
+            label: "Urban LE et al. The energy content of restaurant foods without stated calorie information. JAMA Intern Med, 2013.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/23700076/",
+          },
+          {
+            label: "Urban LE et al. Energy Contents of Frequently Ordered Restaurant Meals and Comparison with Human Energy Requirements and U.S. Department of Agriculture Database Information: A Multinational Cross-Sectional Study. J Acad Nutr Diet, 2016.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/26803805/",
+          },
+          {
+            label: "Burke LE et al. Self-monitoring in weight loss: a systematic review of the literature. J Am Diet Assoc, 2011.",
+            url: "https://pubmed.ncbi.nlm.nih.gov/21185970/",
+          },
+        ],
       },
     ],
   },
