@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { hasPage } from "@/data/pages";
 import { locales, localeNames, localePath, type Locale } from "@/i18n/config";
 
 /** The current page's path with any language prefix removed ("/ar/about" -> "/about"). */
@@ -25,7 +26,8 @@ export function LanguageSwitcher({
   const links = locales.map((l) => (
     <Link
       key={l}
-      href={localePath(l, path)}
+      // A page missing in a language links to that language's home page.
+      href={localePath(l, hasPage(l, path) ? path : "/")}
       hrefLang={l}
       lang={l}
       aria-current={l === lang ? "true" : undefined}

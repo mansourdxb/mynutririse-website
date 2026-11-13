@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
-import { absoluteUrl, locales } from "@/i18n/config";
+import { absoluteUrl } from "@/i18n/config";
+import { pageLocales } from "@/data/pages";
 import { languageAlternates } from "@/i18n/metadata";
 
 type Entry = {
@@ -28,6 +29,7 @@ const pages: Entry[] = [
   { path: "/compare/mynutririse-vs-myfitnesspal", changeFrequency: "monthly", priority: 0.7 },
   { path: "/quiz", changeFrequency: "monthly", priority: 0.8 },
   { path: "/halal-nutrition-app", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/weight-loss-app", changeFrequency: "monthly", priority: 0.9 },
   { path: "/download", changeFrequency: "yearly", priority: 0.5 },
   { path: "/blog", changeFrequency: "weekly", priority: 0.7 },
   { path: "/blog/intermittent-fasting-16-8-guide", changeFrequency: "monthly", priority: 0.6 },
@@ -40,7 +42,7 @@ const pages: Entry[] = [
 // Every page in every language, each listing all its language alternates.
 export default function sitemap(): MetadataRoute.Sitemap {
   return pages.flatMap(({ path, changeFrequency, priority }) =>
-    locales.map((lang) => ({
+    pageLocales(path).map((lang) => ({
       url: absoluteUrl(lang, path),
       changeFrequency,
       priority,

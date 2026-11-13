@@ -3,13 +3,16 @@ import {
   StaggerContainer,
   StaggerItem,
 } from "@/components/ui/AnimatedSection";
+import { pathOr } from "@/data/pages";
 import { localePath, type Locale } from "@/i18n/config";
 import type { Messages } from "@/i18n/messages";
 import { rich } from "@/i18n/rich";
 
-const goalStyles = [
+// `landing` is used instead of `href` in languages where that page exists.
+const goalStyles: { href: string; landing?: string; color: string; bg: string; icon: React.ReactNode }[] = [
   {
     href: "/tools/calorie-calculator",
+    landing: "/weight-loss-app",
     color: "text-emerald-600 dark:text-emerald-400",
     bg: "bg-emerald-50 dark:bg-emerald-400/10",
     icon: (
@@ -112,7 +115,7 @@ export function Goals({ lang, t }: { lang: Locale; t: Messages["home"]["goals"] 
           {goals.map((goal) => (
             <StaggerItem key={goal.title}>
               <a
-                href={localePath(lang, goal.href)}
+                href={localePath(lang, goal.landing ? pathOr(lang, goal.landing, goal.href) : goal.href)}
                 className="group block h-full card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:ring-emerald-200 dark:hover:ring-emerald-400/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2"
               >
                 <div
