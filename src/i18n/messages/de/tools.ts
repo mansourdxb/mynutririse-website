@@ -1,6 +1,7 @@
 import type { Facts } from "@/data/facts";
 import type en from "../en/tools";
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const tools = (f: Facts): ReturnType<typeof en> => ({
   // Strings shared by several tool pages and calculators.
   shared: {
@@ -232,38 +233,6 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
     breadcrumb: "Makrorechner",
     title: "Makrorechner",
     subtitle: "Mach aus deinem Kalorienziel tägliche Ziele für Protein, Kohlenhydrate und Fett – kostenlos und ohne Anmeldung.",
-    chooseHeading: "So wählst du deine Aufteilung",
-    choose:
-      "Eine <b>ausgewogene</b> Aufteilung (30 % Protein / 40 % Kohlenhydrate / 30 % Fett) passt für die meisten. Wähle <b>proteinreich</b> (40 %), wenn du Muskeln aufbauen oder sie im Defizit erhalten willst – Protein sättigt außerdem am stärksten. <b>Keto</b> hält die Kohlenhydrate für Low-Carb-Pläne bei etwa 5 %, und <b>Ausdauer</b> erhöht sie auf 50 %, um hohe Trainingsumfänge zu versorgen.",
-    math:
-      "Die Rechnung ist einfach: Protein und Kohlenhydrate liefern <b>4 kcal pro Gramm</b>, Fett liefert <b>9 kcal pro Gramm</b>. Bei 2.000 kcal und ausgewogener Aufteilung sind das 150 g Protein, 200 g Kohlenhydrate und 67 g Fett.",
-    startHeading: "Starte mit der richtigen Kalorienzahl",
-    start:
-      "Deine Aufteilung ist nur so gut wie die Kalorien, die sie aufteilt. Falls du noch kein Tagesziel hast, nutze zuerst den <calorie>Kalorienrechner</calorie> – und wenn du traditionelle Gerichte isst, zeigt unser Ratgeber zum <guide>Makro-Tracking mit kulturellen Gerichten</guide>, wie du diese Ziele auch mit Biryani, Tajine und Kabuli Pulao auf dem Speiseplan erreichst.",
-    practiceHeading: "Makros im Alltag erreichen",
-    practice:
-      "Baue jede Mahlzeit um eine Proteinquelle herum auf, lass die Kohlenhydrate mit deinem Trainingstag mitwachsen und betrachte Fett als den Rest. Beständigkeit schlägt Präzision: Wenn du jedes Ziel auf ±10 g triffst, war es ein guter Tag.",
-    faqs: [
-      {
-        question: "Welche Makro-Aufteilung ist zum Abnehmen am besten?",
-        answer:
-          "Mehr Protein hilft am meisten – 35–40 % Protein erhalten im Kaloriendefizit die Muskeln und halten dich satt. Den Gewichtsverlust bewirkt aber das Defizit selbst, nicht die genaue Aufteilung.",
-      },
-      {
-        question: "Wie viel Protein brauche ich für den Muskelaufbau?",
-        answer:
-          "Etwa 1,6–2,2 g pro kg Körpergewicht täglich. Die proteinreiche Aufteilung (40 %) erreicht diesen Bereich bei moderatem Überschuss für die meisten Menschen.",
-      },
-      {
-        question: "Sind Makros wichtiger als Kalorien?",
-        answer:
-          "Kalorien bestimmen die Gewichtsveränderung, Makros bestimmen, wie sie sich anfühlt und was du behältst. Lege zuerst die Kalorien fest und nutze dann die Makros, um Muskeln und Energie zu schützen.",
-      },
-      {
-        question: "Kann ich Makros auch mit halalem oder kulturellem Essen tracken?",
-        answer: `Ja – gemischte Gerichte wie Biryani oder Tajine haben bekannte Makroprofile. MyNutriRise deckt ${f.CUISINES} Küchen der Welt ab, mit Protein, Kohlenhydraten und Fett pro Portion.`,
-      },
-    ],
     ctaTitle: "Tracke deine Makros automatisch",
     ctaBody:
       "Mach ein Foto, und MyNutriRise trägt Protein, Kohlenhydrate und Fett für dich ein – mit täglicher Aufschlüsselung im Vergleich zu deinen Zielen.",

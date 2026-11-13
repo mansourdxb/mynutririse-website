@@ -1,6 +1,7 @@
 import type { Facts } from "@/data/facts";
 import type en from "../en/tools";
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const tools = (f: Facts): ReturnType<typeof en> => ({
   // Strings shared by several tool pages and calculators.
   shared: {
@@ -232,38 +233,6 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
     breadcrumb: "Calculateur de macros",
     title: "Calculateur de macros",
     subtitle: "Transformez votre objectif calorique en objectifs quotidiens de protéines, de glucides et de lipides, gratuitement et sans inscription.",
-    chooseHeading: "Comment choisir votre répartition",
-    choose:
-      "Une répartition <b>équilibrée</b> (30 % de protéines / 40 % de glucides / 30 % de lipides) convient à la plupart des gens. Optez pour une répartition <b>protéinée</b> (40 %) pour prendre du muscle ou le préserver en déficit : les protéines sont aussi le macronutriment le plus rassasiant. La répartition <b>céto</b> limite les glucides à environ 5 % pour les programmes pauvres en glucides, et la répartition <b>endurance</b> porte les glucides à 50 % pour soutenir de gros volumes d’entraînement.",
-    math:
-      "Le calcul est simple : les protéines et les glucides apportent <b>4 kcal par gramme</b>, les lipides <b>9 kcal par gramme</b>. Pour 2 000 kcal avec une répartition équilibrée, cela donne 150 g de protéines, 200 g de glucides et 67 g de lipides.",
-    startHeading: "Partez du bon nombre de calories",
-    start:
-      "Votre répartition ne vaut que par les calories qu’elle divise. Si vous n’avez pas encore fixé d’objectif quotidien, utilisez d’abord le <calorie>calculateur de calories</calorie> ; et si vous mangez des plats traditionnels, notre guide pour <guide>suivre ses macros avec les plats de sa culture</guide> montre comment atteindre ces objectifs avec du biryani, du tajine ou du kabuli pulao au menu.",
-    practiceHeading: "Atteindre vos macros au quotidien",
-    practice:
-      "Construisez chaque repas autour d’une source de protéines, adaptez les glucides à vos jours d’entraînement et considérez les lipides comme le reste. La régularité prime sur la précision : rester à ±10 g de chaque objectif, c’est une bonne journée.",
-    faqs: [
-      {
-        question: "Quelle répartition des macros pour perdre du poids ?",
-        answer:
-          "Davantage de protéines aide le plus : 35 à 40 % de protéines préservent le muscle et vous rassasient en déficit calorique. C’est le déficit lui-même, et non la répartition exacte, qui fait perdre du poids.",
-      },
-      {
-        question: "De combien de protéines ai-je besoin pour prendre du muscle ?",
-        answer:
-          "Environ 1,6 à 2,2 g par kg de poids corporel et par jour. La répartition protéinée (40 %) avec un surplus modéré permet d’atteindre cette fourchette pour la plupart des gens.",
-      },
-      {
-        question: "Les macros comptent-elles plus que les calories ?",
-        answer:
-          "Les calories déterminent l’évolution du poids ; les macros déterminent comment vous vous sentez et ce que vous conservez. Fixez d’abord vos calories, puis utilisez les macros pour protéger votre masse musculaire et votre énergie.",
-      },
-      {
-        question: "Puis-je suivre mes macros avec une alimentation halal ou les plats de ma culture ?",
-        answer: `Oui : les plats composés comme le biryani ou le tajine ont des profils de macros connus. MyNutriRise couvre ${f.CUISINES} cuisines du monde avec les protéines, glucides et lipides par portion.`,
-      },
-    ],
     ctaTitle: "Suivez vos macros automatiquement",
     ctaBody:
       "Prenez une photo et MyNutriRise enregistre pour vous les protéines, les glucides et les lipides, avec un détail quotidien par rapport à vos objectifs.",

@@ -1,5 +1,6 @@
 import type { Facts } from "@/data/facts";
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const tools = (f: Facts) => ({
   // Strings shared by several tool pages and calculators.
   shared: {
@@ -231,38 +232,6 @@ const tools = (f: Facts) => ({
     breadcrumb: "Macro Calculator",
     title: "Macro Calculator",
     subtitle: "Turn your calorie goal into daily protein, carb, and fat targets — free, no sign-up needed.",
-    chooseHeading: "How to choose your split",
-    choose:
-      "A <b>balanced</b> split (30% protein / 40% carbs / 30% fat) suits most people. Go <b>high-protein</b> (40%) when building muscle or preserving it in a deficit — protein is also the most satiating macro. <b>Keto</b> keeps carbs near 5% for low-carb plans, and <b>endurance</b> raises carbs to 50% to fuel high training volumes.",
-    math:
-      "The math is simple: protein and carbs provide <b>4 kcal per gram</b>, fat provides <b>9 kcal per gram</b>. On 2,000 kcal with a balanced split that is 150g protein, 200g carbs, and 67g fat.",
-    startHeading: "Start from the right calorie number",
-    start:
-      "Your split is only as good as the calories it divides. If you have not set a daily target yet, run the <calorie>calorie calculator</calorie> first — and if you eat traditional dishes, our guide to <guide>tracking macros with cultural meals</guide> shows how to hit these targets with biryani, tagine, and kabuli pulao on the menu.",
-    practiceHeading: "Hitting your macros in practice",
-    practice:
-      "Anchor each meal around a protein source, let carbs scale with your training day, and treat fat as the remainder. Consistency beats precision: landing within ±10g of each target is a good day.",
-    faqs: [
-      {
-        question: "What macro split is best for weight loss?",
-        answer:
-          "Higher protein helps most — 35–40% protein preserves muscle and keeps you full in a calorie deficit. The deficit itself, not the exact split, drives the weight loss.",
-      },
-      {
-        question: "How much protein do I need to build muscle?",
-        answer:
-          "Around 1.6–2.2g per kg of body weight daily. The High Protein split (40%) on a moderate surplus reaches that range for most people.",
-      },
-      {
-        question: "Do macros matter more than calories?",
-        answer:
-          "Calories determine weight change; macros determine how it feels and what you keep. Set calories first, then use macros to protect muscle and energy.",
-      },
-      {
-        question: "Can I track macros with halal or cultural food?",
-        answer: `Yes — mixed dishes like biryani or tagine have known macro profiles. MyNutriRise covers ${f.CUISINES} world cuisines with per-serving protein, carbs, and fat.`,
-      },
-    ],
     ctaTitle: "Track your macros automatically",
     ctaBody:
       "Snap a photo and MyNutriRise logs the protein, carbs, and fat for you — with daily breakdowns against your targets.",

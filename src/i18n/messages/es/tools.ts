@@ -1,6 +1,7 @@
 import type { Facts } from "@/data/facts";
 import type en from "../en/tools";
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const tools = (f: Facts): ReturnType<typeof en> => ({
   // Strings shared by several tool pages and calculators.
   shared: {
@@ -232,38 +233,6 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
     breadcrumb: "Calculadora de macros",
     title: "Calculadora de macros",
     subtitle: "Convierte tu meta de calorías en objetivos diarios de proteína, carbohidratos y grasa: gratis y sin registro.",
-    chooseHeading: "Cómo elegir tu reparto",
-    choose:
-      "Un reparto <b>equilibrado</b> (30 % proteína / 40 % carbohidratos / 30 % grasa) va bien a la mayoría de las personas. Opta por uno <b>alto en proteína</b> (40 %) si quieres ganar músculo o conservarlo durante un déficit; además, la proteína es el macro que más sacia. El reparto <b>keto</b> mantiene los carbohidratos cerca del 5 % para planes bajos en carbohidratos, y el de <b>resistencia</b> eleva los carbohidratos al 50 % para sostener grandes volúmenes de entrenamiento.",
-    math:
-      "El cálculo es sencillo: la proteína y los carbohidratos aportan <b>4 kcal por gramo</b>, y la grasa, <b>9 kcal por gramo</b>. Con 2.000 kcal y un reparto equilibrado, eso son 150 g de proteína, 200 g de carbohidratos y 67 g de grasa.",
-    startHeading: "Parte de la cifra de calorías correcta",
-    start:
-      "Tu reparto solo es tan bueno como las calorías que divide. Si todavía no has fijado un objetivo diario, usa primero la <calorie>calculadora de calorías</calorie>; y si comes platos tradicionales, nuestra guía para <guide>controlar los macros con comidas culturales</guide> te muestra cómo alcanzar estos objetivos con biryani, tajín y kabuli pulao en el menú.",
-    practiceHeading: "Cómo cumplir tus macros en la práctica",
-    practice:
-      "Construye cada comida en torno a una fuente de proteína, ajusta los carbohidratos según tu día de entrenamiento y deja la grasa como el resto. La constancia es más importante que la precisión: quedarte a ±10 g de cada objetivo ya es un buen día.",
-    faqs: [
-      {
-        question: "¿Qué reparto de macros es mejor para bajar de peso?",
-        answer:
-          "Lo que más ayuda es más proteína: un 35–40 % de proteína preserva el músculo y te mantiene saciado durante un déficit de calorías. Lo que impulsa la pérdida de peso es el déficit en sí, no el reparto exacto.",
-      },
-      {
-        question: "¿Cuánta proteína necesito para ganar músculo?",
-        answer:
-          "Alrededor de 1,6–2,2 g por kg de peso corporal al día. El reparto alto en proteína (40 %) con un superávit moderado alcanza ese rango en la mayoría de las personas.",
-      },
-      {
-        question: "¿Importan más los macros que las calorías?",
-        answer:
-          "Las calorías determinan el cambio de peso; los macros determinan cómo te sientes y qué conservas. Fija primero las calorías y luego usa los macros para proteger tu músculo y tu energía.",
-      },
-      {
-        question: "¿Puedo controlar los macros con comida halal o cultural?",
-        answer: `Sí: los platos combinados como el biryani o el tajín tienen perfiles de macros conocidos. MyNutriRise abarca ${f.CUISINES} cocinas del mundo con la proteína, los carbohidratos y la grasa por porción.`,
-      },
-    ],
     ctaTitle: "Controla tus macros automáticamente",
     ctaBody:
       "Toma una foto y MyNutriRise registra la proteína, los carbohidratos y la grasa por ti, con desgloses diarios frente a tus objetivos.",
