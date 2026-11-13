@@ -25,7 +25,7 @@ export function Footer({
         { label: f.recipes, href: "/recipes" },
         { label: f.halal, href: "/halal-nutrition-app" },
         { label: f.premium, href: "/#premium" },
-        { label: f.compare, href: "/compare/mynutririse-vs-myfitnesspal" },
+        { label: f.compare, href: "/compare" },
         { label: f.download, href: "/download" },
       ],
     },

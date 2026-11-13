@@ -95,4 +95,13 @@ export default (f: Facts): ReturnType<typeof en> => ({
     quiz: "Haz el <link>test de plan de 1 minuto</link> para ver cómo sería tu plan.",
   },
   ctaTitle: "Registra la comida que de verdad comes",
+  index: {
+    breadcrumb: "Comparativas",
+    metaTitle: "Comparativa de apps para contar calorías: MyNutriRise",
+    metaDescription: "Comparativas honestas de MyNutriRise con MyFitnessPal y otras apps para contar calorías: funciones, precios, idiomas y en qué destaca cada una. Léelas ya.",
+    title: "Compara MyNutriRise con otras apps",
+    intro: "Comparativas honestas y con fuentes frente a otras apps de calorías y dieta, incluido en qué son mejores.",
+    lastChecked: "Última comprobación:",
+    sourcesNote: "Los datos de otras apps proceden de sus fichas oficiales en las tiendas indicadas arriba, comprobadas por última vez el",
+  },
 });

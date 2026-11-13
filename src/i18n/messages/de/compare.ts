@@ -95,4 +95,13 @@ export default (f: Facts): ReturnType<typeof en> => ({
     quiz: "Mach das <link>1-Minuten-Plan-Quiz</link> und sieh, wie dein Plan aussehen würde.",
   },
   ctaTitle: "Tracke das Essen, das du wirklich isst",
+  index: {
+    breadcrumb: "Vergleich",
+    metaTitle: "Kalorienzähler-Apps im Vergleich: MyNutriRise vs. andere",
+    metaDescription: "Ehrliche Vergleiche von MyNutriRise mit MyFitnessPal und anderen Kalorienzähler-Apps: Funktionen, Preise, Sprachen und wo jede App stärker ist. Jetzt lesen.",
+    title: "MyNutriRise im Vergleich mit anderen Apps",
+    intro: "Ehrliche, belegte Vergleiche mit anderen Kalorienzähler- und Diät-Apps – auch dort, wo sie stärker sind.",
+    lastChecked: "Zuletzt geprüft:",
+    sourcesNote: "Angaben zu anderen Apps stammen aus ihren offiziellen Store-Einträgen oben, zuletzt geprüft am",
+  },
 });

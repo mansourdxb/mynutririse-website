@@ -95,4 +95,13 @@ export default (f: Facts): ReturnType<typeof en> => ({
     quiz: "Essayez le <link>quiz programme en 1 minute</link> pour découvrir à quoi ressemblerait votre programme.",
   },
   ctaTitle: "Suivez ce que vous mangez vraiment",
+  index: {
+    breadcrumb: "Comparatifs",
+    metaTitle: "Comparatif d’applis compteur de calories : MyNutriRise",
+    metaDescription: "Comparatifs honnêtes de MyNutriRise avec MyFitnessPal et d’autres applis compteur de calories : fonctions, prix, langues et atouts de chacune. À lire.",
+    title: "Comparer MyNutriRise avec d’autres applis",
+    intro: "Des comparatifs honnêtes et sourcés avec d’autres applis de calories et de régime, y compris là où elles font mieux.",
+    lastChecked: "Dernière vérification :",
+    sourcesNote: "Les informations sur les autres applis proviennent de leurs fiches officielles ci-dessus, vérifiées le",
+  },
 });
