@@ -4,6 +4,7 @@ import macro from "./macro";
 import bmi from "./bmi";
 import bmr from "./bmr";
 import idealWeight from "./idealWeight";
+import tdee from "./tdee";
 
 // Long-form explainer + FAQ for each calculator, keyed like data/tools.ts.
 const toolGuides = (f: Facts) => ({
@@ -12,6 +13,7 @@ const toolGuides = (f: Facts) => ({
   bmi: bmi(f),
   bmr: bmr(f),
   idealWeight: idealWeight(f),
+  tdee: tdee(f),
 });
 
 export default toolGuides;

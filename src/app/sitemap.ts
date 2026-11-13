@@ -18,6 +18,7 @@ const pages: Entry[] = [
   { path: "/tools/macro-calculator", changeFrequency: "monthly", priority: 0.7 },
   { path: "/tools/bmr-calculator", changeFrequency: "monthly", priority: 0.7 },
   { path: "/tools/ideal-weight-calculator", changeFrequency: "monthly", priority: 0.7 },
+  { path: "/tools/tdee-calculator", changeFrequency: "monthly", priority: 0.7 },
   { path: "/recipes", changeFrequency: "monthly", priority: 0.8 },
   { path: "/about", changeFrequency: "yearly", priority: 0.5 },
   { path: "/press", changeFrequency: "yearly", priority: 0.4 },

@@ -35,9 +35,9 @@ const tools = (f: Facts) => ({
   index: {
     metaTitle: "Free Nutrition Tools",
     metaDescription:
-      "Free calculators for BMI, daily calories, macros, BMR and ideal weight. Instant results with no sign-up, then turn your numbers into a plan in MyNutriRise.",
+      "Free calculators for calories, calorie deficit, TDEE, macros, protein, BMI, BMR, body fat and ideal weight. Instant results, no sign-up. Try them now.",
     title: "Free Nutrition Tools",
-    subtitle: "Five calculators, zero sign-up. The same math MyNutriRise uses to build your plan.",
+    subtitle: "Free calculators, zero sign-up. The same math MyNutriRise uses to build your plan.",
     cards: {
       calorie: {
         title: "Calorie Calculator",
@@ -58,6 +58,10 @@ const tools = (f: Facts) => ({
       idealWeight: {
         title: "Ideal Weight Calculator",
         description: "Healthy weight range for your height — Devine & Robinson formulas.",
+      },
+      tdee: {
+        title: "TDEE Calculator",
+        description: "Your maintenance calories at every activity level.",
       },
     },
     quiz: {
@@ -187,6 +191,23 @@ const tools = (f: Facts) => ({
       empty: "Enter your daily calories to see your macro targets.",
     },
   },
+  tdee: {
+    metaTitle: "TDEE Calculator: Your Daily Maintenance Calories",
+    metaDescription:
+      "Free TDEE calculator: see your total daily energy expenditure at every activity level with Mifflin-St Jeor, then set a calorie target. Calculate yours now.",
+    breadcrumb: "TDEE Calculator",
+    title: "TDEE Calculator",
+    subtitle: "See how many calories you burn in a day at every activity level — free, no sign-up needed.",
+    ctaTitle: "Track against your TDEE",
+    ctaBody: "MyNutriRise sets your daily target from this math and logs every meal from a photo.",
+    calc: {
+      bmr: "Your BMR",
+      bmrNote: "kcal/day at complete rest",
+      tableHeading: "Your TDEE at each activity level",
+      empty: "Fill in your details to see your TDEE at every activity level.",
+    },
+  },
+
 });
 
 export default tools;

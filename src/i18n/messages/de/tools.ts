@@ -36,9 +36,9 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
   index: {
     metaTitle: "Kostenlose Ernährungsrechner",
     metaDescription:
-      "Kostenlose Rechner für BMI, Kalorienbedarf, Makros, Grundumsatz und Idealgewicht. Sofort Ergebnisse ohne Anmeldung – dann deinen Plan in MyNutriRise umsetzen.",
+      "Kostenlose Rechner für Kalorien, Kaloriendefizit, TDEE, Makros, Protein, BMI, Grundumsatz, Körperfett und Idealgewicht. Ohne Anmeldung – jetzt testen.",
     title: "Kostenlose Ernährungs-Tools",
-    subtitle: "Fünf Rechner, keine Anmeldung. Dieselbe Mathematik, mit der MyNutriRise deinen Plan erstellt.",
+    subtitle: "Kostenlose Rechner, keine Anmeldung. Dieselbe Mathematik, mit der MyNutriRise deinen Plan erstellt.",
     cards: {
       calorie: {
         title: "Kalorienrechner",
@@ -59,6 +59,10 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
       idealWeight: {
         title: "Idealgewicht-Rechner",
         description: "Gesunder Gewichtsbereich für deine Größe – nach den Formeln von Devine & Robinson.",
+      },
+      tdee: {
+        title: "TDEE-Rechner",
+        description: "Dein Erhaltungsbedarf für jedes Aktivitätslevel.",
       },
     },
     quiz: {
@@ -188,6 +192,23 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
       empty: "Gib deine täglichen Kalorien ein, um deine Makroziele zu sehen.",
     },
   },
+  tdee: {
+    metaTitle: "TDEE-Rechner: Kalorienverbrauch pro Tag berechnen",
+    metaDescription:
+      "Kostenloser TDEE-Rechner: Berechne deinen Kalorienverbrauch für jedes Aktivitätslevel nach Mifflin-St Jeor und finde dein Kalorienziel. Jetzt testen.",
+    breadcrumb: "TDEE-Rechner",
+    title: "TDEE-Rechner",
+    subtitle: "Sieh, wie viele Kalorien du an einem Tag verbrennst – für jedes Aktivitätslevel, kostenlos und ohne Anmeldung.",
+    ctaTitle: "Tracke im Vergleich zu deinem TDEE",
+    ctaBody: "MyNutriRise legt dein Tagesziel mit dieser Mathematik fest und trägt jede Mahlzeit per Foto ein.",
+    calc: {
+      bmr: "Dein Grundumsatz",
+      bmrNote: "kcal/Tag in völliger Ruhe",
+      tableHeading: "Dein TDEE für jedes Aktivitätslevel",
+      empty: "Gib deine Daten ein, um deinen TDEE für jedes Aktivitätslevel zu sehen.",
+    },
+  },
+
 });
 
 export default tools;

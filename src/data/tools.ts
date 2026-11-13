@@ -37,6 +37,13 @@ export const toolPages = [
     related: ["bmi", "calorie", "macro"],
     guides: ["ai-photo-calorie-tracking", "intermittent-fasting-16-8-guide"],
   },
+  {
+    key: "tdee",
+    href: "/tools/tdee-calculator",
+    emoji: "⚡",
+    related: ["deficit", "calorie", "bmr"],
+    guides: ["intermittent-fasting-16-8-guide", "ai-photo-calorie-tracking"],
+  },
 ] as const;
 
 export type ToolKey = (typeof toolPages)[number]["key"];

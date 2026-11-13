@@ -36,9 +36,9 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
   index: {
     metaTitle: "Herramientas de nutrición gratuitas",
     metaDescription:
-      "Calculadoras gratuitas de IMC, calorías diarias, macros, TMB y peso ideal. Resultados al instante y sin registro; luego conviértelos en un plan en MyNutriRise.",
+      "Calculadoras gratis de calorías, déficit, TDEE, macros, proteínas, IMC, TMB, grasa corporal y peso ideal. Resultados al instante, sin registro. Pruébalas.",
     title: "Herramientas de nutrición gratuitas",
-    subtitle: "Cinco calculadoras, sin registro. Los mismos cálculos que usa MyNutriRise para crear tu plan.",
+    subtitle: "Calculadoras gratuitas, sin registro. Los mismos cálculos que usa MyNutriRise para crear tu plan.",
     cards: {
       calorie: {
         title: "Calculadora de calorías",
@@ -59,6 +59,10 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
       idealWeight: {
         title: "Calculadora de peso ideal",
         description: "Rango de peso saludable para tu altura, con las fórmulas de Devine y Robinson.",
+      },
+      tdee: {
+        title: "Calculadora de TDEE",
+        description: "Tus calorías de mantenimiento en cada nivel de actividad.",
       },
     },
     quiz: {
@@ -188,6 +192,24 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
       empty: "Introduce tus calorías diarias para ver tus objetivos de macros.",
     },
   },
+
+  tdee: {
+    metaTitle: "Calculadora TDEE: gasto calórico diario y mantenimiento",
+    metaDescription:
+      "Calculadora TDEE gratis: conoce tu gasto calórico diario en cada nivel de actividad con Mifflin-St Jeor y fija tu objetivo de calorías. Calcula el tuyo.",
+    breadcrumb: "Calculadora de TDEE",
+    title: "Calculadora de TDEE",
+    subtitle: "Descubre cuántas calorías quemas al día en cada nivel de actividad: gratis y sin registro.",
+    ctaTitle: "Controla tu ingesta frente a tu TDEE",
+    ctaBody: "MyNutriRise fija tu objetivo diario con estos mismos cálculos y registra cada comida a partir de una foto.",
+    calc: {
+      bmr: "Tu TMB",
+      bmrNote: "kcal/día en reposo absoluto",
+      tableHeading: "Tu TDEE en cada nivel de actividad",
+      empty: "Completa tus datos para ver tu TDEE en cada nivel de actividad.",
+    },
+  },
+
 });
 
 export default tools;

@@ -36,9 +36,9 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
   index: {
     metaTitle: "Outils nutrition gratuits",
     metaDescription:
-      "Calculateurs gratuits d’IMC, de calories quotidiennes, de macros, de métabolisme de base et de poids idéal, sans inscription.",
+      "Calculateurs gratuits de calories, déficit, DEJ, macros, protéines, IMC, métabolisme de base, masse grasse et poids idéal. Sans inscription. Essayez-les.",
     title: "Outils nutrition gratuits",
-    subtitle: "Cinq calculateurs, zéro inscription. Les mêmes calculs que ceux utilisés par MyNutriRise pour créer votre programme.",
+    subtitle: "Des calculateurs gratuits, zéro inscription. Les mêmes calculs que ceux utilisés par MyNutriRise pour créer votre programme.",
     cards: {
       calorie: {
         title: "Calculateur de calories",
@@ -59,6 +59,10 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
       idealWeight: {
         title: "Calculateur de poids idéal",
         description: "La fourchette de poids santé pour votre taille, selon les formules de Devine et de Robinson.",
+      },
+      tdee: {
+        title: "Calculateur de DEJ",
+        description: "Vos besoins d’entretien à chaque niveau d’activité.",
       },
     },
     quiz: {
@@ -188,6 +192,23 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
       empty: "Saisissez vos calories quotidiennes pour voir vos objectifs de macros.",
     },
   },
+  tdee: {
+    metaTitle: "Calcul de la dépense énergétique journalière (DEJ)",
+    metaDescription:
+      "Calcul de la DEJ gratuit : estimez votre dépense énergétique journalière à chaque niveau d’activité (Mifflin-St Jeor), puis fixez un objectif. Calculez-la.",
+    breadcrumb: "Calculateur de DEJ",
+    title: "Calculateur de DEJ",
+    subtitle: "Découvrez combien de calories vous dépensez par jour à chaque niveau d’activité, gratuitement et sans inscription.",
+    ctaTitle: "Suivez votre apport par rapport à votre DEJ",
+    ctaBody: "MyNutriRise fixe votre objectif quotidien à partir de ces calculs et enregistre chaque repas à partir d’une photo.",
+    calc: {
+      bmr: "Votre métabolisme de base",
+      bmrNote: "kcal/jour au repos complet",
+      tableHeading: "Votre DEJ à chaque niveau d’activité",
+      empty: "Renseignez vos informations pour voir votre DEJ à chaque niveau d’activité.",
+    },
+  },
+
 });
 
 export default tools;
