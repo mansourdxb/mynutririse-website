@@ -3,7 +3,7 @@ import Link from "next/link";
 import { localePath, type Locale } from "@/i18n/config";
 import { pageMetadata } from "@/i18n/metadata";
 import { getMessages } from "@/i18n/messages";
-import { articles } from "./articles";
+import { articlesIn } from "@/i18n/posts";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/blog">): Promise<Metadata> {
   const lang = (await params).lang as Locale;
@@ -23,8 +23,7 @@ export default async function BlogPage({ params }: PageProps<"/[lang]/blog">) {
         <p className="mx-auto mt-4 max-w-xl text-center text-lead text-ink-3">{t.subtitle}</p>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {articles.map((article) => {
-            const a = blog[article.key];
+          {articlesIn(lang).map(({ article, text: a }) => {
             return (
               <Link
                 key={article.slug}

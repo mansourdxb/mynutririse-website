@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { articles } from "@/app/[lang]/blog/articles";
+import { articles, type ArticleInfo } from "@/app/[lang]/blog/articles";
+import { articleText } from "@/i18n/posts";
 import { ContentBlocks, richText } from "@/components/content/ContentBlocks";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { StoreButtons } from "@/components/ui/Button";
@@ -41,14 +42,17 @@ export function LandingPage({ lang, config }: { lang: Locale; config: LandingCon
   const path = `/${config.slug}`;
   const t = getLanding(config.slug, lang);
   if (!t || !hasPage(lang, path)) notFound();
-  const { tools, blog, common } = getMessages(lang);
+  const { tools, common } = getMessages(lang);
 
   const related = config.tools
     .map((key) => toolPages.find((p) => p.key === key))
     .filter((p) => p !== undefined);
+  // Only guides published in this language.
   const guides = config.guides
-    .map((slug) => articles.find((a) => a.slug === slug))
-    .filter((a) => a !== undefined);
+    .map((slug) => articles.find((a) => a.slug === slug) as ArticleInfo | undefined)
+    .map((a) => (a ? { a, text: articleText(lang, a) } : null))
+    .filter((g) => g !== null && g.text !== null)
+    .map((g) => ({ a: g!.a, text: g!.text! }));
 
   const faqJsonLd = {
     "@context": "https://schema.org",
@@ -132,13 +136,13 @@ export function LandingPage({ lang, config }: { lang: Locale; config: LandingCon
           <section className="mt-10">
             <h2 className="text-xl font-bold text-ink">{tools.shared.relatedGuides}</h2>
             <ul className="mt-4 grid gap-3 sm:grid-cols-2">
-              {guides.map((a) => (
+              {guides.map(({ a, text }) => (
                 <li key={a.slug}>
                   <Link href={localePath(lang, `/blog/${a.slug}`)} className={cardClass}>
                     <span className="font-semibold text-ink group-hover:text-emerald-600 dark:group-hover:text-emerald-400">
-                      {blog[a.key].title}
+                      {text.title}
                     </span>
-                    <span className="mt-1 text-sm text-ink-3">{blog[a.key].description}</span>
+                    <span className="mt-1 text-sm text-ink-3">{text.description}</span>
                   </Link>
                 </li>
               ))}

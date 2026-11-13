@@ -40,6 +40,7 @@ const pages: Entry[] = [
   { path: "/arabic-calorie-counter", changeFrequency: "monthly", priority: 0.9 },
   { path: "/download", changeFrequency: "yearly", priority: 0.5 },
   { path: "/blog", changeFrequency: "weekly", priority: 0.7 },
+  { path: "/blog/author/mansour-shaaban", changeFrequency: "monthly", priority: 0.4 },
   { path: "/blog/intermittent-fasting-16-8-guide", changeFrequency: "monthly", priority: 0.6 },
   { path: "/blog/ai-photo-calorie-tracking", changeFrequency: "monthly", priority: 0.6 },
   { path: "/blog/track-macros-halal-cultural-meals", changeFrequency: "monthly", priority: 0.6 },

@@ -46,12 +46,13 @@ export const LINK_TAGS: Record<string, string> = {
 export const linkClass =
   "font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300";
 
-export function richText(lang: Locale, text: string): ReactNode {
+/** `extraLinks` adds page-specific tags (tag -> language-neutral path). */
+export function richText(lang: Locale, text: string, extraLinks: Record<string, string> = {}): ReactNode {
   const tags: Record<string, (c: ReactNode) => ReactNode> = {
     b: (c) => <strong>{c}</strong>,
     em: (c) => <em>{c}</em>,
   };
-  for (const [tag, href] of Object.entries(LINK_TAGS)) {
+  for (const [tag, href] of Object.entries({ ...LINK_TAGS, ...extraLinks })) {
     // Pages missing in this language render as plain text, never a 404 link.
     if (!hasPage(lang, href)) continue;
     tags[tag] = (c) => (
@@ -67,10 +68,13 @@ export function ContentBlocks({
   lang,
   blocks,
   sourcesHeading,
+  links,
 }: {
   lang: Locale;
   blocks: readonly Block[];
   sourcesHeading: string;
+  /** Extra link tags for this content only (see richText). */
+  links?: Record<string, string>;
 }) {
   return (
     <>
@@ -93,7 +97,7 @@ export function ContentBlocks({
             const List = block.type;
             return (
               <List key={i} className={`${block.type === "ul" ? "list-disc" : "list-decimal"} space-y-2 ps-6`}>
-                {block.items?.map((item) => <li key={item}>{richText(lang, item)}</li>)}
+                {block.items?.map((item) => <li key={item}>{richText(lang, item, links)}</li>)}
               </List>
             );
           }
@@ -156,7 +160,7 @@ export function ContentBlocks({
               </div>
             );
           default:
-            return <p key={i}>{richText(lang, block.text ?? "")}</p>;
+            return <p key={i}>{richText(lang, block.text ?? "", links)}</p>;
         }
       })}
     </>

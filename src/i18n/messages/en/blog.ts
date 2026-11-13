@@ -14,6 +14,24 @@ export default (f: Facts) => ({
     subtitle: "Practical guides on nutrition, fasting, and building habits that stick.",
     breadcrumb: "Blog",
   },
+  labels: {
+    writtenBy: "Written by",
+    reviewedBy: "Reviewed by",
+    published: "Published",
+    updated: "Updated",
+  },
+  // TODO(owner): replace with the real bio, credentials and photo.
+  authors: {
+    "mansour-shaaban": {
+      name: "Mansour Shaaban",
+      role: "Founder of MyNutriRise",
+      bio: "Mansour Shaaban is the founder of MyNutriRise. He started the app to make nutrition tracking work for the food people actually eat, including halal and cultural dishes from the Gulf, the Middle East and beyond.",
+      metaTitle: "Mansour Shaaban, founder of MyNutriRise",
+      metaDescription:
+        "Articles by Mansour Shaaban, founder of MyNutriRise: practical, sourced guides on calories, protein, fasting and halal and Arabic food.",
+      postsHeading: "Articles by Mansour Shaaban",
+    },
+  },
   cta: {
     intermittentFasting: {
       heading: "Track your fast automatically",

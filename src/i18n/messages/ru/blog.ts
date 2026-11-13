@@ -15,6 +15,24 @@ export default (f: Facts): ReturnType<typeof en> => ({
     subtitle: "Практичные гиды по питанию, голоданию и привычкам, которые остаются с тобой.",
     breadcrumb: "Блог",
   },
+  labels: {
+    writtenBy: "Автор",
+    reviewedBy: "Проверено",
+    published: "Опубликовано",
+    updated: "Обновлено",
+  },
+  // TODO(owner): replace with the real bio, credentials and photo.
+  authors: {
+    "mansour-shaaban": {
+      name: "Мансур Шаабан",
+      role: "Основатель MyNutriRise",
+      bio: "Мансур Шаабан — основатель MyNutriRise. Он создал приложение, чтобы учёт питания подходил к той еде, которую люди едят на самом деле, включая халяльные и традиционные блюда стран Персидского залива, Ближнего Востока и других регионов.",
+      metaTitle: "Мансур Шаабан, основатель MyNutriRise",
+      metaDescription:
+        "Мансур Шаабан, основатель MyNutriRise, пишет практичные гиды с источниками о калориях, белке, голодании, халяльной и арабской кухне. Читай статьи.",
+      postsHeading: "Статьи автора",
+    },
+  },
   cta: {
     intermittentFasting: {
       heading: "Отслеживай голодание автоматически",

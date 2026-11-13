@@ -15,6 +15,24 @@ export default (f: Facts): ReturnType<typeof en> => ({
     subtitle: "أدلة عملية حول التغذية والصيام وبناء عادات تدوم.",
     breadcrumb: "المدونة",
   },
+  labels: {
+    writtenBy: "بقلم",
+    reviewedBy: "راجعه",
+    published: "نُشر",
+    updated: "حُدّث",
+  },
+  // TODO(owner): replace with the real bio, credentials and photo.
+  authors: {
+    "mansour-shaaban": {
+      name: "منصور شعبان",
+      role: "مؤسس MyNutriRise",
+      bio: "منصور شعبان مؤسس تطبيق MyNutriRise. أنشأ التطبيق ليجعل تتبّع التغذية مناسباً للطعام الذي يأكله الناس فعلاً، ومنه الأطباق الحلال والتقليدية من الخليج والشرق الأوسط وغيرها.",
+      metaTitle: "منصور شعبان، مؤسس MyNutriRise",
+      metaDescription:
+        "مقالات منصور شعبان، مؤسس MyNutriRise: أدلة عملية وموثّقة عن حساب السعرات والبروتين والصيام والأكل الحلال والعربي. اقرأ أحدث المقالات.",
+      postsHeading: "مقالات منصور شعبان",
+    },
+  },
   cta: {
     intermittentFasting: {
       heading: "تتبّع صيامك تلقائياً",

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { articles } from "@/app/[lang]/blog/articles";
+import { articles, type ArticleInfo } from "@/app/[lang]/blog/articles";
+import { articleText } from "@/i18n/posts";
 import { ContentBlocks, type Block } from "@/components/content/ContentBlocks";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { StoreButtons } from "@/components/ui/Button";
@@ -39,7 +40,7 @@ export function ToolPage({
   /** The interactive calculator. */
   children: ReactNode;
 }) {
-  const { tools, toolGuides, blog, common } = getMessages(lang);
+  const { tools, toolGuides, common } = getMessages(lang);
   const t = tools[toolKey];
   const g = toolGuides[toolKey];
   const s = tools.shared;
@@ -48,9 +49,12 @@ export function ToolPage({
   const related = page.related
     .map((key) => toolPages.find((p) => p.key === key))
     .filter((p) => p !== undefined);
+  // Only guides published in this language.
   const guides = page.guides
-    .map((slug) => articles.find((a) => a.slug === slug))
-    .filter((a) => a !== undefined);
+    .map((slug) => articles.find((a) => a.slug === slug) as ArticleInfo | undefined)
+    .map((a) => (a ? { a, text: articleText(lang, a) } : null))
+    .filter((g) => g !== null && g.text !== null)
+    .map((g) => ({ a: g!.a, text: g!.text! }));
 
   const faqJsonLd = {
     "@context": "https://schema.org",
@@ -120,13 +124,13 @@ export function ToolPage({
           <section className="mt-10">
             <h2 className="text-xl font-bold text-ink">{s.relatedGuides}</h2>
             <ul className="mt-4 grid gap-3 sm:grid-cols-2">
-              {guides.map((a) => (
+              {guides.map(({ a, text }) => (
                 <li key={a.slug}>
                   <Link href={localePath(lang, `/blog/${a.slug}`)} className={cardClass}>
                     <span className="font-semibold text-ink group-hover:text-emerald-600 dark:group-hover:text-emerald-400">
-                      {blog[a.key].title}
+                      {text.title}
                     </span>
-                    <span className="mt-1 text-sm text-ink-3">{blog[a.key].description}</span>
+                    <span className="mt-1 text-sm text-ink-3">{text.description}</span>
                   </Link>
                 </li>
               ))}
