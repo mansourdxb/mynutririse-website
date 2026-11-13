@@ -6,8 +6,13 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
   shared: {
     breadcrumb: "Outils",
     faqHeading: "Questions fréquentes",
+    disclaimerTitle: "Ceci n’est pas un avis médical",
     disclaimer:
-      "Cet outil fournit des estimations générales et ne constitue pas un avis médical. Consultez un professionnel avant tout changement alimentaire important.",
+      "Ces calculateurs fournissent des estimations générales pour les adultes en bonne santé. Ils ne constituent pas un avis médical et ne remplacent pas un médecin ou un diététicien diplômé. Si vous êtes enceinte, allaitez, avez moins de 18 ans ou suivez un traitement pour un problème de santé, demandez un avis personnalisé avant de modifier votre alimentation.",
+    sourcesHeading: "Sources",
+    relatedTools: "Calculateurs associés",
+    relatedGuides: "Guides associés",
+    ctaButton: "Télécharger l’appli gratuite",
     sexAria: "Sexe",
     male: "Homme",
     female: "Femme",
@@ -182,54 +187,6 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
     title: "Calculateur de calories",
     subtitle:
       "Découvrez combien de calories il vous faut chaque jour pour perdre du poids, le maintenir ou prendre du muscle, gratuitement et sans inscription.",
-    howHeading: "Comment vos besoins caloriques sont calculés",
-    howIntro:
-      "Ce calculateur utilise l’<b>équation de Mifflin–St Jeor</b>, la formule la plus couramment utilisée par les diététiciens pour estimer le métabolisme de base (MB), c’est-à-dire l’énergie que votre corps brûle au repos :",
-    tdeeIntro:
-      "Votre métabolisme de base est ensuite multiplié par un facteur d’activité pour estimer votre dépense énergétique journalière totale (DEJ) :",
-    table: {
-      level: "Niveau d’activité",
-      multiplier: "Coefficient",
-      week: "Semaine type",
-      // Same order as the multipliers 1.2, 1.375, 1.55, 1.725, 1.9.
-      rows: [
-        { level: "Sédentaire", week: "Travail de bureau, peu ou pas d’exercice" },
-        { level: "Activité légère", week: "Exercice léger 1 à 3 jours/semaine" },
-        { level: "Activité modérée", week: "Exercice modéré 3 à 5 jours/semaine" },
-        { level: "Activité intense", week: "Exercice soutenu 6 à 7 jours/semaine" },
-        { level: "Activité très intense", week: "Travail physique et entraînement" },
-      ],
-    },
-    example:
-      "<b>Exemple détaillé :</b> un homme de 30 ans, 175 cm et 75 kg, a un métabolisme de base de 10×75 + 6,25×175 − 5×30 + 5 = 1 699 kcal. S’il fait de l’exercice 3 à 5 jours par semaine (×1,55), ses besoins d’entretien sont d’environ 2 633 kcal/jour, soit environ 2 133 pour perdre environ 0,5 kg par semaine, ou environ 2 933 pour prendre du muscle avec un léger surplus.",
-    numberHeading: "Que faire de ce chiffre ?",
-    number:
-      "Un objectif ne fonctionne que si vous suivez vos apports par rapport à lui. Répartissez vos calories intelligemment sur la journée — notre <macro>calculateur de macros</macro> gratuit transforme ce chiffre en objectifs de protéines, de glucides et de lipides — et pesez-vous chaque semaine, en ajustant de 100 à 200 kcal si votre tendance s’écarte de l’objectif. Pour comprendre la partie « énergie au repos » du calcul, consultez le <bmr>calculateur de métabolisme de base</bmr>.",
-    ramadanHeading: "Les calories pendant le Ramadan et le jeûne",
-    ramadan:
-      "Le jeûne change le <em>moment</em> où vous mangez, pas les besoins de votre corps. Pendant le Ramadan, visez votre objectif quotidien en le répartissant entre le suhoor et l’iftar : misez sur les protéines et les glucides lents au suhoor, rompez le jeûne avec des boissons et des dattes, et gardez un repas d’iftar équilibré plutôt que de tout concentrer dans une seule assiette démesurée. La même logique s’applique au 16:8 et aux autres protocoles ; notre <guide>guide du 16:8 pour débutants</guide> détaille tout cela.",
-    faqs: [
-      {
-        question: "Combien de calories manger pour perdre du poids ?",
-        answer:
-          "Un déficit d’environ 500 kcal par rapport à vos besoins d’entretien entraîne une perte d’environ 0,5 kg (1 lb) par semaine. Utilisez le calculateur ci-dessus pour connaître vos besoins d’entretien, puis retirez 500 kcal, sans descendre sous 1 200 kcal/jour pour une femme ou 1 500 kcal/jour pour un homme sans avis médical.",
-      },
-      {
-        question: "Quelle formule ce calculateur de calories utilise-t-il ?",
-        answer:
-          "Il utilise l’équation de Mifflin–St Jeor, largement considérée comme la formule la plus précise pour estimer les besoins énergétiques au repos, multipliée par un facteur d’activité compris entre 1,2 (sédentaire) et 1,9 (activité très intense).",
-      },
-      {
-        question: "Les calculateurs de calories sont-ils précis ?",
-        answer:
-          "Pour la plupart des personnes, les équations donnent une estimation à environ ±10 % près. Considérez ce chiffre comme un point de départ : suivez vos apports et votre poids pendant 2 à 3 semaines, puis ajustez de 100 à 200 kcal si votre tendance réelle s’écarte de l’objectif.",
-      },
-      {
-        question: "Mes besoins caloriques changent-ils pendant le Ramadan ?",
-        answer:
-          "Vos besoins énergétiques quotidiens restent à peu près les mêmes ; c’est la fenêtre alimentaire qui change. Visez votre objectif habituel en le répartissant entre le suhoor et l’iftar, en misant à chaque repas sur les protéines et l’hydratation plutôt que de tout concentrer dans un seul gros repas.",
-      },
-    ],
     ctaTitle: "Atteignez votre objectif chaque jour",
     ctaBody:
       "MyNutriRise suit vos calories automatiquement : photographiez votre repas et l’IA l’enregistre pour vous.",

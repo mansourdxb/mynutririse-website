@@ -5,8 +5,13 @@ const tools = (f: Facts) => ({
   shared: {
     breadcrumb: "Tools",
     faqHeading: "Frequently asked questions",
+    disclaimerTitle: "Not medical advice",
     disclaimer:
-      "This tool provides general estimates, not medical advice. Consult a professional before major dietary changes.",
+      "These calculators give general estimates for healthy adults. They are not medical advice and do not replace a doctor or registered dietitian. If you are pregnant, breastfeeding, under 18 or managing a health condition, get personal advice before changing how you eat.",
+    sourcesHeading: "Sources",
+    relatedTools: "Related calculators",
+    relatedGuides: "Related guides",
+    ctaButton: "Get the free app",
     sexAria: "Sex",
     male: "Male",
     female: "Female",
@@ -181,54 +186,6 @@ const tools = (f: Facts) => ({
     title: "Calorie Calculator",
     subtitle:
       "See how many calories you need each day to lose weight, maintain, or build muscle — free, no sign-up needed.",
-    howHeading: "How your calorie needs are calculated",
-    howIntro:
-      "This calculator uses the <b>Mifflin–St Jeor equation</b>, the formula dietitians most commonly rely on for estimating basal metabolic rate (BMR) — the energy your body burns at rest:",
-    tdeeIntro:
-      "Your BMR is then multiplied by an activity factor to estimate your total daily energy expenditure (TDEE):",
-    table: {
-      level: "Activity level",
-      multiplier: "Multiplier",
-      week: "Typical week",
-      // Same order as the multipliers 1.2, 1.375, 1.55, 1.725, 1.9.
-      rows: [
-        { level: "Sedentary", week: "Desk job, little or no exercise" },
-        { level: "Lightly active", week: "Light exercise 1–3 days/week" },
-        { level: "Moderately active", week: "Moderate exercise 3–5 days/week" },
-        { level: "Very active", week: "Hard exercise 6–7 days/week" },
-        { level: "Extra active", week: "Physical job plus training" },
-      ],
-    },
-    example:
-      "<b>Worked example:</b> a 30-year-old man, 175 cm and 75 kg, has a BMR of 10×75 + 6.25×175 − 5×30 + 5 = 1,699 kcal. If he exercises 3–5 days a week (×1.55), his maintenance is ≈ 2,633 kcal/day — about 2,133 to lose ~0.5 kg/week, or ~2,933 to gain muscle in a lean surplus.",
-    numberHeading: "What to do with your number",
-    number:
-      "A target only works if you track against it. Split your calories sensibly across the day — our free <macro>macro calculator</macro> turns the number into protein, carb, and fat targets — and weigh in weekly, adjusting by 100–200 kcal if your trend is off. If you want to understand the resting-energy half of the math, see the <bmr>BMR calculator</bmr>.",
-    ramadanHeading: "Calories during Ramadan and fasting",
-    ramadan:
-      "Fasting changes <em>when</em> you eat, not how much your body needs. During Ramadan, aim to reach your daily target across suhoor and iftar: anchor suhoor with protein and slow carbs, break the fast with fluids and dates, and keep the main iftar meal balanced rather than compressed into one oversized plate. The same logic applies to 16:8 and other protocols — our <guide>16:8 beginner's guide</guide> covers the details.",
-    faqs: [
-      {
-        question: "How many calories should I eat to lose weight?",
-        answer:
-          "A deficit of about 500 kcal below your maintenance level leads to roughly 0.5 kg (1 lb) of weight loss per week. Use the calculator above to find your maintenance calories, then subtract 500 — but avoid going below 1,200 kcal/day for women or 1,500 kcal/day for men without medical guidance.",
-      },
-      {
-        question: "What formula does this calorie calculator use?",
-        answer:
-          "It uses the Mifflin–St Jeor equation, widely considered the most accurate formula for estimating resting energy needs, multiplied by an activity factor between 1.2 (sedentary) and 1.9 (extra active).",
-      },
-      {
-        question: "How accurate are calorie calculators?",
-        answer:
-          "Equations estimate within about ±10% for most people. Treat the number as a starting point: track your intake and weight for 2–3 weeks, then adjust by 100–200 kcal if your real-world trend differs from the goal.",
-      },
-      {
-        question: "Do my calorie needs change during Ramadan?",
-        answer:
-          "Your total daily energy needs stay roughly the same — what changes is the eating window. Aim to reach your normal daily target across suhoor and iftar, anchoring each meal with protein and fluids rather than compressing everything into one large meal.",
-      },
-    ],
     ctaTitle: "Hit your target every day",
     ctaBody:
       "MyNutriRise tracks your calories automatically — snap a photo of your meal and AI logs it for you.",

@@ -1,8 +1,46 @@
-// Free calculator pages, in display order. `key` indexes tools.index.cards.
+// Free calculator pages, in display order. `key` indexes tools.<key>,
+// tools.index.cards.<key> and toolGuides.<key> in the messages.
+// `related` lists other tool keys; `guides` lists blog slugs.
 export const toolPages = [
-  { href: "/tools/calorie-calculator", emoji: "🔥", key: "calorie" },
-  { href: "/tools/macro-calculator", emoji: "🥩", key: "macro" },
-  { href: "/tools/bmi-calculator", emoji: "📏", key: "bmi" },
-  { href: "/tools/bmr-calculator", emoji: "💤", key: "bmr" },
-  { href: "/tools/ideal-weight-calculator", emoji: "🎯", key: "idealWeight" },
+  {
+    key: "calorie",
+    href: "/tools/calorie-calculator",
+    emoji: "🔥",
+    related: ["macro", "bmr", "bmi"],
+    guides: ["intermittent-fasting-16-8-guide", "ai-photo-calorie-tracking"],
+  },
+  {
+    key: "macro",
+    href: "/tools/macro-calculator",
+    emoji: "🥩",
+    related: ["calorie", "bmr", "idealWeight"],
+    guides: ["track-macros-halal-cultural-meals", "ai-photo-calorie-tracking"],
+  },
+  {
+    key: "bmi",
+    href: "/tools/bmi-calculator",
+    emoji: "📏",
+    related: ["idealWeight", "calorie", "bmr"],
+    guides: ["intermittent-fasting-16-8-guide", "ai-photo-calorie-tracking"],
+  },
+  {
+    key: "bmr",
+    href: "/tools/bmr-calculator",
+    emoji: "💤",
+    related: ["calorie", "macro", "bmi"],
+    guides: ["intermittent-fasting-16-8-guide", "track-macros-halal-cultural-meals"],
+  },
+  {
+    key: "idealWeight",
+    href: "/tools/ideal-weight-calculator",
+    emoji: "🎯",
+    related: ["bmi", "calorie", "macro"],
+    guides: ["ai-photo-calorie-tracking", "intermittent-fasting-16-8-guide"],
+  },
 ] as const;
+
+export type ToolKey = (typeof toolPages)[number]["key"];
+
+export function toolPage(key: ToolKey) {
+  return toolPages.find((t) => t.key === key)!;
+}

@@ -6,8 +6,13 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
   shared: {
     breadcrumb: "Herramientas",
     faqHeading: "Preguntas frecuentes",
+    disclaimerTitle: "No es consejo médico",
     disclaimer:
-      "Esta herramienta ofrece estimaciones generales, no consejo médico. Consulta a un profesional antes de hacer cambios importantes en tu alimentación.",
+      "Estas calculadoras ofrecen estimaciones generales para adultos sanos. No son consejo médico ni sustituyen a un médico o a un dietista-nutricionista. Si estás embarazada, en periodo de lactancia, eres menor de 18 años o tienes alguna afección de salud, pide consejo personalizado antes de cambiar tu forma de comer.",
+    sourcesHeading: "Fuentes",
+    relatedTools: "Calculadoras relacionadas",
+    relatedGuides: "Guías relacionadas",
+    ctaButton: "Consigue la app gratis",
     sexAria: "Sexo",
     male: "Hombre",
     female: "Mujer",
@@ -182,54 +187,6 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
     title: "Calculadora de calorías",
     subtitle:
       "Descubre cuántas calorías necesitas cada día para bajar de peso, mantenerlo o ganar músculo: gratis y sin registro.",
-    howHeading: "Cómo se calculan tus necesidades de calorías",
-    howIntro:
-      "Esta calculadora usa la <b>ecuación de Mifflin–St Jeor</b>, la fórmula en la que más suelen confiar los nutricionistas para estimar la tasa metabólica basal (TMB), es decir, la energía que tu cuerpo quema en reposo:",
-    tdeeIntro:
-      "Después, tu TMB se multiplica por un factor de actividad para estimar tu gasto energético diario total (TDEE, por sus siglas en inglés):",
-    table: {
-      level: "Nivel de actividad",
-      multiplier: "Multiplicador",
-      week: "Semana típica",
-      // Same order as the multipliers 1.2, 1.375, 1.55, 1.725, 1.9.
-      rows: [
-        { level: "Sedentario", week: "Trabajo de oficina, poco o ningún ejercicio" },
-        { level: "Poco activo", week: "Ejercicio ligero 1–3 días/semana" },
-        { level: "Moderadamente activo", week: "Ejercicio moderado 3–5 días/semana" },
-        { level: "Muy activo", week: "Ejercicio intenso 6–7 días/semana" },
-        { level: "Extremadamente activo", week: "Trabajo físico más entrenamiento" },
-      ],
-    },
-    example:
-      "<b>Ejemplo práctico:</b> un hombre de 30 años, de 175 cm y 75 kg, tiene una TMB de 10×75 + 6,25×175 − 5×30 + 5 = 1.699 kcal. Si hace ejercicio 3–5 días a la semana (×1,55), su mantenimiento es de ≈ 2.633 kcal/día: unas 2.133 para perder ~0,5 kg/semana, o ~2.933 para ganar músculo con un superávit moderado.",
-    numberHeading: "Qué hacer con tu número",
-    number:
-      "Un objetivo solo funciona si haces seguimiento en función de él. Reparte tus calorías de forma razonable a lo largo del día —nuestra <macro>calculadora de macros</macro> gratuita convierte la cifra en objetivos de proteína, carbohidratos y grasa— y pésate cada semana, ajustando 100–200 kcal si tu tendencia no es la esperada. Si quieres entender la mitad de los cálculos que corresponde a la energía en reposo, consulta la <bmr>calculadora de TMB</bmr>.",
-    ramadanHeading: "Calorías durante el Ramadán y el ayuno",
-    ramadan:
-      "El ayuno cambia <em>cuándo</em> comes, no cuánto necesita tu cuerpo. Durante el Ramadán, intenta alcanzar tu objetivo diario entre el suhoor y el iftar: basa el suhoor en proteína y carbohidratos de absorción lenta, rompe el ayuno con líquidos y dátiles, y mantén equilibrada la comida principal del iftar en lugar de concentrarlo todo en un plato enorme. La misma lógica se aplica al 16:8 y a otros protocolos; nuestra <guide>guía de 16:8 para principiantes</guide> explica los detalles.",
-    faqs: [
-      {
-        question: "¿Cuántas calorías debo comer para bajar de peso?",
-        answer:
-          "Un déficit de unas 500 kcal por debajo de tu nivel de mantenimiento supone perder aproximadamente 0,5 kg (1 lb) por semana. Usa la calculadora de arriba para conocer tus calorías de mantenimiento y réstale 500, pero evita bajar de 1.200 kcal/día en mujeres o de 1.500 kcal/día en hombres sin supervisión médica.",
-      },
-      {
-        question: "¿Qué fórmula usa esta calculadora de calorías?",
-        answer:
-          "Usa la ecuación de Mifflin–St Jeor, considerada en general la fórmula más precisa para estimar las necesidades de energía en reposo, multiplicada por un factor de actividad entre 1,2 (sedentario) y 1,9 (extremadamente activo).",
-      },
-      {
-        question: "¿Qué tan precisas son las calculadoras de calorías?",
-        answer:
-          "Las ecuaciones aciertan con un margen de aproximadamente ±10 % en la mayoría de las personas. Toma la cifra como punto de partida: registra lo que comes y tu peso durante 2–3 semanas y ajusta 100–200 kcal si tu tendencia real se aleja del objetivo.",
-      },
-      {
-        question: "¿Cambian mis necesidades de calorías durante el Ramadán?",
-        answer:
-          "Tus necesidades energéticas diarias totales se mantienen más o menos iguales; lo que cambia es la ventana de alimentación. Intenta alcanzar tu objetivo diario habitual entre el suhoor y el iftar, basando cada comida en proteína y líquidos en lugar de concentrarlo todo en una sola comida abundante.",
-      },
-    ],
     ctaTitle: "Alcanza tu objetivo cada día",
     ctaBody:
       "MyNutriRise controla tus calorías automáticamente: toma una foto de tu comida y la IA la registra por ti.",

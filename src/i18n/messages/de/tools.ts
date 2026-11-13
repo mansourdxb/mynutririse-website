@@ -6,8 +6,13 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
   shared: {
     breadcrumb: "Tools",
     faqHeading: "Häufig gestellte Fragen",
+    disclaimerTitle: "Keine medizinische Beratung",
     disclaimer:
-      "Dieses Tool liefert allgemeine Schätzungen und ist keine medizinische Beratung. Sprich vor größeren Ernährungsumstellungen mit einer Fachperson.",
+      "Diese Rechner liefern allgemeine Schätzungen für gesunde Erwachsene. Sie sind keine medizinische Beratung und ersetzen weder eine Ärztin oder einen Arzt noch eine Ernährungsfachkraft. Wenn du schwanger bist, stillst, unter 18 bist oder eine Erkrankung hast, hol dir persönlichen Rat, bevor du deine Ernährung umstellst.",
+    sourcesHeading: "Quellen",
+    relatedTools: "Ähnliche Rechner",
+    relatedGuides: "Passende Ratgeber",
+    ctaButton: "Kostenlose App holen",
     sexAria: "Geschlecht",
     male: "Männlich",
     female: "Weiblich",
@@ -182,54 +187,6 @@ const tools = (f: Facts): ReturnType<typeof en> => ({
     title: "Kalorienrechner",
     subtitle:
       "Finde heraus, wie viele Kalorien du täglich brauchst, um abzunehmen, dein Gewicht zu halten oder Muskeln aufzubauen – kostenlos und ohne Anmeldung.",
-    howHeading: "So wird dein Kalorienbedarf berechnet",
-    howIntro:
-      "Dieser Rechner nutzt die <b>Mifflin–St-Jeor-Formel</b>, auf die sich Ernährungsfachleute am häufigsten verlassen, um den Grundumsatz (BMR) zu schätzen – die Energie, die dein Körper in Ruhe verbrennt:",
-    tdeeIntro:
-      "Dein Grundumsatz wird dann mit einem Aktivitätsfaktor multipliziert, um deinen gesamten täglichen Energieverbrauch (TDEE) zu schätzen:",
-    table: {
-      level: "Aktivitätslevel",
-      multiplier: "Faktor",
-      week: "Typische Woche",
-      // Same order as the multipliers 1.2, 1.375, 1.55, 1.725, 1.9.
-      rows: [
-        { level: "Sitzend", week: "Bürojob, wenig oder kein Sport" },
-        { level: "Leicht aktiv", week: "Leichter Sport an 1–3 Tagen/Woche" },
-        { level: "Mäßig aktiv", week: "Moderater Sport an 3–5 Tagen/Woche" },
-        { level: "Sehr aktiv", week: "Intensiver Sport an 6–7 Tagen/Woche" },
-        { level: "Extrem aktiv", week: "Körperliche Arbeit plus Training" },
-      ],
-    },
-    example:
-      "<b>Rechenbeispiel:</b> Ein 30-jähriger Mann, 175 cm und 75 kg, hat einen Grundumsatz von 10×75 + 6,25×175 − 5×30 + 5 = 1.699 kcal. Treibt er an 3–5 Tagen pro Woche Sport (×1,55), liegt sein Erhaltungsbedarf bei ≈ 2.633 kcal/Tag – etwa 2.133, um ~0,5 kg/Woche abzunehmen, oder ~2.933, um mit einem leichten Überschuss Muskeln aufzubauen.",
-    numberHeading: "Was du mit deiner Zahl anfangen kannst",
-    number:
-      "Ein Ziel funktioniert nur, wenn du dagegen trackst. Verteile deine Kalorien sinnvoll über den Tag – unser kostenloser <macro>Makrorechner</macro> macht aus der Zahl Ziele für Protein, Kohlenhydrate und Fett – und wiege dich wöchentlich; weicht dein Trend ab, passe um 100–200 kcal an. Wenn du die Ruheenergie-Hälfte der Rechnung verstehen willst, sieh dir den <bmr>Grundumsatz-Rechner</bmr> an.",
-    ramadanHeading: "Kalorien im Ramadan und beim Fasten",
-    ramadan:
-      "Fasten verändert, <em>wann</em> du isst – nicht, wie viel dein Körper braucht. Im Ramadan solltest du dein Tagesziel über Suhur und Iftar hinweg erreichen: Setz beim Suhur auf Protein und langsame Kohlenhydrate, brich das Fasten mit Flüssigkeit und Datteln und halte die Hauptmahlzeit zum Iftar ausgewogen, statt alles auf einen übervollen Teller zu packen. Dieselbe Logik gilt für 16:8 und andere Methoden – unser <guide>16:8-Einsteigerguide</guide> erklärt die Details.",
-    faqs: [
-      {
-        question: "Wie viele Kalorien sollte ich zum Abnehmen essen?",
-        answer:
-          "Ein Defizit von etwa 500 kcal unter deinem Erhaltungsbedarf führt zu rund 0,5 kg (1 lb) Gewichtsverlust pro Woche. Ermittle mit dem Rechner oben deinen Erhaltungsbedarf und zieh 500 ab – geh aber ohne ärztliche Begleitung nicht unter 1.200 kcal/Tag (Frauen) bzw. 1.500 kcal/Tag (Männer).",
-      },
-      {
-        question: "Welche Formel nutzt dieser Kalorienrechner?",
-        answer:
-          "Er nutzt die Mifflin–St-Jeor-Formel, die weithin als genaueste Formel zur Schätzung des Ruheenergiebedarfs gilt, multipliziert mit einem Aktivitätsfaktor zwischen 1,2 (sitzend) und 1,9 (extrem aktiv).",
-      },
-      {
-        question: "Wie genau sind Kalorienrechner?",
-        answer:
-          "Die Formeln liegen bei den meisten Menschen auf etwa ±10 % genau. Sieh die Zahl als Ausgangspunkt: Tracke 2–3 Wochen lang deine Aufnahme und dein Gewicht und passe dann um 100–200 kcal an, wenn dein tatsächlicher Trend vom Ziel abweicht.",
-      },
-      {
-        question: "Ändert sich mein Kalorienbedarf im Ramadan?",
-        answer:
-          "Dein gesamter täglicher Energiebedarf bleibt ungefähr gleich – was sich ändert, ist das Essensfenster. Versuche, dein normales Tagesziel über Suhur und Iftar hinweg zu erreichen, und baue jede Mahlzeit auf Protein und Flüssigkeit auf, statt alles in eine große Mahlzeit zu packen.",
-      },
-    ],
     ctaTitle: "Erreiche jeden Tag dein Ziel",
     ctaBody:
       "MyNutriRise trackt deine Kalorien automatisch – fotografiere deine Mahlzeit, und die KI trägt sie für dich ein.",
