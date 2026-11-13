@@ -5,7 +5,7 @@ import type { Locale } from "@/i18n/config";
 const config: LandingConfig = {
   slug: "ramadan-diet-plan",
   tools: ["tdee", "protein", "deficit"],
-  guides: ["intermittent-fasting-16-8-guide", "track-macros-halal-cultural-meals"],
+  guides: ["ramadan-weight-loss-without-losing-muscle", "intermittent-fasting-16-8-guide", "track-macros-halal-cultural-meals"],
 };
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/ramadan-diet-plan">): Promise<Metadata> {

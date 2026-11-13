@@ -15,6 +15,24 @@ export default (f: Facts): ReturnType<typeof en> => ({
     subtitle: "Guías prácticas sobre nutrición, ayuno y cómo crear hábitos que perduran.",
     breadcrumb: "Blog",
   },
+  labels: {
+    writtenBy: "Por",
+    reviewedBy: "Revisado por",
+    published: "Publicado",
+    updated: "Actualizado",
+  },
+  // TODO(owner): replace with the real bio, credentials and photo.
+  authors: {
+    "mansour-shaaban": {
+      name: "Mansour Shaaban",
+      role: "Fundador de MyNutriRise",
+      bio: "Mansour Shaaban es el fundador de MyNutriRise. Creó la app para que el seguimiento nutricional funcione con la comida que la gente come de verdad, incluidos los platos halal y tradicionales del Golfo, Oriente Medio y otras regiones.",
+      metaTitle: "Mansour Shaaban, fundador de MyNutriRise",
+      metaDescription:
+        "Artículos de Mansour Shaaban, fundador de MyNutriRise: guías prácticas con fuentes sobre calorías, proteína, ayuno y comida halal y árabe.",
+      postsHeading: "Artículos de Mansour Shaaban",
+    },
+  },
   cta: {
     intermittentFasting: {
       heading: "Haz seguimiento de tu ayuno automáticamente",

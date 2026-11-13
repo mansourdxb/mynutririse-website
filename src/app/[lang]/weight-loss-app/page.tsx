@@ -5,7 +5,7 @@ import type { Locale } from "@/i18n/config";
 const config: LandingConfig = {
   slug: "weight-loss-app",
   tools: ["deficit", "tdee", "protein"],
-  guides: ["ai-photo-calorie-tracking", "intermittent-fasting-16-8-guide"],
+  guides: ["how-many-calories-to-lose-weight", "ai-photo-calorie-tracking", "intermittent-fasting-16-8-guide"],
 };
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/weight-loss-app">): Promise<Metadata> {

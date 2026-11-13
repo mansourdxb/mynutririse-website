@@ -1,0 +1,53 @@
+import { articles, type ArticleInfo } from "@/app/[lang]/blog/articles";
+import { factsFor } from "@/data/facts";
+import { hasPage } from "@/data/pages";
+import type { Locale } from "../config";
+import { getMessages } from "../messages";
+import type { PostContent } from "./types";
+import caloriesToLoseEn from "./how-many-calories-to-lose-weight/en";
+import caloriesToLoseAr from "./how-many-calories-to-lose-weight/ar";
+import proteinForMuscleEn from "./how-much-protein-to-build-muscle/en";
+import proteinForMuscleAr from "./how-much-protein-to-build-muscle/ar";
+import ramadanMuscleEn from "./ramadan-weight-loss-without-losing-muscle/en";
+import ramadanMuscleAr from "./ramadan-weight-loss-without-losing-muscle/ar";
+import gulfDishesEn from "./calories-in-gulf-arabic-dishes/en";
+import gulfDishesAr from "./calories-in-gulf-arabic-dishes/ar";
+
+export type { PostContent };
+type Builder = (f: ReturnType<typeof factsFor>) => PostContent;
+
+/** Posts whose copy lives in this folder, by slug and language. */
+const registry: Record<string, Partial<Record<Locale, Builder>>> = {
+  "how-many-calories-to-lose-weight": { en: caloriesToLoseEn, ar: caloriesToLoseAr },
+  "how-much-protein-to-build-muscle": { en: proteinForMuscleEn, ar: proteinForMuscleAr },
+  "ramadan-weight-loss-without-losing-muscle": { en: ramadanMuscleEn, ar: ramadanMuscleAr },
+  "calories-in-gulf-arabic-dishes": { en: gulfDishesEn, ar: gulfDishesAr },
+};
+
+/** An article's copy in a language, or null if it is not published there. */
+export function articleText(lang: Locale, article: ArticleInfo): PostContent | null {
+  if (!hasPage(lang, `/blog/${article.slug}`)) return null;
+  if (article.source === "messages") {
+    const { blog } = getMessages(lang);
+    const t = blog[article.key];
+    return {
+      title: t.title,
+      metaTitle: t.metaTitle,
+      description: t.description,
+      breadcrumb: t.breadcrumb,
+      readTime: t.readTime,
+      blocks: t.blocks,
+      cta: blog.cta[article.key],
+    };
+  }
+  const build = registry[article.slug]?.[lang];
+  return build ? build(factsFor(lang)) : null;
+}
+
+/** Articles published in a language, newest first. */
+export function articlesIn(lang: Locale) {
+  return ([...articles] as ArticleInfo[])
+    .sort((a, b) => b.date.localeCompare(a.date))
+    .map((a) => ({ article: a, text: articleText(lang, a) }))
+    .filter((x): x is { article: ArticleInfo; text: PostContent } => x.text !== null);
+}

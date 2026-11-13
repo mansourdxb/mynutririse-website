@@ -94,7 +94,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
       <Premium lang={lang} t={t.premium} store={m.common.store} />
       <Science t={t.science} />
       <HomeIntro t={t.intro} />
-      <HomeResources lang={lang} t={t.resources} tools={m.tools.index.cards} blog={m.blog} />
+      <HomeResources lang={lang} t={t.resources} tools={m.tools.index.cards} />
       <Community t={t.community} />
       <HomeFaq lang={lang} t={t.faq} />
       <CTA lang={lang} t={t.cta} store={m.common.store} />

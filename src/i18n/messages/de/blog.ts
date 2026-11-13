@@ -15,6 +15,24 @@ export default (f: Facts): ReturnType<typeof en> => ({
     subtitle: "Praktische Ratgeber zu Ernährung, Fasten und Gewohnheiten, die bleiben.",
     breadcrumb: "Blog",
   },
+  labels: {
+    writtenBy: "Von",
+    reviewedBy: "Geprüft von",
+    published: "Veröffentlicht",
+    updated: "Aktualisiert",
+  },
+  // TODO(owner): replace with the real bio, credentials and photo.
+  authors: {
+    "mansour-shaaban": {
+      name: "Mansour Shaaban",
+      role: "Gründer von MyNutriRise",
+      bio: "Mansour Shaaban ist der Gründer von MyNutriRise. Er hat die App gestartet, damit Ernährungstracking zu dem Essen passt, das Menschen wirklich essen – auch zu Halal-Gerichten und traditionellen Speisen aus dem Golf, dem Nahen Osten und darüber hinaus.",
+      metaTitle: "Mansour Shaaban, Gründer von MyNutriRise",
+      metaDescription:
+        "Artikel von Mansour Shaaban, Gründer von MyNutriRise: praktische, belegte Ratgeber zu Kalorien, Protein, Fasten sowie Halal- und arabischer Küche.",
+      postsHeading: "Artikel von Mansour Shaaban",
+    },
+  },
   cta: {
     intermittentFasting: {
       heading: "Tracke dein Fasten automatisch",

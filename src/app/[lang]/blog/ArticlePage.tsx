@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
-import type { ReactNode } from "react";
+import Link from "next/link";
+import { notFound } from "next/navigation";
 import { ArticleCta } from "./ArticleCta";
-import { articles, type ArticleKey } from "./articles";
+import { articles, type ArticleInfo, type ArticleSlug } from "./articles";
+import { ContentBlocks } from "@/components/content/ContentBlocks";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { author as authorData } from "@/data/authors";
 import {
   BASE_URL,
   BRAND,
@@ -15,60 +18,57 @@ import {
 } from "@/i18n/config";
 import { pageMetadata } from "@/i18n/metadata";
 import { getMessages } from "@/i18n/messages";
-import { rich } from "@/i18n/rich";
+import { articleText } from "@/i18n/posts";
 
-type Block = {
-  type: string;
-  text?: string;
-  items?: readonly string[];
-  head?: readonly string[];
-  rows?: readonly (readonly string[])[];
-};
-
-const linkClass =
-  "font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300";
-
-function article(key: ArticleKey) {
-  return articles.find((a) => a.key === key)!;
+function article(slug: ArticleSlug): ArticleInfo {
+  return articles.find((a) => a.slug === slug)!;
 }
 
-export function articleMetadata(lang: Locale, key: ArticleKey): Metadata {
-  const t = getMessages(lang).blog[key];
-  return pageMetadata(lang, `/blog/${article(key).slug}`, {
-    title: t.metaTitle,
+export function articleMetadata(lang: Locale, slug: ArticleSlug): Metadata {
+  const t = articleText(lang, article(slug));
+  if (!t) return {};
+  return pageMetadata(lang, `/blog/${slug}`, {
+    title: t.metaTitle ?? t.title,
     description: t.description,
   });
 }
 
+/** "2026-06-09" -> localized long date. */
+export function formatDate(iso: string, lang: Locale) {
+  return new Date(`${iso}T12:00:00Z`).toLocaleDateString(lang === "ar" ? "ar-u-nu-latn" : lang, {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    timeZone: "UTC",
+  });
+}
+
+export function authorPath(slug: string) {
+  return `/blog/author/${slug}`;
+}
+
 /**
- * Renders a blog article from its message blocks. `links` maps the link tags
- * used in the article's text to language-neutral paths.
+ * Renders a blog article: byline (author, published/updated dates, optional
+ * reviewer), content blocks, CTA, and BlogPosting + BreadcrumbList JSON-LD.
+ * `links` maps article-specific link tags to language-neutral paths.
  */
 export function ArticlePage({
   lang,
-  articleKey,
+  slug,
   links = {},
 }: {
   lang: Locale;
-  articleKey: ArticleKey;
+  slug: ArticleSlug;
   links?: Record<string, string>;
 }) {
-  const { blog, common } = getMessages(lang);
-  const t = blog[articleKey];
-  const { slug, date, dateModified } = article(articleKey);
+  const a = article(slug);
+  const t = articleText(lang, a);
+  if (!t) notFound();
+  const { blog, common, tools } = getMessages(lang);
   const path = `/blog/${slug}`;
-
-  const tags: Record<string, (c: ReactNode) => ReactNode> = {
-    em: (c) => <em>{c}</em>,
-    b: (c) => <strong>{c}</strong>,
-  };
-  for (const [tag, href] of Object.entries(links)) {
-    tags[tag] = (c) => (
-      <a href={localePath(lang, href)} className={linkClass}>
-        {c}
-      </a>
-    );
-  }
+  const person = authorData(a.author);
+  const bio = blog.authors[a.author];
+  const authorUrl = absoluteUrl(lang, authorPath(a.author));
 
   const articleJsonLd = {
     "@context": "https://schema.org",
@@ -76,11 +76,9 @@ export function ArticlePage({
     headline: t.title,
     description: t.description,
     inLanguage: lang,
-    datePublished: date,
-    dateModified,
-    // TODO(owner): switch author to a Person (name, url to /blog/author/<slug>)
-    // once the real author's name and credentials are provided.
-    author: { "@type": "Organization", "@id": ORGANIZATION_ID, name: BRAND, url: BASE_URL },
+    datePublished: a.date,
+    dateModified: a.dateModified,
+    author: { "@type": "Person", name: person.name, url: authorUrl, jobTitle: bio.role },
     publisher: {
       "@type": "Organization",
       "@id": ORGANIZATION_ID,
@@ -89,9 +87,10 @@ export function ArticlePage({
     },
     image: `${BASE_URL}/og/${lang}.png`,
     mainEntityOfPage: absoluteUrl(lang, path),
+    ...(a.reviewedBy
+      ? { reviewedBy: { "@type": "Person", name: a.reviewedBy.name, ...(a.reviewedBy.url ? { url: a.reviewedBy.url } : {}) } }
+      : {}),
   };
-
-  const blocks: readonly Block[] = t.blocks;
 
   return (
     <div className="wash-mint pt-24 pb-8">
@@ -106,66 +105,45 @@ export function ArticlePage({
           ]}
         />
         <h1 className="mt-6 text-h2 text-ink">{t.title}</h1>
-        <p className="mt-3 text-sm text-ink-3">
-          <time dateTime={date}>{t.dateLabel}</time> · {t.readTime}
-        </p>
-
-        <div className="mt-10 space-y-6 text-base leading-7 text-ink-2">
-          {blocks.map((block, i) => {
-            switch (block.type) {
-              case "h2":
-                return (
-                  <h2 key={i} className="pt-4 text-2xl font-bold text-ink">
-                    {block.text}
-                  </h2>
-                );
-              case "ul":
-                return (
-                  <ul key={i} className="list-disc space-y-2 ps-6">
-                    {block.items?.map((item) => (
-                      <li key={item}>{rich(item, tags)}</li>
-                    ))}
-                  </ul>
-                );
-              case "table":
-                return (
-                  <div key={i} className="overflow-hidden rounded-2xl ring-1 ring-line">
-                    <table className="w-full text-sm">
-                      <thead>
-                        <tr className="bg-emerald-50/60 dark:bg-emerald-400/10 text-start">
-                          {block.head?.map((h) => (
-                            <th key={h} className="px-4 py-3 font-semibold text-ink-2">
-                              {h}
-                            </th>
-                          ))}
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {block.rows?.map(([first, ...rest]) => (
-                          <tr key={first} className="border-t border-line">
-                            <td className="px-4 py-3 font-medium text-ink-2">{first}</td>
-                            {rest.map((cell, j) => (
-                              <td key={j} className="px-4 py-3">
-                                {cell}
-                              </td>
-                            ))}
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-                );
-              default:
-                return <p key={i}>{rich(block.text ?? "", tags)}</p>;
-            }
-          })}
+        <div className="mt-4 space-y-1 text-sm text-ink-3">
+          <p>
+            {blog.labels.writtenBy}{" "}
+            <Link href={localePath(lang, authorPath(a.author))} className="font-medium text-ink-2 hover:text-accent-strong">
+              {bio.name}
+            </Link>
+            , {bio.role}
+          </p>
+          <p>
+            {blog.labels.published} <time dateTime={a.date}>{formatDate(a.date, lang)}</time>
+            {a.dateModified !== a.date && (
+              <>
+                {" · "}
+                {blog.labels.updated} <time dateTime={a.dateModified}>{formatDate(a.dateModified, lang)}</time>
+              </>
+            )}
+            {" · "}
+            {t.readTime}
+          </p>
+          {a.reviewedBy && (
+            <p>
+              {blog.labels.reviewedBy}{" "}
+              {a.reviewedBy.url ? (
+                <a href={a.reviewedBy.url} className="font-medium text-ink-2 hover:text-accent-strong">
+                  {a.reviewedBy.name}
+                </a>
+              ) : (
+                <span className="font-medium text-ink-2">{a.reviewedBy.name}</span>
+              )}
+              , {a.reviewedBy.credentials}
+            </p>
+          )}
         </div>
 
-        <ArticleCta
-          heading={blog.cta[articleKey].heading}
-          body={blog.cta[articleKey].body}
-          store={common.store}
-        />
+        <div className="mt-10 space-y-6 text-base leading-7 text-ink-2">
+          <ContentBlocks lang={lang} blocks={t.blocks} sourcesHeading={tools.shared.sourcesHeading} links={links} />
+        </div>
+
+        <ArticleCta heading={t.cta.heading} body={t.cta.body} store={common.store} />
       </article>
     </div>
   );

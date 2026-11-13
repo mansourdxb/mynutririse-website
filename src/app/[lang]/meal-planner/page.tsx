@@ -5,7 +5,7 @@ import type { Locale } from "@/i18n/config";
 const config: LandingConfig = {
   slug: "meal-planner",
   tools: ["calorie", "macro", "protein"],
-  guides: ["track-macros-halal-cultural-meals", "ai-photo-calorie-tracking"],
+  guides: ["how-many-calories-to-lose-weight", "track-macros-halal-cultural-meals", "ai-photo-calorie-tracking"],
 };
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/meal-planner">): Promise<Metadata> {

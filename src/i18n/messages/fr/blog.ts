@@ -15,6 +15,24 @@ export default (f: Facts): ReturnType<typeof en> => ({
     subtitle: "Des guides pratiques sur la nutrition, le jeûne et les habitudes qui durent.",
     breadcrumb: "Blog",
   },
+  labels: {
+    writtenBy: "Par",
+    reviewedBy: "Relu par",
+    published: "Publié le",
+    updated: "Mis à jour le",
+  },
+  // TODO(owner): replace with the real bio, credentials and photo.
+  authors: {
+    "mansour-shaaban": {
+      name: "Mansour Shaaban",
+      role: "Fondateur de MyNutriRise",
+      bio: "Mansour Shaaban est le fondateur de MyNutriRise. Il a créé l’appli pour que le suivi nutritionnel s’adapte à ce que les gens mangent vraiment, y compris les plats halal et traditionnels du Golfe, du Moyen-Orient et d’ailleurs.",
+      metaTitle: "Mansour Shaaban, fondateur de MyNutriRise",
+      metaDescription:
+        "Articles de Mansour Shaaban, fondateur de MyNutriRise : des guides pratiques et sourcés sur les calories, les protéines, le jeûne et la cuisine halal.",
+      postsHeading: "Articles de Mansour Shaaban",
+    },
+  },
   cta: {
     intermittentFasting: {
       heading: "Suivez votre jeûne automatiquement",

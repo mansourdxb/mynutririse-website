@@ -5,7 +5,7 @@ import { ArticlePage, articleMetadata } from "../ArticlePage";
 export async function generateMetadata({
   params,
 }: PageProps<"/[lang]/blog/track-macros-halal-cultural-meals">): Promise<Metadata> {
-  return articleMetadata((await params).lang as Locale, "halalMacros");
+  return articleMetadata((await params).lang as Locale, "track-macros-halal-cultural-meals");
 }
 
 export default async function Article({
@@ -15,7 +15,7 @@ export default async function Article({
   return (
     <ArticlePage
       lang={lang}
-      articleKey="halalMacros"
+      slug="track-macros-halal-cultural-meals"
       links={{
         recipes: "/recipes",
         macroCalculator: "/tools/macro-calculator",

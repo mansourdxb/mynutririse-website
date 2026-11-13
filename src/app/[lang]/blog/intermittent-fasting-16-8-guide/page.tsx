@@ -5,7 +5,7 @@ import { ArticlePage, articleMetadata } from "../ArticlePage";
 export async function generateMetadata({
   params,
 }: PageProps<"/[lang]/blog/intermittent-fasting-16-8-guide">): Promise<Metadata> {
-  return articleMetadata((await params).lang as Locale, "intermittentFasting");
+  return articleMetadata((await params).lang as Locale, "intermittent-fasting-16-8-guide");
 }
 
 export default async function Article({
@@ -15,7 +15,7 @@ export default async function Article({
   return (
     <ArticlePage
       lang={lang}
-      articleKey="intermittentFasting"
+      slug="intermittent-fasting-16-8-guide"
       links={{ calorieCalculator: "/tools/calorie-calculator" }}
     />
   );
