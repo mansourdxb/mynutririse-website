@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Calculator } from "./Calculator";
+import { EmbedButton } from "./EmbedButton";
+import { embedSnippet } from "@/lib/embed";
+import { fill } from "@/i18n/rich";
 import { articles, type ArticleInfo } from "@/app/[lang]/blog/articles";
 import { articleText } from "@/i18n/posts";
 import { ContentBlocks, type Block } from "@/components/content/ContentBlocks";
@@ -75,6 +78,10 @@ export function ToolPage({ lang, toolKey }: { lang: Locale; toolKey: GuideKey })
 
         <div className="mt-10">
           <Calculator toolKey={toolKey} lang={lang} />
+          <EmbedButton
+            snippet={embedSnippet(lang, page.href, fill(s.embed.iframeTitle, { tool: t.title }))}
+            t={s.embed}
+          />
         </div>
 
         <div className="mt-12 space-y-4 leading-7 text-ink-2">
